@@ -24,7 +24,7 @@ function Footer() {
                 <li>
                 <img src="/assets/Home/send-mail.png" width={33} alt="location" className="flaticon-facebook-app-symbol" />
 
-                  <a href="mailto:info@finuniques.in">info@finuniques.in</a>
+                  <a href="mailto:info@7unique.in">info@7unique.in</a>
                 </li>
                 <li>
                 <img src="/assets/Home/phone-call.png" width={33} alt="location" className="flaticon-facebook-app-symbol" />
@@ -106,7 +106,7 @@ function Footer() {
           <div className="copyright">
             <div className="row align-items-center">
               <div className="col-md-12 text-center">
-                © 2024 @Finuniques. All rights reserved.
+                © 2024 @Sevenunique. All rights reserved.
               </div>
             </div>
           </div>

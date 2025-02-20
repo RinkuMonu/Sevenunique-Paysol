@@ -17,9 +17,9 @@ export default function RefundPolicy() {
                                     </p>
                                     <p>
                                         <b>2.</b> In case you have attempted to make an online payment of a transaction more than
-                                        once, and Finuniques Private Limited has received the amount more than once,
-                                        Finuniques Private Limited reserves the right to adjust it against additional EMI
-                                        towards your account. In case Finuniques Private Limited decides to refund the
+                                        once, and Sevenunique Private Limited has received the amount more than once,
+                                        Sevenunique Private Limited reserves the right to adjust it against additional EMI
+                                        towards your account. In case Sevenunique Private Limited decides to refund the
                                         excess amount, it will be within 2-3 days of the claim.
                                     </p>
                                     <p>
@@ -34,7 +34,7 @@ export default function RefundPolicy() {
                                     </p>
                                     <p>
                                         <b>5.</b> The application will be processed manually, and after verification, if the claim
-                                        is found valid, the amount received in excess will be refunded by Finuniques Private
+                                        is found valid, the amount received in excess will be refunded by Sevenunique Private
                                         Limited through electronic mode in favor of the applicant. A confirmation will be sent to
                                         the mailing address given in the online registration form within a period of 7 days on
                                         receipt of such claim. It will take 3-7 days for the money to show in your bank account.

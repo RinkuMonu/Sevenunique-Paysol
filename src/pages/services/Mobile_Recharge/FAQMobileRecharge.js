@@ -31,7 +31,7 @@ const FAQMobileRecharge = () => {
             a variety of prepaid plans offered by various operators. People
             looking for budget-friendly options might consider prepaid
             subscriptions. There are so many options available online to do your
-            prepaid mobile recharge, but Finunique Small Pvt. Ltd. is one of the
+            prepaid mobile recharge, but Sevenunique Small Pvt. Ltd. is one of the
             most trustworthy digital payments Website to make your life easier.
           </p>
           <ul>
@@ -52,7 +52,7 @@ const FAQMobileRecharge = () => {
             connection. Here’s how you can recharge online:
           </p>
           <ol>
-            <li>Open the Finunique Small Pvt. Ltd. app & navigate to ‘Recharges & Bill Pay’.</li>
+            <li>Open the Sevenunique Small Pvt. Ltd. app & navigate to ‘Recharges & Bill Pay’.</li>
             <li>Enter the phone number and select Prepaid or Postpaid.</li>
             <li>Select your mobile operator and circle.</li>
             <li>Choose a plan or enter the recharge amount.</li>
@@ -86,11 +86,11 @@ const FAQMobileRecharge = () => {
       ),
     },
     {
-      title: "Why Choose Finunique Small Pvt. Ltd. for Online Mobile Recharge?",
+      title: "Why Choose Sevenunique Small Pvt. Ltd. for Online Mobile Recharge?",
       body: (
         <>
           <p>
-            Here are some benefits of using Finunique Small Pvt. Ltd. for your mobile recharge:
+            Here are some benefits of using Sevenunique Small Pvt. Ltd. for your mobile recharge:
           </p>
           <ul>
             <li>
@@ -98,12 +98,12 @@ const FAQMobileRecharge = () => {
               clicks, and it doesn't even take a minute.
             </li>
             <li>
-              <strong>Secure Payments:</strong> Finunique Small Pvt. Ltd. offers end-to-end data
+              <strong>Secure Payments:</strong> Sevenunique Small Pvt. Ltd. offers end-to-end data
               protection for each prepaid recharge.
             </li>
             <li>
               <strong>No Transaction Cost:</strong> You won't be charged
-              additional fees for making a recharge through Finunique Small Pvt. Ltd.
+              additional fees for making a recharge through Sevenunique Small Pvt. Ltd.
             </li>
             <li>
               <strong>More Savings:</strong> Enjoy discounts and cashback
@@ -121,8 +121,8 @@ const FAQMobileRecharge = () => {
       title: "Free Mobile Recharge",
       body: (
         <p>
-          Finunique Small Pvt. Ltd. does not charge you over any online recharges, i.e., on
-          Finunique Small Pvt. Ltd., it enables free mobile recharge. Moreover, it offers many
+          Sevenunique Small Pvt. Ltd. does not charge you over any online recharges, i.e., on
+          Sevenunique Small Pvt. Ltd., it enables free mobile recharge. Moreover, it offers many
           discounts and phone recharge offers to its users.
         </p>
       ),
@@ -132,37 +132,37 @@ const FAQMobileRecharge = () => {
       body: (
         <ul>
           <li>
-            <strong>Why Choose Finunique Small Pvt. Ltd. for Prepaid Recharge?</strong>
+            <strong>Why Choose Sevenunique Small Pvt. Ltd. for Prepaid Recharge?</strong>
             <br />
-            Finunique Small Pvt. Ltd. is India's no. 1 site for online easy Mobile recharge.
-            Finunique Small Pvt. Ltd. does not charge you over any online recharges, enabling
+            Sevenunique Small Pvt. Ltd. is India's no. 1 site for online easy Mobile recharge.
+            Sevenunique Small Pvt. Ltd. does not charge you over any online recharges, enabling
             free mobile recharge and helping you save your time, effort, and
             money.
           </li>
           <li>
             <strong>Is Online Recharge Safe?</strong>
             <br />
-            Prepaid online recharges via Finunique Small Pvt. Ltd. are safe and seamless. There
-            is no fear of fraudulent or unsafe payments when using Finunique Small Pvt. Ltd.
+            Prepaid online recharges via Sevenunique Small Pvt. Ltd. are safe and seamless. There
+            is no fear of fraudulent or unsafe payments when using Sevenunique Small Pvt. Ltd.
           </li>
           <li>
             <strong>By when can Recharge be done?</strong>
             <br />
-            Mobile recharges via Finunique Small Pvt. Ltd. can be done quickly and instantly in a
+            Mobile recharges via Sevenunique Small Pvt. Ltd. can be done quickly and instantly in a
             few simple steps. There is no hassle or shuffling to pages. Just a
             simple procedure, and your online recharge is done.
           </li>
           <li>
             <strong>Which recharge app gives the best cashback?</strong>
             <br />
-            Finunique Small Pvt. Ltd. recharge app gives you the best benefits with cashback
+            Sevenunique Small Pvt. Ltd. recharge app gives you the best benefits with cashback
             offers, exclusive recharge discounts, and deals.
           </li>
           <li>
             <strong>Is there any extra charge on Mobile Recharge?</strong>
             <br />
-            Finunique Small Pvt. Ltd. enables free online recharge. There are no charges for any
-            operator online recharge. Finunique Small Pvt. Ltd. has never charged its customers
+            Sevenunique Small Pvt. Ltd. enables free online recharge. There are no charges for any
+            operator online recharge. Sevenunique Small Pvt. Ltd. has never charged its customers
             any extra fee for using the platform to recharge their mobile
             numbers.
           </li>

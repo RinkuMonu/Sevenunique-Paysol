@@ -14,16 +14,16 @@ export default function PrivacyPolicy() {
                                     <p>
                                         This Privacy Policy provides you with details about the manner in which your data is
                                         collected, stored &amp; used by us. You are advised to read this Privacy Policy carefully.
-                                        By visiting Finuniques Private Limited website/application you expressly give us
+                                        By visiting Sevenunique Private Limited website/application you expressly give us
                                         consent to use &amp; disclose your personal information in accordance with this Privacy
                                         Policy. If you do not agree to the terms of the policy, please do not use or access
-                                        Finuniques Private Limited website, WAP site, or mobile applications.
+                                        Sevenunique Private Limited website, WAP site, or mobile applications.
                                     </p>
                                     <p>
                                         <b>Note:</b> Our privacy policy may change at any time without prior notification. To make
                                         sure that you are aware of any changes, kindly review the policy periodically. This
-                                        Privacy Policy shall apply uniformly to Finuniques Private Limited desktop
-                                        website, Finuniques Private Limited mobile WAP site &amp; Finuniques
+                                        Privacy Policy shall apply uniformly to Sevenunique Private Limited desktop
+                                        website, Sevenunique Private Limited mobile WAP site &amp; Sevenunique
                                         Private Limited mobile applications.
                                     </p>
 
@@ -93,7 +93,7 @@ export default function PrivacyPolicy() {
                                         <h4>SECURITY</h4>
                                     </div>
                                     <p>
-                                        Finuniques Private Limited has stringent security measures in place to protect the
+                                        Sevenunique Private Limited has stringent security measures in place to protect the
                                         loss, misuse, and alteration of the information under our control. Whenever you change or
                                         access your account information, we offer the use of a secure server. Once your
                                         information is in our possession, we adhere to strict security guidelines, protecting it
@@ -104,8 +104,8 @@ export default function PrivacyPolicy() {
                                         <h4>CONSENT</h4>
                                     </div>
                                     <p>
-                                        By using Finuniques Private Limited and/or by providing your information, you
-                                        consent to the collection and use of the information you disclose on Finuniques
+                                        By using Sevenunique Private Limited and/or by providing your information, you
+                                        consent to the collection and use of the information you disclose on Sevenunique
                                         Private Limited in accordance with this Privacy Policy, including but not limited to your
                                         consent for sharing your information as per this privacy policy.
                                     </p>

@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&amp;display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;display=swap'); :root {
-    --themeht-primary-color: #872D67;
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;display=swap'); 
+:root {
+    --themeht-primary-color: #b53008;
     /* --themeht-primary-color: #c146f7; */
     /* --themeht-secondary-color: #2a4172; */
-    --themeht-secondary-color: #14263F;
+    --themeht-secondary-color: #09333c;
     --themeht-primary2-color: #103ce7;
     --themeht-secondary2-color: #64e9ff;
     --themeht-text-color: #191919;
@@ -54,10 +55,6 @@ section {
 ------------------------*/
 .white-bg {
     background-color: var(--themeht-white-color) !important;
-}
-
-.dark-bg {
-    background-color: #000229;
 }
 
 .light-bg {
@@ -1518,9 +1515,6 @@ input.form-product {
     top: 0;
     width: 100%;
     z-index: -1;
-}
-.dark-bg {
-    background-color: #000229;
 }
 .theme-title h2 {
     margin-bottom: 0;

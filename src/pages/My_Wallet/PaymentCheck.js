@@ -16,8 +16,8 @@ export default function PaymentCheck() {
       phone: "7062316137",
       email: "pateladarsh@gmail.com",
       productinfo: "23456",
-      furl: "https://www.finuniques.in/failure",
-      surl: "https://www.finuniques.in/success",
+      furl: "https://www.Sevenunique.in/failure",
+      surl: "https://www.Sevenunique.in/success",
     };
 
     try {

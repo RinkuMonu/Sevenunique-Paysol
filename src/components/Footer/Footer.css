@@ -1,3 +1,18 @@
+:root {
+    --themeht-primary-color: #b53008;
+    /* --themeht-primary-color: #c146f7; */
+    /* --themeht-secondary-color: #2a4172; */
+    --themeht-secondary-color: #09333c;
+    --themeht-primary2-color: #103ce7;
+    --themeht-secondary2-color: #64e9ff;
+    --themeht-text-color: #191919;
+    --themeht-white-color: #ffffff;
+    --themeht-body-color: #606060;
+    --themeht-bg-dark-color: #000229; 
+    --themeht-bg-light-color: #f7f9fe;
+    --themeht-border-light-color: #e1e1e1;
+    --themeht-body-font-family: "Hanken Grotesk", sans-serif;
+}
 .footer {
     padding: 40px 40px;
     position: relative;
@@ -34,7 +49,7 @@ a{
 
 .primary-footer h5 {
     margin-bottom: 20px;
-    background: linear-gradient(115deg, #c146f7, #fe9e30);
+    background: linear-gradient(115deg, var(--themeht-primary-color), var(--themeht-secondary-color));
     background-clip: border-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -117,7 +132,7 @@ a{
 
 .footer-social li a:hover {
     color: #ffffff;
-    background: #c146f7;
+    background: var(--themeht-primary-color);
 }
 
 .copyright::after {
@@ -142,5 +157,5 @@ a{
     z-index: -1;
 }
 .dark-bg {
-    background-color: #000229;
+    background-color:#cd805c;
 }

@@ -14,20 +14,20 @@ const AboutUs = () => {
             <div className="row align-items-center">
               <div className="col-lg-6 col-md-12">
                 <div className="shape-img-bg">
-                  <img className="mask-img1" src="/assets/IMG18.png" alt="" />
+                  <img className="mask-img1" src="/assets/ABOUT2.svg" alt="" />
                 </div>
               </div>
               <div className="col-lg-6 col-md-12 mt-6 mt-lg-0 ps-lg-10 text-secondary">
                 <div className="theme-title mb-4">
                   <h2>WHO WE ARE</h2>
                   <p>
-                    We are happy to introduce you about Finuniques Private
-                    Limited, Finuniques Private Limited is service provider
+                    We are happy to introduce you about Sevenunique Private
+                    Limited, Sevenunique Private Limited is service provider
                     company which is providing Recharge and BillPayment - BBPS
                     services to our valuable retailers/merchants.
                   </p>
                   <p>
-                    Finuniques Private Limited has taken a step forward in
+                    Sevenunique Private Limited has taken a step forward in
                     the field of Financial Inclusion through a partnership with
                     Multiple Banks &amp; Other Parties.
                   </p>
@@ -52,7 +52,7 @@ const AboutUs = () => {
                       <h4>WHAT WE DO</h4>
                     </div>
                     <p>
-                      Finuniques Private Limited is easy to operate but also
+                      Sevenunique Private Limited is easy to operate but also
                       it makes your easier and faster. We are providing the best
                       services to our customers. Whether it’s IT Services &amp;
                       Banking Services.
