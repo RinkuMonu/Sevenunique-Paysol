@@ -136,7 +136,7 @@ const ContactUs = () => {
                       <i className="bi bi-globe-americas fs-3"></i>
                       <div>
                         <span>Visit Our Location</span>
-                        <b>Sevenunique Private Limited</b>
+                        <b>SEVENUNIQUE TECH SOLUTIONS PVT LTD</b>
                         <p>
                           Plot No 97, Dakshinpuri - I, Shrikishan, Sanganer, Jagatpura, Jaipur Rajasthan, India, 302017
                         </p>

@@ -17,18 +17,18 @@ export default function Term() {
                                             https://www.sevenunique.com/
                                         </a>{" "}
                                         (the "website"), you are agreeing to be legally bound by these "Terms &amp; Conditions". The
-                                        terms "you" and "user" refer to anyone who accesses the Sevenunique Private Limited
+                                        terms "you" and "user" refer to anyone who accesses the SEVENUNIQUE TECH SOLUTIONS PVT LTD
                                         website.
                                     </p>
                                     <p>
-                                        As you browse through the Sevenunique Private Limited sites, you may access other
+                                        As you browse through the SEVENUNIQUE TECH SOLUTIONS PVT LTD sites, you may access other
                                         websites that are subject to different terms of use. When you use those sites, you will be
                                         legally bound by the specific terms of use posted on such sites. If there is a conflict
                                         between these terms &amp; conditions and the other terms and conditions, the other terms
                                         &amp; conditions will govern with respect to use of such pages.
                                     </p>
                                     <p>
-                                        Sevenunique Private Limited may change these terms &amp; conditions at any time
+                                        SEVENUNIQUE TECH SOLUTIONS PVT LTD may change these terms &amp; conditions at any time
                                         without notice. Changes will be posted on{" "}
                                         <a href="https://www.sevenunique.com/">
                                             https://www.sevenunique.com/
@@ -46,7 +46,7 @@ export default function Term() {
                                     </div>
                                     <p>
                                         As part of the registration process, you must select a username and password and provide
-                                        Sevenunique Private Limited with accurate, complete, and updated information. Failure
+                                        SEVENUNIQUE TECH SOLUTIONS PVT LTD with accurate, complete, and updated information. Failure
                                         to do so constitutes a breach of this agreement, which may result in immediate termination
                                         of your access.
                                     </p>
@@ -58,12 +58,12 @@ export default function Term() {
                                         You are entirely liable for activities conducted by you in connection with your browsing and
                                         use of the website. If you are dissatisfied with the content or the website or with these
                                         terms of use, your sole and exclusive remedy is to stop using the content and the website.
-                                        Sevenunique Private Limited will not pay you any damages in connection with your
+                                        SEVENUNIQUE TECH SOLUTIONS PVT LTD will not pay you any damages in connection with your
                                         browsing or use of the website.
                                     </p>
                                     <p>
-                                        Sevenunique Private Limited assumes no responsibility for the use of third-party
-                                        software on the Sevenunique Private Limited site and shall have no liability
+                                        SEVENUNIQUE TECH SOLUTIONS PVT LTD assumes no responsibility for the use of third-party
+                                        software on the SEVENUNIQUE TECH SOLUTIONS PVT LTD site and shall have no liability
                                         whatsoever to any person or entity for the accuracy or completeness of any outcome generated
                                         by such software.
                                     </p>
@@ -73,35 +73,34 @@ export default function Term() {
                                     </div>
                                     <p>
                                         You may, through hypertext or other computer links, gain access to websites operated by
-                                        persons other than Sevenunique Private Limited. Such hyperlinks are provided for your
+                                        persons other than SEVENUNIQUE TECH SOLUTIONS PVT LTD. Such hyperlinks are provided for your
                                         reference and convenience only, and are the exclusive responsibility of such websites'
-                                        owners. You agree that Sevenunique Private Limited is not responsible for the content
-                                        or operation of such websites, and that Sevenunique Private Limited shall have no
+                                        owners. You agree that SEVENUNIQUE TECH SOLUTIONS PVT LTD is not responsible for the content
+                                        or operation of such websites, and that SEVENUNIQUE TECH SOLUTIONS PVT LTD shall have no
                                         liability to you or any other person or entity for the use of third-party websites. Except
                                         as described below, a hyperlink from this website to another website does not imply or mean
-                                        that Sevenunique Private Limited endorses the content on that website or the operator
+                                        that SEVENUNIQUE TECH SOLUTIONS PVT LTD endorses the content on that website or the operator
                                         or operations of that site. You are solely responsible for determining the extent to which
-                                        you may use any content at any other websites to which you link from the Sevenunique
-                                        Private Limited website.
+                                        you may use any content at any other websites to which you link from the SEVENUNIQUE TECH SOLUTIONS PVT LTD  website.
                                     </p>
 
                                     <div className="service-title">
                                         <h4>5. THE USER'S CONTENT</h4>
                                     </div>
                                     <p>
-                                        The user grants to Sevenunique Private Limited the non-exclusive right to use all
+                                        The user grants to SEVENUNIQUE TECH SOLUTIONS PVT LTD the non-exclusive right to use all
                                         material entered into the Sevenunique by the user (other than
                                         third-party material transmitted through private electronic mail) in any of the Skriptonic
                                         Softech Private Limited print or electronic publications ("other content").
                                     </p>
                                     <p>
                                         Users entering material into the Sevenunique are responsible
-                                        for the other content. Neither Sevenunique Private Limited nor has any responsibility
+                                        for the other content. Neither SEVENUNIQUE TECH SOLUTIONS PVT LTD nor has any responsibility
                                         for other content, including the content of any messages or information posted by users or
                                         others, or for the content of information accessible via direct or indirect hyperlinks from
-                                        the Sevenunique. However, Sevenunique Private Limited
+                                        the Sevenunique. However, SEVENUNIQUE TECH SOLUTIONS PVT LTD
                                         retains the right, which it may or may not exercise in its sole discretion, to review, edit,
-                                        or delete other content that Sevenunique Private Limited deems to be illegal,
+                                        or delete other content that SEVENUNIQUE TECH SOLUTIONS PVT LTD deems to be illegal,
                                         offensive, or otherwise inappropriate.
                                     </p>
 
@@ -109,8 +108,7 @@ export default function Term() {
                                         <h4>6. PAYMENTS, CANCELLATION &amp; REFUNDS</h4>
                                     </div>
                                     <p>
-                                        All information, reports, content and access rights purchased on Sevenunique Private
-                                        Limited are non-refundable.
+                                        All information, reports, content and access rights purchased on SEVENUNIQUE TECH SOLUTIONS PVT LTD  are non-refundable.
                                     </p>
                                     <p>
                                         We as a merchant shall be under no liability whatsoever in respect of any loss or damage
@@ -123,7 +121,7 @@ export default function Term() {
                                         <h4>7. ADDITIONAL LEGAL TERMS</h4>
                                     </div>
                                     <p>
-                                        This agreement will continue until terminated by either Sevenunique Private Limited
+                                        This agreement will continue until terminated by either SEVENUNIQUE TECH SOLUTIONS PVT LTD
                                         or you. Either party can terminate the agreement by notifying the other party by telephone
                                         or electronic mail of the decision to terminate.
                                     </p>
