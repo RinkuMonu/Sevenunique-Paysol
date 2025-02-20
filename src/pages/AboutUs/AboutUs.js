@@ -23,7 +23,7 @@ const AboutUs = () => {
                   <p>
                     We are happy to introduce you about SEVENUNIQUE TECH SOLUTIONS PVT LTD, is service provider
                     company which is providing Recharge and BillPayment - BBPS
-                    services to our valuable retailers/merchants.
+                    services to our valuable retailers/merchants
                   </p>
                   <p>
                     SEVENUNIQUE TECH SOLUTIONS PVT LTD has taken a step forward in
