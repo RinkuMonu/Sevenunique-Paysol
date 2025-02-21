@@ -23,7 +23,7 @@ const FAQBroadbandBillPayment = () => {
       body: (
         <>
           <p>
-            Sevenunique Small Pvt. Ltd. introduces new service to their consumers
+            SEVENUNIQUE TECH SOLUTIONS PVT LTD introduces new service to their consumers
             to pay their broadband bills online. Now there is no need to stand
             in the long queue to pay their broadband bills for hours. Sevenunique
             allows their consumers to pay BSNL Broadband, Tikona, Airtel

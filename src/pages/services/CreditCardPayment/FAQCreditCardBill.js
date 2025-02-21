@@ -31,10 +31,10 @@ const FAQCreditCardPayment = () => {
             time, you are charged with interest. Further, untimely payment of
             the credit card bill also leads to a late fee. To avoid unnecessary
             late fees and interest on credit card processing, you can instantly
-            make online credit card payments using Sevenunique Small Pvt. Ltd.
+            make online credit card payments using SEVENUNIQUE TECH SOLUTIONS PVT LTD
           </p>
           <p>
-            Sevenunique Small Pvt. Ltd. provides a convenient and seamless experience for users to
+            SEVENUNIQUE TECH SOLUTIONS PVT LTD provides a convenient and seamless experience for users to
             pay their credit card bills online, ensuring timely payments and
             savings.
           </p>
@@ -72,7 +72,7 @@ const FAQCreditCardPayment = () => {
       body: (
         <>
           <p>
-            Sevenunique Small Pvt. Ltd. supports credit card payments for a wide range of banks,
+            SEVENUNIQUE TECH SOLUTIONS PVT LTD supports credit card payments for a wide range of banks,
             including:
           </p>
           <ul>
@@ -120,7 +120,7 @@ const FAQCreditCardPayment = () => {
           <li>
             <strong>How long does it take to process the payment?</strong>
             <br />
-            Payments made via Sevenunique Small Pvt. Ltd. usually take 2-3 business days to
+            Payments made via SEVENUNIQUE TECH SOLUTIONS PVT LTD usually take 2-3 business days to
             process.
           </li>
         </ul>
