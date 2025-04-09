@@ -26,15 +26,15 @@ const FAQElectricityBill = () => {
           <p>
             Paying bills is now a seamless and quick process via online means. A
             user can easily make online electricity bill payment easily with
-            SEVENUNIQUE TECH SOLUTIONS PVT LTD website. Any user can make their online electricity bill
+            SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. website. Any user can make their online electricity bill
             payment instantly in a few simple steps. To pay their bijli bill
-            online, the users shall go to the SEVENUNIQUE TECH SOLUTIONS PVT LTD website and follow the
+            online, the users shall go to the SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. website and follow the
             mentioned steps. our Website to get offers on the electricity bill
             payment.
           </p>
           <ol>
             <li>
-              Go to the ‘Recharge’ section on the SEVENUNIQUE TECH SOLUTIONS PVT LTD app/website and
+              Go to the ‘Recharge’ section on the SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. app/website and
               select ‘Electricity’.
             </li>
             <li>Select ‘electricity’ from the operator dropdown.</li>
@@ -47,7 +47,7 @@ const FAQElectricityBill = () => {
             </li>
           </ol>
           <p>
-            You can make online electricity bill payments via SEVENUNIQUE TECH SOLUTIONS PVT LTD across
+            You can make online electricity bill payments via SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. across
             various operators such as TNEB, WBSEDCL, JVVNL, NBPDCL, PSPCL,
             SBPDCL, DHBVN, APDCL, BESCOM, UHBVN, APSPDCL, CESC, UGVCL, DGVCL,
             CSEB, HESCOM, PGVCL, APEPDCL, BSES Rajdhani, BSES Yamuna, DVVNL,
@@ -57,12 +57,12 @@ const FAQElectricityBill = () => {
       ),
     },
     {
-      title: "Why Choose SEVENUNIQUE TECH SOLUTIONS PVT LTD for Electricity Bill Payment?",
+      title: "Why Choose SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. for Electricity Bill Payment?",
       body: (
         <>
           <p>
-            SEVENUNIQUE TECH SOLUTIONS PVT LTD is the ideal platform for making electricity online
-            payments. Electricity bill payment via SEVENUNIQUE TECH SOLUTIONS PVT LTD offers many perks to
+            SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. is the ideal platform for making electricity online
+            payments. Electricity bill payment via SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. offers many perks to
             the users:
           </p>
           <ul>
@@ -75,11 +75,11 @@ const FAQElectricityBill = () => {
       ),
     },
     {
-      title: "Electricity Bill Payment Online At SEVENUNIQUE TECH SOLUTIONS PVT LTD",
+      title: "Electricity Bill Payment Online At SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. ",
       body: (
         <>
           <p>
-            SEVENUNIQUE TECH SOLUTIONS PVT LTD, a reliable and user-friendly digital payment wallet,
+            SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. , a reliable and user-friendly digital payment wallet,
             enables easy electricity bill payments. Users can:
           </p>
           <ul>
@@ -96,14 +96,14 @@ const FAQElectricityBill = () => {
       ),
     },
     {
-      title: "Electricity Bill Offers | Electricity Coupon Codes at SEVENUNIQUE TECH SOLUTIONS PVT LTD",
+      title: "Electricity Bill Offers | Electricity Coupon Codes at SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. ",
       body: (
         <>
           <p>
             Get 5% up to Rs.50 SuperCash on electricity bill payments done on
-            the SEVENUNIQUE TECH SOLUTIONS PVT LTD App or website. Minimum amount spend to redeem the
+            the SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. App or website. Minimum amount spend to redeem the
             SuperCash is Rs.300 & maximum is Rs.50. To know more, visit our
-            SEVENUNIQUE TECH SOLUTIONS PVT LTD Electricity Bill Offers page.
+            SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. Electricity Bill Offers page.
           </p>
         </>
       ),
@@ -117,7 +117,7 @@ const FAQElectricityBill = () => {
             <li>
               <strong>How to check electricity bill online in India?</strong>{" "}
               You can check your electricity bill using the Truly Indian
-              Payments App, SEVENUNIQUE TECH SOLUTIONS PVT LTD Simply select ‘Electricity’ under the
+              Payments App, SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. Simply select ‘Electricity’ under the
               ‘Recharge and Bill Payment’ section, choose your operator, and
               provide your account details.
             </li>
@@ -131,25 +131,25 @@ const FAQElectricityBill = () => {
               <strong>
                 How to get a receipt for electricity bill payment online?
               </strong>{" "}
-              Visit your payment history on the SEVENUNIQUE TECH SOLUTIONS PVT LTD app to view and
+              Visit your payment history on the SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. app to view and
               download the receipt.
             </li>
             <li>
               <strong>How to pay the light bill online?</strong> Open the
-              SEVENUNIQUE TECH SOLUTIONS PVT LTD app, click on ‘Electricity’ in the ‘Recharge & Bill
+              SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. app, click on ‘Electricity’ in the ‘Recharge & Bill
               Payments’ section, select your operator, provide account details,
               and make the payment.
             </li>
             <li>
               <strong>How to check electricity bill status online?</strong> Use
-              the SEVENUNIQUE TECH SOLUTIONS PVT LTD app, select electricity and your operator, provide
+              the SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. app, select electricity and your operator, provide
               account details, and view your bill status.
             </li>
             <li>
               <strong>
                 How can I check my electricity bill online in Karnataka?
               </strong>{" "}
-              Visit the SEVENUNIQUE TECH SOLUTIONS PVT LTD website or download the SEVENUNIQUE TECH SOLUTIONS PVT LTD app to resolve
+              Visit the SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. website or download the SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. app to resolve
               queries related to electricity bills in Karnataka.
             </li>
           </ul>

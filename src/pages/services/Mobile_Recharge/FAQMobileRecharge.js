@@ -31,7 +31,7 @@ const FAQMobileRecharge = () => {
             a variety of prepaid plans offered by various operators. People
             looking for budget-friendly options might consider prepaid
             subscriptions. There are so many options available online to do your
-            prepaid mobile recharge, but SEVENUNIQUE TECH SOLUTIONS PVT LTD is one of the
+            prepaid mobile recharge, but SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. is one of the
             most trustworthy digital payments Website to make your life easier.
           </p>
           <ul>
@@ -52,7 +52,7 @@ const FAQMobileRecharge = () => {
             connection. Here’s how you can recharge online:
           </p>
           <ol>
-            <li>Open the SEVENUNIQUE TECH SOLUTIONS PVT LTD app & navigate to ‘Recharges & Bill Pay’.</li>
+            <li>Open the SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. app & navigate to ‘Recharges & Bill Pay’.</li>
             <li>Enter the phone number and select Prepaid or Postpaid.</li>
             <li>Select your mobile operator and circle.</li>
             <li>Choose a plan or enter the recharge amount.</li>
@@ -86,11 +86,11 @@ const FAQMobileRecharge = () => {
       ),
     },
     {
-      title: "Why Choose SEVENUNIQUE TECH SOLUTIONS PVT LTD for Online Mobile Recharge?",
+      title: "Why Choose SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. for Online Mobile Recharge?",
       body: (
         <>
           <p>
-            Here are some benefits of using SEVENUNIQUE TECH SOLUTIONS PVT LTD for your mobile recharge:
+            Here are some benefits of using SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. for your mobile recharge:
           </p>
           <ul>
             <li>
@@ -98,12 +98,12 @@ const FAQMobileRecharge = () => {
               clicks, and it doesn't even take a minute.
             </li>
             <li>
-              <strong>Secure Payments:</strong> SEVENUNIQUE TECH SOLUTIONS PVT LTD offers end-to-end data
+              <strong>Secure Payments:</strong> SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. offers end-to-end data
               protection for each prepaid recharge.
             </li>
             <li>
               <strong>No Transaction Cost:</strong> You won't be charged
-              additional fees for making a recharge through SEVENUNIQUE TECH SOLUTIONS PVT LTD
+              additional fees for making a recharge through SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. 
             </li>
             <li>
               <strong>More Savings:</strong> Enjoy discounts and cashback
@@ -121,8 +121,8 @@ const FAQMobileRecharge = () => {
       title: "Free Mobile Recharge",
       body: (
         <p>
-          SEVENUNIQUE TECH SOLUTIONS PVT LTD does not charge you over any online recharges, i.e., on
-          SEVENUNIQUE TECH SOLUTIONS PVT LTD, it enables free mobile recharge. Moreover, it offers many
+          SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. does not charge you over any online recharges, i.e., on
+          SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. , it enables free mobile recharge. Moreover, it offers many
           discounts and phone recharge offers to its users.
         </p>
       ),
@@ -132,37 +132,37 @@ const FAQMobileRecharge = () => {
       body: (
         <ul>
           <li>
-            <strong>Why Choose SEVENUNIQUE TECH SOLUTIONS PVT LTD for Prepaid Recharge?</strong>
+            <strong>Why Choose SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. for Prepaid Recharge?</strong>
             <br />
-            SEVENUNIQUE TECH SOLUTIONS PVT LTD is India's no. 1 site for online easy Mobile recharge.
-            SEVENUNIQUE TECH SOLUTIONS PVT LTD does not charge you over any online recharges, enabling
+            SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. is India's no. 1 site for online easy Mobile recharge.
+            SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. does not charge you over any online recharges, enabling
             free mobile recharge and helping you save your time, effort, and
             money.
           </li>
           <li>
             <strong>Is Online Recharge Safe?</strong>
             <br />
-            Prepaid online recharges via SEVENUNIQUE TECH SOLUTIONS PVT LTD are safe and seamless. There
-            is no fear of fraudulent or unsafe payments when using SEVENUNIQUE TECH SOLUTIONS PVT LTD
+            Prepaid online recharges via SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. are safe and seamless. There
+            is no fear of fraudulent or unsafe payments when using SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. 
           </li>
           <li>
             <strong>By when can Recharge be done?</strong>
             <br />
-            Mobile recharges via SEVENUNIQUE TECH SOLUTIONS PVT LTD can be done quickly and instantly in a
+            Mobile recharges via SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. can be done quickly and instantly in a
             few simple steps. There is no hassle or shuffling to pages. Just a
             simple procedure, and your online recharge is done.
           </li>
           <li>
             <strong>Which recharge app gives the best cashback?</strong>
             <br />
-            SEVENUNIQUE TECH SOLUTIONS PVT LTD recharge app gives you the best benefits with cashback
+            SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. recharge app gives you the best benefits with cashback
             offers, exclusive recharge discounts, and deals.
           </li>
           <li>
             <strong>Is there any extra charge on Mobile Recharge?</strong>
             <br />
-            SEVENUNIQUE TECH SOLUTIONS PVT LTD enables free online recharge. There are no charges for any
-            operator online recharge. SEVENUNIQUE TECH SOLUTIONS PVT LTD has never charged its customers
+            SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. enables free online recharge. There are no charges for any
+            operator online recharge. SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. has never charged its customers
             any extra fee for using the platform to recharge their mobile
             numbers.
           </li>

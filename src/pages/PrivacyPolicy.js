@@ -14,16 +14,16 @@ export default function PrivacyPolicy() {
                                     <p>
                                         This Privacy Policy provides you with details about the manner in which your data is
                                         collected, stored &amp; used by us. You are advised to read this Privacy Policy carefully.
-                                        By visiting SEVENUNIQUE TECH SOLUTIONS PVT LTD website/application you expressly give us
+                                        By visiting SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. website/application you expressly give us
                                         consent to use &amp; disclose your personal information in accordance with this Privacy
                                         Policy. If you do not agree to the terms of the policy, please do not use or access
-                                        SEVENUNIQUE TECH SOLUTIONS PVT LTD website, WAP site, or mobile applications.
+                                        SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. website, WAP site, or mobile applications.
                                     </p>
                                     <p>
                                         <b>Note:</b> Our privacy policy may change at any time without prior notification. To make
                                         sure that you are aware of any changes, kindly review the policy periodically. This
-                                        Privacy Policy shall apply uniformly to SEVENUNIQUE TECH SOLUTIONS PVT LTD desktop
-                                        website, SEVENUNIQUE TECH SOLUTIONS PVT LTD mobile WAP site &amp; SEVENUNIQUE TECH SOLUTIONS PVT LTD  mobile applications.
+                                        Privacy Policy shall apply uniformly to SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. desktop
+                                        website, SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. mobile WAP site &amp; SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED.  mobile applications.
                                     </p>
 
                                     <div className="service-title">
@@ -92,7 +92,7 @@ export default function PrivacyPolicy() {
                                         <h4>SECURITY</h4>
                                     </div>
                                     <p>
-                                        SEVENUNIQUE TECH SOLUTIONS PVT LTD has stringent security measures in place to protect the
+                                        SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. has stringent security measures in place to protect the
                                         loss, misuse, and alteration of the information under our control. Whenever you change or
                                         access your account information, we offer the use of a secure server. Once your
                                         information is in our possession, we adhere to strict security guidelines, protecting it
@@ -103,8 +103,8 @@ export default function PrivacyPolicy() {
                                         <h4>CONSENT</h4>
                                     </div>
                                     <p>
-                                        By using SEVENUNIQUE TECH SOLUTIONS PVT LTD and/or by providing your information, you
-                                        consent to the collection and use of the information you disclose on SEVENUNIQUE TECH SOLUTIONS PVT LTD  in accordance with this Privacy Policy, including but not limited to your
+                                        By using SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. and/or by providing your information, you
+                                        consent to the collection and use of the information you disclose on SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED.  in accordance with this Privacy Policy, including but not limited to your
                                         consent for sharing your information as per this privacy policy.
                                     </p>
                                 </div>

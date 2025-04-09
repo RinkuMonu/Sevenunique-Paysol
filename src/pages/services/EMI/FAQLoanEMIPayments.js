@@ -19,7 +19,7 @@ const FAQLoanEMIPayments = () => {
 
   const content = [
     {
-      title: "Pay Your Loan EMI Online Through Sevenunique small pvt ltd .",
+      title: "Pay Your Loan EMI Online Through SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. .",
       body: (
         <>
           <p>
@@ -62,7 +62,7 @@ const FAQLoanEMIPayments = () => {
             easily in just a few steps.
           </p>
           <p>
-            Sevenunique small pvt ltd . offers instant personal loans with minimum documentation
+            SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . offers instant personal loans with minimum documentation
             and a hassle-free experience.
           </p>
         </>
@@ -87,13 +87,13 @@ const FAQLoanEMIPayments = () => {
           <li>
             <strong>Can I pay my EMIs using any device?</strong>
             <br />
-            Yes, Sevenunique small pvt ltd . allows you to pay EMIs from a smartphone, tablet,
+            Yes, SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . allows you to pay EMIs from a smartphone, tablet,
             laptop, or desktop with an internet connection.
           </li>
           <li>
-            <strong>Are my transactions secure on Sevenunique small pvt ltd .?</strong>
+            <strong>Are my transactions secure on SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. .?</strong>
             <br />
-            Absolutely. Sevenunique small pvt ltd . ensures all transactions are routed through
+            Absolutely. SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . ensures all transactions are routed through
             secure gateways, protecting your personal and financial data.
           </li>
         </ul>

@@ -29,9 +29,9 @@ const FAQMoneyTransfer = () => {
             legal formalities is no longer needed since the money can be
             transferred online through a digital wallet without any hassle.
             Hence, transferring money online has become easier than before with
-            Sevenunique small pvt ltd. Just make instant money transfer with the 'Wallet to Bank'
-            feature on Sevenunique small pvt ltd, from credit cards to any bank account through
-            Sevenunique small pvt ltd's digital wallet. Now, transfer money from credit cards of
+            SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED.  Just make instant money transfer with the 'Wallet to Bank'
+            feature on SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. , from credit cards to any bank account through
+            SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. 's digital wallet. Now, transfer money from credit cards of
             ICICI, HDFC, Citibank, SBI, and more to any bank account, and the
             amount will reflect in the bank accounts instantly.
           </p>
@@ -48,7 +48,7 @@ const FAQMoneyTransfer = () => {
             steps:
           </p>
           <ol>
-            <li>Add money to your digital wallet on the Sevenunique small pvt ltd app using your credit or debit card.</li>
+            <li>Add money to your digital wallet on the SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. app using your credit or debit card.</li>
             <li>
               Tap on the 'Transfer money' feature on the app and find 'Wallet
               to Bank.'
@@ -69,12 +69,12 @@ const FAQMoneyTransfer = () => {
           <ul>
             <li>
               <strong>Secure platform:</strong> Choose a platform that is 100%
-              secure. On Sevenunique small pvt ltd, user data is end-to-end encrypted to ensure
+              secure. On SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. , user data is end-to-end encrypted to ensure
               safety.
             </li>
             <li>
               <strong>Charges involved:</strong> Charges for transferring money
-              vary by bank. Sevenunique small pvt ltd ensures minimal charges and a smooth
+              vary by bank. SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. ensures minimal charges and a smooth
               process.
             </li>
             <li>
@@ -84,7 +84,7 @@ const FAQMoneyTransfer = () => {
             </li>
             <li>
               <strong>Risk factors:</strong> Follow safe online banking
-              practices to avoid scams. Use Sevenunique small pvt ltd for secure transactions.
+              practices to avoid scams. Use SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. for secure transactions.
             </li>
           </ul>
         </>
@@ -96,17 +96,17 @@ const FAQMoneyTransfer = () => {
         <>
           <ul>
             <li>
-              <strong>Transfer to any bank account:</strong> Sevenunique small pvt ltd's digital
+              <strong>Transfer to any bank account:</strong> SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. 's digital
               wallet enables hassle-free transfers from any credit card to any
               bank account.
             </li>
             <li>
-              <strong>Swift Transactions:</strong> Sevenunique small pvt ltd ensures quick and
+              <strong>Swift Transactions:</strong> SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. ensures quick and
               simple money transfers with its seamless interface.
             </li>
             <li>
               <strong>Minimum Charges:</strong> Enjoy low fees for instant
-              transfers with Sevenunique small pvt ltd.
+              transfers with SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. 
             </li>
             <li>
               <strong>KYC Required:</strong> KYC ensures secure transactions
@@ -124,25 +124,25 @@ const FAQMoneyTransfer = () => {
             <strong>How does online money transfer work?</strong>
             <br />
             Online money transfers can be done via NEFT, RTFS, UPI, or IMPS.
-            Sevenunique small pvt ltd also offers a 'Wallet to Bank' feature for quick
+            SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. also offers a 'Wallet to Bank' feature for quick
             transfers.
           </li>
           <li>
             <strong>Is KYC required for money transfers?</strong>
             <br />
             Yes, KYC is mandatory for secure transactions and can be completed
-            easily on Sevenunique small pvt ltd.
+            easily on SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. 
           </li>
           <li>
-            <strong>How safe are bank transfers on Sevenunique small pvt ltd?</strong>
+            <strong>How safe are bank transfers on SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. ?</strong>
             <br />
-            Sevenunique small pvt ltd provides end-to-end encryption to ensure secure
+            SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. provides end-to-end encryption to ensure secure
             transactions.
           </li>
           <li>
             <strong>How long does a money transfer take?</strong>
             <br />
-            Transfers are completed instantly with Sevenunique small pvt ltd's 'Wallet to Bank'
+            Transfers are completed instantly with SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. 's 'Wallet to Bank'
             feature.
           </li>
         </ul>

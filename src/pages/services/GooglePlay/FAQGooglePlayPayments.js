@@ -26,7 +26,7 @@ const FAQGooglePlayPayments = () => {
             Today, smartphones have replaced many devices that once had individual significance. Tasks like sending emails, taking photos, and much more can now be handled directly on your smartphone. Apps play a critical role in this functionality, available primarily on platforms like the Google Play Store for Android devices.
           </p>
           <p>
-            The Play Store offers a range of apps, music, books, and movies. To purchase premium content, you need to recharge your Google Play account. With Sevenunique small pvt ltd ., you can easily recharge your account anywhere between INR 100-1500. Plus, you get access to exciting Google Play recharge coupons.
+            The Play Store offers a range of apps, music, books, and movies. To purchase premium content, you need to recharge your Google Play account. With SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. ., you can easily recharge your account anywhere between INR 100-1500. Plus, you get access to exciting Google Play recharge coupons.
           </p>
         </>
       ),
@@ -36,10 +36,10 @@ const FAQGooglePlayPayments = () => {
       body: (
         <>
           <p>
-            Sevenunique small pvt ltd . ensures that your Google Play online recharge is fast, safe, and secure. We adhere to the highest safety standards, protecting your transactions and personal data. 
+            SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . ensures that your Google Play online recharge is fast, safe, and secure. We adhere to the highest safety standards, protecting your transactions and personal data. 
           </p>
           <p>
-            You can recharge your Google Play account via the Sevenunique small pvt ltd . wallet, saving time and providing a hassle-free experience. Other payment options, such as credit cards, debit cards, and net banking, are also available for your convenience.
+            You can recharge your Google Play account via the SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . wallet, saving time and providing a hassle-free experience. Other payment options, such as credit cards, debit cards, and net banking, are also available for your convenience.
           </p>
         </>
       ),
@@ -49,7 +49,7 @@ const FAQGooglePlayPayments = () => {
       body: (
         <>
           <p>
-            By recharging your Google Play account via Sevenunique small pvt ltd ., you can avail exciting deals and cashback offers. Some highlights include:
+            By recharging your Google Play account via SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. ., you can avail exciting deals and cashback offers. Some highlights include:
           </p>
           <ul>
             <li>Discounts on movie tickets and bus tickets.</li>
@@ -57,17 +57,17 @@ const FAQGooglePlayPayments = () => {
             <li>Special deals on online shopping platforms.</li>
           </ul>
           <p>
-            Sevenunique small pvt ltd . provides a seamless payment experience, making it one of the most trusted names for online transactions.
+            SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . provides a seamless payment experience, making it one of the most trusted names for online transactions.
           </p>
         </>
       ),
     },
     {
-      title: 'How to Recharge Google Play Using Sevenunique small pvt ltd .',
+      title: 'How to Recharge Google Play Using SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. .',
       body: (
         <>
           <ol>
-            <li>Download & log in to the Sevenunique small pvt ltd . app.</li>
+            <li>Download & log in to the SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . app.</li>
             <li>Select the 'Recharge and Bill Pay' option.</li>
             <li>Choose 'Google Play' as the category.</li>
             <li>Enter the recharge amount (between INR 100-1500).</li>
@@ -82,12 +82,12 @@ const FAQGooglePlayPayments = () => {
       body: (
         <ul>
           <li>
-            <strong>Is it safe to recharge Google Play via Sevenunique small pvt ltd .?</strong><br />
-            Yes, Sevenunique small pvt ltd . adheres to the highest safety standards to protect your data and transactions.
+            <strong>Is it safe to recharge Google Play via SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. .?</strong><br />
+            Yes, SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . adheres to the highest safety standards to protect your data and transactions.
           </li>
           <li>
             <strong>Can I use any bank for payment?</strong><br />
-            Yes, Sevenunique small pvt ltd . supports payments from all major banks.
+            Yes, SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . supports payments from all major banks.
           </li>
         </ul>
       ),

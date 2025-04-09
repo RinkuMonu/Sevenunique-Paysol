@@ -14,7 +14,7 @@ const RedeemPayback = () => {
             The best reward for loyalty? Money.
           </h2>
           <h3>
-            Redeem your Payback Points at Sevenunique small pvt ltd .!
+            Redeem your Payback Points at SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. .!
           </h3>
         </Col>
 

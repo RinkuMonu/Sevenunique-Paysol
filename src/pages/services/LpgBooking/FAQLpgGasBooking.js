@@ -28,7 +28,7 @@ const FAQLpgGasBooking = () => {
             users to make LPG bookings online and offers exciting deals for LPG
             gas bookings and enables users to make their gas bill payments
             online without any hassle. Making online gas booking through
-            Sevenunique Small Pvt Ltd is easy and instant and offers great
+            SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. is easy and instant and offers great
             savings. Thus, Sevenunique is the best platform for online gas payment
           </p>
         </>
@@ -83,12 +83,12 @@ const FAQLpgGasBooking = () => {
       ),
     },
     {
-      title: "Why Use Sevenunique small pvt ltd . for LPG Booking?",
+      title: "Why Use SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . for LPG Booking?",
       body: (
         <>
           <ul>
             <li>
-              <strong>Free of cost online LPG gas connection:</strong> Sevenunique small pvt ltd .
+              <strong>Free of cost online LPG gas connection:</strong> SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. .
               does not charge any amount for online LPG gas booking.
             </li>
             <li>
@@ -116,11 +116,11 @@ const FAQLpgGasBooking = () => {
       ),
     },
     {
-      title: "Sevenunique small pvt ltd . Provides Irresistible Deals on LPG Gas Booking",
+      title: "SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . Provides Irresistible Deals on LPG Gas Booking",
       body: (
         <>
           <p>
-            Sevenunique small pvt ltd . offers SuperCash and Cashback on LPG gas booking online
+            SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . offers SuperCash and Cashback on LPG gas booking online
             payments. These deals make it an ideal platform for users to book
             gas cylinders conveniently while saving time and money. Make your
             booking today and avail the best offers on Bharat Gas, HP Gas, and

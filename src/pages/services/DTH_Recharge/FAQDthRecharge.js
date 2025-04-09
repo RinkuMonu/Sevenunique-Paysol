@@ -32,7 +32,7 @@ const FAQDthRecharge = () => {
             users can get their DTH recharge done and enjoy uninterrupted DTH
             services. Online DTH recharge via Sevenunique is a simple process, and
             the users can avail a variety of the best DTH recharge offers.
-            Online DTH recharge can be done via SEVENUNIQUE TECH SOLUTIONS PVT LTD
+            Online DTH recharge can be done via SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. 
           </p>
           <ol>
             <li>

@@ -42,7 +42,7 @@ const FAQDataCardRecharge = () => {
       body: (
         <>
           <p>
-            Online data card recharge via SEVENUNIQUE TECH SOLUTIONS PVT LTD is a simple and a quick
+            Online data card recharge via SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. is a simple and a quick
             process. In order to avail the data card recharge plans online and
             enjoy huge data card recharge offers at the same time, a user must
             only follow the following simple steps.
@@ -50,7 +50,7 @@ const FAQDataCardRecharge = () => {
           <ol>
             <li>
               Select ‘Data Card’ from ‘Recharge and Bill Payments’ section on
-              the SEVENUNIQUE TECH SOLUTIONS PVT LTD app/ website
+              the SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. app/ website
             </li>
             <li>
               Enter your Data card number, choose the operator and add the
@@ -66,38 +66,38 @@ const FAQDataCardRecharge = () => {
       ),
     },
     {
-      title: "Why Choose SEVENUNIQUE TECH SOLUTIONS PVT LTD for Data Card Recharge",
+      title: "Why Choose SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. for Data Card Recharge",
       body: (
         <>
           <p>
-            SEVENUNIQUE TECH SOLUTIONS PVT LTD ensures ease and convenience to all its users. It is the
+            SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. ensures ease and convenience to all its users. It is the
             only Truly Indian payments app which allows one-tap data card
             recharge. In addition to ensuring an easy way of online data card
-            recharge, SEVENUNIQUE TECH SOLUTIONS PVT LTD also ensures exciting online data card recharge
+            recharge, SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. also ensures exciting online data card recharge
             offers including huge Cashback and SuperCash offers. Following are
-            the key benefits of making online data card recharge using SEVENUNIQUE TECH SOLUTIONS PVT LTD.
+            the key benefits of making online data card recharge using SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. 
           </p>
           <ul>
             <li>
-              <strong>Instant Payment:</strong> On SEVENUNIQUE TECH SOLUTIONS PVT LTD all internet service
+              <strong>Instant Payment:</strong> On SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. all internet service
               recharges including data card recharge plans, dongle recharge
               plans, modem recharge plans and wifi dongle recharge plans are
-              just a click away. SEVENUNIQUE TECH SOLUTIONS PVT LTD ensures a seamless process of making
+              just a click away. SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. ensures a seamless process of making
               the online data card recharge
             </li>
             <li>
-              <strong>Data card recharge offers:</strong> With the SEVENUNIQUE TECH SOLUTIONS PVT LTD app,
+              <strong>Data card recharge offers:</strong> With the SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. app,
               users can earn and save big on every payment with Cashback and
               SuperCash offers
             </li>
             <li>
               <strong>Secured Transactions:</strong> Every transaction you make
-              using the SEVENUNIQUE TECH SOLUTIONS PVT LTD app or website is highly secured. The app
+              using the SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. app or website is highly secured. The app
               assures the utmost safety and confidentiality as you pay for your
               online data card recharge
             </li>
             <li>
-              <strong>Data Card Recharge Offers:</strong> On SEVENUNIQUE TECH SOLUTIONS PVT LTD, a user
+              <strong>Data Card Recharge Offers:</strong> On SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. , a user
               gets huge variety of offers. A user may earn or use his/her
               SuperCash balance on the online data card recharge payment. A user
               may also get a huge Cashback depending on the ongoing data card
@@ -113,7 +113,7 @@ const FAQDataCardRecharge = () => {
         <ul>
           <li>
             <strong>How do I recharge my dongle?</strong>
-            <br />A user can easily avail dongle recharge plans on SEVENUNIQUE TECH SOLUTIONS PVT LTD
+            <br />A user can easily avail dongle recharge plans on SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. 
             under ‘Recharges and bill payment’ section by providing the operator
             name and making the payment
           </li>

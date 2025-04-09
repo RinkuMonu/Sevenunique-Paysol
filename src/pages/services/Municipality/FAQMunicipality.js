@@ -23,7 +23,7 @@ const FAQMunicipality = () => {
       body: (
         <>
           <p>
-            Gone are the days when you had to stand in a queue for making your Municipal Property Tax payments. Sevenunique small pvt ltd . now brings house tax payment facilities for you at your fingertips. You can now make your property tax payment at any time and any place.
+            Gone are the days when you had to stand in a queue for making your Municipal Property Tax payments. SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . now brings house tax payment facilities for you at your fingertips. You can now make your property tax payment at any time and any place.
           </p>
           <p>
             You also have the added benefit of using secure payment options for municipal property tax payment online through debit/credit card or through net banking.
@@ -36,7 +36,7 @@ const FAQMunicipality = () => {
       body: (
         <>
           <p>
-            Sevenunique small pvt ltd . ensures secure and hassle-free transactions for municipal property tax payments. All payment options such as debit cards, credit cards, and net banking are routed through secure servers, providing the highest level of data protection.
+            SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . ensures secure and hassle-free transactions for municipal property tax payments. All payment options such as debit cards, credit cards, and net banking are routed through secure servers, providing the highest level of data protection.
           </p>
           <p>
             Your personal information, including email addresses, phone numbers, and banking details, is encrypted and accessible only by you, ensuring maximum privacy.
@@ -45,11 +45,11 @@ const FAQMunicipality = () => {
       ),
     },
     {
-      title: 'Steps to Pay Property Tax Using Sevenunique small pvt ltd .',
+      title: 'Steps to Pay Property Tax Using SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. .',
       body: (
         <>
           <ol>
-            <li>Download & log in to the Sevenunique small pvt ltd . app.</li>
+            <li>Download & log in to the SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . app.</li>
             <li>Select the 'Recharge and Bill Pay' option.</li>
             <li>Choose 'Property Tax' as the category.</li>
             <li>Enter your municipal corporation and property details.</li>
@@ -64,12 +64,12 @@ const FAQMunicipality = () => {
       body: (
         <ul>
           <li>
-            <strong>Is it safe to pay property taxes online using Sevenunique small pvt ltd .?</strong><br />
-            Yes, Sevenunique small pvt ltd . offers encrypted payment gateways and keeps all user data secure.
+            <strong>Is it safe to pay property taxes online using SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. .?</strong><br />
+            Yes, SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . offers encrypted payment gateways and keeps all user data secure.
           </li>
           <li>
             <strong>Can I pay property taxes for any municipal corporation?</strong><br />
-            Yes, Sevenunique small pvt ltd . supports property tax payments for multiple municipal corporations across the country.
+            Yes, SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . supports property tax payments for multiple municipal corporations across the country.
           </li>
         </ul>
       ),

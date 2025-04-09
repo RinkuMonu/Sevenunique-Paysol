@@ -17,9 +17,9 @@ export default function RefundPolicy() {
                                     </p>
                                     <p>
                                         <b>2.</b> In case you have attempted to make an online payment of a transaction more than
-                                        once, and SEVENUNIQUE TECH SOLUTIONS PVT LTD has received the amount more than once,
-                                        SEVENUNIQUE TECH SOLUTIONS PVT LTD reserves the right to adjust it against additional EMI
-                                        towards your account. In case SEVENUNIQUE TECH SOLUTIONS PVT LTD decides to refund the
+                                        once, and SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. has received the amount more than once,
+                                        SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. reserves the right to adjust it against additional EMI
+                                        towards your account. In case SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. decides to refund the
                                         excess amount, it will be within 2-3 days of the claim.
                                     </p>
                                     <p>
@@ -34,7 +34,7 @@ export default function RefundPolicy() {
                                     </p>
                                     <p>
                                         <b>5.</b> The application will be processed manually, and after verification, if the claim
-                                        is found valid, the amount received in excess will be refunded by SEVENUNIQUE TECH SOLUTIONS PVT LTD through electronic mode in favor of the applicant. A confirmation will be sent to
+                                        is found valid, the amount received in excess will be refunded by SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. through electronic mode in favor of the applicant. A confirmation will be sent to
                                         the mailing address given in the online registration form within a period of 7 days on
                                         receipt of such claim. It will take 3-7 days for the money to show in your bank account.
                                     </p>
