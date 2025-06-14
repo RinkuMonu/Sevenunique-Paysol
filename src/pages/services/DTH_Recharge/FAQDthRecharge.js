@@ -1,5 +1,64 @@
 import React, { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
+import {
+  FaTv,
+  FaMoneyCheck,
+  FaMobileAlt,
+  FaRocket,
+  FaRupeeSign,
+  FaWallet,
+} from "react-icons/fa";
+
+
+  const operators = [
+    "Airtel Digital TV",
+    "Tata Play (formerly Tata Sky)",
+    "Dish TV",
+    "d2h (Videocon d2h)",
+    "Sun Direct",
+  ];
+const steps = [
+  "Visit the Recharge section on ABDKS platform.",
+  "Select DTH from the categories.",
+  "Choose your DTH operator.",
+  "Enter your 10-digit customer ID.",
+  "Enter amount or choose plan.",
+  "Pay using UPI, card, or wallet.",
+  "Enjoy instant recharge confirmation.",
+];
+  const benefits = [
+    {
+      icon: <FaMoneyCheck />,
+      title: "No Transaction Fee",
+      desc: "Recharge at no additional cost.",
+    },
+    {
+      icon: <FaWallet />,
+      title: "Multiple Payment Modes",
+      desc: "UPI, cards, wallet, net banking.",
+    },
+    {
+      icon: <FaRocket />,
+      title: "Fast & Secure",
+      desc: "Real-time, encrypted transactions.",
+    },
+    {
+      icon: <FaTv />,
+      title: "All Major Operators",
+      desc: "Supports Airtel, Tata Play, Dish TV, & more.",
+    },
+    {
+      icon: <FaMobileAlt />,
+      title: "User-Friendly",
+      desc: "Step-by-step, mobile-optimized experience.",
+    },
+    {
+      icon: <FaRupeeSign />,
+      title: "Cashback Offers",
+      desc: "Get seasonal discounts and rewards.",
+    },
+  ];
+
 
 const FAQDthRecharge = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -18,138 +77,90 @@ const FAQDthRecharge = () => {
     };
   }, []);
 
-  const content = [
-    {
-      title: "How to Make DTH Recharge Online",
-      body: (
-        <>
-          <p>
-            DTH is one good source of entertainment for the audiences & timely
-            recharge for the same is vital for the constant grasp of content.
-            There are many options online for instant recharge but Sevenunique is
-            a leading payment wallet that allows users to make recharges and
-            bill payments with a button click. On the Sevenunique platform, the
-            users can get their DTH recharge done and enjoy uninterrupted DTH
-            services. Online DTH recharge via Sevenunique is a simple process, and
-            the users can avail a variety of the best DTH recharge offers.
-            Online DTH recharge can be done via SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. 
-          </p>
-          <ol>
-            <li>
-              Go to the recharge and bill payment section on the Sevenunique
-              website or app.
-            </li>
-            <li>Select ‘DTH’ as a category.</li>
-            <li>
-              Select the operator, e.g., Airtel DTH recharge, Dish TV recharge,
-              etc.
-            </li>
-            <li>Enter your customer ID.</li>
-            <li>
-              Check for available DTH recharge plans for the selected operator
-              or enter the amount manually.
-            </li>
-          </ol>
-          <p>
-            With this, your DTH recharge will be done within minutes. Sevenunique
-            provides multiple payment modes like UPI, wallet, credit card, debit
-            card, Pay Later (ZIP), and net banking.
-          </p>
-        </>
-      ),
-    },
-    {
-      title: "Why Choose Sevenunique for DTH Recharge Online",
-      body: (
-        <>
-          <p>
-            If you seek to make DTH recharge online while enjoying exciting DTH
-            recharge offers, discounts, and cashback, then Sevenunique is the right
-            platform. Benefits include:
-          </p>
-          <ul>
-            <li>
-              <strong>Free online DTH recharge:</strong> No transaction fee is
-              chargeable.
-            </li>
-            <li>
-              <strong>Exciting deals and offers:</strong> Discounts, cashback,
-              and coupons to maximize savings.
-            </li>
-            <li>
-              <strong>Safe and secure:</strong> Payment details are encrypted
-              and not shared with third parties.
-            </li>
-            <li>
-              <strong>Available across all operators:</strong> Airtel DTH, Dish
-              TV, Tata Sky, etc.
-            </li>
-            <li>
-              <strong>Simple and seamless:</strong> Recharge within minutes by
-              providing basic details.
-            </li>
-          </ul>
-        </>
-      ),
-    },
-    {
-      title: "Frequently Asked Questions about DTH Recharge",
-      body: (
-        <ul>
-          <li>
-            <strong>
-              How long does it take to process DTH Recharge Online?
-            </strong>
-            <br />
-            Transactions are completed within minutes. Depending on the
-            operator, the balance reflects shortly after.
-          </li>
-          <li>
-            <strong>
-              Does Sevenunique support all operators for DTH recharge?
-            </strong>
-            <br />
-            Yes, it supports Airtel DTH, Dish TV, Tata Sky, Videocon D2H, and
-            Sun Direct.
-          </li>
-          <li>
-            <strong>How to check DTH balance online?</strong>
-            <br />
-            The process varies by operator. Check the balance via the operator’s
-            website, app, or customer support.
-          </li>
-          <li>
-            <strong>What payment options are available on Sevenunique?</strong>
-            <br />
-            Payment options include UPI, credit/debit cards, internet banking,
-            and wallet balance.
-          </li>
-        </ul>
-      ),
-    },
-  ];
+  
 
   return (
     <>
-      {isMobile ? (
-        <Accordion>
-          {content.map((item, index) => (
-            <Accordion.Item eventKey={index.toString()} key={index}>
-              <Accordion.Header>{item.title}</Accordion.Header>
-              <Accordion.Body>{item.body}</Accordion.Body>
-            </Accordion.Item>
-          ))}
-        </Accordion>
-      ) : (
-        <div className="p-5">
-          {content.map((item, index) => (
-            <div key={index} style={{ marginBottom: "1rem" }}>
-              <h3>{item.title}</h3>
-              {item.body}
-            </div>
-          ))}
+ 
+      <section className="py-5 text-center ">
+        <div className="container">
+          <h1 className="display-5 fw-bold">DTH Recharge – Uninterrupted Entertainment Starts Here</h1>
+          <p className="lead fs-5 mt-3">
+            Recharge any DTH connection instantly with ABDKS and keep the entertainment going.
+          </p>
         </div>
-      )}
+      </section>
+
+      {/* How to Recharge */}
+         <section className="py-5 bg-light">
+     <div className="row justify-content-center mb-5">
+       <h2 className="text-center fw-bold mb-5">How to Recharge DTH with ABDKS</h2>
+            <div className="col-lg-10">
+              <div className="row g-4">
+                {steps.map((step, i) => (
+                  <div key={i} className="col-md-6">
+                    <div
+                      className="d-flex align-items-start p-3 shadow-sm rounded-4 bg-light h-100"
+                      style={{
+                        borderLeft: "4px solid #b53008",
+                      }}
+                    >
+
+                      <div className="me-3 fs-4 fw-bold text-theme">{i + 1}</div>
+                      <div className="text-dark fw-medium">{step}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+    </section>
+
+      {/* Supported Operators */}
+      <section className="py-5">
+        <div className="container text-center">
+          <h2 className="fw-bold mb-4">Supported DTH Operators</h2>
+          <div className="row justify-content-center ">
+            {operators.map((op, idx) => (
+              <div key={idx} className="col-md-4 mb-3 ">
+                <div className="text-white p-3 rounded shadow-sm fs-5 primary-bg">{op}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose ABDKS */}
+      <section className="py-5 bg-light">
+        <div className="container">
+          <h2 className="fw-bold text-center mb-5">Why Choose ABDKS?</h2>
+          <div className="row g-4">
+            {benefits.map((b, i) => (
+              <div key={i} className="col-md-4">
+                <div className="bg-white p-4 rounded-4 shadow-sm h-100 text-center">
+                  <div className="text-theme fs-2 mb-3">{b.icon}</div>
+                  <h5 className="fw-semibold">{b.title}</h5>
+                  <p className="text-muted small">{b.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="grediant-bg2 text-white py-5 text-center mb-3">
+        <div className="container">
+          <h2 className="display-5 fw-bold mb-3 text-white">Start Earning with DTH Recharge</h2>
+          <p className="lead col-lg-8 mx-auto mb-4">
+            Offer DTH recharge services in your store and earn commissions on every successful transaction.
+          </p>
+          <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+            <button className="btn btn-light text-theme fw-bold px-4 py-2">Become a Partner</button>
+            <button className="btn btn-outline-light fw-bold px-4 py-2">Recharge Now</button>
+          </div>
+        </div>
+      </section>
     </>
   );
 };

@@ -1,197 +1,247 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useEffect, useState } from "react";
+import {
+  FaMobileAlt,
+  FaClock,
+  FaMoneyBillWave,
+  FaCheckCircle,
+  FaLock,
+  FaCreditCard,
+  FaUsers,
+  FaChartLine,
+  FaPhoneAlt,
+} from "react-icons/fa";
 import Accordion from "react-bootstrap/Accordion";
 
+const mobileOperators = ["Jio", "Airtel", "VI (Vodafone Idea)", "BSNL"];
+
+const rechargeSteps = [
+  "Go to the Recharge section on the ABDKS website or app.",
+  "Choose Mobile Recharge option.",
+  "Select your operator and circle (region).",
+  "Enter your 10-digit mobile number.",
+  "Choose a plan or manually enter the amount.",
+  "Complete payment via UPI, card, net banking, or wallet.",
+  "Receive instant confirmation and a digital receipt.",
+];
+
+const rechargeFeatures = [
+  {
+    icon: <FaCheckCircle />,
+    title: "Instant Recharge Processing",
+    desc: "Get recharge confirmation in seconds with real-time status.",
+  },
+  {
+    icon: <FaClock />,
+    title: "Available 24x7",
+    desc: "Recharge anytime, including weekends and holidays.",
+  },
+  {
+    icon: <FaMobileAlt />,
+    title: "Prepaid & Postpaid Support",
+    desc: "Recharge prepaid or pay postpaid bills easily.",
+  },
+  {
+    icon: <FaCreditCard />,
+    title: "Multiple Payment Options",
+    desc: "Use UPI, credit/debit card, wallet, or net banking.",
+  },
+  {
+    icon: <FaPhoneAlt />,
+    title: "Mobile-Friendly Interface",
+    desc: "Seamless recharge from any smartphone or tablet.",
+  },
+  {
+    icon: <FaLock />,
+    title: "Secure & Encrypted",
+    desc: "All transactions are protected via RBI-authorized gateways.",
+  },
+];
+
+const retailerBenefits = [
+  {
+    icon: <FaChartLine />,
+    title: "Earn Commissions",
+    desc: "Get paid for every successful mobile recharge.",
+  },
+  {
+    icon: <FaUsers />,
+    title: "No Technical Setup",
+    desc: "Start offering services instantly via our web dashboard.",
+  },
+  {
+    icon: <FaMobileAlt />,
+    title: "All Major Operators",
+    desc: "Recharge for Jio, Airtel, VI, and BSNL in one place.",
+  },
+];
+
+const mobileFAQs = [
+  {
+    title: "Is mobile recharge on ABDKS secure?",
+    content:
+      "Yes, all transactions are encrypted and processed via RBI-authorized payment channels.",
+  },
+  {
+    title: "Can I recharge for others?",
+    content:
+      "Yes, you can recharge for anyone by entering their number and selecting a plan.",
+  },
+  {
+    title: "Are there extra charges for mobile recharges?",
+    content:
+      "No, ABDKS does not add any hidden transaction fees on recharges.",
+  },
+  {
+    title: "What payment methods are accepted?",
+    content:
+      "You can pay via UPI, debit/credit cards, net banking, and wallet balance.",
+  },
+];
+
 const FAQMobileRecharge = () => {
-  const [isMobile, setIsMobile] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
-  // Handle screen size change
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Adjust the breakpoint as per your design
-    };
-
-    handleResize(); // Check initial screen size
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+   useEffect(() => {
+    const checkScreen = () => setIsMobile(window.innerWidth < 768);
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
   }, []);
-
-  const content = [
-    {
-      title: "Prepaid Mobile Recharge",
-      body: (
-        <>
-          <p>
-            Nowadays, everyone has a smartphone, and the number of smartphone
-            users continues to rise. When it comes to mobile payment plans,
-            users have two options: postpaid or prepaid. Prepaid mobile plans are
-            those you must pay in advance to use them. Customers can choose from
-            a variety of prepaid plans offered by various operators. People
-            looking for budget-friendly options might consider prepaid
-            subscriptions. There are so many options available online to do your
-            prepaid mobile recharge, but SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. is one of the
-            most trustworthy digital payments Website to make your life easier.
-          </p>
-          <ul>
-            <li>Budget-friendly plans</li>
-            <li>Pay in advance</li>
-            <li>Wide variety of options</li>
-          </ul>
-        </>
-      ),
-    },
-    {
-      title: "How to Make Prepaid Mobile Recharge Online?",
-      body: (
-        <>
-          <p>
-            Online recharge gives you the liberty to recharge your mobile phone
-            number anytime and from anywhere. All you need is an internet
-            connection. Here’s how you can recharge online:
-          </p>
-          <ol>
-            <li>Open the SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. app & navigate to ‘Recharges & Bill Pay’.</li>
-            <li>Enter the phone number and select Prepaid or Postpaid.</li>
-            <li>Select your mobile operator and circle.</li>
-            <li>Choose a plan or enter the recharge amount.</li>
-            <li>Enter your mobile number again and verify with OTP.</li>
-            <li>Complete the payment using your preferred method.</li>
-          </ol>
-        </>
-      ),
-    },
-    {
-      title: "Prepaid vs Postpaid Mobile Recharge",
-      body: (
-        <>
-          <p>
-            Prepaid mobile plans require customers to pay in advance for mobile
-            services, while postpaid mobile services require customers to pay
-            monthly bills after utilizing the services.
-          </p>
-          <ul>
-            <li>
-              Prepaid plans are less expensive when compared to postpaid plans.
-            </li>
-            <li>Prepaid plans are more flexible.</li>
-            <li>Prepaid plans ensure no bill shock for users.</li>
-            <li>
-              Generally, prepaid recharge offers are more attractive and
-              cost-effective.
-            </li>
-          </ul>
-        </>
-      ),
-    },
-    {
-      title: "Why Choose SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. for Online Mobile Recharge?",
-      body: (
-        <>
-          <p>
-            Here are some benefits of using SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. for your mobile recharge:
-          </p>
-          <ul>
-            <li>
-              <strong>Instant Transactions:</strong> Recharge in just a few
-              clicks, and it doesn't even take a minute.
-            </li>
-            <li>
-              <strong>Secure Payments:</strong> SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. offers end-to-end data
-              protection for each prepaid recharge.
-            </li>
-            <li>
-              <strong>No Transaction Cost:</strong> You won't be charged
-              additional fees for making a recharge through SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. 
-            </li>
-            <li>
-              <strong>More Savings:</strong> Enjoy discounts and cashback
-              rewards on prepaid plans.
-            </li>
-            <li>
-              <strong>Various Payment Options:</strong> Pay using Credit Card,
-              Debit Card, UPI, ZIP pay later, or other methods.
-            </li>
-          </ul>
-        </>
-      ),
-    },
-    {
-      title: "Free Mobile Recharge",
-      body: (
-        <p>
-          SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. does not charge you over any online recharges, i.e., on
-          SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. , it enables free mobile recharge. Moreover, it offers many
-          discounts and phone recharge offers to its users.
-        </p>
-      ),
-    },
-    {
-      title: "Frequently Asked Questions on Online Prepaid Recharge",
-      body: (
-        <ul>
-          <li>
-            <strong>Why Choose SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. for Prepaid Recharge?</strong>
-            <br />
-            SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. is India's no. 1 site for online easy Mobile recharge.
-            SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. does not charge you over any online recharges, enabling
-            free mobile recharge and helping you save your time, effort, and
-            money.
-          </li>
-          <li>
-            <strong>Is Online Recharge Safe?</strong>
-            <br />
-            Prepaid online recharges via SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. are safe and seamless. There
-            is no fear of fraudulent or unsafe payments when using SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. 
-          </li>
-          <li>
-            <strong>By when can Recharge be done?</strong>
-            <br />
-            Mobile recharges via SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. can be done quickly and instantly in a
-            few simple steps. There is no hassle or shuffling to pages. Just a
-            simple procedure, and your online recharge is done.
-          </li>
-          <li>
-            <strong>Which recharge app gives the best cashback?</strong>
-            <br />
-            SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. recharge app gives you the best benefits with cashback
-            offers, exclusive recharge discounts, and deals.
-          </li>
-          <li>
-            <strong>Is there any extra charge on Mobile Recharge?</strong>
-            <br />
-            SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. enables free online recharge. There are no charges for any
-            operator online recharge. SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. has never charged its customers
-            any extra fee for using the platform to recharge their mobile
-            numbers.
-          </li>
-        </ul>
-      ),
-    },
-  ];
-
   return (
     <>
-      {isMobile ? (
-        <Accordion>
-          {content.map((item, index) => (
-            <Accordion.Item eventKey={index.toString()} key={index}>
-              <Accordion.Header>{item.title}</Accordion.Header>
-              <Accordion.Body>{item.body}</Accordion.Body>
-            </Accordion.Item>
-          ))}
-        </Accordion>
-      ) : (
-        <div className="px-5 py-5">
-          {content.map((item, index) => (
-            <div key={index} style={{ marginBottom: "1rem" }}>
-              <h3>{item.title}</h3>
-              {item.body}
-            </div>
-          ))}
+      {/* Hero */}
+      <section className="py-5 text-center">
+        <div className="container">
+          <h1 className="display-5 fw-bold">Mobile Recharge Services</h1>
+          <p className="lead mt-3">
+            Quick, Secure & Real-Time Mobile Recharges with ABDKS
+          </p>
         </div>
-      )}
+      </section>
+
+      {/* Operators */}
+      <section className="py-5 bg-light text-center">
+        <div className="container">
+          <h2 className="fw-bold mb-4">Supported Operators</h2>
+          <div className="row justify-content-center">
+            {mobileOperators.map((operator, i) => (
+              <div key={i} className="col-md-3 mb-3">
+                <div className="primary-bg text-white p-3 rounded shadow-sm fs-5 transition-hover ">
+                  {operator}
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-muted mt-3 small">
+            We support both prepaid recharges and postpaid bill payments.
+          </p>
+        </div>
+      </section>
+
+      {/* How to Recharge */}
+      <section className="py-5">
+        <div className="container">
+          <h2 className="fw-bold text-center mb-5">
+            How to Recharge Mobile with ABDKS
+          </h2>
+          <div className="row g-4">
+            {rechargeSteps.map((step, i) => (
+              <div key={i} className="col-md-6">
+                <div className="p-3 shadow-sm rounded-4 bg-light d-flex align-items-start h-100 recharge-step-hover" style={{ borderLeft: "4px solid #b53008" }}>
+                  <div className="me-3 fs-4 fw-bold text-theme">{i + 1}</div>
+                  <div>{step}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="py-5 bg-light">
+        <div className="bg-white p-4 rounded-4 shadow-sm text-center h-100 card-hover">
+          <h2 className="fw-bold text-center mb-5">
+            Key Features of Mobile Recharge
+          </h2>
+          <div className="row g-4">
+            {rechargeFeatures.map((f, i) => (
+              <div key={i} className="col-md-4">
+                <div className="bg-light p-4 rounded-4 shadow-sm h-100">
+                  <div className="text-theme fs-2 mb-3">{f.icon}</div>
+                  <h5 className="fw-semibold">{f.title}</h5>
+                  <p className="text-muted small">{f.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Retailer Benefits */}
+      <section className="py-5 text-center">
+        <div className="container">
+          <h2 className="fw-bold mb-4">Benefits for Retailers & Agents</h2>
+          <p className="lead mb-5">
+            Expand your income by offering recharge services to your customers.
+          </p>
+          <div className="row g-4">
+            {retailerBenefits.map((r, i) => (
+              <div key={i} className="col-md-4">
+                <div className="bg-light p-4 rounded-4 shadow-sm text-center h-100 card-hover">
+                  <div className="text-theme fs-2 mb-3">{r.icon}</div>
+                  <h5>{r.title}</h5>
+                  <p className="text-muted small">{r.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+       <section className="py-5 bg-white">
+      <div className="p-3 bg-light shadow-sm rounded border h-100 faq-card-hover">
+        <h2 className="fw-bold text-center mb-5">Frequently Asked Questions</h2>
+        {isMobile ? (
+          <Accordion>
+            {mobileFAQs.map((faq, i) => (
+              <Accordion.Item eventKey={i.toString()} key={i}>
+                <Accordion.Header>{faq.title}</Accordion.Header>
+                <Accordion.Body>{faq.content}</Accordion.Body>
+              </Accordion.Item>
+            ))}
+          </Accordion>
+        ) : (
+          <div className="row">
+            {mobileFAQs.map((faq, i) => (
+              <div key={i} className="col-md-6 mb-4">
+                <div className="p-3 bg-light shadow-sm rounded border h-100">
+                  <h5 className="fw-bold">{faq.title}</h5>
+                  <p className="text-muted small">{faq.content}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+
+      {/* CTA */}
+      <section className="py-5 grediant-bg2 text-white text-center mb-3">
+        <div className="container">
+          <h2 className="display-5 fw-bold mb-3 text-white">
+            Start Recharging with ABDKS Today
+          </h2>
+          <p className="lead col-lg-8 mx-auto mb-4">
+            Whether you're a user or a business, ABDKS makes mobile recharges simple, secure, and profitable.
+          </p>
+          <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+            <button className="btn btn-light text-theme fw-bold px-4 py-2">Recharge Now</button>
+            <button className="btn btn-outline-light fw-bold px-4 py-2">Become a Recharge Partner</button>
+          </div>
+        </div>
+      </section>
     </>
   );
 };

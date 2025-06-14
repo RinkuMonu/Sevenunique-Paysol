@@ -111,6 +111,14 @@ section {
     position: relative;
 }
 
+.section-divider {
+  height: 4px;
+  background: var(--themeht-primary-color);
+  border-radius: 2px;
+  width: 60px;
+  margin: 0 auto 2rem;
+}
+
 .banner h1 span {
     font-weight: 700;
     font-size: 120px;
@@ -2057,4 +2065,28 @@ p {
 .Image404 img{
     background-attachment: fixed;
     margin: 0 auto;
+}
+
+
+/* ------------------------ Recharge ------------------------ */
+.transition-hover:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+}
+.recharge-step-hover:hover {
+  background-color: #f9f9f9;
+  border-left: 4px solid #ff5e00;
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+.card-hover:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+.faq-card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
 }

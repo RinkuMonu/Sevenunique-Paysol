@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import "./style/Home.css";
+import FeaturesSection from "./FeatureIconsComponent";
 
 function PageContent() {
     return (
@@ -32,40 +33,42 @@ function PageContent() {
                             <div className="theme-title mb-4">
                                 <h6>About Us</h6>
                                 <h2>
-                                    The Fastest Way To <span>Grow Your Business</span>
+                                    The Fastest Way to Grow Your Digital Business in India
                                 </h2>
                                 <p>
-                                    We are happy to introduce Sevenunique, a  service provider
-                                    offering services like Bills Payment (BBPS) and Recharge to
-                                    retailers/merchants.
+                                    Founded in 2024, ABDKS is a Jaipur-based fintech company revolutionizing the way retailers and merchants deliver digital financial services. We specialize in instant mobile recharges, BBPS utility bill payments, and card-based transactions — enabling businesses to grow faster and smarter.
+                                    <br></br>
+                                    We are committed to building the next generation of secure, scalable, and user-friendly financial services across India.
                                 </p>
                             </div>
                             <div className="row">
+                                <p className="fs-6 text-theme fw-bold">Why Choose ABDKS?</p>
                                 <div className="col-sm-6 mb-3">
                                     <ul className="list-unstyled list-icon style-1">
                                         <li>
-                                            <i className="bi bi-check2"></i> Fast
+                                            <i className="bi bi-check2"></i> Backed by 7+ Years of Industry Experience via Seven Unique
+
                                         </li>
                                     </ul>
                                 </div>
                                 <div className="col-sm-6 mb-3">
                                     <ul className="list-unstyled list-icon style-1">
                                         <li>
-                                            <i className="bi bi-check2"></i> Secure
+                                            <i className="bi bi-check2"></i> Trusted by 1000+ Retailers Across Jaipur
                                         </li>
                                     </ul>
                                 </div>
                                 <div className="col-sm-6 mb-3">
                                     <ul className="list-unstyled list-icon style-1">
                                         <li>
-                                            <i className="bi bi-check2"></i> Easy documentation
+                                            <i className="bi bi-check2"></i> 24x7 Dedicated Multilingual Support
                                         </li>
                                     </ul>
                                 </div>
                                 <div className="col-sm-6">
                                     <ul className="list-unstyled list-icon style-1">
                                         <li>
-                                            <i className="bi bi-check2"></i> Credit Card Swipe
+                                            <i className="bi bi-check2"></i> Transparent Commissions & Easy Onboarding
                                         </li>
                                     </ul>
                                 </div>
@@ -187,7 +190,8 @@ function PageContent() {
                     <div className="row">
                         <div className="col-lg-5">
                             <div className="theme-title">
-                                <h6 className="fz40">Services</h6>
+                                <h6 className="fz40">Our Core Fintech Services in Jaipur
+                                </h6>
                                 <p>
                                     Services that we offer to our clients at a glance. We have earned 3+ years of expertise in  services. You just need to tell us about your requirements, we will strictly take care of that. You are just one click away!! Start your own business with Sevenunique  services and provide Recharge and Bill Payment (BBPS) to your customers.
                                 </p>
@@ -205,10 +209,11 @@ function PageContent() {
                                             </div>
                                             <div className="service-desc">
                                                 <div className="service-title">
-                                                    <h4>Electricity Bill</h4>
+                                                    <h4>Mobile Recharge in Jaipur</h4>
                                                 </div>
                                                 <p>
-                                                    Pay your Electricity bill online using the Pay Sevenunique app. We use the best in industry technology to make it fast and reliable.
+                                                    Fast recharges for all telecom providers with instant confirmation.
+
                                                 </p>
                                                 <a className="arrow-btn" href="#">
                                                     <i className="bi bi-arrow-up-right"></i>
@@ -227,10 +232,10 @@ function PageContent() {
                                             </div>
                                             <div className="service-desc">
                                                 <div className="service-title">
-                                                    <h4>Pay Utility Bill</h4>
+                                                    <h4>DTH Recharge Jaipur</h4>
                                                 </div>
                                                 <p>
-                                                    How difficult it is to make payment for your utility bills at a merchant outlet that does not accept credit cards. We make it easy for you with our credit card payment system.
+                                                    Recharge any major DTH provider quickly and securely.
                                                 </p>
                                                 <a className="arrow-btn" href="#">
                                                     <i className="bi bi-arrow-up-right"></i>
@@ -241,7 +246,7 @@ function PageContent() {
                                 </div>
 
                                 {/* Service 3 */}
-                                <div className="col-md-6 mt-6 mt-md-0">
+                                <div className="col-md-4 mt-6 mt-md-0">
                                     <div className="service-item style-1">
                                         <div className="service-item-inner">
                                             <div className="service-icon">
@@ -249,10 +254,10 @@ function PageContent() {
                                             </div>
                                             <div className="service-desc">
                                                 <div className="service-title">
-                                                    <h4>BBPS</h4>
+                                                    <h4>BBPS Bill Payments Rajasthan</h4>
                                                 </div>
                                                 <p>
-                                                    Sevenunique offers its customers to pay their bills with just a click. No need to stand in queue at the operator’s office anymore.
+                                                    Pay electricity, gas, water, insurance, and other bills with ease.
                                                 </p>
                                                 <a className="arrow-btn" href="#">
                                                     <i className="bi bi-arrow-up-right"></i>
@@ -263,7 +268,7 @@ function PageContent() {
                                 </div>
 
                                 {/* Service 4 */}
-                                <div className="col-md-6 mt-6">
+                                <div className="col-md-4 mt-6">
                                     <div className="service-item style-1">
                                         <div className="service-item-inner">
                                             <div className="service-icon">
@@ -271,10 +276,32 @@ function PageContent() {
                                             </div>
                                             <div className="service-desc">
                                                 <div className="service-title">
-                                                    <h4>Recharge Services</h4>
+                                                    <h4>Credit Card Swipe for Local Shops</h4>
                                                 </div>
                                                 <p>
-                                                    Sevenunique recharge service covers all major service providers of Mobile, and you can earn the best commission on each recharge.
+                                                    Accept card payments from customers with fast settlements.
+                                                </p>
+                                                <a className="arrow-btn" href="#">
+                                                    <i className="bi bi-arrow-up-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Service 5 */}
+                                <div className="col-md-4 mt-6">
+                                    <div className="service-item style-1">
+                                        <div className="service-item-inner">
+                                            <div className="service-icon">
+                                                <img src="/assets/bill.png" width="50" alt="recharge" />
+                                            </div>
+                                            <div className="service-desc">
+                                                <div className="service-title">
+                                                    <h4>Utility Bill Payment in Jaipur</h4>
+                                                </div>
+                                                <p>
+                                                    Simplified utility payments through credit/debit cards and UPI.
                                                 </p>
                                                 <a className="arrow-btn" href="#">
                                                     <i className="bi bi-arrow-up-right"></i>
@@ -288,7 +315,7 @@ function PageContent() {
                     </div>
                 </div>
             </section>
-
+<FeaturesSection/>
         </div>
 
     );

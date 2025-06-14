@@ -1,6 +1,86 @@
 import React, { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
+import {
+  FaWifi,
+  FaLock,
+  FaClock,
+  FaMobileAlt,
+  FaUsers,
+  FaWallet,
+} from "react-icons/fa";
 
+const datacardOperators = [
+  "JioFi Datacard",
+  "Airtel 4G Datacard",
+  "VI Dongle / Internet Stick",
+  "BSNL Data Card",
+  "MTNL Dongle",
+];
+
+const datacardSteps = [
+  "Visit the Recharge section on ABDKS website or app.",
+  "Select Datacard Recharge as the category.",
+  "Choose your datacard operator.",
+  "Enter your datacard number or registered mobile number.",
+  "Enter amount or choose from available plans.",
+  "Pay using UPI, card, wallet, or net banking.",
+  "Receive instant confirmation and continue browsing.",
+];
+
+const datacardBenefits = [
+  {
+    icon: <FaClock />,
+    title: "24x7 Recharge Availability",
+    desc: "Recharge anytime, from any device.",
+  },
+  {
+    icon: <FaWifi />,
+    title: "Instant Confirmation",
+    desc: "Get real-time success messages and receipts.",
+  },
+  {
+    icon: <FaLock />,
+    title: "Secure Transactions",
+    desc: "Encrypted payments ensure your safety.",
+  },
+  {
+    icon: <FaMobileAlt />,
+    title: "Mobile-Friendly Design",
+    desc: "Optimized for smartphones and low-bandwidth usage.",
+  },
+  {
+    icon: <FaUsers />,
+    title: "Multi-Operator Support",
+    desc: "Supports Jio, Airtel, VI, BSNL, MTNL & more.",
+  },
+  {
+    icon: <FaWallet />,
+    title: "Retailer Benefits",
+    desc: "Earn commission on every successful recharge.",
+  },
+];
+
+const datacardFAQs = [
+  {
+    title: "How long does a datacard recharge take?",
+    content:
+      "Most recharges are processed instantly and balance reflects within minutes.",
+  },
+  {
+    title: "Can I recharge a JioFi device or Airtel dongle?",
+    content:
+      "Yes, ABDKS supports all leading datacard and dongle providers like JioFi, Airtel, VI, and BSNL.",
+  },
+  {
+    title: "Is there any extra charge on datacard recharge?",
+    content: "No. There are no hidden charges on recharges done through ABDKS.",
+  },
+  {
+    title: "Can I check available datacard plans?",
+    content:
+      "Yes. The platform fetches operator-specific plans after entering your datacard number.",
+  },
+];
 const FAQDataCardRecharge = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -17,154 +97,110 @@ const FAQDataCardRecharge = () => {
     };
   }, []);
 
-  const content = [
-    {
-      title: "About Data Card Recharge",
-      body: (
-        <>
-          <p>
-            In today’s time, wherever you may go, the internet must follow.
-            Online data card recharge allows a user to enjoy uninterrupted
-            internet service on their smartphone. With monthly, quarterly or
-            annual data card recharge plans, users can avail seamless browsing,
-            online streaming and downloading services. The data card recharge
-            plans vary for each network operator and time period. Sevenunique
-            ensures an instant and simple process of online data card recharge,
-            dongle recharge, modem recharge, dongle recharge plans, wifi dongle
-            recharge plans and more. Instant data card recharge ensures internet
-            access to all the users.
-          </p>
-        </>
-      ),
-    },
-    {
-      title: "How to Recharge Data Card Online Instantly",
-      body: (
-        <>
-          <p>
-            Online data card recharge via SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. is a simple and a quick
-            process. In order to avail the data card recharge plans online and
-            enjoy huge data card recharge offers at the same time, a user must
-            only follow the following simple steps.
-          </p>
-          <ol>
-            <li>
-              Select ‘Data Card’ from ‘Recharge and Bill Payments’ section on
-              the SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. app/ website
-            </li>
-            <li>
-              Enter your Data card number, choose the operator and add the
-              amount for Prepaid/Postpaid connection
-            </li>
-            <li>Click ‘Continue’ and proceed to pay</li>
-            <li>
-              Select a suitable payment mode and complete your online data card
-              recharge
-            </li>
-          </ol>
-        </>
-      ),
-    },
-    {
-      title: "Why Choose SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. for Data Card Recharge",
-      body: (
-        <>
-          <p>
-            SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. ensures ease and convenience to all its users. It is the
-            only Truly Indian payments app which allows one-tap data card
-            recharge. In addition to ensuring an easy way of online data card
-            recharge, SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. also ensures exciting online data card recharge
-            offers including huge Cashback and SuperCash offers. Following are
-            the key benefits of making online data card recharge using SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. 
-          </p>
-          <ul>
-            <li>
-              <strong>Instant Payment:</strong> On SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. all internet service
-              recharges including data card recharge plans, dongle recharge
-              plans, modem recharge plans and wifi dongle recharge plans are
-              just a click away. SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. ensures a seamless process of making
-              the online data card recharge
-            </li>
-            <li>
-              <strong>Data card recharge offers:</strong> With the SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. app,
-              users can earn and save big on every payment with Cashback and
-              SuperCash offers
-            </li>
-            <li>
-              <strong>Secured Transactions:</strong> Every transaction you make
-              using the SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. app or website is highly secured. The app
-              assures the utmost safety and confidentiality as you pay for your
-              online data card recharge
-            </li>
-            <li>
-              <strong>Data Card Recharge Offers:</strong> On SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. , a user
-              gets huge variety of offers. A user may earn or use his/her
-              SuperCash balance on the online data card recharge payment. A user
-              may also get a huge Cashback depending on the ongoing data card
-              recharge offer.
-            </li>
-          </ul>
-        </>
-      ),
-    },
-    {
-      title: "Frequently Asked Question on Data Card Recharge",
-      body: (
-        <ul>
-          <li>
-            <strong>How do I recharge my dongle?</strong>
-            <br />A user can easily avail dongle recharge plans on SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. 
-            under ‘Recharges and bill payment’ section by providing the operator
-            name and making the payment
-          </li>
-          <li>
-            <strong>What is a data card for Internet access?</strong>
-            <br />A data card is a removable electronic card that allows data
-            storage and internet access in a particular device.
-          </li>
-          <li>
-            <strong>What is difference between data card and dongle?</strong>
-            <br />A data card is a removable electronic card which allows data
-            storage or is used to carry out data operations. A dongle, on the
-            other hand, is used for enabling services like software protection,
-            audio-video, etc. A dongle used for connection to mobile broadband
-            is also referred to as a data card
-          </li>
-          <li>
-            <strong>Is dongle faster than mobile Internet?</strong>
-            <br />
-            Both dongle and mobile internet are offered by a wide range of
-            operators and the quality of service varies. While a dongle is used
-            for internet access in laptop/ computer devices, mobile internet is
-            needed for continuous internet access throughout the day. Hence, a
-            user must opt for either based on his/her need or requirement.
-          </li>
-        </ul>
-      ),
-    },
-  ];
-
   return (
     <>
-      {isMobile ? (
-        <Accordion>
-          {content.map((item, index) => (
-            <Accordion.Item eventKey={index.toString()} key={index}>
-              <Accordion.Header>{item.title}</Accordion.Header>
-              <Accordion.Body>{item.body}</Accordion.Body>
-            </Accordion.Item>
-          ))}
-        </Accordion>
-      ) : (
-        <div className="p-5">
-          {content.map((item, index) => (
-            <div key={index} style={{ marginBottom: "1rem" }}>
-              <h3>{item.title}</h3>
-              {item.body}
-            </div>
-          ))}
+      
+      <section className="py-5 text-center ">
+        <div className="container">
+          <h1 className="display-5 fw-bold">Datacard Recharge Made Easy</h1>
+          <p className=" mt-3 fs-6">
+            Fast, secure, and real-time internet datacard recharge — anytime, anywhere.
+          </p>
         </div>
-      )}
+      </section>
+
+      {/* How To Steps */}
+      <section className="py-5 bg-light">
+        <div className="container">
+          <h2 className="text-center fw-bold mb-5">How to Recharge Your Datacard</h2>
+          <div className="row g-4">
+            {datacardSteps.map((step, i) => (
+              <div key={i} className="col-md-6">
+                          <div className="p-3 shadow-sm rounded-4 bg-white h-100 d-flex align-items-start" style={{ borderLeft: "4px solid #b53008" }}>
+                  <div className="me-3 fs-4 fw-bold text-theme">{i + 1}</div>
+                  <div>{step}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Supported Operators */}
+      <section className="py-5 text-center">
+        <div className="container">
+          <h2 className="fw-bold mb-4">Supported Datacard Operators</h2>
+          <div className="row justify-content-center">
+            {datacardOperators.map((op, idx) => (
+              <div key={idx} className="col-md-4 mb-3">
+                <div className="text-white p-3 rounded shadow-sm fs-5 primary-bg">
+                  {op}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits */}
+      <section className="py-5 bg-light">
+        <div className="container">
+          <h2 className="fw-bold text-center mb-5">Why Choose ABDKS?</h2>
+          <div className="row g-4">
+            {datacardBenefits.map((b, i) => (
+              <div key={i} className="col-md-4">
+                <div className="bg-white p-4 rounded-4 shadow-sm h-100 text-center">
+                  <div className="text-theme fs-2 mb-3">{b.icon}</div>
+                  <h5 className="fw-semibold">{b.title}</h5>
+                  <p className="text-muted small">{b.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="py-5">
+        <div className="container">
+          <h2 className="fw-bold text-center mb-5">Frequently Asked Questions</h2>
+          {isMobile ? (
+            <Accordion>
+              {datacardFAQs.map((faq, i) => (
+                <Accordion.Item eventKey={i.toString()} key={i}>
+                  <Accordion.Header>{faq.title}</Accordion.Header>
+                  <Accordion.Body>{faq.content}</Accordion.Body>
+                </Accordion.Item>
+              ))}
+            </Accordion>
+          ) : (
+            <div className="row">
+              {datacardFAQs.map((faq, i) => (
+                <div key={i} className="col-md-6 mb-4">
+                  <div className="p-3 border rounded shadow-sm bg-white h-100">
+                    <h5 className="fw-bold">{faq.title}</h5>
+                    <p className="text-muted small">{faq.content}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="grediant-bg2 text-white py-5 text-center mb-3">
+        <div className="container">
+          <h2 className="display-5 fw-bold mb-3">Stay Connected, Always</h2>
+          <p className="lead col-lg-8 mx-auto mb-4">
+            Keep your internet running with fast and reliable datacard recharges from ABDKS.
+          </p>
+          <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+            <button className="btn btn-light text-theme fw-bold px-4 py-2">Recharge Now</button>
+            <button className="btn btn-outline-light fw-bold px-4 py-2">Join as a Retailer</button>
+          </div>
+        </div>
+      </section>
     </>
   );
 };

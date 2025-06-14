@@ -1,5 +1,108 @@
 import React, { useState, useEffect } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
+import {
+  FaReceipt,
+  FaClock,
+  FaHome,
+  FaMoneyBillAlt,
+  FaShieldAlt,
+  FaChartLine,
+  FaStore,
+} from "react-icons/fa";
+
+const housingSteps = [
+  "Visit the Bill Payment section on the ABDKS website or mobile app.",
+  "Choose Housing / Society Bill from the service list.",
+  "Select your society or property management organization.",
+  "Enter your Flat Number / Account ID / Mobile Number.",
+  "View your latest dues and billing history (if enabled).",
+  "Proceed with payment using UPI, card, wallet, or net banking.",
+  "Receive real-time payment confirmation and downloadable receipt.",
+];
+
+const housingServices = [
+  "Monthly Maintenance Charges",
+  "Water & Utility Charges",
+  "Parking & Security Fees",
+  "Clubhouse or Facility Usage Fees",
+  "Building Repair Fund Contributions",
+  "Rental Charges (if applicable)",
+  "Penalties or Late Fees (if any)",
+];
+
+const housingSupport = [
+  "Registered Housing Societies",
+  "Gated Communities",
+  "Resident Welfare Associations (RWAs)",
+  "Cooperative Housing Boards",
+  "Apartment Management Portals",
+  "Private Property Management Firms",
+];
+
+const housingFeatures = [
+  {
+    icon: <FaClock />,
+    title: "24x7 Online Payment Access",
+    desc: "Pay anytime, even on weekends and holidays.",
+  },
+  {
+    icon: <FaReceipt />,
+    title: "No Paperwork Needed",
+    desc: "Digital receipts are generated instantly after payment.",
+  },
+  {
+    icon: <FaMoneyBillAlt />,
+    title: "Multiple Payment Options",
+    desc: "Pay via UPI, cards, net banking, or digital wallets.",
+  },
+  {
+    icon: <FaShieldAlt />,
+    title: "Safe & Secure Transactions",
+    desc: "Protected by PCI-DSS compliant encryption.",
+  },
+  {
+    icon: <FaHome />,
+    title: "Transparent Billing History",
+    desc: "Track your payments anytime in the dashboard.",
+  },
+];
+
+const retailerBenefits = [
+  {
+    icon: <FaStore />,
+    title: "Expand Your Services",
+    desc: "Help society residents pay their dues and grow your customer base.",
+  },
+  {
+    icon: <FaChartLine />,
+    title: "Earn Commissions",
+    desc: "Get rewarded for each successful payment processed.",
+  },
+  {
+    icon: <FaReceipt />,
+    title: "Easy Setup & Support",
+    desc: "Minimal training and full-time assistance provided.",
+  },
+];
+
+const housingFAQs = [
+  {
+    title: "Can I pay my housing maintenance bill online with ABDKS?",
+    content: "Yes. If your housing society is partnered with ABDKS, you can pay directly online.",
+  },
+  {
+    title: "What details do I need to pay my society bill?",
+    content: "Usually your flat number, society name, or account ID is sufficient.",
+  },
+  {
+    title: "Can I pay multiple bills at once?",
+    content: "Yes, if the bills are grouped under a single statement, you can pay them together.",
+  },
+  {
+    title: "Are payments updated in real-time?",
+    content: "Yes. Both you and the society receive instant confirmations.",
+  },
+];
 
 const FAQHousingBillPayments = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -17,105 +120,145 @@ const FAQHousingBillPayments = () => {
     };
   }, []);
 
-  const content = [
-    {
-      title: 'Pay Housing Societies\' Bills Online',
-      body: (
-        <>
-          <p>
-            Amongst the daily hustle-bustle of life, how often do you forget to pay your housing society's bill? Going to a society office and waiting for your turn to pay the bill is a task. But, SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . is a platform that offers hassle-free bill payment for a housing society & also provides various offers and discounts to save on every payment. So, gear up & pay your housing bills through SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . from anywhere. It's quick and secure.
-          </p>
-        </>
-      ),
-    },
-    {
-      title: 'Advantages Of Paying Housing Societies\' Bill Online Via SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. .',
-      body: (
-        <>
-          <ul>
-            <li><strong>Easy and convenient:</strong> Be it a phone bill, DTH bill, or apartment maintenance bill payment, online bill payment is a one-time process after which your bank takes over. All your account information is organized in one centralized location, and there is no question of late or missing payments.</li>
-            <li><strong>Securing privacy and saving money:</strong> Online apartment maintenance bill payment aids in protecting your privacy and identity by eliminating any risk associated with lost or stolen paperwork. You don't have to pay for cheques, stamps or envelopes and can save on the fuel costs too. By eliminating paper usage, you can contribute to the betterment of the environment as well.</li>
-            <li><strong>You get rewarded:</strong> With your bills you can earn free rewards, cashback, discount & SuperCash offers which helps you save.</li>
-            <li><strong>No transaction cost:</strong> SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . does not ask for extra charges to process your payments. In addition, there are no hidden charges or taxes. It ensures you enjoy a free service.</li>
-            <li><strong>Select from multiple payment options:</strong> You are free to choose any of the preferred modes available on SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. ., such as UPI, debit card, Credit card, etc., for making your housing bill payments.</li>
-            <li><strong>Pay later option:</strong> To make your payments via SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . later at a specific time, you can opt for the option named 'ZIP', which gives you instant credit to clear dues now & pay back later.</li>
-          </ul>
-        </>
-      ),
-    },
-    {
-      title: 'How To Make Housing Bill Payment Online Via SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. .',
-      body: (
-        <>
-          <ol>
-            <li>Open the SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . app or its official website.</li>
-            <li>Go to ’Recharge and pay bills’ option.</li>
-            <li>Choose the option of ’Housing Payment’.</li>
-            <li>Select your city and then society name.</li>
-            <li>Select service type.</li>
-            <li>Enter meter number and amount to be paid.</li>
-            <li>Make the digital payment either by debit/credit card, UPI, SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . ZIP or net banking.</li>
-          </ol>
-        </>
-      ),
-    },
-    {
-      title: 'How To Check Housing Bill On SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. .',
-      body: (
-        <>
-          <p>
-            In order to check the housing bill, open the app or the website and check your housing bill by entering your customer ID after selecting the city, society, and service type.
-          </p>
-        </>
-      ),
-    },
-    {
-      title: 'Flexible Payment Methods Available For Housing Bill Payment On SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. .',
-      body: (
-        <>
-          <ul>
-            <li>UPI</li>
-            <li>Debit and credit cards</li>
-            <li>Netbanking</li>
-            <li>Wallet</li>
-            <li>SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . ZIP - Pay Later</li>
-          </ul>
-        </>
-      ),
-    },
-    {
-      title: 'Get Cashback Offers On Housing Bill Payment Through SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. .',
-      body: (
-        <>
-          <p>
-            SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . offers a plethora of offers and cashback on paying housing bills. You can save money by availing of the cashback offers available on almost all payment methods. Visit the website to make payment for your apartment bill. There you can look for cashback offers and discounts and finally pay the bill after saving some money.
-          </p>
-        </>
-      ),
-    },
-  ];
+
 
   return (
     <>
-      {isMobile ? (
-        <Accordion>
-          {content.map((item, index) => (
-            <Accordion.Item eventKey={index.toString()} key={index}>
-              <Accordion.Header>{item.title}</Accordion.Header>
-              <Accordion.Body>{item.body}</Accordion.Body>
-            </Accordion.Item>
-          ))}
-        </Accordion>
-      ) : (
-        <div className='p-5'>
-          {content.map((item, index) => (
-            <div key={index} style={{ marginBottom: '1rem' }}>
-              <h3>{item.title}</h3>
-              {item.body}
-            </div>
-          ))}
+       {/* Hero */}
+      <section className="py-5 text-center">
+        <div className="container">
+          <h1 className="display-5 fw-bold">Pay Housing Society Bills Online</h1>
+          <p className="lead mt-3">
+            Fast, paperless, and secure payments for your apartment, society, or complex.
+          </p>
         </div>
-      )}
+      </section>
+
+      {/* What You Can Pay */}
+      <section className="py-5 bg-light">
+        <div className="container">
+          <h2 className="fw-bold text-center mb-5">What Can You Pay?</h2>
+          <div className="row g-3">
+            {housingServices.map((item, i) => (
+              <div key={i} className="col-md-6 col-lg-4">
+                <div className="p-3 bg-white rounded shadow-sm h-100">{item}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Supported Entities */}
+      <section className="py-5 text-center">
+        <div className="container">
+          <h2 className="fw-bold mb-4">Supported Housing Systems</h2>
+          <div className="row justify-content-center">
+            {housingSupport.map((type, i) => (
+              <div key={i} className="col-md-4 mb-3">
+                <div className="primary-bg text-white p-3 rounded shadow-sm fs-5">
+                  {type}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How to Pay */}
+      <section className="py-5 bg-light">
+        <div className="container">
+          <h2 className="fw-bold text-center mb-5">How to Pay Housing Bills</h2>
+          <div className="row g-4">
+            {housingSteps.map((step, i) => (
+              <div key={i} className="col-md-6">
+                <div className="p-3 shadow-sm rounded-4 bg-white h-100 d-flex align-items-start" style={{ borderLeft: "4px solid #b53008" }}>
+                  <div className="me-3 fs-4 fw-bold text-theme">{i + 1}</div>
+                  <div>{step}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Key Features */}
+      <section className="py-5">
+        <div className="container">
+          <h2 className="fw-bold text-center mb-5">Why Use ABDKS?</h2>
+          <div className="row g-4">
+            {housingFeatures.map((f, i) => (
+              <div key={i} className="col-md-4">
+                <div className="bg-light p-4 rounded-4 shadow-sm text-center h-100">
+                  <div className="text-theme fs-2 mb-3">{f.icon}</div>
+                  <h5 className="fw-semibold">{f.title}</h5>
+                  <p className="text-muted small">{f.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* For Retailers */}
+      <section className="py-5 text-center">
+        <div className="container">
+          <h2 className="fw-bold mb-4">For Retailers & Agents</h2>
+          <p className="lead mb-5">Add housing payments to your digital services and grow income.</p>
+          <div className="row g-4">
+            {retailerBenefits.map((r, i) => (
+              <div key={i} className="col-md-4">
+                <div className="bg-light p-4 rounded-4 shadow-sm h-100">
+                  <div className="text-theme fs-2 mb-3">{r.icon}</div>
+                  <h5>{r.title}</h5>
+                  <p className="small text-muted">{r.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="py-5 bg-white">
+        <div className="container">
+          <h2 className="fw-bold text-center mb-5">Frequently Asked Questions</h2>
+          {isMobile ? (
+            <Accordion>
+              {housingFAQs.map((faq, i) => (
+                <Accordion.Item eventKey={i.toString()} key={i}>
+                  <Accordion.Header>{faq.title}</Accordion.Header>
+                  <Accordion.Body>{faq.content}</Accordion.Body>
+                </Accordion.Item>
+              ))}
+            </Accordion>
+          ) : (
+            <div className="row">
+              {housingFAQs.map((faq, i) => (
+                <div key={i} className="col-md-6 mb-4">
+                  <div className="p-3 bg-light shadow-sm rounded border h-100">
+                    <h5 className="fw-bold">{faq.title}</h5>
+                    <p className="text-muted small">{faq.content}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-5 grediant-bg2 text-white text-center mb-3">
+        <div className="container">
+          <h2 className="display-5 fw-bold mb-3 text-white">Make Housing Payments Easy</h2>
+          <p className="lead col-lg-8 mx-auto mb-4">
+            Say goodbye to late fees and paperwork. Pay securely with ABDKS.
+          </p>
+          <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+            <button className="btn btn-light text-theme fw-bold px-4 py-2">Pay Housing Bill Now</button>
+            <button className="btn btn-outline-light fw-bold px-4 py-2">Become a Service Partner</button>
+          </div>
+        </div>
+      </section>
     </>
   );
 };

@@ -1,5 +1,101 @@
 import React, { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
+import {
+  FaHeartbeat,
+  FaCar,
+  FaHome,
+  FaUmbrella,
+  FaClock,
+  FaShieldAlt,
+  FaMobileAlt,
+  FaMoneyBillWave,
+  FaUserTie,
+  FaReceipt,
+} from "react-icons/fa";
+
+const insuranceTypes = [
+  "Life Insurance",
+  "Health Insurance",
+  "Motor Insurance (Car/Bike)",
+  "Travel Insurance",
+  "Home & Property Insurance",
+];
+
+const insuranceProviders = [
+  "LIC (Life Insurance Corporation of India)",
+  "ICICI Prudential",
+  "HDFC Life",
+  "SBI Life Insurance",
+  "Max Life",
+  "Kotak Life Insurance",
+  "Reliance General Insurance",
+  "Star Health Insurance",
+  "Bajaj Allianz",
+  "Future Generali",
+];
+
+const insuranceSteps = [
+  "Go to the Bill Payment section on the ABDKS app or website.",
+  "Select Insurance as the bill category.",
+  "Choose your insurance provider from the list.",
+  "Enter your policy number or customer ID.",
+  "The system will auto-fetch your premium details.",
+  "Confirm the amount and complete the payment via UPI, card, wallet, or net banking.",
+  "Receive instant payment confirmation and digital receipt.",
+];
+
+const insuranceBenefits = [
+  {
+    icon: <FaClock />, title: "24x7 Payment Availability", desc: "Pay anytime — day or night — even on holidays."
+  },
+  {
+    icon: <FaReceipt />, title: "Instant Policy Updates", desc: "Premiums updated in real time with receipts."
+  },
+  {
+    icon: <FaShieldAlt />, title: "Safe & Encrypted", desc: "Fully compliant with RBI and data security norms."
+  },
+  {
+    icon: <FaMoneyBillWave />, title: "Multiple Payment Modes", desc: "Supports UPI, card, wallet, and internet banking."
+  },
+  {
+    icon: <FaUmbrella />, title: "Covers All Insurers", desc: "Government & private insurance providers supported."
+  },
+  {
+    icon: <FaMobileAlt />, title: "User-Friendly Platform", desc: "Easy to use for users and service partners alike."
+  },
+];
+
+const insuranceRetailerInfo = [
+  {
+    icon: <FaUserTie />, title: "Add Value to Your Shop", desc: "Offer insurance services and attract more footfall."
+  },
+  {
+    icon: <FaMoneyBillWave />, title: "Earn Commission", desc: "Get paid for every premium processed."
+  },
+  {
+    icon: <FaReceipt />, title: "Full Tracking", desc: "Real-time updates and receipts for every payment."
+  },
+];
+
+const insuranceFAQs = [
+  {
+    title: "Can I pay premiums for LIC and private insurers?",
+    content: "Yes, we support both government (like LIC) and private insurers."
+  },
+  {
+    title: "How fast is the payment processed?",
+    content: "Payments are completed instantly and updated in real-time."
+  },
+  {
+    title: "Can I pay for someone else’s insurance?",
+    content: "Yes, just enter their policy number or customer ID."
+  },
+  {
+    title: "Are there any extra charges?",
+    content: "No, we do not charge any additional service fees."
+  },
+];
+
 
 const FAQWaterBillPayment = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -17,141 +113,131 @@ const FAQWaterBillPayment = () => {
     };
   }, []);
 
-  const content = [
-    {
-      title: "Water Bill Payment",
-      body: (
-        <>
-          <p>
-            Water is a necessity of life, and it is critical to pay your water
-            bill on time. In this era, everyone is too busy to stand in long
-            queues for water bill payments at the centers. The good news is that
-            your water bills can now be paid from the comfort of your own home
-            in a few simple clicks with a fast and secure payments Website like
-            SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. 
-          </p>
-          <p>
-            SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . is India’s No. 1 site for Online water bill payments like
-            BWSSB, Delhi Jal Board, Kerala water Authority.
-          </p>
-        </>
-      ),
-    },
-    {
-      title: "What is the Advantage of Water Bill Payment Online?",
-      body: (
-        <>
-          <ul>
-            <li>
-              Online bill payment allows you to tidy up your funds all at once.
-            </li>
-            <li>
-              Getting rid of paper bills is one of the most significant benefits
-              of paying online.
-            </li>
-            <li>
-              By paying online, you can avail discounts and apply promo codes.
-            </li>
-            <li>
-              You can pay bills for your relatives and family in other cities.
-            </li>
-          </ul>
-        </>
-      ),
-    },
-    {
-      title: "What are the Available Options to Make Payment for Water Bill?",
-      body: (
-        <>
-          <p>
-            With multiple payment options, SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . has become a popular choice
-            for bill payments. The following methods are available:
-          </p>
-          <ul>
-            <li>Debit Card</li>
-            <li>Credit Card</li>
-            <li>UPI Payment</li>
-            <li>Net Banking</li>
-            <li>SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . ZIP - Pay Later</li>
-          </ul>
-        </>
-      ),
-    },
-    {
-      title: "Is it Safe to Pay Water Bills Online?",
-      body: (
-        <>
-          <p>
-            Water bill online payment is safe when using the right bill payment
-            service. Digital payment apps like SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . are 100% trustworthy and
-            dependable, using encryption and multistep identity verification to
-            keep your data secure.
-          </p>
-        </>
-      ),
-    },
-    {
-      title: "Steps to Pay Water Bills Online Through SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. .",
-      body: (
-        <>
-          <ol>
-            <li>Download & login on the SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . UPI Payment app.</li>
-            <li>Click on the 'Recharge and Bill Pay' option.</li>
-            <li>Select 'Water' as a category.</li>
-            <li>Select your operator & enter your Consumer Number.</li>
-            <li>
-              Once you enter the details, the system will automatically fetch
-              your due amount.
-            </li>
-            <li>Click on 'Pay Now'.</li>
-          </ol>
-        </>
-      ),
-    },
-    {
-      title: "FAQs",
-      body: (
-        <ul>
-          <li>
-            <strong>
-              Is it Safe to Pay Water Bills Online Through SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. .?
-            </strong>
-            <br />
-            SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . offers a safe and secured payment platform where you can
-            make payments.
-          </li>
-          <li>
-            <strong>Can we make payment from any bank?</strong>
-            <br />
-            Yes, you can pay your water bills from any bank listed on the
-            SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . app.
-          </li>
-        </ul>
-      ),
-    },
-  ];
 
   return (
     <>
-      {isMobile ? (
-        <Accordion>
-          {content.map((item, index) => (
-            <Accordion.Item eventKey={index.toString()} key={index}>
-              <Accordion.Header>{item.title}</Accordion.Header>
-              <Accordion.Body>{item.body}</Accordion.Body>
-            </Accordion.Item>
-          ))}
-        </Accordion>
-      ) : (
-        <div className="p-5">
-          {content.map((item, index) => (
-            <div key={index} style={{ marginBottom: "1rem" }}>
-              <h3>{item.title}</h3>
-              {item.body}
-            </div>
-          ))}
+ 
+        <section className="py-5 text-center">
+        <div className="container">
+          <h1 className="display-5 fw-bold">Insurance Premium Payments Simplified</h1>
+          <p className="lead mt-3">One secure platform for all your life, health, motor, and other insurance needs.</p>
         </div>
-      )}
+      </section>
+
+      <section className="py-5 bg-light">
+        <div className="container">
+          <h2 className="text-center fw-bold mb-5">How to Pay Insurance Premiums</h2>
+          <div className="row g-4">
+            {insuranceSteps.map((step, i) => (
+              <div key={i} className="col-md-6">
+                <div className="p-3 shadow-sm rounded-4 bg-white h-100 d-flex align-items-start" style={{ borderLeft: "4px solid #b53008" }}>
+                  <div className="me-3 fs-4 fw-bold text-theme">{i + 1}</div>
+                  <div>{step}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-5 text-center">
+        <div className="container">
+          <h2 className="fw-bold mb-4">Types of Insurance Supported</h2>
+          <div className="row justify-content-center">
+            {insuranceTypes.map((type, i) => (
+              <div key={i} className="col-md-4 mb-3">
+                <div className="text-white p-3 rounded shadow-sm fs-5 primary-bg">{type}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-5 bg-light">
+        <div className="container text-center">
+          <h2 className="fw-bold mb-4">Top Insurance Companies We Support</h2>
+          <div className="row justify-content-center">
+            {insuranceProviders.map((provider, i) => (
+              <div key={i} className="col-md-4 mb-3">
+                <div className="bg-white rounded p-3 shadow-sm fs-6">{provider}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-5">
+        <div className="container">
+          <h2 className="text-center fw-bold mb-5">Why Use ABDKS for Insurance Payments?</h2>
+          <div className="row g-4">
+            {insuranceBenefits.map((item, i) => (
+              <div key={i} className="col-md-4">
+                <div className="bg-light p-4 text-center rounded-4 shadow-sm h-100">
+                  <div className="text-theme fs-2 mb-3">{item.icon}</div>
+                  <h5>{item.title}</h5>
+                  <p className="small text-muted">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-5 bg-light text-center">
+        <div className="container">
+          <h2 className="fw-bold mb-4">Retailers & Service Centers</h2>
+          <p className="lead mb-5">Provide insurance premium payment services and grow your digital offerings.</p>
+          <div className="row g-4">
+            {insuranceRetailerInfo.map((info, i) => (
+              <div key={i} className="col-md-4">
+                <div className="bg-white p-4 rounded-4 shadow-sm h-100">
+                  <div className="text-theme fs-2 mb-3">{info.icon}</div>
+                  <h5>{info.title}</h5>
+                  <p className="small text-muted">{info.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-5">
+        <div className="container">
+          <h2 className="fw-bold text-center mb-5">Frequently Asked Questions</h2>
+          {isMobile ? (
+            <Accordion>
+              {insuranceFAQs.map((faq, i) => (
+                <Accordion.Item eventKey={i.toString()} key={i}>
+                  <Accordion.Header>{faq.title}</Accordion.Header>
+                  <Accordion.Body>{faq.content}</Accordion.Body>
+                </Accordion.Item>
+              ))}
+            </Accordion>
+          ) : (
+            <div className="row">
+              {insuranceFAQs.map((faq, i) => (
+                <div key={i} className="col-md-6 mb-4">
+                  <div className="p-3 bg-white rounded shadow-sm border h-100">
+                    <h5 className="fw-bold">{faq.title}</h5>
+                    <p className="text-muted small">{faq.content}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      <section className="py-5 grediant-bg2 mb-3 text-white text-center">
+        <div className="container">
+          <h2 className="display-5 fw-bold mb-3 text-white">Pay Your Insurance Premium Easily</h2>
+          <p className="lead col-lg-8 mx-auto mb-4">No delays, no hassles. Use ABDKS to stay on top of your insurance renewals.</p>
+          <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+            <button className="btn btn-light text-theme fw-bold px-4 py-2">Pay Insurance Now</button>
+            <button className="btn btn-outline-light fw-bold px-4 py-2">Become a Service Partner</button>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
