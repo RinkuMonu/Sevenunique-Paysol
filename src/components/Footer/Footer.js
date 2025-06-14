@@ -50,6 +50,9 @@ function Footer() {
                     <li>
                       <Link to={"/RefundPolicy"}>Refund Cancellation</Link>
                     </li>
+                    <li>
+                      <Link to={"/ContentPolicy"}>Content Policy</Link>
+                    </li>
                   </ul>
                 </div>
                 {/* Pages Links */}
