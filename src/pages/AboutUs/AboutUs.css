@@ -8,6 +8,7 @@
     margin-bottom: 0;
     font-size: 20px;
     line-height: 28px;
+    margin-top: 14px;
 }
 p {
     line-height: 1.7;
@@ -64,4 +65,17 @@ a, i, .themeht-btn, button, img, span, .nav-link, .dropdown-item, #ht-main-nav, 
     line-height: 1.2;
     margin-bottom: .5rem;
     margin-top: 0;
+}
+
+.choose{
+color: rgb(181, 48, 8);
+font-weight: bold;
+ font-size: 1.2rem;
+}
+.bgcolor{
+background-color: #b53008;
+}
+
+.about-heading{
+padding-top: 150px;
 }
