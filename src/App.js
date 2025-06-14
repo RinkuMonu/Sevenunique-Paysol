@@ -27,6 +27,7 @@ import KYC from './pages/Kyc/KYC.js';
 import AadharCard from './pages/Kyc/AadharCard.js';
 import PaymentSuccessPage from './pages/PaymentSuccessPage/PaymentSuccessPage.js';
 import PaymentErrorPage from './pages/PaymentErrorPage/PaymentErrorPage.js';
+import ContentPolicy from './pages/ContentPolicy.js';
 
 function App() {
   const router = createBrowserRouter([
@@ -129,6 +130,10 @@ function App() {
          {
           path: "/failure",
           element: <PaymentErrorPage/>
+         },
+          {
+          path: "/contentpolicy",
+          element: <ContentPolicy/>
          }
       ],
     },
