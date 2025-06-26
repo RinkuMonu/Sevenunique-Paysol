@@ -24,11 +24,9 @@ const ElectricityBillPayment = () => {
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#872D67"}}>Ingenious Electricity Bill Settlement</h2>
+            <h2 className="fw-bold" style={{color:"#872D67"}}>Electricity Bill Payment Online – BBPS-Powered, Secure & Instant</h2>
             <h3>
-              Empower your life with the efficient management of electricity
-              bills, ensuring uninterrupted power supply for your world of
-              possibilities.
+              Pay electricity bills across India instantly with ABDKS – a trusted BBPS platform offering real-time updates, zero extra charges, and multi-operator coverage.
             </h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
@@ -92,6 +90,8 @@ const ElectricityBillPayment = () => {
       </div>
       <FAQElectricityBill />
     </>
+
+
   );
 };
 
