@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
-import { FaBuilding, FaFaucet, FaRecycle, FaMapMarkerAlt, FaShieldAlt, FaGlobeAsia, FaRupeeSign, FaQuestionCircle } from "react-icons/fa";
+import { FaBuilding, FaFaucet, FaRecycle, FaMapMarkerAlt, FaShieldAlt, FaGlobeAsia, FaRupeeSign, FaQuestionCircle ,FaClock ,FaMobileAlt ,FaUserCheck,} from "react-icons/fa";
+import { BiSolidSelectMultiple } from "react-icons/bi";
+import { MdOutlineSecurityUpdateGood } from "react-icons/md";
 
 const services = [
   { icon: <FaBuilding />, title: "Property Tax" },
@@ -21,6 +23,7 @@ const steps = [
   "Receive instant confirmation and receipt.",
 ];
 
+
 const faqs = [
   {
     question: "Can I pay property tax online through ABDKS?",
@@ -28,17 +31,70 @@ const faqs = [
   },
   {
     question: "What details are required to pay a municipal bill?",
-    answer: "Usually, your property ID, account number, or consumer ID is needed.",
+    answer: "Typically, your property ID, account number, or consumer ID is required.",
   },
   {
     question: "Are municipal payments processed instantly?",
-    answer: "Yes. Confirmation is shared immediately after payment via SMS/email.",
+    answer: "Yes. Once paid, the confirmation is generated instantly and shared via email/SMS.",
   },
   {
     question: "Is there a service charge for municipal bill payment?",
-    answer: "No extra charges for standard bill payments via ABDKS.",
+    answer: "There are no additional service charges for standard municipal bill payments.",
   },
 ];
+
+const support = [
+"Jaipur Municipal Corporation",
+"Delhi MCD (North, South, East)",
+"Pune Municipal Corporation",
+"Chennai Corporation",
+"Greater Hyderabad Municipal Corporation (GHMC)",
+"Bhopal Municipal Corporation",
+"And many others based on regional coverage",
+]
+
+
+const munfeatures = [
+  {
+    icon: <FaClock />,
+    title: "24x7 Availability",
+    desc: "Pay your bills anytime, from any location",
+  },
+ {
+  icon: <BiSolidSelectMultiple />,
+    title: "Multiple Services in One Place",
+    desc: "Pay property tax, water bills, and more",
+  },
+  {
+    icon: <MdOutlineSecurityUpdateGood />,
+    title: "Instant Updates",
+    desc: "View current dues and receive instant confirmations",
+  },
+  {
+    icon: <FaShieldAlt />,
+    title: "Secure Payment Gateway",
+    desc: "RBI-authorized, encrypted transactions",
+  },
+  {
+    icon: <FaMobileAlt />,
+    title: "Mobile-Friendly Interface",
+    desc: "Seamless experience on mobile or desktop",
+  },
+  {
+    icon: <FaUserCheck />,
+    title: "Retailer Access",
+    desc: "Offer civic payment services in your shop or center",
+  },
+];
+
+const retailer = [
+"Increase customer footfall and revenue",
+"Offer value-added services to residents",
+"Earn a commission on every successful payment",
+"View and manage transactions easily from your dashboard",
+"Greater Hyderabad Municipal Corporation (GHMC)",
+"Get real-time support from our local Jaipur-based team",
+]
 
 
 const FAQMunicipality = () => {
@@ -57,96 +113,16 @@ const FAQMunicipality = () => {
     };
   }, []);
 
-  const content = [
-    {
-      title: 'Pay Your Municipal Property Tax Online',
-      body: (
-        <>
-          <p>
-            Gone are the days when you had to stand in a queue for making your Municipal Property Tax payments. SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . now brings house tax payment facilities for you at your fingertips. You can now make your property tax payment at any time and any place.
-          </p>
-          <p>
-            You also have the added benefit of using secure payment options for municipal property tax payment online through debit/credit card or through net banking.
-          </p>
-        </>
-      ),
-    },
-    {
-      title: 'Safe and Secure Property Tax Payment',
-      body: (
-        <>
-          <p>
-            SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . ensures secure and hassle-free transactions for municipal property tax payments. All payment options such as debit cards, credit cards, and net banking are routed through secure servers, providing the highest level of data protection.
-          </p>
-          <p>
-            Your personal information, including email addresses, phone numbers, and banking details, is encrypted and accessible only by you, ensuring maximum privacy.
-          </p>
-        </>
-      ),
-    },
-    {
-      title: 'Steps to Pay Property Tax Using SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. .',
-      body: (
-        <>
-          <ol>
-            <li>Download & log in to the SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . app.</li>
-            <li>Select the 'Recharge and Bill Pay' option.</li>
-            <li>Choose 'Property Tax' as the category.</li>
-            <li>Enter your municipal corporation and property details.</li>
-            <li>Verify the tax amount fetched by the system.</li>
-            <li>Choose your preferred payment method and complete the transaction.</li>
-          </ol>
-        </>
-      ),
-    },
-    {
-      title: 'FAQs',
-      body: (
-        <ul>
-          <li>
-            <strong>Is it safe to pay property taxes online using SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. .?</strong><br />
-            Yes, SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . offers encrypted payment gateways and keeps all user data secure.
-          </li>
-          <li>
-            <strong>Can I pay property taxes for any municipal corporation?</strong><br />
-            Yes, SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . supports property tax payments for multiple municipal corporations across the country.
-          </li>
-        </ul>
-      ),
-    },
-  ];
+
 
   return (
     <>
-      {isMobile ? (
-        <Accordion>
-          {content.map((item, index) => (
-            <Accordion.Item eventKey={index.toString()} key={index}>
-              <Accordion.Header>{item.title}</Accordion.Header>
-              <Accordion.Body>{item.body}</Accordion.Body>
-            </Accordion.Item>
-          ))}
-        </Accordion>
-      ) : (
-        <div className='p-5'>
-          {content.map((item, index) => (
-            <div key={index} style={{ marginBottom: '1rem' }}>
-              <h3>{item.title}</h3>
-              {item.body}
-            </div>
-          ))}
-        </div>
-      )}
 
-        {/* Hero Section */}
       <section className="py-5 text-center bg-light">
         <div className="container">
-          <h1 className="display-5 fw-bold">Municipal Bill Payments</h1>
+          <h1 className="display-5 fw-bold">Introducing a Convenient, Transparent & Instant Civic Bill Payment Solution!</h1>
           <p className="lead mt-3">
-            Pay Your Municipal Taxes and Bills Online with ABDKS
-          </p>
-          <p className="col-lg-8 mx-auto">
-            From property tax to sewerage fees — pay it all online, securely and instantly, with real-time updates and zero hassle.
+             We’re all about making life easier for citizens and retailers alike. Our platform offers a straightforward and secure way to handle municipal payments online. Whether you need to pay property tax, water tax, sewerage charges, or municipal service fees, our digital solution lets you make quick payments and get real-time updates on your status—no more waiting in long lines!
           </p>
         </div>
       </section>
@@ -155,11 +131,12 @@ const FAQMunicipality = () => {
       <section className="py-5">
         <div className="container">
           <h2 className="fw-bold text-center mb-5">Types of Municipal Bills You Can Pay</h2>
+          <p className='text-center fs-5 text-theme'>Expand your digital services by offering municipal bill payments to your community:</p>
           <div className="row g-4">
             {services.map((service, i) => (
               <div className="col-md-4" key={i}>
                 <div className="bg-light p-4 text-center rounded-4 shadow-sm h-100">
-                  <div className="text-theme fs-2 mb-3">{service.icon}</div>
+<h6 className='text-theme fs-2'>{service.icon}</h6>
                   <h6>{service.title}</h6>
                 </div>
               </div>
@@ -167,6 +144,27 @@ const FAQMunicipality = () => {
           </div>
         </div>
       </section>
+
+<section>
+   <div className="container">
+          <h2 className="fw-bold mb-4 text-center">Supported Municipal Corporations</h2>
+          <p className='fs-5 text-center'>
+           We support municipal bill payments across major city and district boards, including:
+
+          </p>
+          <div className="row justify-content-center">
+            {support.map((support, i) => (
+              <div key={i} className="col-md-4 mb-3">
+                <div className="text-white p-3 rounded shadow-sm fs-5 primary-bg">
+                  {support}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
 
       {/* Steps Section */}
       <section className="py-5 bg-light">
@@ -184,6 +182,49 @@ const FAQMunicipality = () => {
           </div>
         </div>
       </section>
+
+
+
+ <section className="py-5 bg-light">
+        <div className="container">
+          <h2 className="fw-bold text-center mb-5">Why Use Our Software for Municipal Payments?</h2>
+          <div className="row g-4">
+            {munfeatures.map((feature, i) => (
+              <div key={i} className="col-md-4">
+                <div className="bg-white p-4 rounded-4 shadow-sm text-center h-100">
+ <h5 className="fw-semibold text-theme fs-2">{feature.icon}</h5>
+                  <h5 className="fw-semibold text-theme">{feature.title}</h5>
+                  <p className="text-muted small">{feature.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+
+<section>
+   <div className="container">
+          <h2 className="fw-bold mb-4 text-center">For Retailers & Digital Entrepreneurs
+</h2>
+          <p className='fs-5 text-center'>
+           Expand your digital services by offering municipal bill payments to your community:
+
+          </p>
+          <div className="row justify-content-center">
+            {retailer.map((retailer, i) => (
+              <div key={i} className="col-md-4 mb-3">
+                <div className="text-white p-3 rounded shadow-sm fs-5 primary-bg">
+                  {retailer}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
 
       {/* FAQ Section */}
       <section className="py-5">
@@ -208,9 +249,10 @@ const FAQMunicipality = () => {
       {/* CTA Section */}
       <section className="py-5 text-center grediant-bg2 text-white mb-3">
         <div className="container">
-          <h2 className="display-5 fw-bold mb-3">Make Civic Payments Simple & Stress-Free</h2>
+          <h2 className="display-5 fw-bold mb-3 text-white">Make Civic Payments Simple & Stress-Free</h2>
           <p className="lead col-lg-8 mx-auto mb-4">
-            Pay your civic dues without queues. Fast, secure, and available 24x7 — whether you're a resident or a service partner.
+           Whether you're a resident or a digital retailer, our platform helps you manage all your civic dues from one trusted platform—quickly, securely, and without delay.
+
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
             <button className="btn btn-light text-theme fw-bold px-4 py-2">Pay Municipal Bill Now</button>

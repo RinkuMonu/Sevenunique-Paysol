@@ -24,13 +24,13 @@ const Landline = () => {
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#872D67"}}>Effortless Landline Bill Settlement</h2>
+            <h2 className="fw-bold text-orange"> Landline Bill Pay with Sevenunique BBPS </h2>
             <h3>
-              Streamline Your Communications with Landline Bill Payment.
+              Use the BBPS service to pay BSNL & MTNL landline bills instantly.
             </h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="images/landline.png"
+                src="/assets/Home/landline-vec.png"
                 alt="Image"
                 height="300"
                 className="item-center"
@@ -44,7 +44,7 @@ const Landline = () => {
               className="p-4 rounded bg-white shadow"
               style={{ maxWidth: "500px", margin: "0 auto" }}
             >
-              <h3 className="mb-4" style={{color:"#872D67",fontWeight:"bold"}}>Online Landline Bill Payment</h3>
+              <h3 className="mb-4 text-orange fw-bold">Online Landline Bill Payment</h3>
               <Form>
                 <Form.Group className="mb-3" controlId="operator">
                   <div className="d-flex justify-content-between align-items-center">
@@ -79,7 +79,7 @@ const Landline = () => {
                   variant="primary"
                   type="submit"
                   className="w-100"
-                  style={{ backgroundColor: '#872D67', color: 'white' }}
+                  style={{ backgroundColor: '#b53008', color: 'white' }}
                   disabled={!isFormValid}
                 >
                   Confirm

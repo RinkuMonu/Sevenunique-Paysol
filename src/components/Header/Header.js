@@ -27,10 +27,10 @@ export default function Header({ onLoginClick }) {
         <>
             <header id="site-header" className="header">
                 <div id="header-wrap">
-                    <div className="container-fluid">
-                        <div className="row">
+                    <div className="container-fluid px-0">
+                        <div className="row ">
                             <div className="col">
-                                <nav className="navbar navbar-expand-lg justify-content-lg-between px-4">
+                                <nav className="navbar navbar-expand-lg justify-content-lg-between px-4 py-1">
                                     <Link className="navbar-brand logo" to={"/"}>
                                         <img
                                             className="img-fluid"

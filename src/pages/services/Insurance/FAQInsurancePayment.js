@@ -11,7 +11,17 @@ import {
   FaMoneyBillWave,
   FaUserTie,
   FaReceipt,
+  FaQuestion
 } from "react-icons/fa";
+
+import { FaHandshake } from "react-icons/fa6";
+import { MdMoneyOff } from "react-icons/md";
+
+
+
+
+
+
 
 const insuranceTypes = [
   "Life Insurance",
@@ -32,10 +42,11 @@ const insuranceProviders = [
   "Star Health Insurance",
   "Bajaj Allianz",
   "Future Generali",
+  "and many more",
 ];
 
 const insuranceSteps = [
-  "Go to the Bill Payment section on the ABDKS app or website.",
+  "Go to the Bill Payment section on the app or website.",
   "Select Insurance as the bill category.",
   "Choose your insurance provider from the list.",
   "Enter your policy number or customer ID.",
@@ -48,69 +59,75 @@ const insuranceBenefits = [
   {
     icon: <FaClock />,
     title: "24x7 Payment Availability",
-    desc: "Pay anytime — day or night — even on holidays.",
+    desc: "Pay anytime, even during non-banking hours.",
   },
   {
     icon: <FaReceipt />,
     title: "Instant Policy Updates",
-    desc: "Premiums updated in real time with receipts.",
+    desc: "No delays in premium acknowledgment",
   },
   {
     icon: <FaShieldAlt />,
     title: "Safe & Encrypted",
-    desc: "Fully compliant with RBI and data security norms.",
+    desc: "RBI-authorized, secure payment gateways",
   },
   {
     icon: <FaMoneyBillWave />,
     title: "Multiple Payment Modes",
-    desc: "Supports UPI, card, wallet, and internet banking.",
+    desc: "UPI, debit/credit card, wallet, net banking supported",
   },
   {
     icon: <FaUmbrella />,
-    title: "Covers All Insurers",
-    desc: "Government & private insurance providers supported.",
+    title: "Wide Insurer Network",
+    desc: "Covers all major insurance providers",
   },
   {
     icon: <FaMobileAlt />,
-    title: "User-Friendly Platform",
-    desc: "Easy to use for users and service partners alike.",
+    title: "User-Friendly Interface",
+    desc: "Easy to use for both individual users and retailers",
   },
 ];
+
 
 const insuranceRetailerInfo = [
   {
     icon: <FaUserTie />,
-    title: "Add Value to Your Shop",
-    desc: "Offer insurance services and attract more footfall.",
+    title: "Attract more customers with value-added services",
   },
   {
     icon: <FaMoneyBillWave />,
-    title: "Earn Commission",
-    desc: "Get paid for every premium processed.",
+    title: "Earn commissions on every insurance premium paid",
   },
   {
+    icon: <FaHandshake />,
+    title: "Support your community by simplifying policy renewals",
+  },
+{
     icon: <FaReceipt />,
-    title: "Full Tracking",
-    desc: "Real-time updates and receipts for every payment.",
+    title: "Get full transaction tracking and real-time reporting",
+  },
+  {
+    icon: <MdMoneyOff />,
+    title: "Expand your fintech service portfolio with zero investment",
   },
 ];
 
 const insuranceFAQs = [
   {
     title: "Can I pay premiums for LIC and private insurers?",
-    content: "Yes, we support both government (like LIC) and private insurers.",
+    content: "Yes, we support both government and private insurance providers.",
   },
   {
     title: "How fast is the payment processed?",
-    content: "Payments are completed instantly and updated in real-time.",
+    content: "Payments are processed instantly and updated against the policy in real time.",
   },
   {
-    title: "Can I pay for someone else’s insurance?",
-    content: "Yes, just enter their policy number or customer ID.",
+    title: "Can I pay for another person’s insurance?",
+    content: "Yes. You just need the correct policy number or customer ID.",
   },
   {
-    title: "Are there any extra charges?",
-    content: "No, we do not charge any additional service fees.",
+    title: "Are there extra charges for insurance payments?",
+    content: "No, Sevenunique does not charge additional service fees for standard insurance premium payments.",
   },
 ];
 
@@ -130,16 +147,15 @@ const FAQInsurancePayment = () => {
     };
   }, []);
 
-  
   return (
     <>
     
        {/* Hero Section */}
       <section className="py-5  text-center">
         <div className="container">
-          <h1 className="display-5 fw-bold">Insurance Premium Payments Simplified</h1>
+          <h1 className="display-5 fw-bold">One Platform for All Your Insurance Payment Needs</h1>
           <p className="lead mt-3">
-            One secure platform for all your life, health, motor, and other insurance needs.
+            We offer a fast, reliable, and secure solution to pay your insurance premiums online. Whether you’re paying for life, health, or vehicle insurance, our platform is designed to help you make payments effortlessly — with instant confirmation and support for leading insurers in India.
           </p>
         </div>
       </section>
@@ -147,7 +163,7 @@ const FAQInsurancePayment = () => {
       {/* Payment Steps */}
       <section className="py-5 bg-light">
         <div className="container">
-          <h2 className="text-center fw-bold mb-5">How to Pay Insurance Premiums</h2>
+          <h2 className="text-center fw-bold mb-5">How to Pay Insurance Premiums Online with our platform</h2>
           <div className="row g-4">
             {insuranceSteps.map((step, i) => (
               <div key={i} className="col-md-6">
@@ -165,6 +181,7 @@ const FAQInsurancePayment = () => {
       <section className="py-5 text-center">
         <div className="container">
           <h2 className="fw-bold mb-4">Types of Insurance Supported</h2>
+          <p>Using our platform, you can pay premiums for:</p>
           <div className="row justify-content-center">
             {insuranceTypes.map((type, i) => (
               <div key={i} className="col-md-4 mb-3">
@@ -178,7 +195,8 @@ const FAQInsurancePayment = () => {
       {/* Providers */}
       <section className="py-5 bg-light">
         <div className="container text-center">
-          <h2 className="fw-bold mb-4">Top Insurance Companies We Support</h2>
+          <h2 className="fw-bold mb-4 text-theme">Insurance Providers Supported</h2>
+          <p>We support payments to major insurance companies including:</p>
           <div className="row justify-content-center">
             {insuranceProviders.map((provider, i) => (
               <div key={i} className="col-md-4 mb-3">
@@ -192,7 +210,7 @@ const FAQInsurancePayment = () => {
       {/* Benefits */}
       <section className="py-5">
         <div className="container">
-          <h2 className="text-center fw-bold mb-5">Why Use ABDKS for Insurance Payments?</h2>
+          <h2 className="text-center fw-bold mb-5">Key Features</h2>
           <div className="row g-4">
             {insuranceBenefits.map((item, i) => (
               <div key={i} className="col-md-4">
@@ -210,9 +228,10 @@ const FAQInsurancePayment = () => {
       {/* For Retailers */}
       <section className="py-5 bg-light text-center">
         <div className="container">
-          <h2 className="fw-bold mb-4">Retailers & Service Centers</h2>
+          <h2 className="fw-bold mb-4">Benefits for Retailers & Digital Service Centers
+</h2>
           <p className="lead mb-5">
-            Provide insurance premium payment services and grow your digital offerings.
+            Offer insurance payment services at your shop and:
           </p>
           <div className="row g-4">
             {insuranceRetailerInfo.map((info, i) => (
@@ -220,7 +239,7 @@ const FAQInsurancePayment = () => {
                 <div className="bg-white p-4 rounded-4 shadow-sm h-100">
                   <div className="text-theme fs-2 mb-3">{info.icon}</div>
                   <h5>{info.title}</h5>
-                  <p className="small text-muted">{info.desc}</p>
+
                 </div>
               </div>
             ))}
@@ -246,7 +265,10 @@ const FAQInsurancePayment = () => {
               {insuranceFAQs.map((faq, i) => (
                 <div key={i} className="col-md-6 mb-4">
                   <div className="p-3 bg-white rounded shadow-sm border h-100">
-                    <h5 className="fw-bold">{faq.title}</h5>
+                   <h5 className="fw-bold">
+                                        <FaQuestion className="me-2 text-theme" />
+                                        {faq.title}
+                                      </h5>
                     <p className="text-muted small">{faq.content}</p>
                   </div>
                 </div>
@@ -259,9 +281,9 @@ const FAQInsurancePayment = () => {
       {/* CTA */}
       <section className="py-5 grediant-bg2 mb-3 text-white text-center">
         <div className="container">
-          <h2 className="display-5 fw-bold mb-3 text-white">Pay Your Insurance Premium Easily</h2>
+          <h2 className="display-5 fw-bold mb-3 text-white">Pay Insurance Premiums Easily with our platform.</h2>
           <p className="lead col-lg-8 mx-auto mb-4">
-            No delays, no hassles. Use ABDKS to stay on top of your insurance renewals.
+            Never miss a renewal again. Whether you're paying for yourself or assisting customers, our platform makes insurance payments smooth, secure, and on time.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
             <button className="btn btn-light text-theme fw-bold px-4 py-2">Pay Insurance Now</button>

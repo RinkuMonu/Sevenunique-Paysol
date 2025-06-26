@@ -33,12 +33,12 @@ function PageContent() {
                             <div className="theme-title mb-4">
                                 <h6>About Us</h6>
                                 <h2>
-                                    The Fastest Way to Grow Your Digital Business in India
+                                    Fast BBPS recharge solution to provide Your digital business in India
                                 </h2>
                                 <p>
-                                    Founded in 2024, ABDKS is a Jaipur-based fintech company revolutionizing the way retailers and merchants deliver digital financial services. We specialize in instant mobile recharges, BBPS utility bill payments, and card-based transactions — enabling businesses to grow faster and smarter.
+                                    Sevenunique  is a Jaipur-based fintech platform that is changing how retail vendors have distributed the BBPS biller recharge system. We offer a fast DTH recharge BBPS platform, prepaid and postpaid recharge BBPS, and seamless utility bill payment software to empower traders to operate smartly.
                                     <br></br>
-                                    We are committed to building the next generation of secure, scalable, and user-friendly financial services across India.
+                                    We are dedicated to the creation of BBPS solutions with secure, scalable and intuitive BBPS solutions for digital financial development all over India.
                                 </p>
                             </div>
                             <div className="row">
@@ -54,7 +54,7 @@ function PageContent() {
                                 <div className="col-sm-6 mb-3">
                                     <ul className="list-unstyled list-icon style-1">
                                         <li>
-                                            <i className="bi bi-check2"></i> Trusted by 1000+ Retailers Across Jaipur
+                                            <i className="bi bi-check2"></i> Trusted by 1000+ Retailers
                                         </li>
                                     </ul>
                                 </div>
@@ -186,14 +186,64 @@ function PageContent() {
                 </div>
             </section>
             <section>
-                <div className="container">
+
+
+
+
+<section>
+     <div
+            className="p-5 h-100 d-flex flex-column justify-content-center align-items-center text-center text-white mx-5 rounded shadow-lg"
+            style={{ backgroundColor: "rgb(202, 110, 68)" }}
+          >
+            <div className="container">
+              <h1 className="fw-bold text-white mb-3 fs-3 fs-md-1">
+                Empowering Jaipur's Retailers with Seamless Digital Payments
+              </h1>
+
+              <p className="fs-6 fs-md-5 mb-4">
+                Recharge, Pay Bills & Earn Commissions with One Powerful
+                Platform in India
+              </p>
+
+              <div className="d-grid gap-3 d-md-flex justify-content-center">
+                <a
+                  href="/ContactUs"
+                  className="btn text-white btn-lg px-4 primary-bg fs-6"
+                >
+                  Start Your Digital Business
+                </a>
+                <a
+                  href="/ContactUs"
+                  className="btn btn-light btn-lg text-theme px-4 fs-6"
+                >
+                  Become a Retail Partner
+                </a>
+              </div>
+
+              <p className="mt-4 fs-6 text-light">
+                Fast. Secure. Scalable. Trusted by 1000+ Retailers Across
+                Rajasthan.
+              </p>
+            </div>
+          </div>
+</section>
+
+
+
+
+
+
+
+
+                <div className="container mt-5">
                     <div className="row">
                         <div className="col-lg-5">
                             <div className="theme-title">
-                                <h6 className="fz40">Our Core Fintech Services in Jaipur
+                                <h6 className="fz40">Our Core Fintech Services in India
                                 </h6>
                                 <p>
-                                    Services that we offer to our clients at a glance. We have earned 3+ years of expertise in  services. You just need to tell us about your requirements, we will strictly take care of that. You are just one click away!! Start your own business with Sevenunique  services and provide Recharge and Bill Payment (BBPS) to your customers.
+                                    Services that we offer to our clients at a glance. We have earned 3+ years of expertise in services. You just need to tell us about your requirements, we will strictly take care of that. You are just one click away!! Start your own business with Sevenunique services and provide Recharge and Bill Payment (BBPS) to your customers.
+
                                 </p>
                             </div>
                             <img className="img-fluid" src="/assets/Home/SERVICE2.svg" alt="about" />
@@ -209,10 +259,12 @@ function PageContent() {
                                             </div>
                                             <div className="service-desc">
                                                 <div className="service-title">
-                                                    <h4>Mobile Recharge in Jaipur</h4>
+                                                    <h4>Prepaid & Postpaid Recharge BBPS
+</h4>
                                                 </div>
                                                 <p>
-                                                    Fast recharges for all telecom providers with instant confirmation.
+                                                    Fast mobile recharge solutions for all telecom providers with real-time confirmation.
+
 
                                                 </p>
                                                 <a className="arrow-btn" href="#">
@@ -232,10 +284,12 @@ function PageContent() {
                                             </div>
                                             <div className="service-desc">
                                                 <div className="service-title">
-                                                    <h4>DTH Recharge Jaipur</h4>
+                                                    <h4>DTH Recharge BBPS Platform
+</h4>
                                                 </div>
                                                 <p>
-                                                    Recharge any major DTH provider quickly and securely.
+                                                    Recharge all major DTH services instantly using our secure BBPS-powered platform.
+
                                                 </p>
                                                 <a className="arrow-btn" href="#">
                                                     <i className="bi bi-arrow-up-right"></i>
@@ -254,10 +308,10 @@ function PageContent() {
                                             </div>
                                             <div className="service-desc">
                                                 <div className="service-title">
-                                                    <h4>BBPS Bill Payments Rajasthan</h4>
+                                                    <h4>BBPS Utility Bill Payments in Rajasthan</h4>
                                                 </div>
                                                 <p>
-                                                    Pay electricity, gas, water, insurance, and other bills with ease.
+                                                     Pay electricity, gas, water, insurance, and broadband bills through our unified BBPS system.
                                                 </p>
                                                 <a className="arrow-btn" href="#">
                                                     <i className="bi bi-arrow-up-right"></i>
@@ -276,10 +330,11 @@ function PageContent() {
                                             </div>
                                             <div className="service-desc">
                                                 <div className="service-title">
-                                                    <h4>Credit Card Swipe for Local Shops</h4>
+                                                    <h4>Card Swipe Solutions for Local Retailers</h4>
                                                 </div>
                                                 <p>
-                                                    Accept card payments from customers with fast settlements.
+                                                     Accept secure card payments with fast settlements and simplified merchant onboarding.
+
                                                 </p>
                                                 <a className="arrow-btn" href="#">
                                                     <i className="bi bi-arrow-up-right"></i>
@@ -298,10 +353,10 @@ function PageContent() {
                                             </div>
                                             <div className="service-desc">
                                                 <div className="service-title">
-                                                    <h4>Utility Bill Payment in Jaipur</h4>
+                                                    <h4>Utility Bill Payment Software</h4>
                                                 </div>
                                                 <p>
-                                                    Simplified utility payments through credit/debit cards and UPI.
+                                                    Offer customers seamless bill payment via debit cards, credit cards, and UPI – powered by BBPS.
                                                 </p>
                                                 <a className="arrow-btn" href="#">
                                                     <i className="bi bi-arrow-up-right"></i>

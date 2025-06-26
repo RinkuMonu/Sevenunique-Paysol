@@ -7,6 +7,7 @@ import {
   FaLock,
   FaWallet,
   FaMobileAlt,
+   FaQuestion
 } from "react-icons/fa";
 
 const emiTypes = [
@@ -53,33 +54,34 @@ const emiBenefits = [
   {
     icon: <FaClock />,
     title: "24x7 Access",
-    desc: "Pay EMIs anytime, even on holidays.",
+    desc: "Pay EMIs anytime, even during holidays.",
   },
   {
     icon: <FaLock />,
     title: "Secure Transactions",
-    desc: "RBI-compliant, encrypted EMI processing.",
+    desc: "Encrypted and compliant with banking regulations",
   },
   {
     icon: <FaWallet />,
     title: "Multiple Payment Modes",
-    desc: "Use UPI, cards, wallets, or net banking.",
+    desc: "Choose what suits you best",
   },
   {
     icon: <FaUniversity />,
-    title: "Support for All Major Lenders",
+    title: "Supports All Major NBFCs & Lenders",
     desc: "Works with NBFCs, fintechs & banks.",
   },
   {
     icon: <FaMobileAlt />,
     title: "Mobile-Friendly Interface",
-    desc: "Smooth experience across devices.",
+    desc: "Recharge on-the-go from your smartphone",
   },
 ];
 
+
 const emiFAQs = [
   {
-    title: "Can I pay EMI for any NBFC or bank through ABDKS?",
+    title: "Can I pay EMI for any NBFC or bank through SevenUnique?",
     content:
       "We support most major NBFCs and banks. You can check the partner list in the portal.",
   },
@@ -94,11 +96,29 @@ const emiFAQs = [
       "Yes. Just enter their valid account/loan number or registered mobile number.",
   },
   {
-    title: "Is there any extra charge for using ABDKS?",
+    title: "Is there any extra charge for using SevenUnique?",
     content:
       "No additional service charge is applied for standard EMI payments.",
   },
 ];
+
+const retailer = [
+"Serve more customers who need to pay monthly EMIs",
+"Earn commissions on every EMI transaction",
+"Easy setup via our dashboard",
+"Real-time reports and support",
+"Increase footfall and income with high-demand utility services",
+]
+
+
+const emisteps = [
+"1 . Visit the EMI Payment section on the website or mobile app",
+"2 . Select the financial institution or NBFC",
+"3 . Enter your loan/account number or mobile number",
+"4 . View the outstanding EMI and due date (auto-fetched)",
+"5 . Proceed to pay via UPI, debit/credit card, wallet, or net banking",
+"6 . Receive instant payment confirmation and digital receipt",
+]
 
 
 const FAQLoanEMIPayments = () => {
@@ -125,9 +145,14 @@ const FAQLoanEMIPayments = () => {
       {/* Hero Section */}
       <section className="py-5 text-center">
         <div className="container">
-          <h1 className="display-5 fw-bold">Online EMI Payments</h1>
+          <h1 className="display-5 fw-bold">Discover the ultimate solution for managing all your EMI payments
+</h1>
           <p className="mt-3 fs-6">
-            Pay Your Loan EMIs Online Quickly, Securely & Hassle-Free with ABDKS
+            Now, you can effortlessly pay your loan EMIs from the comfort of your home or at your nearest digital service point. Whether you have a personal loan, vehicle loan, home loan, or consumer durable loan, we guarantee secure, instant, and reliable EMI transactions with all major NBFCs and banks.
+            <br />
+
+Say goodbye to missed due dates, long lines, and payment delays. With our platform, your EMI payments are just a few clicks away!
+
           </p>
         </div>
       </section>
@@ -155,6 +180,7 @@ const FAQLoanEMIPayments = () => {
       <section className="py-5 text-center">
         <div className="container">
           <h2 className="fw-bold mb-4">Supported Loan Types</h2>
+          <p>You can pay EMIs for:</p>
           <div className="row justify-content-center">
             {emiTypes.map((type, idx) => (
               <div key={idx} className="col-md-4 mb-3">
@@ -170,7 +196,10 @@ const FAQLoanEMIPayments = () => {
       {/* Partner NBFCs */}
       <section className="py-5 bg-light text-center">
         <div className="container">
-          <h2 className="fw-bold mb-4">Partnered NBFCs & Banks</h2>
+          <h2 className="fw-bold mb-4">Partnered NBFCs & Banks
+</h2>
+<p>Our platform supports EMI collections for leading financial institutions like:
+</p>
           <div className="row justify-content-center">
             {emiPartners.map((partner, idx) => (
               <div key={idx} className="col-md-4 mb-3">
@@ -183,11 +212,35 @@ const FAQLoanEMIPayments = () => {
         </div>
       </section>
 
+
+
+
+<section>
+   <div className="container">
+          <h2 className="fw-bold mb-4 text-center">How to Pay EMI Online via  our platform</h2>
+
+
+          <div className="row justify-content-center">
+            {emisteps.map((emisteps, i) => (
+              <div key={i} className="col-md-4 mb-3">
+                <div className="text-white p-3 rounded shadow-sm fs-5 primary-bg h-100">
+                  {emisteps}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+
+
       {/* Benefits */}
       <section className="py-5">
         <div className="container">
           <h2 className="fw-bold text-center mb-5">
-            Features & Benefits of EMI Payment via ABDKS
+           Features & Benefits
+
           </h2>
           <div className="row g-4">
             {emiBenefits.map((b, i) => (
@@ -202,6 +255,32 @@ const FAQLoanEMIPayments = () => {
           </div>
         </div>
       </section>
+
+
+
+
+      <section>
+   <div className="container">
+          <h2 className="fw-bold mb-4 text-center">For Retailers & Agents
+</h2>
+          <p className='fs-5 text-center'>
+           Expand your fintech offerings by adding EMI payment services through our platform :
+
+
+          </p>
+          <div className="row justify-content-center">
+            {retailer.map((retailer, i) => (
+              <div key={i} className="col-md-4 mb-3">
+                <div className="text-white p-3 rounded shadow-sm fs-5 primary-bg h-100">
+                  {retailer}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
 
       {/* FAQs */}
       <section className="py-5 bg-light">
@@ -221,7 +300,10 @@ const FAQLoanEMIPayments = () => {
               {emiFAQs.map((faq, i) => (
                 <div key={i} className="col-md-6 mb-4">
                   <div className="p-3 border rounded shadow-sm bg-white h-100">
-                    <h5 className="fw-bold">{faq.title}</h5>
+                     <h5 className="fw-bold">
+                                          <FaQuestion className="me-2 text-theme" />
+                                          {faq.title}
+                                        </h5>
                     <p className="text-muted small">{faq.content}</p>
                   </div>
                 </div>
@@ -234,9 +316,10 @@ const FAQLoanEMIPayments = () => {
       {/* CTA */}
       <section className="grediant-bg2 text-white py-5 text-center mb-3">
         <div className="container">
-          <h2 className="display-5 fw-bold mb-3 text-white">Stay On Track with Your EMI Payments</h2>
+          <h2 className="display-5 fw-bold mb-3 text-white">Stay On Track with Your EMI Payments
+</h2>
           <p className="lead col-lg-8 mx-auto mb-4">
-            Avoid late fees and maintain a good credit score by paying EMIs on time — powered by ABDKS.
+            Avoid late fees and maintain a good credit score by paying EMIs on time — powered by SevenUnique.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
             <button className="btn btn-light text-theme fw-bold px-4 py-2">

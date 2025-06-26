@@ -1,11 +1,17 @@
 import React from "react";
 import "./styles/ourpartner.css";
-import { FaCheckCircle, FaHandshake, FaMobileAlt, FaUniversity, FaChartLine } from "react-icons/fa";
-import { 
-  CheckCircle, 
-  HandHeart, 
-  Smartphone, 
-  Building, 
+import {
+  FaCheckCircle,
+  FaHandshake,
+  FaMobileAlt,
+  FaUniversity,
+  FaChartLine,
+} from "react-icons/fa";
+import {
+  CheckCircle,
+  HandHeart,
+  Smartphone,
+  Building,
   TrendingUp,
   Shield,
   Clock,
@@ -13,66 +19,83 @@ import {
   Zap,
   Globe,
   Star,
-  Award
-} from 'lucide-react';
+  Award,
+} from "lucide-react";
 
 const benefits = [
   {
     icon: TrendingUp,
-    title: "Recurring Income",
-    description: "Earn ongoing commissions on recharges, bill payments, and financial transactions with competitive rates."
+    title: "Earn recurring income",
+    description:
+      "Get commission on every recharge, bill payment, AEPS, BBPS, and financial transaction.",
   },
   {
     icon: Zap,
     title: "Easy Setup",
-    description: "Start with just a smartphone and internet connection - no complex requirements or technical expertise needed."
+    description:
+      "Start with just one smartphone and an internet connection. No technical expertise is required.",
   },
   {
     icon: Shield,
-    title: "Trusted Platform",
-    description: "RBI and NPCI-approved systems including BBPS and AEPS for maximum security and compliance."
+    title: "Reliable and approved platform",
+    description:
+      "Work on BBPS and AEPS, such as the RBI- and NPCI-regulated system.",
   },
   {
     icon: Globe,
-    title: "Digital Tools",
-    description: "Intuitive dashboard and comprehensive transaction management system with real-time reporting."
+    title: "Smart digital tools",
+    description:
+      "Use our spontaneous dashboard to manage transactions, commissions and reports.",
   },
   {
     icon: Clock,
-    title: "24x7 Support",
-    description: "Dedicated assistance from our experienced Jaipur-based support team whenever you need help."
-  }
+    title: "24x7 partner support",
+    description:
+      "Get dedicated assistance from our experienced Jaipur-based support team.",
+  },
 ];
 
 const partnershipModels = [
   {
     icon: Smartphone,
     title: "Retail Partner",
-    description: "Offer services directly to customers and earn attractive commissions on every transaction.",
- 
+    description:
+      " Offer services directly to end users and earn commission on every transaction.",
   },
   {
     icon: Users,
     title: "Distributor",
-    description: "Build and manage a network of retailers while earning from their activities.",
-
+    description:
+      "Build your own network of SevenUnique retailers and earn on each of their transactions.",
   },
   {
     icon: Building,
     title: "API Partner",
-    description: "Integrate our comprehensive services into your existing platform or application.",
- 
-  }
+    description:
+      "Integrate SevenUnique BBPS and AEPS services into your own app or platform.",
+  },
 ];
 
 const whoCanPartner = [
-  "Retailers", "Cyber Café Owners", "Jan Seva Kendra Operators", "Kirana Store Owners",
-  "Recharge Shops", "Small Business Owners", "First-time Entrepreneurs", "NGOs and Village Service Centers",
+  "Retailers",
+  "Cyber Café Owners",
+  "Jan Seva Kendra Operators",
+  "Kirana Store Owners",
+  "Recharge Shops",
+  "Small Business Owners",
+  "First-time Entrepreneurs",
+  "NGOs and Village Service Centers",
 ];
 
 const servicesOffered = [
-  "Mobile & DTH Recharge", "Utility Bill Payments", "Postpaid Bill Collection",
-  "Credit Card Payments", "AEPS Services", "Micro ATM Services", "Insurance Assistance", "PAN Card Services"
+  "Mobile & DTH Recharge",
+  "Utility Bill Payments",
+  "Postpaid Bill Collection",
+  "Credit Card Payments",
+  "AEPS Services",
+  "Micro ATM Services",
+  "Insurance Assistance",
+  "PAN Card Services",
 ];
 
 const banks = ["ICICI Bank", "Yes Bank", "Axis Bank", "PayU", "NSDL"];
@@ -81,11 +104,169 @@ const OurPartener = () => {
     <div>
       <section className="page-title  border-0">
         <img
-          src="/images/PARTNERS.svg"
+          src="/assets/Home/partner-banner.jpg"
           alt="Contact Us"
           className="full-width-image"
         />
       </section>
+
+
+
+
+      <section className="container py-5">
+        <div className="text-center mb-5">
+          <h2 className="fw-bold">Our Partners</h2>
+          <p className="lead text-theme fw-bold">
+            Together, we are building India's digital future
+          </p>
+          <p className="text-muted">
+            At SevenUnique Solutions Private Limited, our company is at the
+            heart of our development. From local shopkeepers in Jaipur to
+            distributors across Rajasthan, our success is driven by thousands of
+            committed entrepreneurs who deliver BBPS, AEPS, recharge, and
+            financial services to communities across India.
+            <br />
+            We believe in partnerships that create long-term value, create
+            faith, and bring digital empowerment to the last mile.
+          </p>
+        </div>
+
+        <section className="py-5">
+          <div className="container py-4">
+            <div className="text-center mb-5">
+              <h2 className="display-5 fw-bold text-dark mb-3">
+                Why partner with SevenUnique?
+              </h2>
+              {/* <div className="section-divider"></div>
+            <p className="lead text-muted col-lg-8 mx-auto">
+              Join thousands of successful partners who are transforming their communities through digital services
+            </p> */}
+            </div>
+
+            <div className="row g-4">
+              {benefits.map((benefit, index) => (
+                <div key={index} className="col-lg-4  col-md-6">
+                  <div className="card card-hover  h-100 p-4 shadow-lg">
+                    <div className="card-body text-center">
+                      <div className=" grediant-bg2 w-25 rounded p-2 mx-auto">
+                        <benefit.icon size={28} className="text-white" />
+                      </div>
+                      <h4 className="fw-bold text-dark mb-3 pt-3">
+                        {benefit.title}
+                      </h4>
+                      <p className="text-muted mb-0">{benefit.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Partnership Models */}
+        <section className="py-5 bg-light">
+          <div className="container py-4">
+            <div className="text-center mb-5">
+              <h2 className="display-5 fw-bold text-dark mb-3">
+                Partnership Models Available
+              </h2>
+              <div className="section-divider"></div>
+              {/* <p className="lead text-muted">Choose the model that best fits your business goals</p> */}
+            </div>
+
+            <div className="row g-4">
+              {partnershipModels.map((model, index) => (
+                <div key={index} className="col-lg-4 col-md-6">
+                  <div className="card card-hover h-100 overflow-hidden">
+                    <div className="grediant-bg2 text-white text-center py-5">
+                      <model.icon size={48} className="mb-3" />
+                      <h3 className="text-white fw-bold mb-0">{model.title}</h3>
+                    </div>
+                    <div className="card-body p-4">
+                      <p className="text-muted mb-0 fs-6">
+                        {model.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Who Can Partner & Services */}
+        <section className="py-5">
+          <div className="container py-4">
+            <div className="row g-5">
+              <div className="col-lg-6">
+                <h5 className="display-6 fw-bold text-dark mb-4">
+                  Who Can Become a Partner?
+                </h5>
+                <p className="lead text-muted mb-4 fs-6">
+                  Our network is open to someone to start or expand the digital
+                  service business. ideal for: Retail shop owner || Cyber ​​Cafe
+                  Operator || Public service center agent ||Kiran &Grocery Shop
+                  Recharge and mobile shops || Small business owner || First
+                  time entrepreneur Village-level NGOs & Rural Service Centers
+                  No prior experience is necessary - just a reliable Fintech's
+                  desire to grow with the brand.
+                </p>
+                <div className="d-flex flex-wrap gap-2">
+                  {whoCanPartner.map((role, index) => (
+                    <span
+                      key={index}
+                      className="primary-bg rounded-pill text-white  px-3 py-2"
+                    >
+                      {role}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="col-lg-6">
+                <h5 className="display-6 fw-bold text-dark mb-4">
+                  What Services Can You Offer as Our Partner
+                </h5>
+                <p className="lead text-muted mb-4 fs-6">
+                  With SevenUnique, you gain access to a wide range of digital
+                  financial services, including: || Mobile Recharge & Postpaid
+                  Bill Payment || DTH Recharge BBPS Platform BBPS Utility Bill
+                  Payments || Credit Card Bill Collection AEPS Services || Micro
+                  ATM Services || PAN Card Application & Correction || Life,
+                  Health, and General Insurance Services All services can be
+                  accessed via our unified platform or mobile dashboard.
+                </p>
+                <div className="d-flex flex-wrap gap-2">
+                  {servicesOffered.map((service, index) => (
+                    <span
+                      key={index}
+                      className="primary-bg rounded-pill text-white  px-3 py-2"
+                    >
+                      {service}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+      </section>
+
+
+
+<h2 className="text-center mb-4 fw-bold text-theme">
+                Our Banking & Financial Partners
+
+              </h2>
+              <h4 className="text-muted text-center">Powering Trust, Compliance & Nationwide Access</h4>
+              <p className="text-center mt-3 mx-5">
+                Our technology is supported by strategic partnerships with India’s top banks and financial service providers, ensuring compliance, scalability, and security for all BBPS and fintech operations.
+
+
+              </p>
+              <h4 className="text-muted text-center mt-5 fw-bold fs-4">We proudly collaborate with:</h4>
       <div class="page-content">
         <section class="pb0 partner">
           <div class="container">
@@ -111,143 +292,29 @@ const OurPartener = () => {
             </div>
           </div>
         </section>
-      </div>
-         
-         <section className="container py-5">
-      <div className="text-center mb-5">
-        <h2 className="fw-bold">Our Partners</h2>
-        <p className="lead">Together, We Are Building India’s Digital Future</p>
-        <p className="text-muted">
-          From local shopkeepers in Jaipur to service distributors across Rajasthan, we work with entrepreneurs bringing digital services to every corner of India.
-        </p>
+        <p className="text-center">These partnerships allow us to offer robust, real-time services across every pin code in India.
+</p>
       </div>
 
-          <section className="py-5">
-        <div className="container py-4">
-          <div className="text-center mb-5">
-            <h2 className="display-5 fw-bold text-dark mb-3">Why Partner With ABDKS?</h2>
-            <div className="section-divider"></div>
-            <p className="lead text-muted col-lg-8 mx-auto">
-              Join thousands of successful partners who are transforming their communities through digital services
-            </p>
-          </div>
-          
-          <div className="row g-4">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="col-lg-4  col-md-6">
-                <div className="card card-hover  h-100 p-4">
-                  <div className="card-body text-center">
-                    <div className=" grediant-bg2 w-25 rounded p-2 mx-auto">
-                      <benefit.icon size={28} className="text-white" />
-                    </div>
-                    <h4 className="fw-bold text-dark mb-3">{benefit.title}</h4>
-                    <p className="text-muted mb-0">{benefit.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
+
+
+
+
+      <section className="py-5 grediant-bg2 text-white text-center mb-3 mt-5">
+        <div className="container">
+          <h2 className="display-5 fw-bold mb-3 text-white">
+            Join the network that growing with you
+          </h2>
+          <p className="lead col-lg-8 mx-auto mb-4">
+           We are already related to 1000+  active retailers and distributors across Rajasthan and expanding every day. Whether you are launching your first fintech venture or scaling an existing business, SevenUnique is your entrance for the digital revolution run by BBPS.
+          </p>
+          <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+            <button className="btn btn-light text-theme fw-bold px-4 py-2">Join as a retail partner</button>
+            <button className="btn btn-light text-theme fw-bold px-4 py-2">Apply as a distributor</button>
           </div>
         </div>
       </section>
-
-
-
-      {/* Partnership Models */}
-      <section className="py-5 bg-light">
-        <div className="container py-4">
-          <div className="text-center mb-5">
-            <h2 className="display-5 fw-bold text-dark mb-3">Partnership Models Available</h2>
-            <div className="section-divider"></div>
-            <p className="lead text-muted">Choose the model that best fits your business goals</p>
-          </div>
-          
-          <div className="row g-4">
-            {partnershipModels.map((model, index) => (
-              <div key={index} className="col-lg-4 col-md-6">
-                <div className="card card-hover h-100 overflow-hidden">
-                  <div className="grediant-bg2 text-white text-center py-5">
-                    <model.icon size={48} className="mb-3" />
-                    <h3 className="fw-bold mb-0">{model.title}</h3>
-                  </div>
-                  <div className="card-body p-4">
-                    <p className="text-muted mb-0 fs-6">{model.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Who Can Partner & Services */}
-      <section className="py-5">
-        <div className="container py-4">
-          <div className="row g-5">
-            <div className="col-lg-6">
-              <h3 className="display-6 fw-bold text-dark mb-4">Who Can Become a Partner?</h3>
-              <p className="lead text-muted mb-4">
-                No prior technical experience needed — just a desire to grow your business and serve your community.
-              </p>
-              <div className="d-flex flex-wrap gap-2">
-                {whoCanPartner.map((role, index) => (
-                  <span 
-                    key={index}
-                    className="primary-bg rounded-pill text-white  px-3 py-2"
-                  >
-                    {role}
-                  </span>
-                ))}
-              </div>
-            </div>
-            
-            <div className="col-lg-6">
-              <h3 className="display-6 fw-bold text-dark mb-4">Services You Can Offer</h3>
-              <p className="lead text-muted mb-4">
-                Comprehensive suite of digital services to meet all your customers' needs.
-              </p>
-              <div className="d-flex flex-wrap gap-2">
-                {servicesOffered.map((service, index) => (
-                  <span 
-                    key={index}
-                    className="primary-bg rounded-pill text-white  px-3 py-2"
-                  >
-                    {service}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-         <section className="grediant-bg2 py-3 text-white position-relative">
-        <div className="container py-5 position-relative">
-          <div className="text-center mb-5">
-            <h2 className="display-4 text-white fw-bold mb-4">
-              Join the Network That Grows With You
-            </h2>
-            <p className="lead mb-5 col-lg-8 mx-auto">
-              Partner with ABDKS today and be part of India's digital revolution. 
-              Build a sustainable business while serving your community.
-            </p>
-            
-            <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center mb-3">
-              <button className="btn  primary-bg text-white btn-lg px-5 py-3 fw-bold">
-                <Smartphone size={20} className="me-2" />
-                Join as Retail Partner
-              </button>
-              <button className="btn border-light text-theme btn-lg px-5 py-3 fw-bold">
-                <Users size={20} className="me-2" />
-                Apply as Distributor
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-    </section>
     </div>
-  
   );
 };
 

@@ -1,57 +1,41 @@
-import React from 'react'
-import './style/Home.css'
-import PageContent from './PageContent'
-import StepsComponent from './StepsComponent'
+import React from "react";
+import "./style/Home.css";
+import PageContent from "./PageContent";
+import StepsComponent from "./StepsComponent";
 const Home = () => {
   return (
     <>
       <section className="banner overflow-hidden">
-       <div className="position-relative w-100">
-  <img
-    src="/assets/Home/bppsbg2.svg"
-    alt="Banner"
-    className="img-fluid w-100"
-    style={{ objectFit: "cover", height: "100%", minHeight: "500px" }}
-  />
-
-  <div
-    className="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-center text-white px-3"
-    style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
-  >
-    <div className="container">
-      <h1 className="fw-bold text-white mb-3 fs-3 fs-md-1">
-        Empowering Jaipur's Retailers with Seamless Digital Payments
-      </h1>
-
-      <p className="fs-6 fs-md-5 mb-4">
-        Recharge, Pay Bills & Earn Commissions with One Powerful Platform in Jaipur
-      </p>
-
-      <div className="d-grid gap-3 d-md-flex justify-content-center">
-        <a href="#" className="btn text-white btn-lg px-4 primary-bg fs-6">
-          Start Your Digital Business in Jaipur
-        </a>
-        <a href="#"className="btn btn-light btn-lg text-theme px-4 fs-6">
-          Become a Retail Partner
-        </a>
-      </div>
-
-      <p className="mt-4 fs-6 text-light">
-        Fast. Secure. Scalable. Trusted by 1000+ Retailers Across Rajasthan.
-      </p>
-    </div>
-  </div>
-</div>
-
-
-
+        <div className="position-relative w-100">
+          <img
+            src="/assets/Home/home-banner.jpg"
+            alt="Banner"
+            className="img-fluid w-100"
+            style={{ objectFit: "cover", height: "100%", minHeight: "500px" }}
+          />
+        </div>
 
         {/* SVG Animated Shape */}
         <div className="banner-shape">
-          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 288 288">
-            <linearGradient id="bannerwave" x1="70.711%" x2="0%" y1="70.711%" y2="0%">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            x="0px"
+            y="0px"
+            viewBox="0 0 288 288"
+          >
+            <linearGradient
+              id="bannerwave"
+              x1="70.711%"
+              x2="0%"
+              y1="70.711%"
+              y2="0%"
+            >
               <stop className="stop-color1" offset="0%" stopOpacity="1"></stop>
-              <stop className="stop-color2" offset="100%" stopOpacity="1"></stop>
+              <stop
+                className="stop-color2"
+                offset="100%"
+                stopOpacity="1"
+              ></stop>
             </linearGradient>
             <path fill="url(#bannerwave)">
               <animate
@@ -79,9 +63,9 @@ const Home = () => {
         </div>
       </section>
       <PageContent />
-      <StepsComponent/>
+      <StepsComponent />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

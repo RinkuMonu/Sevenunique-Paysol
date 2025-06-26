@@ -27,15 +27,21 @@ export default function StepsComponent() {
   const testimonials = [
     {
       quote:
-        "I started with ABDKS in 2024 and now handle 300+ transactions a day. Amazing support and payouts!",
+        "I started with SevenUnique in 2024, and now I handle 300 BBPS transactions daily. The stage is fast, and the support team is excellent.",
       name: "Ravi Kumar",
-      role: "Retailer – Patna",
+      role: "Retailer – Delhi",
     },
     {
       quote:
-        "BBPS integration was so simple. My customers love the instant bill payments.",
+        " BBPS recharge and utility bill payment setup was so simple. My customers love instant service.",
       name: "Neha Verma",
       role: "Shop Owner – Jaipur",
+    },
+    {
+      quote:
+        " The Android app is smooth, and the commission is more satisfied with others. SevenUnique is very satisfied.",
+      name: "Mohit Meena",
+      role: "Retail Merchant – Bihar",
     },
   ];
 
@@ -44,9 +50,9 @@ export default function StepsComponent() {
       {/* Steps Section */}
       <section className="py-5 bg-light">
         <div className="container text-center">
-          <h2 className="fw-bold display-5 mb-2">Get Started in 3 Simple Steps</h2>
+          <h4 className="fw-bold display-5 mb-2">Get Started in 3 Simple Steps</h4>
           <p className="text-muted fs-5">
-            Join as a <span className="text-theme">Jaipur Retailer</span>
+            Join as a <span className="text-theme"> Retailer</span>
           </p>
           <div className="row g-4 mt-4">
             {steps.map((step, idx) => (
@@ -70,7 +76,7 @@ export default function StepsComponent() {
       {/* Testimonials Section */}
       <section className="py-5 bg-white">
         <div className="container text-center">
-          <h2 className="fw-bold display-5 mb-5">What Our Jaipur Partners Say</h2>
+          <h4 className="fw-bold display-5 mb-5">What Our Partners Say</h4>
 
           <div className="row g-4">
             {testimonials.map((t, i) => (
@@ -94,11 +100,11 @@ export default function StepsComponent() {
       <section className="grediant-bg2 py-3 text-white position-relative mb-3">
         <div className="container py-5 position-relative">
           <div className="text-center mb-5">
-            <h2 className="display-4 text-white fw-bold mb-4">
-              Start Your Digital Journey in Jaipur with ABDKS
-            </h2>
+            <h4 className="display-4 text-white fw-bold mb-4">
+              Start Your Digital Journey with Sevenunique
+            </h4>
             <p className="lead fs-5 mb-5 col-lg-8 mx-auto">
-              Become a part of Jaipur's fastest-growing fintech network.
+              Become a part of fastest-growing fintech network.
             </p>
 
             <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center mb-3">

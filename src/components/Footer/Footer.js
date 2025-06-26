@@ -109,7 +109,7 @@ function Footer() {
           <div className="copyright">
             <div className="row align-items-center">
               <div className="col-md-12 text-center">
-                © 2024 @Sevenunique. All rights reserved.
+                © 2024 @Sevenunique Tech Solutions Private Limited. All rights reserved.
               </div>
             </div>
           </div>
@@ -119,11 +119,7 @@ function Footer() {
       {/* Dark Background */}
       <div
         className="dark-bg ht-bg-move"
-        style={{
-          transformOrigin: "50% 50%",
-          transform: "scale(0.95, 1)",
-          borderRadius: "30px",
-        }}
+
       ></div>
     </footer>
   );

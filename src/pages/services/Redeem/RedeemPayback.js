@@ -14,9 +14,15 @@ const RedeemPayback = () => {
            The Best Reward for Loyalty? Real Money.
           </h2>
           <h3>
-           Redeem Your Payback Points Instantly with ABDKS Solutions Pvt. Ltd.
-
-          </h3>
+           Redeem Your Payback Points Instantly with our platform </h3>
+           <div className="d-flex justify-content-center align-items-center">
+              <img
+                src="/assets/Home/redeem-vec.png"
+                alt="Image"
+                height="300"
+                className="item-center"
+              />
+              </div>
         </Col>
 
         {/* Right Side Content */}
@@ -27,13 +33,14 @@ const RedeemPayback = () => {
             style={{ maxWidth: "400px" }}
           >
            
-            <h3 className='fw-bold text-theme' >Login with phone number linked with PAYBACK </h3>
-            
+            <h3 className='fw-bold text-theme' >Turn your loyalty into instant savings! </h3>
+            <p>Now you can redeem your Payback Points directly through our platform. and use them for mobile recharges, utility bill payments, DTH, and more.</p>
+
       <ul className="list-unstyled mt-3">
       <li>✔ Quick Redemption Process</li>
       <li>✔ Instant Discount on Transactions</li>
       <li>✔ No Hidden Charges</li>
-      <li>✔ Works Across All ABDKS Partnered Services</li>
+      <li>✔ Available Across All our Partnered Services</li>
     </ul>
     <div className="mt-4 d-flex justify-content-center gap-3 flex-wrap">
       <a href="#check-balance" className="btn btn-light border-light  text-theme fw-semibold px-4 py-2 rounded-pill">

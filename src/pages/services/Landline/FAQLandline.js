@@ -8,90 +8,92 @@ import {
   FaLock,
   FaStore,
   FaChartLine,
+  FaClock,
+  FaWallet,
+   FaQuestion
 } from "react-icons/fa";
+import { TbArrowsCross } from "react-icons/tb";
 
 const emiSteps = [
-  "Visit the EMI Payment section on the ABDKS website or mobile app.",
-  "Select the financial institution or NBFC.",
-  "Enter your loan/account number or registered mobile number.",
-  "View your outstanding EMI amount and due date.",
-  "Proceed to pay using UPI, debit/credit card, wallet, or net banking.",
-  "Receive instant confirmation and digital receipt.",
+  "Go to the bill payment section on website or mobile app.",
+  "Select the landline as a bill category.",
+  "Enter your landline number or account ID.",
+  "The system will receive your current bill details.",
+  "Confirm the bill and pay through UPI, Debit/Credit Card, Wallet or Net Banking.",
+  "Get a quick confirmation and digital receipt.",
 ];
 
 const loanTypes = [
-  "Personal Loans",
-  "Business Loans",
-  "Home Loans",
-  "Car or Bike Loans",
-  "Consumer Durable Loans",
-  "Education Loans",
-  "Gold Loans",
-  "Digital Credit Cards (BNPL / Pay Later)",
+  "BSNL landline",
+  "MTNL (Delhi & Mumbai)",
+  "Airtel Landline",
+  "Tata Tele Services",
+  "Reliance Communications (if available)",
 ];
 
 const emiFeatures = [
   {
     icon: <FaHandHoldingUsd />,
-    title: "Instant Payment & Confirmation",
-    desc: "No delays — pay and get receipts instantly.",
+    title: "Quick status and receipts",
+    desc: "Confirm real-time payment and get auto-borne digital receipts.",
   },
   {
-    icon: <FaMobileAlt />,
-    title: "24x7 Access",
-    desc: "Make EMI payments anytime, even on holidays.",
+    icon: <FaClock />,
+    title: "24x7 bill payment access",
+    desc: " Never pay the bill including weekends and holidays.",
   },
   {
     icon: <FaLock />,
-    title: "Secure Transactions",
-    desc: "Bank-grade encryption for safe payments.",
+    title: "Safe payment option",
+    desc: " All payments are encrypted and rooted through the RBI-authorized gateway.",
   },
   {
     icon: <FaUniversity />,
-    title: "All Major Lenders Supported",
-    desc: "From Bajaj to HDFC, we cover leading NBFCs & banks.",
+    title: "Supports all major operators",
+    desc: "Pay for a personal or business landline connection.",
   },
   {
     icon: <FaMobileAlt />,
-    title: "Mobile-Friendly Design",
-    desc: "Easy-to-use UI for all smartphones.",
+    title: "Mobile-friendly design",
+    desc: "Easy navigation on mobile, tablet and desktop devices.",
   },
 ];
 
 const emiRetailerPoints = [
   {
     icon: <FaStore />,
-    title: "Serve More Customers",
-    desc: "Add high-demand EMI services to your offering.",
+    title: "Draw more walk-in customers",
   },
   {
     icon: <FaChartLine />,
-    title: "Earn Commissions",
-    desc: "Get paid on every EMI you collect.",
+    title: "Increase your earnings through utility bill services",
   },
   {
+    icon: <TbArrowsCross />,
+    title: "Easy onboarding, no technical skills require",
+  },
+   {
     icon: <FaReceipt />,
-    title: "Real-Time Dashboard",
-    desc: "Track payments and earnings with ease.",
+    title: "Real -time reports and our support via dashboard",
   },
 ];
 
 const emiFAQs = [
-  {
-    title: "Can I pay EMI for any NBFC or bank through ABDKS?",
-    content: "We support most major NBFCs and banks. You can check the partner list in the portal.",
+ {
+    title: "Which operators can I pay landline bills for?",
+    content: "Our platform supports major operators like BSNL, MTNL, Airtel, and more, depending on your region.",
   },
   {
-    title: "Do I get a receipt for my EMI payment?",
-    content: "Yes, a digital receipt is generated and sent via SMS/email immediately after payment.",
+    title: "Is there a charge to pay landline bills?",
+    content: "There are no extra charges for bill payments through our platform.",
   },
   {
-    title: "Can I pay for someone else’s loan EMI?",
-    content: "Yes. Just enter their valid account/loan number or registered mobile number.",
+    title: "How soon is the landline bill payment confirmed?",
+    content: "Usually within a few minutes. Confirmation is shown instantly and also sent via SMS/email.",
   },
   {
-    title: "Is there any extra charge for using ABDKS?",
-    content: "No additional service charge is applied for standard EMI payments.",
+    title: "Can I pay someone else's landline bill?",
+    content: "Yes, just enter their landline/account number and proceed with the payment.",
   },
 ];
 
@@ -121,9 +123,12 @@ const FAQLandline = () => {
          {/* Hero Section */}
       <section className="py-5 text-center">
         <div className="container">
-          <h1 className="display-5 fw-bold">Pay Your Loan EMIs Online Quickly & Securely</h1>
+          <h1 className="display-5 fw-bold">Stay connected with uninterrupted landline bill payment</h1>
           <p className="lead mt-3">
-            One platform to manage all your EMI payments with ABDKS.
+            Now you can pay your landline phone bills online—anywhere, anytime. Our platform supports major telecom operators across India, providing real-time bills, several payment modes, and immediate confirmation.
+            <br />
+Whether you are managing individual bills or a retailer offering services in your area, they ensure trouble-free landline bill payment with complete security.
+
           </p>
         </div>
       </section>
@@ -131,7 +136,8 @@ const FAQLandline = () => {
       {/* Steps */}
       <section className="py-5 bg-light">
         <div className="container">
-          <h2 className="text-center fw-bold mb-5">How to Pay EMIs</h2>
+          <h2 className="text-center fw-bold mb-5">How to pay online landline bills with our BBPS service
+</h2>
           <div className="row g-4">
             {emiSteps.map((step, i) => (
               <div key={i} className="col-md-6">
@@ -151,7 +157,9 @@ const FAQLandline = () => {
       {/* Supported Loan Types */}
       <section className="py-5 text-center">
         <div className="container">
-          <h2 className="fw-bold mb-4">Supported Loan Types</h2>
+          <h2 className="fw-bold mb-4">We supported the landline operator
+</h2>
+<p>Our system allows for landline bill payment.</p>
           <div className="row justify-content-center">
             {loanTypes.map((type, idx) => (
               <div key={idx} className="col-md-4 mb-3">
@@ -160,12 +168,13 @@ const FAQLandline = () => {
             ))}
           </div>
         </div>
+        <p>Coverage expands as per regional service availability.</p>
       </section>
 
       {/* Key Features */}
       <section className="py-5 bg-light">
         <div className="container">
-          <h2 className="fw-bold text-center mb-5">Why Choose ABDKS for EMI Payments?</h2>
+          <h2 className="fw-bold text-center mb-5">Key Features</h2>
           <div className="row g-4">
             {emiFeatures.map((feature, i) => (
               <div key={i} className="col-md-4">
@@ -183,9 +192,9 @@ const FAQLandline = () => {
       {/* Retailers Section */}
       <section className="py-5 text-center">
         <div className="container">
-          <h2 className="fw-bold mb-4">For Retailers and Business Points</h2>
+          <h2 className="fw-bold mb-4">For retailers and business points</h2>
           <p className="lead mb-5">
-            Start offering EMI payment services and grow your income.
+            Provide landline bill payment services at your retail shop and earn commission:
           </p>
           <div className="row g-4">
             {emiRetailerPoints.map((point, i) => (
@@ -219,7 +228,10 @@ const FAQLandline = () => {
               {emiFAQs.map((faq, i) => (
                 <div key={i} className="col-md-6 mb-4">
                   <div className="p-3 bg-white shadow-sm rounded border h-100">
-                    <h5 className="fw-bold">{faq.title}</h5>
+                    <h5 className="fw-bold">
+                                         <FaQuestion className="me-2 text-theme" />
+                                         {faq.title}
+                                       </h5>
                     <p className="text-muted small">{faq.content}</p>
                   </div>
                 </div>
@@ -232,13 +244,13 @@ const FAQLandline = () => {
       {/* CTA */}
       <section className="py-5 grediant-bg2 text-white text-center mb-3">
         <div className="container">
-          <h2 className="display-5 fw-bold mb-3 text-white">Stay On Track with Your EMI Payments</h2>
+          <h2 className="display-5 fw-bold mb-3 text-white">Pay Landline Bills on Time, Every Time</h2>
           <p className="lead col-lg-8 mx-auto mb-4">
-            Avoid late fees and maintain a good credit score by paying EMIs on time — powered by ABDKS.
+            Avoid missed deadlines and late fees. With our platform, landline bill payments are quick, convenient, and accessible anytime — even from your mobile.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <button className="btn btn-light text-theme fw-bold px-4 py-2">Pay EMI Now</button>
-            <button className="btn btn-outline-light fw-bold px-4 py-2">Become a Retail Partner</button>
+            <button className="btn btn-light text-theme fw-bold px-4 py-2">Pay Your Landline Bill Now</button>
+            <button className="btn btn-outline-light fw-bold px-4 py-2">Become a Service Partner</button>
           </div>
         </div>
       </section>

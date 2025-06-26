@@ -18,19 +18,25 @@ const ElectricityBillPayment = () => {
 
   const isFormValid = formData.operator && formData.consumerNumber;
 
+
+
+
+
+
   return (
     <>
       <div className="p-5" style={{backgroundColor:"#EFF8FF"}}>
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#872D67"}}>Electricity Bill Payment Online – BBPS-Powered, Secure & Instant</h2>
+            <h2 className="fw-bold fs-2 text-orange"> Pay Electricity Bills on SevenUnique BBPS</h2>
             <h3>
-              Pay electricity bills across India instantly with ABDKS – a trusted BBPS platform offering real-time updates, zero extra charges, and multi-operator coverage.
+              Use the platform for fast, secure electricity bill payments via BBPS.
+
             </h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="images/Electricity.png"
+                src="/assets/Home/electricity-vec.png"
                 alt="Image"
                 height="300"
                 className="item-center"
@@ -44,7 +50,13 @@ const ElectricityBillPayment = () => {
               className="p-4 rounded bg-white shadow"
               style={{ maxWidth: "500px", margin: "0 auto" }}
             >
-              <h3 className="mb-4" style={{color:"#872D67",fontWeight:"bold"}}>Electricity Bill Payment</h3>
+              <h3 className="mb-4 text-orange fw-bold">Electricity bill payment online- BBPS- Powered, safe, and immediate</h3>
+              <p>Immediately pay electricity bills across India with the SevenUnique reliable BBPS platform that offers real-time updates, zero additional fees, and multi-operator coverage.</p>
+
+<div className="text-center text-orange">
+<h4>Pay the electricity bill online</h4>
+<p>It is the days of standing in queues to pay electricity bills. You can immediately make your electricity bill payment online through our safe and BBPS-integrated platform. Whether you are looking for a customer facility or a retailer offering services, simplifies electricity bill payment in all major cities in India.</p>
+</div>
               <Form>
                 <Form.Group className="mb-3" controlId="operator">
                   <div className="d-flex justify-content-between align-items-center">
@@ -78,7 +90,7 @@ const ElectricityBillPayment = () => {
                   variant="primary"
                   type="submit"
                   className="w-100"
-                  style={{ backgroundColor: "#872D67", color: "white" }}
+                  style={{ backgroundColor: "#b53008", color: "white" }}
                   disabled={!isFormValid}
                 >
                   Confirm

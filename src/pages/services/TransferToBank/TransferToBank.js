@@ -27,15 +27,14 @@ const TransferToBank = () => {
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#664A86"}}>Online Money Transfer</h2>
+            <h2 className="fw-bold text-orange">Online Money Transfer</h2>
             <h3>
-              Effortless Money Transfers: Empowering You to Send, Receive, and
-              Manage Funds with Speed, Security, and Simplicity – Wherever You
-              Go!
+              Send Money Securely Across India—Powered by Sevenunique
+
             </h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="images/loanemi.png"
+                src="/assets/Home/transfer-vec.png"
                 alt="Image"
                 height="300"
                 className="item-center"
@@ -94,7 +93,7 @@ const TransferToBank = () => {
                   variant="primary"
                   type="submit"
                   className="w-100"
-                  style={{ backgroundColor: "#664A86", color: "white" }}
+                  style={{ backgroundColor: "#b53008", color: "white" }}
                   disabled={!isFormValid}
                 >
                   Go
