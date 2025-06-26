@@ -51,7 +51,19 @@ const WhyUs = () => {
             className="img-fluid w-100"
             style={{ objectFit: "cover", height: "100%", minHeight: "500px" }}
           />
-
+<h1
+            className="text-white text-right fw-bold"
+            style={{
+              position: "absolute",
+              top: "40%",
+              left: "30%",
+              transform: "translate(-50%, 0%)",
+              fontSize: "6rem",
+              zIndex: 2,
+            }}
+          >
+     WHY US
+          </h1>
           {/* <div
             className="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-center text-white px-3"
             style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}

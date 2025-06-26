@@ -108,6 +108,19 @@ const OurPartener = () => {
           alt="Contact Us"
           className="full-width-image"
         />
+ <h1
+            className="text-white text-right fw-bold"
+            style={{
+              position: "absolute",
+              top: "40%",
+              left: "30%",
+              transform: "translate(-50%, 0%)",
+              fontSize: "5rem",
+              zIndex: 2,
+            }}
+          >
+OUR PARTNERS
+          </h1>
       </section>
 
 

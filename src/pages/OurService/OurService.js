@@ -102,7 +102,19 @@ line: "Deliver value by enabling access to essential government documentation.",
             style={{ objectFit: "cover", height: "100%", minHeight: "500px" }}
           />
 
-
+<h1
+            className="text-white text-right fw-bold"
+            style={{
+              position: "absolute",
+              top: "40%",
+              left: "25%",
+              transform: "translate(-50%, 0%)",
+              fontSize: "6rem",
+              zIndex: 2,
+            }}
+          >
+           OUR SERVICES
+          </h1>
         </div>
 
     </section>

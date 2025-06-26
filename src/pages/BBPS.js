@@ -77,6 +77,19 @@ const BBPS = () => {
           alt="Contact Us"
           className="full-width-image"
         />
+         <h1
+            className="text-white text-right fw-bold"
+            style={{
+              position: "absolute",
+              top: "34%",
+              left: "24%",
+              transform: "translate(-50%, 0%)",
+              fontSize: "8rem",
+              zIndex: 2,
+            }}
+          >
+BBPS
+          </h1>
       </section>
 
       <div class="">

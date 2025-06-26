@@ -57,6 +57,21 @@ const ContactUs = () => {
             className="img-fluid w-100"
             style={{ objectFit: "cover", height: "100%", minHeight: "500px" }}
           />
+
+
+        <h1
+            className="text-white text-right fw-bold"
+            style={{
+              position: "absolute",
+              top: "40%",
+              left: "30%",
+              transform: "translate(-50%, 0%)",
+              fontSize: "6rem",
+              zIndex: 2,
+            }}
+          >
+     CONTACT US
+          </h1>
         </div>
 
       </section>

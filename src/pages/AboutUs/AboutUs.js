@@ -188,7 +188,19 @@ const AboutUs = () => {
             className="img-fluid w-100"
             style={{ objectFit: "cover", height: "100%", minHeight: "500px" }}
           />
-
+<h1
+            className="text-white text-right fw-bold"
+            style={{
+              position: "absolute",
+              top: "40%",
+              right: "0%",
+              transform: "translate(-50%, 0%)",
+              fontSize: "6rem",
+              zIndex: 2,
+            }}
+          >
+            ABOUT US
+          </h1>
         </div>
 
         <h6 className="fz40 text-center mt-5 fw-bold">ABOUT US</h6>
