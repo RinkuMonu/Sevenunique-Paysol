@@ -3,7 +3,29 @@ import React from "react";
 const ContentPolicy = () => {
   return (
     <section className="page-title">
-      <img src="/assets/Home/privacy.svg" alt="Content Policy" />
+       <div className="position-relative w-100 ">
+          <img
+            src="/assets/Home/content-banner.jpg"
+            alt="Banner"
+            className="img-fluid w-100"
+            style={{ objectFit: "cover", height: "100%", minHeight: "500px" }}
+          />
+
+          <h1
+            className="text-white text-right fw-bold"
+            style={{
+              position: "absolute",
+              top: "40%",
+              left: "30%",
+              transform: "translate(-50%, 0%)",
+              fontSize: "4rem",
+              zIndex: 2,
+            }}
+          >
+            CONTENT POLICY
+          </h1>
+        </div>
+
       <div className="container text-secondary">
         <div className="row my-5">
           <div className="col-lg-12 col-md-12 text-left">

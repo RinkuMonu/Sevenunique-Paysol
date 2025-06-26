@@ -33,11 +33,12 @@ const Municipality = () => {
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#872D67"}}>Simplify Municipal Bill Payments</h2>
-            <h3>Simplify urban life with convenient municipality bill payments.</h3>
+            <h2 className="fw-bold text-orange">Municipal Bill Payments
+</h2>
+            <h3>Pay Your Municipal Taxes and Bills Online with our platform</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="images/municipality.png"
+                src="/assets/Home/munic-vec.png"
                 alt="Image"
                 height="300"
                 className="item-center"
@@ -51,7 +52,7 @@ const Municipality = () => {
               className="p-4 rounded bg-white shadow"
               style={{ maxWidth: "500px", margin: "0 auto" }}
             >
-              <h3 className="mb-4" style={{color:"#872D67",fontWeight:"bold"}}>
+              <h3 className="mb-4 text-orange fw-bold">
                 Online Municipal Property Tax Payment
               </h3>
               <Form onSubmit={handleSubmit}>
@@ -88,7 +89,7 @@ const Municipality = () => {
                   variant="primary"
                   type="submit"
                   className="w-100"
-                  style={{ backgroundColor: '#872D67', color: 'white' }}
+                  style={{ backgroundColor: '#b53008', color: 'white' }}
                   disabled={!isFormValid} 
                 >
                   Confirm

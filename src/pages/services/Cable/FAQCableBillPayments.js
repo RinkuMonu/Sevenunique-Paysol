@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import Accordion from 'react-bootstrap/Accordion';
+import React, { useState, useEffect } from "react";
+import Accordion from "react-bootstrap/Accordion";
 import {
   FaTv,
   FaClock,
@@ -10,6 +10,7 @@ import {
   FaReceipt,
   FaMoneyBillWave,
   FaHandshake,
+  FaQuestion
 } from "react-icons/fa";
 
 const cableOperators = [
@@ -22,66 +23,72 @@ const cableOperators = [
   "Asianet",
   "Fastway",
   "NXT Digital",
+  "And more, depending on your region",
 ];
 
 const paymentSteps = [
-  "Go to the Bill Payment section on the ABDKS website or app.",
-  "Select 'Cable TV' from the service categories.",
-  "Choose your Cable Operator from the dropdown.",
-  "Enter your Subscriber ID or Customer Number.",
-  "Your bill amount will be auto-fetched.",
-  "Pay using UPI, card, wallet, or net banking.",
-  "Get instant confirmation and a digital receipt.",
+  "Go to the Bill Payment section on the website or mobile app.",
+  "Select Cable TV or Cable Bill from the service category",
+  "Choose your Cable Operator from the dropdown list",
+  "Enter your Subscriber ID / Customer Number",
+  "The system auto-fetches the current bill amount",
+  "Complete payment using UPI, debit/credit card, wallet, or internet banking",
+  "Get instant confirmation and a digital receipt",
 ];
 
 const benefits = [
   {
     icon: <FaClock />,
     title: "24x7 Availability",
-    desc: "Pay your cable bill anytime, without delays.",
+    desc: "Pay anytime, anywhere.",
   },
   {
     icon: <FaTv />,
-    title: "Major Operators Supported",
-    desc: "From GTPL to Hathway and beyond — we've got it covered.",
+    title: "All Major Operators Supported",
+    desc: "Serve urban and rural connections",
   },
   {
     icon: <FaReceipt />,
     title: "Instant Confirmation",
-    desc: "Payment status updated in real-time with digital receipt.",
+    desc: "Real-time payment status updated",
   },
   {
     icon: <FaShieldAlt />,
     title: "Secure Payments",
-    desc: "Encrypted and RBI-compliant infrastructure for peace of mind.",
+    desc: "Encrypted & RBI-compliant payment infrastructure",
   },
   {
     icon: <FaMobileAlt />,
-    title: "Mobile Friendly",
-    desc: "Fast, simple, and optimized for smartphone users.",
+    title: "Mobile Friendly Platform",
+    desc: "Optimized for quick use on mobile devices",
   },
   {
     icon: <FaRupeeSign />,
-    title: "Multiple Payment Options",
-    desc: "Choose UPI, card, wallet, or net banking.",
+    title: "Multi-Payment Options",
+    desc: "UPI, cards, wallet, and net banking",
   },
 ];
 
 const retailerBenefits = [
   {
     icon: <FaUserFriends />,
-    title: "Serve Your Community",
-    desc: "Offer cable bill payments to your customers easily.",
+    title: "Provide a valuable service in your local area",
   },
   {
     icon: <FaMoneyBillWave />,
-    title: "Earn Commissions",
-    desc: "Get paid for every successful cable bill payment.",
+    title: "Earn commissions on each successful cable bill payment",
   },
   {
-    icon: <FaHandshake />,
-    title: "24x7 Backend Support",
-    desc: "Always-on help from the ABDKS team and dashboard access.",
+    icon: <FaReceipt />,
+    title: "Attract more footfall to your digital service point",
+  },
+  {
+    icon: <FaMobileAlt />,
+    title: "Get a dedicated dashboard with full transaction logs",
+  },
+  {
+    icon: <FaClock />,
+    title: "Access 24/7 support from the sevenunique backend team",
   },
 ];
 
@@ -89,22 +96,21 @@ const faqs = [
   {
     title: "Can I pay for any cable operator?",
     content:
-      "Yes, ABDKS supports a wide range of regional and national cable TV providers.",
+      "Yes, we support a wide range of regional and national cable TV providers.",
   },
   {
     title: "Is the payment confirmed instantly?",
     content:
-      "Yes. Once the transaction is completed, the payment status updates in real-time.",
+      "Yes. Once paid, the status is updated instantly, and a digital receipt is issued.",
   },
   {
-    title: "Are there extra fees for paying a cable bill through ABDKS?",
+    title: "Are there extra fees for paying a cable bill through sevenUnique?",
     content:
-      "No, we do not apply any additional charges for standard cable bill payments.",
+      " No additional charges are applied for standard cable bill payments.",
   },
   {
     title: "Can I pay for someone else’s cable connection?",
-    content:
-      "Yes. You just need the correct Subscriber ID or customer number of the person.",
+    content: "Yes, just enter their correct Subscriber ID or customer number.",
   },
 ];
 
@@ -117,27 +123,29 @@ const FAQCableBillPayments = () => {
     };
 
     handleResize();
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
-
   return (
     <>
-       {/* Hero Section */}
+      {/* Hero Section */}
       <section className="py-5 text-center">
         <div className="container">
-          <h1 className="display-5 fw-bold">Cable Bill Ease</h1>
+          <h1 className="display-5 fw-bold">
+            Simplifying Cable TV Payments for Every Household
+          </h1>
           <p className="lead mt-3">
-            Pay Your Cable TV Bills Online with ABDKS – Quick, Secure & Hassle-Free
-          </p>
-          <p className="col-lg-9 mx-auto">
-            Whether you're paying for your home connection or helping a customer
-            as a digital retailer, ABDKS ensures smooth, secure, and real-time
-            bill payments.
+            You can now pay your cable TV bills online in just a few simple
+            steps. Whether you're paying for your home connection or helping a
+            customer as a digital service retailer, we ensure smooth, secure,
+            and real-time bill payments.
+            <br />
+            Avoid missed deadlines, late penalties, and long queues—make your
+            cable bill payments digitally with ease.
           </p>
         </div>
       </section>
@@ -145,7 +153,9 @@ const FAQCableBillPayments = () => {
       {/* Payment Steps */}
       <section className="py-5 bg-light">
         <div className="container">
-          <h2 className="text-center fw-bold mb-5">How to Pay Cable Bills</h2>
+          <h2 className="text-center fw-bold mb-5">
+            How to Pay Cable Bills with our platform
+          </h2>
           <div className="row g-4">
             {paymentSteps.map((step, i) => (
               <div key={i} className="col-md-6">
@@ -169,7 +179,9 @@ const FAQCableBillPayments = () => {
           <div className="row justify-content-center">
             {cableOperators.map((op, i) => (
               <div key={i} className="col-md-4 mb-3">
-                <div className="text-white p-3 rounded shadow-sm fs-5 primary-bg">{op}</div>
+                <div className="text-white p-3 rounded shadow-sm fs-5 primary-bg">
+                  {op}
+                </div>
               </div>
             ))}
           </div>
@@ -179,7 +191,9 @@ const FAQCableBillPayments = () => {
       {/* Benefits for Users */}
       <section className="py-5">
         <div className="container">
-          <h2 className="text-center fw-bold mb-5">Why Use ABDKS for Cable Bill Payments?</h2>
+          <h2 className="text-center fw-bold mb-5">
+            Why Use Our Platform for Cable Bill Payment?
+          </h2>
           <div className="row g-4">
             {benefits.map((item, i) => (
               <div key={i} className="col-md-4">
@@ -197,17 +211,16 @@ const FAQCableBillPayments = () => {
       {/* Benefits for Retailers */}
       <section className="py-5 bg-light text-center">
         <div className="container">
-          <h2 className="fw-bold mb-4">Retailer & CSC Operator Benefits</h2>
-          <p className="lead mb-5">
-            Expand your service offerings and boost your income with every cable bill you process.
-          </p>
+          <h2 className="fw-bold mb-4">
+            Benefits for Retailers & CSC Operators
+          </h2>
+
           <div className="row g-4">
             {retailerBenefits.map((info, i) => (
               <div key={i} className="col-md-4">
                 <div className="bg-white p-4 rounded-4 shadow-sm h-100">
                   <div className="text-theme fs-2 mb-3">{info.icon}</div>
                   <h5>{info.title}</h5>
-                  <p className="small text-muted">{info.desc}</p>
                 </div>
               </div>
             ))}
@@ -218,7 +231,9 @@ const FAQCableBillPayments = () => {
       {/* FAQ */}
       <section className="py-5">
         <div className="container">
-          <h2 className="fw-bold text-center mb-5">Frequently Asked Questions</h2>
+          <h2 className="fw-bold text-center mb-5">
+            Frequently Asked Questions
+          </h2>
           {isMobile ? (
             <Accordion>
               {faqs.map((faq, i) => (
@@ -233,7 +248,11 @@ const FAQCableBillPayments = () => {
               {faqs.map((faq, i) => (
                 <div key={i} className="col-md-6 mb-4">
                   <div className="p-3 bg-white rounded shadow-sm border h-100">
-                    <h5 className="fw-bold">{faq.title}</h5>
+                    <h5 className="fw-bold">
+                      <FaQuestion className="me-2 text-theme" />
+                      {faq.title}
+                    </h5>
+
                     <p className="text-muted small">{faq.content}</p>
                   </div>
                 </div>
@@ -246,13 +265,20 @@ const FAQCableBillPayments = () => {
       {/* CTA */}
       <section className="py-5 grediant-bg2 mb-3 text-white text-center">
         <div className="container">
-          <h2 className="display-5 fw-bold mb-3 text-white">Pay Your Cable TV Bill Without Delay</h2>
+          <h2 className="display-5 fw-bold mb-3 text-white">
+            Pay Your Cable TV Bill Without Any Delay
+          </h2>
           <p className="lead col-lg-8 mx-auto mb-4">
-            Choose ABDKS to simplify your entertainment bill payments — quickly, securely, and without hassle.
+            Choose our platform to simplify your entertainment bill
+            payments—quickly, securely, and without hassle.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <button className="btn btn-light text-theme fw-bold px-4 py-2">Pay Cable Bill Now</button>
-            <button className="btn btn-outline-light fw-bold px-4 py-2">Become a Retail Partner</button>
+            <button className="btn btn-light text-theme fw-bold px-4 py-2">
+              Pay Cable Bill Now
+            </button>
+            <button className="btn btn-outline-light fw-bold px-4 py-2">
+              Become a Retail Partner
+            </button>
           </div>
         </div>
       </section>

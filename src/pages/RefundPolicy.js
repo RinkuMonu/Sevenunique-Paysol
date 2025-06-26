@@ -4,489 +4,556 @@ export default function RefundPolicy() {
   return (
     <>
       <section class="page-title">
-        <img src="/assets/Home/refund.svg" alt="TERMS" />
+         <div className="position-relative w-100">
+          <img
+            src="/assets/Home/refund-banner.jpg"
+            alt="Banner"
+            className="img-fluid w-100"
+            style={{ objectFit: "cover", height: "100%", minHeight: "500px" }}
+          />
+        </div>
+
         <div className="container text-secondary">
           <div className="row my-5">
             <div className="col-lg-12 col-md-12 text-left">
               <div className="service-item style-2">
                 <div className="service-desc abt">
                   <div className="service-title">
-                    <h4>1. Company Introduction</h4>
+                    <h4>1. Purpose and Scope</h4>
                   </div>
                   <p>
-                    ABDKS Solutions Private Limited ("ABDKS," "we," "our," or
-                    "us") is a fintech enterprise registered under the Companies
-                    Act, 2013 in India. We provide digital financial solutions
-                    tailored to both B2B and B2C segments, including:
+                    This Refund Policy has been developed to protect the
+                    interests of users who rely on the digital payment services
+                    offered by Sevenunique Tech Solution Private Limited
+                    (“Sevenunique”). It outlines when and how users are eligible
+                    to receive refunds for failed, erroneous, or incomplete
+                    transactions.
+                    <br />
+                    Sevenunique operates as a regulated participant within the
+                    Bharat Bill Payment System (BBPS), a unified platform
+                    managed by the National Payments Corporation of India (NPCI)
+                    and supervised by the Reserve Bank of India (RBI). All
+                    refunds are processed in compliance with the guidelines and
+                    timelines defined under:
                   </p>
                   <ul>
-                    <li>Payment Gateway Services</li>
-                    <li>Digital Lending APIs</li>
-                    <li>KYC/AML Verification Tools</li>
-                    <li>Wallet and UPI Services</li>
-                    <li>SaaS-based Financial Dashboards and Analytics</li>
-                  </ul>
-                  <p>
-                    Our platform supports merchants, financial institutions,
-                    startups, and individuals in building and scaling secure,
-                    compliant, and technology-enabled financial products.
-                  </p>
-                  <div className="service-title">
-                    <h4>2. Purpose and Scope</h4>
-                  </div>
-
-                  <h6> 2.1 Purpose</h6>
-                  <p>
-                    This policy outlines the guidelines, procedures, and rights
-                    of all stakeholders involved in service cancellation and
-                    refund requests. The objective is to ensure legal clarity,
-                    protect consumer rights, and define the company's
-                    responsibilities in compliance with Indian law.
-                  </p>
-                  <h6> 2.2 Scope</h6>
-                  <p>This policy applies to:</p>
-                  <ul>
-                    <li>
-                      Merchants/Businesses using our APIs or payment services.
-                    </li>
-                    <li>
-                      End Users/Consumers transacting via our B2C interfaces.
-                    </li>
-                    <li>
-                      Technology/Channel Partners integrating our fintech
-                      services.
-                    </li>
-                  </ul>
-
-                  <div className="service-title">
-                    <h4>3. Definitions</h4>
-                  </div>
-
-                  <div className="container my-5">
-                    <div className="table-responsive">
-                      <table className="table table-bordered table-striped align-middle shadow-sm">
-                        <thead className="table-light">
-                          <tr>
-                            <th scope="col">Term</th>
-                            <th scope="col">Definition</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>
-                              <strong>Customer</strong>
-                            </td>
-                            <td>
-                              Any individual or entity availing ABDKS services.
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <strong>Refund</strong>
-                            </td>
-                            <td>
-                              Return of funds to a Customer due to failed
-                              service or billing error.
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <strong>Cancellation</strong>
-                            </td>
-                            <td>
-                              Termination or revocation of a subscribed service
-                              or integration.
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <strong>Transaction</strong>
-                            </td>
-                            <td>
-                              Any financial or service-related interaction
-                              processed via ABDKS.
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <strong>Service</strong>
-                            </td>
-                            <td>
-                              Any digital feature, product, or offering
-                              delivered by ABDKS.
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <strong>Dispute</strong>
-                            </td>
-                            <td>
-                              A disagreement raised by the customer regarding a
-                              transaction or refund.
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-
-                  <div className="service-title">
-                    <h4>4. Cancellation Policy</h4>
-                  </div>
-                  <h6>4.1 General Guidelines</h6>
-                  <p>
-                    Customers may cancel services subject to specific
-                    conditions:
-                  </p>
-                  <ul>
-                    <li>
-                      Subscription cancellations must be initiated within 7 days
-                      of activation.
-                    </li>
-                    <li>
-                      Cancellation requests must be submitted via official
-                      support channel.
-                    </li>
-                  </ul>
-
-                  <h6>4.2 Types of cancellable services</h6>
-                  <p>
-                    Customers may cancel services subject to specific
-                    conditions:
-                  </p>
-                  <ul>
-                    <li>
-                      Subscription cancellations must be initiatedwithin 7 days
-                      of activation.
-                    </li>
-                    <li>
-                      Cancellation requests must be submitted via official
-                      support channels.
-                    </li>
-                  </ul>
-
-                  <div className="container my-5">
-                    <h3 className="text-center fw-bold mb-4 text-theme">
-                      Types of Cancellable Services
-                    </h3>
-                    <div className="table-responsive">
-                      <table className="table table-bordered table-striped align-middle shadow-sm">
-                        <thead className="table-light">
-                          <tr>
-                            <th>Service Category</th>
-                            <th>Cancellation Window</th>
-                            <th>Eligibility Conditions</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>
-                              <strong>SaaS Subscriptions</strong>
-                            </td>
-                            <td>Within 7 Days</td>
-                            <td>No usage or API hits post-activation</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <strong>Custom Integrations</strong>
-                            </td>
-                            <td>Pre-initiation Only</td>
-                            <td>Work has not commenced</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <strong>KYC/AML Services</strong>
-                            </td>
-                            <td>Non-cancellable</td>
-                            <td>Triggered real-time and consumed</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <strong>Wallet/UPI Setup</strong>
-                            </td>
-                            <td>Within 24 Hours</td>
-                            <td>Wallet not activated or linked</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-
-                  <h6>4.3 Procedure</h6>
-                  <ul>
-                    <li>
-                      Email support@abdks.in with subject "Service Cancellation
-                      Request."
-                    </li>
-                    <li>
-                      Include registered account details, service ID, and
-                      reason.
-                    </li>
-                    <li>
-                      Team will validate the request and respond within 3
-                      business days.
-                    </li>
-                  </ul>
-
-                  <div className="service-title">
-                    <h4>5. Refund Policy</h4>
-                  </div>
-                  <h4>5.1 Refund Eligibility</h4>
-                  <p>
-                    Refunds may be issued under the following circumstances:
-                  </p>
-                  <h6>A. Failed Transactions</h6>
-                  <ul>
-                    <li>Funds deducted, but service not delivered.</li>
-                    <li>
-                      Verified through backend logs or payment gateway APIs.
-                    </li>
-                  </ul>
-
-                  <h6>B. Duplicate Payments</h6>
-                  <ul>
-                    <li>Same transaction processed more than once.</li>
-                    <li>
-                      Supporting evidence required (bank statements, receipts).
-                    </li>
-                  </ul>
-
-                  <h6>C. Unauthorized Transactions</h6>
-                  <ul>
-                    <li>Transaction initiated without customer consent.</li>
-                    <li>
-                      Subject to internal verification and legal protocols.
-                    </li>
-                  </ul>
-
-                  <h6>D. Technical Glitches</h6>
-                  <ul>
-                    <li>Platform failure causing loss of service value.</li>
-                    <li>
-                      Applicable only if validated through internal system logs.
-                    </li>
-                  </ul>
-
-                  <h6>E. Service Dissatisfaction </h6>
-                  <ul>
-                    <li>
-                      Only accepted for SaaS dashboards, within 3 days of first
-                      use.
-                    </li>
-                    <li>Reason and screenshots must be provided.</li>
-                  </ul>
-
-                  <h4>5.2 Non-Refundable Charges</h4>
-                  <div className="container my-5">
-                    <h3 className="text-center fw-bold mb-4 text-theme">
-                      Fee Structure & Non-Refundable Charges
-                    </h3>
-                    <div className="table-responsive">
-                      <table className="table table-bordered table-striped align-middle shadow-sm">
-                        <thead className="table-light">
-                          <tr>
-                            <th>Fee Type</th>
-                            <th>Reason</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>
-                              <strong>Onboarding Charges</strong>
-                            </td>
-                            <td>
-                              One-time and non-reversible administrative cost
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <strong>Custom Development Fees</strong>
-                            </td>
-                            <td>Work is labor-intensive and client-specific</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <strong>KYC/AML API Hits</strong>
-                            </td>
-                            <td>Real-time and consumption-based</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <strong>Payment Gateway Setup Fee</strong>
-                            </td>
-                            <td>
-                              Paid to third-party networks and is non-refundable
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-
-                  <div className="service-title">
-                    <h4>6. Refund Process and Timeline</h4>
-                  </div>
-                  <h6>6.1 How to Raise a Refund Request</h6>
-
-                  <ul>
-                    <li>Email: support@abdks.in</li>
-                    <li>Subject: "Refund Request - [Transaction ID]"</li>
-                    <li>
-                      Include full details, reason, and proof (screenshots, bank
-                      statements).
-                    </li>
-                  </ul>
-                  <h6>6.2 Timeline</h6>
-
-                  <ul>
-                    <li>Acknowledgment: Within 3 business days</li>
-                    <li>Investigation: Up to 7 business days</li>
-                    <li>
-                      Refund Credit: Within 14 business days from approval
-                    </li>
-                  </ul>
-                  <h6>6.3 Notification</h6>
-
-                  <ul>
-                    <ol>
-                      Users will be informed of refund approval or rejection
-                      via:
-                      <li>Registered email ID</li>
-                      <li>In-app notification (if applicable)</li>
-                    </ol>
-                  </ul>
-                  <div className="service-title">
-                    <h4>7. Mode of Refund</h4>
-                  </div>
-                  <h6>Approved refunds will be processed via:</h6>
-
-                  <ul>
-                    <li>UPI – Reversed to original UPI ID</li>
-                    <li>
-                      Bank Transfer (NEFT/IMPS) – To the source bank account
-                    </li>
-                    <li> Wallet Credit – If transaction was wallet-based </li>
                     <li>
                       {" "}
-                      Credit Note – For business accounts (redeemable against
-                      future services)
+                      RBI circulars related to digital transactions and
+                      grievance redressal
+                    </li>
+                    <li>BBPS procedural guidelines issued by NPCI</li>
+                    <li>
+                      Consumer protection rules under applicable Indian laws
                     </li>
                   </ul>
-                  <h4>8. Cancellation Due to Policy Violation or Fraud</h4>
+                  <p>
+                    This policy applies to all users (retail and business)
+                    transacting via Sevenunique’s:
+                  </p>
+                  <ul>
+                    <li>Mobile application</li>
+                    <li>Web portal</li>
+                    <li>Retail agent interface (BBPOU authorized)</li>
+                  </ul>
+                  <div className="service-title">
+                    <h4>2. Eligible Scenarios for Refund</h4>
+                    <p>
+                      Refunds may be issued in the following scenarios, provided
+                      the transaction is verified and falls within the
+                      regulatory framework:
+                    </p>
+                  </div>
+                  <h6>2.1 Payment Failures or Technical Issues</h6>
+                  <ul>
+                    <li>
+                      The user’s account was debited but the transaction was not
+                      acknowledged or processed by the biller or payment
+                      gateway.
+                    </li>
+                    <li>
+                      Errors or downtime on Sevenunique servers, NPCI systems,
+                      or participating bank/payment gateway servers.
+                    </li>
+                  </ul>
+                  <h6>2.2 Duplicate or Excess Payments</h6>
+                  <ul>
+                    <li>
+                      User unintentionally makes more than one payment for the
+                      same bill.
+                    </li>
+                    <li>
+                      Amount paid exceeds the bill amount and biller confirms
+                      inability to adjust or hold excess amount.
+                    </li>
+                  </ul>
+                  <h6>2.3 Biller Rejection or System Timeouts</h6>
+                  <ul>
+                    <li>
+                      Biller does not accept the transaction due to data
+                      mismatch, cutoff expiry, or disconnection from BBPS.
+                    </li>
+                    <li>
+                      Payment remains in a ‘Processing’ or ‘Pending’ state for
+                      more than T+2 working days without a final status.
+                    </li>
+                  </ul>
+                  <h6>2.4 Unauthorized Transactions (If Proven)</h6>
+                  <ul>
+                    <li>
+                      User identifies a transaction not initiated by them.
+                    </li>
+                    <li>
+                      After due diligence, Sevenunique confirms the user’s claim
+                      and no negligence is found on part of the user (such as
+                      shared credentials).
+                    </li>
+                  </ul>
+                  <h6>2.5 Services Not Rendered or Delivered</h6>
+                  <ul>
+                    <li>
+                      Prepaid recharges (e.g., mobile, DTH) fail even after
+                      successful deduction.
+                    </li>
+                    <li>
+                      Utility bill marked paid but not reflected in biller’s
+                      system within a reasonable time (e.g., 72 hours).
+                    </li>
+                  </ul>
+                  <p>
+                    All refund approvals are contingent on compliance with NPCI
+                    dispute timelines and BBPS transaction audit logs.
+                  </p>
+                  <div className="service-title">
+                    <h4>3. Non-Refundable Scenarios</h4>
+                    <p>
+                      Not all transactions qualify for refunds. The following
+                      scenarios are excluded under this Refund Policy:
+                    </p>
+                  </div>
+                  <h6>3.1 User Errors</h6>
+                  <ul>
+                    <li>Incorrect biller selected</li>
+                    <li>Wrong consumer number or account ID entered</li>
+                    <li>Incorrect amount paid</li>
+                    <li>
+                      Transactions initiated without verifying beneficiary or
+                      biller details
+                    </li>
+                  </ul>
+                  <h6>3.2 Successful Transactions as per System Records</h6>
+                  <ul>
+                    <li>
+                      If the BBPS/NPCI network and biller system both reflect
+                      the transaction as successful and fulfilled.
+                    </li>
+                    <li>
+                      No refund will be processed simply due to user
+                      dissatisfaction after successful service.
+                    </li>
+                  </ul>
+                  <h6>3.3 Delay in Biller Confirmation</h6>
+                  <ul>
+                    <li>
+                      Some billers may update their systems on a delayed basis
+                      (e.g., post business day).
+                    </li>
+                    <li>
+                      Such delays, though inconvenient, do not warrant refund
+                      unless the transaction fails entirely.
+                    </li>
+                  </ul>
+                  <h6>3.4 Consumed or Delivered Services</h6>
+                  <ul>
+                    <li>
+                      Prepaid recharges, subscriptions, or utility services that
+                      have already been used or activated.
+                    </li>
+                    <li>
+                      If a user has received partial or full benefit from the
+                      service, refund will not apply.
+                    </li>
+                  </ul>
+                  <h6>3.5 Misuse or Repeated Refund Requests</h6>
+                  <ul>
+                    <li>
+                      Any attempts to misuse this policy by filing repetitive,
+                      fraudulent, or baseless refund claims.
+                    </li>
+                    <li>
+                      Sevenunique reserves the right to deny refund requests
+                      that do not meet these eligibility guidelines or violate
+                      the platform’s terms of use.
+                    </li>
+                  </ul>
+                  <div className="service-title">
+                    <h4>4. Refund Process & Timeline</h4>
+                  </div>
+                  <p>
+                    Sevenunique is committed to processing legitimate refund
+                    requests in a timely and transparent manner. The process is
+                    designed in line with RBI/BBPS/NPCI norms and internal
+                    compliance controls.
+                  </p>
+                  <h6>4.1 Steps to Request a Refund</h6>
+                  <ul>
+                    <li>
+                      <strong>Initiate a Refund Request:</strong> Log in to the
+                      Sevenunique platform and visit the "Support" or "My
+                      Transactions" section.
+                    </li>
+                    <li>
+                      <strong>Submit Request Form:</strong> Fill in the refund
+                      request form providing:
+                      <ul>
+                        <li>Transaction ID or BBPS Reference Number</li>
+                        <li>Date and time of transaction</li>
+                        <li>Payment method (UPI, debit card, etc.)</li>
+                        <li>Reason for refund</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <strong>Alternative Submission:</strong> If online access
+                      is unavailable, users can send an email to{" "}
+                      <a href="mailto:support@sevenunique.in">
+                        support@sevenunique.in
+                      </a>{" "}
+                      with the subject line “Refund Request – [Transaction ID]”.
+                    </li>
+                  </ul>
+                  <h6>4.2 Processing Timeline</h6>
+                  <ul>
+                    <li>
+                      All refunds will be processed within{" "}
+                      <strong>T+5 to T+7 working days</strong> from the date of
+                      acknowledgment.
+                    </li>
+                    <li>
+                      Delays beyond T+7 days may occur only in cases requiring
+                      third-party biller verification or fraud investigation.
+                    </li>
+                  </ul>
+                  <h6>4.3 Mode of Refund</h6>
+                  <ul>
+                    <li>
+                      Refunds will be credited back to the original mode of
+                      payment wherever technically feasible.
+                    </li>
+                    <li>
+                      If not possible (e.g., expired card), refunds will be
+                      processed to a verified UPI ID or Sevenunique wallet.
+                    </li>
+                  </ul>
+                  <h6>4.4 Communication and Updates</h6>
+                  <ul>
+                    <li>Registered Email ID</li>
+                    <li>SMS notifications</li>
+                    <li>In-app push notifications (if enabled)</li>
+                  </ul>
+                  <div className="service-title">
+                    <h4>5. Evidence and Documentation</h4>
+                  </div>
+                  <p>
+                    To validate and process a refund request, users must provide
+                    accurate transaction details and supporting documents. These
+                    help in verifying the legitimacy of the request and speed up
+                    resolution.
+                  </p>
+                  <h6>5.1 Required Information for Refund Processing</h6>
+                  <ul>
+                    <li>Transaction ID / BBPS Reference Number</li>
+                    <li>Date and time of the transaction</li>
+                    <li>
+                      Payment method used (UPI, Debit/Credit Card, Net Banking,
+                      etc.)
+                    </li>
+                    <li>
+                      Mobile number / account number used for the transaction
+                    </li>
+                    <li>Screen capture or proof of payment (if available)</li>
+                    <li>
+                      Bank statement or SMS proof in case of unauthorized debits
+                    </li>
+                  </ul>
+                  <h6>
+                    5.2 Special Documentation for Fraud or Unauthorized Use
+                  </h6>
+                  <ul>
+                    <li>
+                      A signed declaration may be required confirming that the
+                      transaction was not authorized.
+                    </li>
+                    <li>
+                      Proof of identity and account ownership may be asked.
+                    </li>
+                    <li>
+                      Sevenunique may request the user to file a police
+                      complaint or FIR in serious fraud cases as per RBI
+                      advisory.
+                    </li>
+                  </ul>
+                  <h6>5.3 BBPS Complaint Reference Number (CRN)</h6>
+                  <p>
+                    If the user raises a complaint directly through the BBPS
+                    Central Unit, the Complaint Reference Number (CRN) should be
+                    included in all correspondence with Sevenunique to
+                    facilitate tracking and resolution.
+                  </p>
+                  <div class="service-title">
+                    <h4>6. Dispute Resolution and Escalation</h4>
+                  </div>
+                  <h6>
+                    Sevenunique has a structured grievance redressal process to
+                    ensure user concerns are handled with transparency,
+                    fairness, and efficiency.
+                  </h6>
+                  <ul>
+                    <li>
+                      <h6>6.1 First-Level Support</h6>
+                      <ul>
+                        <li>
+                          Users should initially contact Sevenunique’s customer
+                          support through the official email:
+                          support@sevenunique.in or call: 0141-4511098.
+                        </li>
+                        <li>
+                          Support is available Monday to Saturday, 10:00 AM to
+                          6:00 PM (excluding national holidays).
+                        </li>
+                        <li>
+                          Users should provide all relevant transaction details
+                          for quick resolution.
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <h6>6.2 Escalation to Grievance Officer</h6>
+                      <p>
+                        If the user is unsatisfied with the initial response or
+                        no resolution is provided within T+7 working days, they
+                        may escalate the matter to the Grievance Redressal
+                        Officer (GRO):
+                      </p>
+                      <ul>
+                        <li>
+                          Name: Compliance Officer – Sevenunique Tech Solution
+                          Pvt. Ltd.
+                        </li>
+                        <li>Email: grievance@sevenunique.in</li>
+                        <li>Phone: 0141-4511098</li>
+                        <li>
+                          Office Address: Plot No 97, Dakshinpuri - I,
+                          Shrikishan, Sanganer, Jagatpura, Jaipur, Rajasthan –
+                          302017
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <h6>
+                        6.3 Escalation to BBPS Central Unit or RBI Ombudsman
+                      </h6>
+                      <p>
+                        If not satisfied with the final resolution by
+                        Sevenunique, users may:
+                      </p>
+                      <ul>
+                        <li>
+                          Lodge a complaint on the BBPS grievance portal using
+                          their BBPS Complaint Reference Number.
+                        </li>
+                        <li>
+                          Approach the RBI Ombudsman under the RBI Integrated
+                          Ombudsman Scheme, subject to eligibility and
+                          jurisdiction.
+                        </li>
+                      </ul>
+                      <p>
+                        All escalations must include supporting evidence, ticket
+                        ID, and all communication logs for a complete audit
+                        trail.
+                      </p>
+                    </li>
+                  </ul>
+                  ---
+                  <div class="service-title">
+                    <h4>7. Fraud Checks and Hold Conditions</h4>
+                  </div>
+                  <h6>
+                    Sevenunique follows a robust internal risk management and
+                    fraud prevention framework to ensure refunds are not misused
+                    or exploited.
+                  </h6>
+                  <ul>
+                    <li>
+                      <h6>7.1 Internal Verification Protocols</h6>
+                      <ul>
+                        <li>
+                          All refund requests undergo internal verification.
+                        </li>
+                        <li>
+                          This includes validating transaction logs, IP address
+                          matching, device fingerprinting, and checking for
+                          repeated claims.
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <h6>7.2 Temporary Holds and Review</h6>
+                      <p>
+                        Sevenunique reserves the right to temporarily hold a
+                        refund if:
+                      </p>
+                      <ul>
+                        <li>
+                          The transaction appears suspicious or irregular.
+                        </li>
+                        <li>
+                          Multiple refund claims originate from the same user in
+                          a short span.
+                        </li>
+                        <li>
+                          The same credentials are used for transactions on
+                          multiple accounts.
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <h6>7.3 Reporting to Authorities</h6>
+                      <p>
+                        In case of strong suspicion of fraud, Sevenunique may:
+                      </p>
+                      <ul>
+                        <li>
+                          Escalate the case to NPCI’s BBPS monitoring unit.
+                        </li>
+                        <li>Inform the user’s bank or payment provider.</li>
+                        <li>
+                          Lodge a report with appropriate cybercrime authorities
+                          as per Indian law.
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <h6>7.4 Right to Refuse Refund</h6>
+                      <p>
+                        If a refund request is found to be intentionally
+                        misleading, fabricated, or not supported by
+                        documentation, Sevenunique reserves the right to reject
+                        the claim.
+                      </p>
+                    </li>
+                  </ul>
+                  <p>
+                    These measures are designed not only to safeguard company
+                    assets but also to ensure fair usage of consumer protection
+                    mechanisms.
+                  </p>
+
+                  <h4>8. Policy Changes and Updates</h4>
+                  <ul>
+                    <li>
+                      <h6>8.1 Right to Modify</h6>
+                      <p>
+                        Sevenunique Tech Solution Private Limited reserves the
+                        right to revise, update, or amend this Refund Policy at
+                        any time to reflect changes in law, technology, business
+                        operations, or user feedback.
+                      </p>
+                    </li>
+                    <li>
+                      <h6>8.2 Notification of Changes</h6>
+                      <p>When a significant change is made:</p>
+                      <ul>
+                        <li>
+                          Users will be notified via registered email and/or
+                          SMS.
+                        </li>
+                        <li>
+                          A prominent notice will be displayed on the official
+                          website and mobile app.
+                        </li>
+                        <li>
+                          The updated policy will be published with a revised
+                          “Effective Date” and “Last Updated” tag.
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <h6>8.3 User Responsibility</h6>
+                      <p>
+                        It is the responsibility of the user to periodically
+                        review the Refund Policy. Continued use of the platform
+                        after such changes will constitute the user's
+                        acknowledgment and acceptance of the revised policy.
+                      </p>
+                    </li>
+                    <li>
+                      <h6>8.4 Regulatory Compliance</h6>
+                      <p>
+                        All amendments shall be made in adherence with the
+                        latest instructions from:
+                      </p>
+                      <ul>
+                        <li>RBI</li>
+                        <li>NPCI (BBPS guidelines)</li>
+                        <li>Ministry of Consumer Affairs</li>
+                        <li>
+                          Any other applicable Indian data protection or payment
+                          settlement authority
+                        </li>
+                      </ul>
+                      <p>
+                        In the event of any conflict between a previously issued
+                        version of the policy and an updated version, the
+                        updated version shall prevail.
+                      </p>
+                    </li>
+                  </ul>
+                  <div class="service-title">
+                    <h4>9. Contact Information</h4>
+                  </div>
+                  <p>
+                    If you have any questions, concerns, or refund-related
+                    queries, you may reach out to our dedicated support and
+                    grievance redressal team:
+                  </p>
+                  <h6>Customer Support Team</h6>
+                  <ul>
+                    <li>Email: support@sevenunique.in</li>
+                    <li>Phone: 0141-4511098</li>
+                    <li>
+                      Availability: Monday to Saturday, 10:00 AM to 6:00 PM
+                      (excluding public holidays)
+                    </li>
+                  </ul>
+                  <h6>Grievance Redressal Officer</h6>
+                  <ul>
+                    <li>
+                      Name: Compliance Officer – Sevenunique Tech Solution
+                      Private Limited
+                    </li>
+                    <li>Email: grievance@sevenunique.in</li>
+                    <li>Phone: 0141-4511098</li>
+                    <li>
+                      Office Address: Plot No 97, Dakshinpuri - I, Shrikishan,
+                      Sanganer, Jagatpura, Jaipur, Rajasthan – 302017
+                    </li>
+                  </ul>
+                  <p>
+                    We are committed to resolving your queries in a timely and
+                    transparent manner in line with RBI and NPCI consumer
+                    grievance redressal norms.
+                  </p>
+                  <p>
+                    Thank you for trusting Sevenunique Tech Solution Private
+                    Limited.
+                  </p>
+                  <p>
+                    For more details on our services and related policies,
+                    please also refer to our Terms & Conditions and Privacy
+                    Policy.
+                  </p>
                 </div>
-                <p>
-                  ABDKS reserves the right to cancel service(s) immediately
-                  under the following:
-                </p>
-
-                <ul>
-                  <li>Misuse of platform or API abuse</li>
-                  <li>Fraudulent activity or chargeback misuse</li>
-                  <li> Breach of contract or data policies</li>
-                </ul>
-                <p>
-                  Such cancellations will result in no refund and may attract
-                  legal action under Indian cyber and financial laws.
-                </p>
-
-                <div className="service-title">
-                  <h4>9. Customer Responsibilities</h4>
-                </div>
-
-                <ul>
-                  <li>Ensure accurate account information.</li>
-                  <li>Monitor transactions regularly.</li>
-                  <li>Avoid sharing login or access credentials.</li>
-                  <li>
-                    Inform support of suspicious activity within 48 hours.
-                  </li>
-                </ul>
-                <p>
-                  Failure to meet these responsibilities may delay or invalidate
-                  refunds/cancellations.
-                </p>
-
-                <div className="service-title">
-                  <h4>10. Dispute Resolution & Escalation</h4>
-                </div>
-                <h6>10.1 Grievance Redressal</h6>
-
-                <ul>
-                  <li>Level 1: Write to support@abdks.in</li>
-                  <li>Subject: "Refund Request - [Transaction ID]"</li>
-                  <li>
-                    Level 2: Escalate to grievance@abdks.in within 7 days of
-                    unsatisfactory resolution
-                  </li>
-                </ul>
-                <h6>10.2 Arbitration Clause</h6>
-
-                <ul>
-                  <li>
-                    All disputes shall be resolved via binding arbitration under
-                    the Arbitration and Conciliation Act, 1996.
-                  </li>
-                  <li>Seat of arbitration: Jaipur, Rajasthan, India</li>
-                </ul>
-
-                <h6>10.3 Jurisdiction</h6>
-
-                <ul>
-                  <li>
-                    All legal proceedings are subject to the exclusive
-                    jurisdiction of courts in Jaipur, Rajasthan, India.
-                  </li>
-                </ul>
-
-                <div className="service-title">
-                  <h4>11. Policy Updates</h4>
-                </div>
-
-                <ul>
-                  <li>
-                    ABDKS reserves the right to update this policy periodically.
-                  </li>
-                  <li>
-                    Material changes will be communicated via email or platform
-                    banner.
-                  </li>
-                  <li>
-                    Continued use post-update implies acceptance of revised
-                    terms.
-                  </li>
-                </ul>
-                <div className="service-title">
-                  <h4>12. Contact Information</h4>
-                </div>
-                <p>For refund and cancellation queries, reach us at:</p>
-
-                <h6>
-                  ABDKS Solutions Private Limited Email: support@abdks.in
-                  Grievance Cell: grievance@abdks.in Phone: +91-XXXXXXXXXX
-                  Website: www.abdks.in Office Address:
-                </h6>
-
-                <div className="service-title">
-                  <h4>13. Compliance Statement</h4>
-                </div>
-                <p>
-                  This policy is in alignment with the following Indian
-                  regulatory frameworks:
-                </p>
-                <ul>
-                  <li>Consumer Protection Act, 2019</li>
-                  <li>Information Technology Act, 2000</li>
-                  <li>
-                    Reserve Bank of India (RBI) Guidelines for Payment
-                    Aggregators and Prepaid Instruments
-                  </li>
-                  <li>Data Protection Regulations under Indian law</li>
-                </ul>
-                <p>
-                  All stakeholders are advised to review this policy regularly.
-                  By availing any service of ABDKS, you agree to the terms
-                  mentioned herein.
-                </p>
               </div>
             </div>
           </div>

@@ -85,16 +85,18 @@ const MobileRechargeUI = () => {
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{ color: "#b53008" }}>
-              Instant Prepaid Mobile Recharge Solution
+            <h2 className="fw-bold text-orange">
+              Instant Mobile Recharge via BBPS
+
             </h2>
             <h3>
-              Empower your connectivity with seamless prepaid mobile recharges,
-              where convenience meets innovation.
+              Recharge prepaid & postpaid numbers securely with the BBPS mobile portal.
+              <br />
             </h3>
+            <p>Experience uninterrupted recharge using India's reliable BBPS recharge system.We provides a fully integrated mobile recharge BBPS platform, designed for individuals, retailers and fintech entrepreneurs. With support to all major telecommunications networks and real-time recharge confirmation, you can serve customers anytime, anywhere.</p>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="images/mobile_recharge.png"
+                src="/assets/Home/mobile-vec.png"
                 alt="Image"
                 height="300"
                 className="item-center"
@@ -109,8 +111,8 @@ const MobileRechargeUI = () => {
               style={{ maxWidth: "500px", margin: "0 auto" }}
             >
               <h3
-                className="mb-4"
-                style={{ color: "#b53008", fontWeight: "bold" }}
+                className="mb-4 text-orange fw-bold"
+
               >
                 Mobile Recharge
               </h3>

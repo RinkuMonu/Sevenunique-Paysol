@@ -1,137 +1,44 @@
-import React, { useState, useEffect } from "react";
-import Accordion from "react-bootstrap/Accordion";
+import React from "react";
+
+import { TbLocationFilled } from "react-icons/tb";
 import {
-  FaBolt,
-  FaMoneyCheck,
-  FaClock,
-  FaWallet,
-  FaMobileAlt,
-  FaLock,
+  FaQuestion
 } from "react-icons/fa";
 
-const electricitySteps = [
-  "Visit the ‘Recharge & Bill Payment’ section on the ABDKS website or app.",
-  "Select ‘Electricity’ as the bill category.",
-  "Choose your Electricity Board/Operator from the dropdown.",
-  "Enter your Consumer/Account Number.",
-  "The system will automatically fetch your latest bill.",
-  "Click ‘Continue’ and verify bill details.",
-  "Select your preferred payment method and click ‘Make Payment’.",
-  "Receive instant confirmation and access your digital receipt via email or app.",
-];
-
-const electricityBoards = [
-  "JVVNL, AVVNL, JDVVNL (Rajasthan)",
-  "BSES Rajdhani / Yamuna (Delhi)",
-  "TNEB, MSEB, PSPCL, UPPCL",
-  "BESCOM, MESCOM, HESCOM, APSPDCL, APEPDCL",
-  "WBSEDCL, CESC, NBPDCL, SBPDCL, DGVCL, UGVCL, PGVCL",
-  "And many more state-regulated DISCOMs",
-];
-
-const electricityBenefits = [
-  {
-    icon: <FaBolt />,
-    title: "BBPS-Compliant Platform",
-    desc: "Secure, real-time connection to all major boards.",
-  },
-  {
-    icon: <FaMoneyCheck />,
-    title: "Zero Transaction Charges",
-    desc: "No hidden fees. What you see is what you pay.",
-  },
-  {
-    icon: <FaClock />,
-    title: "24/7 Access",
-    desc: "Pay anytime, even during holidays.",
-  },
-  {
-    icon: <FaWallet />,
-    title: "Multiple Payment Modes",
-    desc: "Supports UPI, cards, wallets, and net banking.",
-  },
-  {
-    icon: <FaMobileAlt />,
-    title: "User-Friendly Interface",
-    desc: "Seamless experience on both mobile and desktop.",
-  },
-  {
-    icon: <FaLock />,
-    title: "RBI-Approved Security",
-    desc: "Encrypted, fraud-proof transactions always.",
-  },
-];
-
-const electricityFAQs = [
-  {
-    title: "How can I check my electricity bill online?",
-    content:
-      "Open the ABDKS app or website, go to ‘Electricity’, select your operator, and enter your account details to fetch your latest bill.",
-  },
-  {
-    title: "Is online electricity bill payment secure on ABDKS?",
-    content:
-      "Yes. ABDKS uses RBI-authorized, BBPS-integrated, encrypted infrastructure to ensure secure and fraud-proof payments.",
-  },
-  {
-    title: "How quickly is my bill payment updated?",
-    content:
-      "Almost instantly. Most electricity boards reflect payments in real-time with a confirmation message and digital receipt.",
-  },
-  {
-    title: "What if the payment fails?",
-    content:
-      "In case of a failed transaction, your amount is auto-refunded. Our 24x7 Jaipur-based support team is always available to assist you.",
-  },
-  {
-    title: "Can I pay bills for others?",
-    content:
-      "Yes. Just enter the correct consumer/account number and proceed with the payment.",
-  },
-];
-
-const FAQElectricityBill = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  // Handle screen size change
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Adjust the breakpoint as per your design
-    };
-
-    handleResize(); // Check initial screen size
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-
+const SevenUniqueElectricityBill = () => {
   return (
     <>
-       {/* Hero */}
-      <section className="py-5 text-center">
+
+
+      {/* Intro */}
+      <section className="mt-5 bg-light">
         <div className="container">
-          <h1 className="display-5 fw-bold">
-            Electricity Bill Payment Online – BBPS-Powered, Secure & Instant
-          </h1>
-          <p className="mt-3 fs-6">
-            Pay electricity bills across India instantly with ABDKS – a trusted BBPS
-            platform offering real-time updates, zero extra charges, and
-            multi-operator coverage.
+          <h2 className="fw-bold text-center mb-4">
+            Electricity bill payment online- BBPS- Powered, safe, and immediate
+          </h2>
+          <p className="text-center col-md-10 mx-auto">
+           Immediately pay electricity bills across India with the SevenUnique reliable BBPS platform that offers real-time updates, zero additional fees, and multi-operator coverage.
           </p>
         </div>
       </section>
 
-      {/* How To Steps */}
-      <section className="py-5 bg-light">
+      {/* How to Pay */}
+      <section className="py-5">
         <div className="container">
-          <h2 className="text-center fw-bold mb-5">
-            How to Pay Your Electricity Bill via ABDKS
+          <h2 className="fw-bold text-center mb-5">
+            How to Pay your electricity bill through SevenUnique online
           </h2>
           <div className="row g-4">
-            {electricitySteps.map((step, i) => (
+            {[
+              "Go to 'Recharge and Bill Payment' section on the website or app",
+              "Select 'Electricity' as a bill category",
+              "Electricity bill payment online- BBPS- Powered, safe, and immediateChoose your electricity board/operator from dropdown",
+              "Enter your consumer/account number",
+              "The system will automatically receive your latest bill",
+              "Click 'Continue' and verify the bill details",
+              "Select your favorite payment method and click 'Pay'",
+              "Get immediate confirmation and use your digital receipt through email or app"
+            ].map((step, i) => (
               <div key={i} className="col-md-6">
                 <div
                   className="p-3 shadow-sm rounded-4 bg-white h-100 d-flex align-items-start"
@@ -149,32 +56,116 @@ const FAQElectricityBill = () => {
       {/* Supported Boards */}
       <section className="py-5 text-center">
         <div className="container">
-          <h2 className="fw-bold mb-4">Supported Electricity Boards</h2>
+          <h2 className="fw-bold mb-4">Supported Electricity Boards on SevenUnique BBPS</h2>
+          <p className="mb-4">
+            Our platform supports electricity bill payments across 25+ Indian states and regional electricity boards, including:
+          </p>
           <div className="row justify-content-center">
-            {electricityBoards.map((board, idx) => (
-              <div key={idx} className="col-md-4 mb-3">
+            {[
+              "JVVNL, AVVNL, JDVVNL (Rajasthan)",
+              "BSES Rajdhani / Yamuna (Delhi)",
+              "TNEB, MSEB, PSPCL, UPPCL",
+              "BESCOM, MESCOM, HESCOM, APSPDCL, APEPDCL",
+              "WBSEDCL, CESC, NBPDCL, SBPDCL, DGVCL, UGVCL, PGVCL",
+              "And many more state-regulated DISCOMs"
+            ].map((board, i) => (
+              <div key={i} className="col-md-4 mb-3">
                 <div className="text-white p-3 rounded shadow-sm fs-5 primary-bg">
                   {board}
                 </div>
               </div>
             ))}
           </div>
+          <p>Our BBPS electricity bill payment system ensures nationwide coverage, fast access, and real-time syncing with operators.</p>
         </div>
       </section>
 
-      {/* Benefits */}
+      {/* Why Choose */}
       <section className="py-5 bg-light">
         <div className="container">
           <h2 className="fw-bold text-center mb-5">
-            Why Choose ABDKS for Electricity Bill Payment?
+            Why Choose SevenUnique for Electricity Bill Payments?
           </h2>
-          <div className="row g-4">
-            {electricityBenefits.map((b, i) => (
-              <div key={i} className="col-md-4">
-                <div className="bg-white p-4 rounded-4 shadow-sm h-100 text-center">
-                  <div className="text-theme fs-2 mb-3">{b.icon}</div>
-                  <h5 className="fw-semibold">{b.title}</h5>
-                  <p className="text-muted small">{b.desc}</p>
+
+
+<div className="row g-4">
+  {[
+    "BBPS-Compliant Platform – Secure, real-time connection to all major boards",
+    "Zero Transaction Charges – Pay electricity bills online with no extra fees",
+    "Multiple Payment Modes – UPI, debit/credit card, wallet, net banking",
+    "24/7 Access – Recharge or pay bills anytime, even on holidays",
+    "Full Digital Receipt – Easily download or share your transaction history",
+    "Attractive Offers – Get discounts, promo codes, and SuperCash rewards",
+    "User-Friendly Dashboard – Works perfectly on both mobile and desktop",
+    "RBI-Approved Payment Flow – Ensures your data and money stay secure"
+  ].map((benefit, i) => (
+    <div key={i} className="col-md-6">
+      <div className="bg-white p-4 rounded-4 shadow-sm h-100 d-flex align-items-start gap-2">
+        <TbLocationFilled className="text-theme fs-4 me-2" />
+        <span>{benefit}</span>
+      </div>
+    </div>
+  ))}
+</div>
+
+        </div>
+      </section>
+
+      {/* Offers & Retailers */}
+      <section className="py-5">
+        <div className="container">
+          <h2 className="fw-bold mb-4 text-center text-theme">Electricity Bill Offers & Coupons</h2>
+          <p className="text-center col-md-8 mx-auto mb-5">
+            Enjoy 5% SuperCash up to ₹50 on your first electricity bill payment via our platform. Minimum transaction: ₹300. Maximum reward: ₹50. Visit our Electricity Bill Offers page regularly for updated coupons and cashback codes.
+          </p>
+          <h3 className="fw-bold mb-3 text-center text-theme">Benefits for Retailers & BBPS Agents</h3>
+          <p>Retail shop owners, CSC operators, and entrepreneurs can use our platform to provide utility bill payment services and earn commissions on every successful transaction.
+</p>
+          <ul>
+            <li>Serve your local community with real-time bijli bill payments</li>
+            <li>No complex setup – start with just a smartphone</li>
+            <li>Instant commission credit on every bill payment</li>
+            <li>Access to full transaction history and support via partner dashboard</li>
+            <li>Grow footfall and trust with value-added BBPS services</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="py-5 bg-light">
+        <div className="container">
+          <h2 className="fw-bold text-center mb-5">Frequently Asked Questions</h2>
+          <div className="row">
+            {[
+              {
+                q: "How can I check my electricity bill online?",
+                a: "Open the app or website, go to ‘Electricity’, select your operator, and enter your account details to fetch your latest bill."
+              },
+              {
+                q: "Is online electricity bill payment secure on SevenUnique?",
+                a: "Yes. We use RBI-authorized, BBPS-integrated, encrypted infrastructure to ensure secure and fraud-proof payments."
+              },
+              {
+                q: "How quickly is my bill payment updated?",
+                a: "Almost instantly. Most electricity boards reflect payments in real-time with a confirmation message and digital receipt."
+              },
+              {
+                q: "What if the payment fails?",
+                a: "In case of a failed transaction, your amount is auto-refunded. Our 24x7 Jaipur-based support team is always available to assist you."
+              },
+              {
+                q: "Can I pay bills for others?",
+                a: "Yes. Just enter the correct consumer/account number and proceed with the payment."
+              }
+            ].map((faq, i) => (
+              <div key={i} className="col-md-6 mb-4">
+                <div className="p-3 border rounded shadow-sm bg-white h-100">
+                  <h5 className="fw-bold">
+                                          <FaQuestion className="me-2 text-theme" />
+                                          {faq.q}
+                                        </h5>
+
+                  <p className="text-muted small">{faq.a}</p>
                 </div>
               </div>
             ))}
@@ -182,42 +173,14 @@ const FAQElectricityBill = () => {
         </div>
       </section>
 
-      {/* FAQs */}
-      <section className="py-5">
-        <div className="container">
-          <h2 className="fw-bold text-center mb-5">Frequently Asked Questions</h2>
-          {isMobile ? (
-            <Accordion>
-              {electricityFAQs.map((faq, i) => (
-                <Accordion.Item eventKey={i.toString()} key={i}>
-                  <Accordion.Header>{faq.title}</Accordion.Header>
-                  <Accordion.Body>{faq.content}</Accordion.Body>
-                </Accordion.Item>
-              ))}
-            </Accordion>
-          ) : (
-            <div className="row">
-              {electricityFAQs.map((faq, i) => (
-                <div key={i} className="col-md-6 mb-4">
-                  <div className="p-3 border rounded shadow-sm bg-white h-100">
-                    <h5 className="fw-bold">{faq.title}</h5>
-                    <p className="text-muted small">{faq.content}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="grediant-bg2 text-white py-5 text-center mb-3">
         <div className="container">
-          <h2 className="display-5 fw-bold mb-3 text-white">Pay Electricity Bills the Smart Way</h2>
+          <h2 className="display-5 fw-bold mb-3 text-white">
+            Pay Electricity Bills the Smart Way – With SevenUnique
+          </h2>
           <p className="lead col-lg-8 mx-auto mb-4">
-            Whether you're in Rajasthan, Delhi, Maharashtra, or Karnataka, ABDKS
-            offers a fast, secure, and commission-free BBPS electricity bill
-            payment solution.
+            Whether you're in Rajasthan, Delhi, Maharashtra, or Karnataka, we offer a fast, secure, and commission-free BBPS electricity bill payment solution. Enjoy nationwide service, user-friendly experience, and complete transaction peace of mind.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
             <button className="btn btn-light text-theme fw-bold px-4 py-2">
@@ -233,4 +196,4 @@ const FAQElectricityBill = () => {
   );
 };
 
-export default FAQElectricityBill;
+export default SevenUniqueElectricityBill;

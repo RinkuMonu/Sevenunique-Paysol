@@ -16,7 +16,7 @@
 .footer {
     padding: 40px 40px;
     position: relative;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
 }
 a{
     text-decoration: none !important;
@@ -90,7 +90,7 @@ a{
 }
 
 .media-icon li a:hover {
-    color: #c146f7;
+    color: #b53008;
 }
 
 .footer-menu li {
@@ -110,7 +110,7 @@ a{
 }
 
 .footer-menu li a:hover {
-    color: #c146f7
+    color: #b53008
 }
 
 .footer-menu .list-inline li {

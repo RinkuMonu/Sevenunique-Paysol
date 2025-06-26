@@ -3,27 +3,27 @@ import { FaIdCard, FaShieldAlt, FaChartLine, FaClock, FaMobileAlt, FaMoneyBillWa
 export default function FeaturesSection() {
   const features = [
     {
-      icon: <FaIdCard className="text-theme fs-1 mb-2" />,
+      icon: <FaIdCard className="text-theme fs-1 mb-2 p-1" />,
       title: "Instant Activation with PAN/Aadhaar",
     },
     {
-      icon: <FaShieldAlt className="text-theme fs-1 mb-2" />,
+      icon: <FaShieldAlt className="text-theme fs-1 mb-2 p-1" />,
       title: "Secure & Encrypted Transactions",
     },
     {
-      icon: <FaChartLine className="text-theme fs-1 mb-2" />,
+      icon: <FaChartLine className="text-theme fs-1 mb-2 p-1" />,
       title: "User-Friendly Dashboard for Jaipur Merchants",
     },
     {
-      icon: <FaClock className="text-theme fs-1 mb-2" />,
+      icon: <FaClock className="text-theme fs-1 mb-2 p-1" />,
       title: "Real-Time Settlement Reports",
     },
     {
-      icon: <FaMobileAlt className="text-theme fs-1 mb-2" />,
+      icon: <FaMobileAlt className="text-theme fs-1 mb-2 p-1" />,
       title: "Works on Any Android Device in Local Stores",
     },
     {
-      icon: <FaMoneyBillWave className="text-theme fs-1 mb-2" />,
+      icon: <FaMoneyBillWave className="text-theme fs-1 mb-2 p-1" />,
       title: "Highest Market Commissions in Jaipur",
     },
   ];
@@ -34,7 +34,7 @@ export default function FeaturesSection() {
         {/* Centered Title with Subtitle */}
         <div className="text-center mb-5">
           <p className="text-muted fs-4">
-           Built for Simplicity & Speed –<span className="text-theme fw-bold"> Trusted in Jaipur </span>
+           Built for Simplicity & Speed –<span className="text-theme fw-bold"> Trusted in India </span>
           </p>
         </div>
 

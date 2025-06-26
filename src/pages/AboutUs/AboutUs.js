@@ -1,235 +1,219 @@
 import React from "react";
 import "./AboutUs.css";
 
-
-
-
-import { FaStar, FaHandsHelping, FaShieldAlt, FaLightbulb, FaRocket, FaUsers } from "react-icons/fa";
+import {
+  FaStar,
+  FaHandsHelping,
+  FaShieldAlt,
+  FaLightbulb,
+  FaRocket,
+  FaUsers,
+} from "react-icons/fa";
 import {
   FaMobileAlt,
   FaMoneyCheckAlt,
   FaBolt,
   FaUniversity,
   FaWallet,
-  FaIdCard
+  FaIdCard,
+  FaBullseye,
 } from "react-icons/fa";
-import { FaUserPlus,  FaCheckCircle } from "react-icons/fa";
+import { FaUserPlus, FaCheckCircle } from "react-icons/fa";
 import {
   FaRupeeSign,
   FaUserCheck,
   FaSyncAlt,
-  FaThumbsUp
+  FaThumbsUp,
 } from "react-icons/fa";
-
-
-
-
+import { FaEye } from "react-icons/fa6";
 
 const AboutUs = () => {
   const listItems = [
-  {
-    text: "Instant and Secure Transactions",
-    icon: <FaBolt className="me-2 text-theme" />
-  },
-  {
-    text: "100% Verified & Trusted Platform",
-    icon: <FaShieldAlt className="me-2 text-theme" />
-  },
-  {
-    text: "Best Commission Structures",
-    icon: <FaRupeeSign className="me-2 text-theme" />
-  },
-  {
-    text: "Seamless KYC & Onboarding",
-    icon: <FaUserCheck className="me-2 text-theme" />
-  },
-  {
-    text: "BBPS, AEPS, DMT & Utility Services",
-    icon: <FaSyncAlt className="me-2 text-theme" />
-  },
-  {
-    text: "Trusted by Thousands of Retailers",
-    icon: <FaThumbsUp className="me-2 text-theme" />
-  }
-];
+    {
+      text: "Instant and Secure Transactions",
+      icon: <FaBolt className="me-2 text-theme" />,
+    },
+    {
+      text: "100% Verified & Trusted Platform",
+      icon: <FaShieldAlt className="me-2 text-theme" />,
+    },
+    {
+      text: "Best Commission Structures",
+      icon: <FaRupeeSign className="me-2 text-theme" />,
+    },
+    {
+      text: "Seamless KYC & Onboarding",
+      icon: <FaUserCheck className="me-2 text-theme" />,
+    },
+    {
+      text: "BBPS, AEPS, DMT & Utility Services",
+      icon: <FaSyncAlt className="me-2 text-theme" />,
+    },
+    {
+      text: "Trusted by Thousands of Retailers",
+      icon: <FaThumbsUp className="me-2 text-theme" />,
+    },
+  ];
 
-   const coreValues = [
-  {
-    title: "Excellence",
-    description: "We strive to deliver outstanding services and set high standards in everything we do.",
-    icon: <FaStar className="me-2 text-theme" />
-  },
-  {
-    title: "Collaboration",
-    description: "We believe in working together—internally and with our partners—for mutual growth.",
-    icon: <FaHandsHelping className="me-2 text-theme" />
-  },
-  {
-    title: "Integrity",
-    description: "Honesty and transparency are at the heart of all our interactions and decisions.",
-    icon: <FaShieldAlt className="me-2 text-theme" />
-  },
-  {
-    title: "Innovation",
-    description: "We embrace new ideas and technologies to provide smart and scalable solutions.",
-    icon: <FaLightbulb className="me-2 text-theme" />
-  },
-  {
-    title: "Customer Centricity",
-    description: "Our customers' needs and satisfaction drive our strategy and operations.",
-    icon: <FaUsers className="me-2 text-theme" />
-  },
-  {
-    title: "Growth",
-    description: "We aim to empower all stakeholders with tools and opportunities for growth.",
-    icon: <FaRocket className="me-2 text-theme" />
-  }
-];
+  const coreValues = [
+    {
+      title: "Excellence",
+      description:
+        "We provide BBPS-operated fintech solutions that set benchmarks for speed, reliability, and scale.",
+      icon: <FaStar className="me-2 text-theme" />,
+    },
+    {
+      title: "Collaboration",
+      description:
+        "We flourish by partnering with retailers, distributors, and stakeholders to expand the entire India.",
+      icon: <FaHandsHelping className="me-2 text-theme" />,
+    },
+    {
+      title: "Integrity",
+      description:
+        "We maintain transparency, morality, and data security in every transaction and relationship.",
+      icon: <FaShieldAlt className="me-2 text-theme" />,
+    },
+    {
+      title: "Innovation",
+      description:
+        "We continuously upgrade our BBPS platforms and services using the latest technologies and smart automation.",
+      icon: <FaLightbulb className="me-2 text-theme" />,
+    },
+    {
+      title: "Customer Centricity",
+      description:
+        "We prefer user needs by offering a spontaneous dashboard, quick settlements, and real value construction.",
+      icon: <FaUsers className="me-2 text-theme" />,
+    },
+    {
+      title: "Continuous Education",
+      description:
+        "We grow through continuous market research, user response, and team dismissal to live fintech-red.",
+      icon: <FaRocket className="me-2 text-theme" />,
+    },
+  ];
 
+  const services = [
+    {
+      title: "Prepaid & Postpaid Recharge BBPS",
+      description:
+        "Fast mobile recharge solutions for all telecom providers with real-time confirmation.",
+      icon: <FaMobileAlt className="fs-2 text-white" />,
+    },
+    {
+      title: "DTH Recharge BBPS Platform",
+      description:
+        "Recharge all major DTH services instantly using our secure BBPS-powered platform.",
+      icon: <FaBolt className="fs-2 text-white" />,
+    },
+    {
+      title: "BBPS Utility Bill Payments in Rajasthan",
+      description:
+        "Pay electricity, gas, water, insurance, and broadband bills through our unified BBPS system.",
+      icon: <FaUniversity className="fs-2 text-white" />,
+    },
+    {
+      title: "Card Swipe Solutions for Local Retailers",
+      description:
+        " Accept secure card payments with fast settlements and simplified merchant onboarding.",
+      icon: <FaIdCard className="fs-2 text-white" />,
+    },
+    {
+      title: "Utility Bill Payment Software",
+      description:
+        "Offer customers seamless bill payment via debit cards, credit cards, and UPI – powered by BBPS.",
+      icon: <FaMoneyCheckAlt className="fs-2 text-white" />,
+    },
+  ];
 
- const services = [
-  {
-    title: "Mobile & DTH Recharge",
-    description: "Instant prepaid recharges for all major operators.",
-    icon: <FaMobileAlt className="fs-2 text-white" />
-  },
-  {
-    title: "Utility Bill Payments",
-    description: "Electricity, water, gas bill payments made easy.",
-    icon: <FaBolt className="fs-2 text-white" />
-  },
-  {
-    title: "Money Transfer (DMT)",
-    description: "Secure bank transfers using IMPS/NEFT.",
-    icon: <FaUniversity className="fs-2 text-white" />
-  },
-  {
-    title: "AEPS & Cash Withdrawal",
-    description: "Aadhaar-based transactions and balance inquiry.",
-    icon: <FaIdCard className="fs-2 text-white" />
-  },
-  {
-    title: "BBPS Services",
-    description: "Bharat BillPay services for multiple categories.",
-    icon: <FaMoneyCheckAlt className="fs-2 text-white" />
-  },
-  {
-    title: "Wallet Management",
-    description: "Add, use, and track your wallet funds easily.",
-    icon: <FaWallet className="fs-2 text-white" />
-  }
-];
+  const features = [
+    "Instant Activation with PAN/Aadhaar",
+    "Secure & Encrypted Transactions",
+    "User-Friendly Dashboard for Merchants",
+    "Real-Time Settlement Reports",
+    "Works on Any Android Device in Local Stores",
+    "Highest Market Commissions in Jaipur",
+  ];
 
+  const steps = [
+    {
+      title: "Register with PAN & Aadhaar",
 
-const features = [
-  'Instant Activation with PAN/Aadhaar',
-  'Secure & Encrypted Transactions',
-  'User-Friendly Dashboard for Jaipur Merchants',
-  'Real-Time Settlement Reports',
-  'Works on Any Android Device in Local Stores',
-  'Highest Market Commissions in Jaipur'
-];
+      icon: <FaUserPlus className="text-theme fs-1 mb-3" />,
+    },
+    {
+      title: "Get Activated in 24 Hours",
 
-const steps = [
-  {
-    title: "Register",
-    description: "Sign up as a retailer with your mobile number and basic details.",
-    icon: <FaUserPlus className="text-theme fs-1 mb-3" />
-  },
-  {
-    title: "KYC Verification",
-    description: "Submit Aadhaar, PAN, and a live selfie for instant verification.",
-    icon: <FaIdCard className="text-theme fs-1 mb-3" />
-  },
-  {
-    title: "Start Earning",
-    description: "Access all services and begin earning commissions instantly.",
-    icon: <FaCheckCircle className="text-theme fs-1 mb-3" />
-  }
-];
+      icon: <FaIdCard className="text-theme fs-1 mb-3" />,
+    },
+    {
+      title: "Start Earning via BBPS Today",
 
+      icon: <FaCheckCircle className="text-theme fs-1 mb-3" />,
+    },
+  ];
 
-const testimonials = [
-  {
-    quote:
-      'I started with ABDKS in 2024 and now handle 300+ transactions a day. Amazing support and payouts!',
-    name: 'Ravi Kumar',
-    role: 'Retailer – Patna'
-  },
-  {
-    quote:
-      'BBPS integration was so simple. My customers love the instant bill payments.',
-    name: 'Neha Verma',
-    role: 'Shop Owner – Jaipur'
-  }
-];
-
-
+  const testimonials = [
+    {
+      quote:
+        "I started with SevenUnique in 2024, and now I handle 300 BBPS transactions daily. The stage is fast, and the support team is excellent.",
+      name: "Ravi Kumar",
+      role: "Retailer – Delhi",
+    },
+    {
+      quote:
+        "BBPS recharge and utility bill payment setup was so simple. My customers love instant service.",
+      name: "Neha Verma",
+      role: "Shop Owner – Jaipur",
+    },
+    {
+      quote:
+        "The Android app is smooth, and the commission is more satisfied with others. SevenUnique is very satisfied.",
+      name: "Mohit Meena",
+      role: "Retail Merchant  – Bihar",
+    },
+  ];
 
   return (
     <>
       <div>
-       <div className="position-relative w-100">
-  <img
-    src="/assets/aboutbg2.svg"
-    alt="Banner"
-    className="img-fluid w-100"
-    style={{ objectFit: "cover", height: "100%", minHeight: "500px" }}
-  />
+        <div
+          className="position-relative w-100 mt-5"
+          style={{ position: "relative" }}
+        >
+          <img
+            src="/assets/Home/about-banner.jpg"
+            alt="Banner"
+            className="img-fluid w-100"
+            style={{ objectFit: "cover", height: "100%", minHeight: "500px" }}
+          />
 
-  <div
-    className="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-center text-white px-3"
-    style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
-  >
-    <div className="container">
-      <h1 className="fw-bold text-white mb-3 fs-3 fs-md-1 about-heading">
-        Empowering Jaipur's Retailers with Seamless Digital Payments
+        </div>
 
-      </h1>
-
-      <p className="fs-6 fs-md-5 mb-4">
-        Recharge, Pay Bills & Earn Commissions with One Powerful Platform in Jaipur
-
-      </p>
-
-      <div className="d-grid gap-3 d-md-flex justify-content-center">
-        <a href="#" className="btn text-white btn-lg px-4 primary-bg fs-6">
-          Start Your Digital Business in Jaipur
-        </a>
-        <a href="#"className="btn btn-light btn-lg text-theme  fs-6">
-          Become a Retail Partner
-        </a>
-      </div>
-
-      <p className="pt-md-5 fs-6 text-light mb-5">
-        Fast. Secure. Scalable. Trusted by 1000+ Retailers Across Rajasthan.
-      </p>
-    </div>
-  </div>
-</div>
         <h6 className="fz40 text-center mt-5 fw-bold">ABOUT US</h6>
         <div className="container my-5">
           <div className="card shadow-lg border-0 rounded-4">
             <div className="card-body p-5">
               <h2 className="card-title text-center mb-4 fw-bold text-theme">
-                From Vision to Fintech Transformation – The ABDKS Story
+                From Vision to Fintech Powerhouse—The SevenUnique Story
               </h2>
               <p className="card-text">
-                Founded in <strong>2024</strong> by fintech visionaries{" "}
-                <strong>Mr. Dinesh Kumar</strong> and{" "}
-                <strong>Mr. Amit Balotiya</strong>,
-                <strong> ABDKS Solutions Pvt. Ltd.</strong> emerged with a
-                mission to simplify and scale digital financial services across
-                India. What started as a focused goal in Jaipur has now evolved
-                into a growing fintech force making digital payments accessible
-                to businesses and individuals alike.
+                Fintech innovators <strong>Mr. Dinesh Kumar</strong> and{" "}
+                <strong> Mr. Amit Balotia</strong> founded{" "}
+                <strong>SevenUnique Tech Solutions Private Limited</strong>,
+                ABDKS Solutions Pvt. Ltd. which was born with a bold mission: to
+                simplify and score BBPS-smooth digital financial services across
+                India. The beginning that started as a centered initiative has
+                developed as a reliable platform, offering Semales Utility Bill
+                Payments, Mobile and DTH Recharge BBPS, and Credit Card Swipe
+                Solutions.
               </p>
               <p className="card-text">
-                Backed by the legacy of{" "}
-                <strong>SevenUnique Tech Solutions</strong>, ABDKS has expanded
-                rapidly across Rajasthan, providing smart solutions like{" "}
-                <strong>BBPS</strong>, mobile & DTH recharges, utility bill
-                payments, and secure credit card transactions.
+                At <strong>SevenUnique Tech Solutions</strong>, we believe in
+                innovation, transparency, and influence. Our goal is to lead
+                India's digital payment revolution - a BBPS transaction at a
+                time.
               </p>
               <p className="card-text">
                 With <strong>innovation</strong>, <strong>integrity</strong>,
@@ -241,23 +225,27 @@ const testimonials = [
           </div>
         </div>
 
-       <div className="container my-5 bgcolor shadow-lg p-4 rounded">
-  <div className="bg-white border rounded-4 p-5">
-    <h3 className="fw-bold mb-4 text-center text-theme">Why Choose ABDKS?</h3>
-    <div className="row row-cols-1 row-cols-md-2 g-4">
-      {listItems.map((item, index) => (
-        <div key={index} className="col">
-          <div className="p-3 border-start border-4 border-theme bg-light rounded-3 d-flex align-items-start service-item style-1">
-            <div className=" service-item-inner service-active">
-            <div className="fs-5">{item.icon}</div>
-            <p className="mb-0 ms-2">{item.text}</p>
+        {/* <div className="container my-5 bgcolor shadow-lg p-4 rounded">
+          <div className="bg-white border rounded-4 p-5">
+            <h3 className="fw-bold mb-4 text-center text-theme">
+              Why Choose ABDKS?
+            </h3>
+            <div className="row row-cols-1 row-cols-md-2 g-4">
+              {listItems.map((item, index) => (
+                <div key={index} className="col">
+                  <div className="p-3 border-start border-4 border-theme bg-light rounded-3 d-flex align-items-start service-item style-1">
+                    <div className=" service-item-inner service-active">
+                      <div className="d-flex">
+                        <div className="fs-5">{item.icon}</div>
+                        <p className="mb-0 ms-2">{item.text}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</div>
+        </div> */}
 
         <div className="page-content">
           <section className="pb-0">
@@ -275,7 +263,7 @@ const testimonials = [
 
                 <div className="col-lg-6 col-md-12 mt-6 mt-lg-0 ps-lg-10 text-secondary px-3">
                   <div className="theme-title mb-4 ">
-                    <h2>WHO WE ARE</h2>
+                    <h4 className="text-theme">WHO WE ARE</h4>
                     <p>
                       We are happy to introduce you about SEVENUNIQUE TECH
                       SOLUTIONS PRIVATE LIMITED. , is service provider company
@@ -287,34 +275,47 @@ const testimonials = [
                       step forward in the field of Financial Inclusion through a
                       partnership with Multiple Banks &amp; Other Parties.
                     </p>
-                    <h2>OUR VISION</h2>
+                    <h4 className="text-theme mt-3">
+                      <FaEye className="text-theme fs-4 flex items-center me-2" />
+                      OUR VISION
+                    </h4>
                     <p className="fw-bold">
-                      Creating a Digital Future That Works for Everyone
+                      Creating a digital future that works for everyone
                     </p>
                     <p>
-                      At ABDKS, we envision a world where every business and
-                      individual can confidently participate in the digital
-                      economy. Through secure, fast, and user-friendly
-                      solutions, we are shaping India’s digital payment
-                      landscape. Our ultimate goal: to contribute to India’s
-                      transformation into the world’s leading economy by 2040 —
-                      powered by fintech innovation, accessibility, and
-                      inclusive growth.
+                      At SevenUnique, we imagine a future where every
+                      Indian-oriented retailer to remote consumers can access
+                      and benefit from BBPS-operated digital services. With
+                      mobile recharge, utility bill payment software, and DTH
+                      recharge BBPS platforms, such as sharp, safe, and easily
+                      used solutions, we are shaping India's digital payment
+                      landscape.
+                      <br />
+                      Our long-term goal: Fantech access was given by 2040 to
+                      run India's rise as a global economic leader, fueled by
+                      platform scalable platform and nationwide BBPS innovation.
                     </p>
-                    <h2>OUR MISSION</h2>
+                    <h4 className="text-theme mt-3">
+                      <FaBullseye className="text-theme fs-4 flex items-center me-2" />
+                      OUR MISSION
+                    </h4>
                     <p className="fw-bold">
-                      Empowering Businesses Through Technology
+                      Empowering businesses with BBPS-operated Technology
                     </p>
                     <p>
-                      Our mission is to build trust, foster innovation, and
-                      provide robust digital payment infrastructure that helps
-                      Indian retailers grow. Whether you are a local merchant in
-                      Jaipur or a rural distributor, ABDKS is here to power your
-                      digital growth. We’re solving real-world financial
-                      challenges with tech-first thinking — bringing digital
-                      services to underserved communities, bridging gaps in
-                      cashless ecosystems, and building resilient financial
-                      tools that serve both economic and social goals.
+                      Our mission is to provide a strong, reliable, and
+                      transparent BBPS recharge platform that empowers Indian
+                      retailers, shop owners, and local traders. Whether you are
+                      a small business or a distributor in a remote area,
+                      SevenUnique offers comfortable digital equipment to help
+                      you grow.
+                      <br />
+                      We are solving real financial constraints by enabling
+                      mobile recharge BBPS, utility bill payment, and safe
+                      credit transactions, which are bringing cashless
+                      facilities for weak communities and carrying forward
+                      India's digital changes through scalable fintech
+                      infrastructure.
                     </p>
                   </div>
                 </div>
@@ -322,136 +323,143 @@ const testimonials = [
             </div>
           </section>
 
-         <section>
-  <div className="container my-5">
-    <h3 className="text-center fw-bold mb-4 text-theme">Our Core Values</h3>
-    <h4 className="text-center mb-5">The Principles That Power ABDKS</h4>
-    <div className="row g-4">
-      {coreValues.map((value, index) => (
-        <div className="col-md-6 col-lg-4" key={index}>
-          <div className="card h-100 shadow-sm border-0 rounded-4 p-3 service-item style-1">
-            <div className="card-body service-item-inner service-active">
-              <h5 className="card-title fw-semibold text-theme d-flex align-items-center">
-                {value.icon}
-                {value.title}
-              </h5>
-              <p className="card-text">{value.description}</p>
+          <section>
+            <div className="container my-5">
+              <h3 className="text-center fw-bold mb-4 text-theme">
+                Our Core Values
+              </h3>
+              <h4 className="text-center mb-5">
+                The main principle that powers SevenUnique{" "}
+              </h4>
+              <div className="row g-4">
+                {coreValues.map((value, index) => (
+                  <div className="col-md-6 col-lg-4" key={index}>
+                    <div className="card h-100 shadow-sm border-0 rounded-4 p-3 service-item style-1">
+                      <div className="card-body service-item-inner service-active">
+                        <h5 className="card-title fw-semibold text-theme d-flex align-items-center">
+                          {value.icon}
+                          {value.title}
+                        </h5>
+                        <p className="card-text">{value.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
+          </section>
 
           <section className="bgcolor p-2">
-  <div className="container my-5">
-    <h3 className="text-center fw-bold mb-5 text-white">
-      Services Overview
-    </h3>
-    <h4 className="text-center mb-5 fw-bold text-white">
-      Our Core Fintech Services in Jaipur
-    </h4>
-    <div className="row g-4">
-      {services.map((service, index) => (
-        <div className="col-md-6" key={index}>
-          <div className="d-flex align-items-start gap-3 border rounded-4 p-4 shadow-sm h-100">
-            <div className="icon-box">{service.icon}</div>
-            <div>
-              <h5 className="mb-2 fw-semibold text-white">
-                {service.title}
-              </h5>
-              <p className="mb-0 text-white fw-bold">
-                {service.description}
-              </p>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
-
-
- <div className="container my-5">
-      <h3 className="text-center fw-bold mb-5 section-heading text-white">
-        Key Features
-      </h3>
-      <h4 className="text-center mb-5">Built for Simplicity & Speed – Trusted in Jaipur
-</h4>
-      <div className="row g-4">
-        {features.map((feature, index) => (
-          <div className="col-lg-4 col-md-6" key={index}>
-            <div className="feature-card d-flex align-items-start gap-3 p-4 rounded-4 h-100">
-              <div className="rounded-circle d-flex align-items-center fs-1 text-theme">
-                {index + 1}
+            <div className="container my-5">
+              <h3 className="text-center fw-bold mb-5 text-white">
+                Services Overview
+              </h3>
+              <h4 className="text-center mb-5 fw-bold text-white">
+                Our Core Fintech Services in India
+              </h4>
+              <div className="row g-4">
+                {services.map((service, index) => (
+                  <div className="col-md-6" key={index}>
+                    <div className="d-flex align-items-start gap-3 border rounded-4 p-4 shadow-sm h-100">
+                      <div className="icon-box">{service.icon}</div>
+                      <div>
+                        <h5 className="mb-2 fw-semibold text-white">
+                          {service.title}
+                        </h5>
+                        <p className="mb-0 text-white fw-bold">
+                          {service.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
-              <p className="mb-0 feature-text fw-semibold fs-4 text-black">{feature}</p>
+            </div>
+          </section>
+
+          <div className="container my-5">
+            <h3 className="text-center fw-bold mb-5 section-heading text-white">
+              Key Features
+            </h3>
+            <h4 className="text-center mb-5">
+              Built for Simplicity & Speed – Trusted in India
+            </h4>
+            <div className="row g-4">
+              {features.map((feature, index) => (
+                <div className="col-lg-4 col-md-6" key={index}>
+                  <div className="feature-card d-flex align-items-start gap-3 p-4 rounded-4 h-100">
+                    <div className="rounded-circle d-flex align-items-center fs-1 text-theme">
+                      {index + 1}
+                    </div>
+                    <p className="mb-0 feature-text fw-semibold fs-4 text-black">
+                      {feature}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        ))}
-      </div>
-    </div>
 
-
-<div className="container my-5 bg rounded p-3">
-  <h3 className=" text-center text-theme fw-bold">HOW IT WORKS</h3>
-  <p className="text-center fw-bold howit-heading">
-    Get Started in 3 Simple Steps – Join as a Jaipur Retailer
-  </p>
-  <div className="row g-4 justify-content-center">
-    {steps.map((step, index) => (
-      <div className="col-md-4" key={index}>
-        <div className="step-card p-4 text-center rounded-4 h-100 text-theme fs-5">
-          {step.icon}
-          <div className="step-number fw-bold fs-4 mb-2">Step {index + 1}</div>
-          <h5 className="fw-bold mb-2">{step.title}</h5>
-          <p className="mb-0">{step.description}</p>
-        </div>
-      </div>
-    ))}
-  </div>
-</div>
-
-
-    <div className="container  mt-5">
-      <h3 className="text-theme mt-5">Testimonials</h3>
-      <h4 className="mt-5 fw-bold mb-4 testimonials-heading">
-        What Our Jaipur Partners Say
-      </h4>
-      <div className="row g-4 justify-content-center">
-        {testimonials.map((testimonial, index) => (
-          <div className="col-md-6" key={index}>
-            <div className="testimonial-card p-4 rounded-4 shadow-sm h-100">
-              <p className="testimonial-quote mb-4">"{testimonial.quote}"</p>
-              <h6 className="mb-0 fw-bold">{testimonial.name}</h6>
-              <small className="text-muted">{testimonial.role}</small>
+          <div className="container my-5 bg rounded p-3">
+            <h3 className=" text-center text-theme fw-bold">HOW IT WORKS</h3>
+            <p className="text-center fw-bold howit-heading">
+              Get Started in 3 Simple Steps – Join as a BBPS Retailer Across
+              India
+            </p>
+            <div className="row g-4 justify-content-center">
+              {steps.map((step, index) => (
+                <div className="col-md-4" key={index}>
+                  <div className="step-card p-4 text-center rounded-4 h-100 text-theme fs-5">
+                    {step.icon}
+                    <div className="step-number fw-bold fs-4 mb-2">
+                      Step {index + 1}
+                    </div>
+                    <h5 className="fw-bold mb-2">{step.title}</h5>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        ))}
-      </div>
-    </div>
 
+          <div className="container  mt-5">
+            <h3 className="text-theme mt-5">Reviews section </h3>
+            <h4 className="mt-5 fw-bold mb-4 testimonials-heading">
+              What our Jaipur retailers say about SevenUnique Sample Review:
+            </h4>
+            <div className="row g-4 justify-content-center">
+              {testimonials.map((testimonial, index) => (
+                <div className="col-md-6" key={index}>
+                  <div className="testimonial-card p-4 rounded-4 shadow-sm h-100">
+                    <p className="testimonial-quote mb-4">
+                      "{testimonial.quote}"
+                    </p>
+                    <h6 className="mb-0 fw-bold">{testimonial.name}</h6>
+                    <small className="text-muted">{testimonial.role}</small>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
 
-
-
-<div className="cta-section text-center py-5 bgcolor mt-5">
-      <div className="container">
-        <h4 className="cta-heading mb-3 text-white">
-          Start Your Digital Journey in Jaipur with ABDKS
-        </h4>
-        <p className="cta-subtext mb-4 fw-bold fs-4 text-white">
-          Become a part of Jaipur's fastest-growing fintech network.
-        </p>
-        <div className="d-flex justify-content-center gap-3 flex-wrap">
-          <button className="btn btn-primary-custom">Join Now</button>
-          <button className="btn btn-outline-custom">Schedule a Demo in Jaipur</button>
-        </div>
-      </div>
-    </div>
-
-
+          <div className="cta-section text-center py-5 bgcolor mt-5">
+            <div className="container">
+              <h4 className="cta-heading mb-3 text-white">
+                Start your digital BBPS Journey with SevenUnique
+              </h4>
+              <p className="cta-subtext mb-4 fw-bold fs-4 text-white">
+                Become a part of fastest-growing BBPS and utility bill payment
+                network. Easily activate fast, and start earning today.
+              </p>
+              <div className="d-flex justify-content-center gap-3 flex-wrap">
+                <button className="btn btn-primary-custom">
+                  Now join as a BBPS Retailer
+                </button>
+                <button className="btn btn-outline-custom">
+                  A demo schedule as Distributor
+                </button>
+              </div>
+            </div>
+          </div>
 
           <section>
             <div className="container text-secondary">

@@ -49,17 +49,40 @@ const ContactUs = () => {
 
   return (
     <div>
-      <section className="page-title pb-0 border-0">
-        <img src="/images/contact.svg" alt="Contact Us" className="full-width-image" />
+ <section className="page-title pb-0 border-0">
+   <div className="position-relative w-100 ">
+          <img
+            src="/assets/Home/contact-banner.jpg"
+            alt="Banner"
+            className="img-fluid w-100"
+            style={{ objectFit: "cover", height: "100%", minHeight: "500px" }}
+          />
+        </div>
+
+      </section>
+
+
+
+
+      <section className="py-5 text-center">
+        <div className="container">
+          <h3 className="display-5 fw-bold text-theme">We are here to help - Anywhere, Anytime </h3>
+          <p className="lead mt-3">
+           Whether you are a retailer who is ready to join our BBPS network, a distributor searching for a fintech partnership, or a customer support, the SevenUnique team is available 24/7 to assist you with fast, reliable service.
+
+
+          </p>
+        </div>
       </section>
 
       <div className="page-content">
         <section className="pb-lg-0 z-index-1 pt-0">
-          <div className="container py-5">
+          <div className="container">
             <div className="row">
               <div className="col-lg-7 col-md-12 ps-lg-10 order-lg-1">
                 <div className="theme-title">
-                  <h2>Get In Touch</h2>
+                  <h2>Stay in touch</h2>
+                  <p>Fill out the form, and our team will soon return to you.</p>
                 </div>
                 {responseMessage && (
                   <div className={`alert ${responseMessage.type === "success" ? "alert-success" : "alert-danger"}`}>
@@ -136,12 +159,15 @@ const ContactUs = () => {
                       <i className="bi bi-globe-americas fs-3"></i>
                       <div>
                         <span>Head Office</span>
-                        <b>ABDKS Solutions Pvt. Ltd.
+                        <b>SevenUnique Tech Solutions Private Limited
                         </b>
                         <p>
-                          Plot No. 97, Dakshinpuri - I,
-                          Shrikishan, Sanganer, Jagatpura,
-                          Jaipur, Rajasthan, India – 302017
+                         SevenUnique Tech Solutions Private Limited
+ Plot number 97, Darakshapuri - I,
+ Srikishan, Sangner, Jagatpura,
+ Jaipur, Rajasthan, India - 302017
+
+
                         </p>
                       </div>
                     </li>
@@ -164,16 +190,17 @@ const ContactUs = () => {
                           </a>
                         <p className="fw-bold  fs-6">Email</p>
                         <a href="mailto:info@7unique.in" className="text-decoration-none  fs-6">
-                          info@7unique.in
+                          Support@7unique.in
                         </a>
+
 
                       </div>
                     </li>
                     <li>
                       <i className="bi bi-clock fs-3"></i>
                       <div>
-                        <span>Business Hours</span>
-                        24x7 Assistance for All BBPS Partners
+                        <span>Professional Hours</span>
+                        24/7 assistance for all BBPS partners
 
                       </div>
                     </li>
@@ -198,11 +225,12 @@ const ContactUs = () => {
         </section>
       </div>
       <div className="text-center mb-3 pt-4 border-top">
-        <h5 className="fw-bold mb-3"> Partner With Us</h5>
-        <p className="text-muted small">
-          Interested in becoming an ABDKS BBPS retailer, distributor, or service partner?
-        </p>
-        <button className="btn text-theme fw-semibold rounded-pill px-4 ">Become a Partner →</button>
+<h5 className="text-theme fw-bold"> Partner with us</h5>
+        <h5 className="fw-bold mb-3"> At SevenUnique  BBPS willing to become retailers, distributors, or service partners?
+ Let's increase India's digital payment future simultaneously.
+</h5>
+
+        <button className="btn text-theme fw-semibold rounded-pill px-4 ">Be a Partner →</button>
       </div>
     </div>
   );

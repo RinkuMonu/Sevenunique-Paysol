@@ -7,14 +7,16 @@ import {
   FaMobileAlt,
   FaUsers,
   FaWallet,
+  FaQuestion,
 } from "react-icons/fa";
 
 const datacardOperators = [
   "JioFi Datacard",
-  "Airtel 4G Datacard",
-  "VI Dongle / Internet Stick",
+  "Airtel 4G Dongle / Hotspot",
+  "VI Dongle (Vodafone Idea",
   "BSNL Data Card",
   "MTNL Dongle",
+  "And other prepaid internet providers",
 ];
 
 const datacardSteps = [
@@ -30,57 +32,62 @@ const datacardSteps = [
 const datacardBenefits = [
   {
     icon: <FaClock />,
-    title: "24x7 Recharge Availability",
-    desc: "Recharge anytime, from any device.",
+    desc: "BBPS-supported platform-RBI-authorized and safe digital payment ecosystem",
   },
   {
     icon: <FaWifi />,
-    title: "Instant Confirmation",
-    desc: "Get real-time success messages and receipts.",
+    desc: "Instant Recharge-Right-Time Payment Success and Balance Update",
   },
   {
     icon: <FaLock />,
-    title: "Secure Transactions",
-    desc: "Encrypted payments ensure your safety.",
+    desc: "Multi-operator support-Recharge for any major data provider in India",
   },
   {
     icon: <FaMobileAlt />,
-    title: "Mobile-Friendly Design",
-    desc: "Optimized for smartphones and low-bandwidth usage.",
+    desc: "Mobile-friendly interface-cum customized for bandwidth and mobile use",
   },
   {
     icon: <FaUsers />,
-    title: "Multi-Operator Support",
-    desc: "Supports Jio, Airtel, VI, BSNL, MTNL & more.",
+    desc: "No additional fee - no hidden transaction fee",
   },
   {
     icon: <FaWallet />,
-    title: "Retailer Benefits",
-    desc: "Earn commission on every successful recharge.",
+    desc: "Attractive offers, cashbacks, supercash, and coupon-based awards are available",
   },
 ];
 
 const datacardFAQs = [
   {
-    title: "How long does a datacard recharge take?",
+    title: "How do I recharge my internet dongle?",
     content:
-      "Most recharges are processed instantly and balance reflects within minutes.",
+      "Log in to SevenUnique , choose 'Datacard Recharge', select your operator, enter your device number, and complete the payment.",
   },
   {
-    title: "Can I recharge a JioFi device or Airtel dongle?",
+    title: "What is a datacard?",
     content:
-      "Yes, ABDKS supports all leading datacard and dongle providers like JioFi, Airtel, VI, and BSNL.",
+      "A datacard is a device or card that provides internet connectivity through mobile networks. It can be USB-based, SIM-based, or wireless.",
   },
   {
-    title: "Is there any extra charge on datacard recharge?",
-    content: "No. There are no hidden charges on recharges done through ABDKS.",
+    title: " Is dongle recharge the same as datacard recharge?",
+    content:
+      "Yes. In most cases, dongles (Wi-Fi or USB sticks) are referred to as datacards, and recharge plans are similar.",
   },
   {
-    title: "Can I check available datacard plans?",
+    title: "Is dongle internet faster than mobile internet?",
     content:
-      "Yes. The platform fetches operator-specific plans after entering your datacard number.",
+      "Speed varies by operator, location, and device. Dongles offer stable access for laptops and desktops, while mobile internet supports all-day use on phones.",
+  },
+  {
+    title: "Are there any extra charges on SevenUnique?",
+    content: " No. offers datacard and dongle recharges with zero hidden fees.",
+  },
+  {
+    title: "Can I check available datacard recharge plans?",
+    content:
+      " Yes. After entering your datacard number and operator, available plans will be displayed automatically.",
   },
 ];
+
 const FAQDataCardRecharge = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -99,12 +106,23 @@ const FAQDataCardRecharge = () => {
 
   return (
     <>
-      
       <section className="py-5 text-center ">
         <div className="container">
-          <h1 className="display-5 fw-bold">Datacard Recharge Made Easy</h1>
+          <h4 className="display-5 fw-bold">
+            Data card recharge was simplified with SevenUnique.
+          </h4>
           <p className=" mt-3 fs-6">
-            Fast, secure, and real-time internet datacard recharge — anytime, anywhere.
+            In today's digital-first world, uninterrupted internet is
+            non-parasitic. Whether you are streaming, working from afar,
+            participating in online classes, or gaming, your internet dongle or
+            data card should be active.
+            <br />
+            Our platform provides a sharp, safe, and easy-to-use platform to
+            recharge any prepaid data card or dongle—any prepaid data card or
+            dongle-anywhere in India, any prepaid data card or dongle.
+            <br />
+            Supported by BBPS (India Bill Payment System), it ensures real-time
+            recharge confirmation and complete operator coverage.
           </p>
         </div>
       </section>
@@ -112,11 +130,16 @@ const FAQDataCardRecharge = () => {
       {/* How To Steps */}
       <section className="py-5 bg-light">
         <div className="container">
-          <h2 className="text-center fw-bold mb-5">How to Recharge Your Datacard</h2>
+          <h2 className="text-center fw-bold mb-5">
+            How to Recharge Your Datacard
+          </h2>
           <div className="row g-4">
             {datacardSteps.map((step, i) => (
               <div key={i} className="col-md-6">
-                          <div className="p-3 shadow-sm rounded-4 bg-white h-100 d-flex align-items-start" style={{ borderLeft: "4px solid #b53008" }}>
+                <div
+                  className="p-3 shadow-sm rounded-4 bg-white h-100 d-flex align-items-start"
+                  style={{ borderLeft: "4px solid #b53008" }}
+                >
                   <div className="me-3 fs-4 fw-bold text-theme">{i + 1}</div>
                   <div>{step}</div>
                 </div>
@@ -129,7 +152,12 @@ const FAQDataCardRecharge = () => {
       {/* Supported Operators */}
       <section className="py-5 text-center">
         <div className="container">
-          <h2 className="fw-bold mb-4">Supported Datacard Operators</h2>
+          <h2 className="fw-bold mb-4">
+            Supported Datacard & Dongle Operators
+          </h2>
+          <p>
+            Recharge supported for all major devices and internet providers:
+          </p>
           <div className="row justify-content-center">
             {datacardOperators.map((op, idx) => (
               <div key={idx} className="col-md-4 mb-3">
@@ -139,13 +167,19 @@ const FAQDataCardRecharge = () => {
               </div>
             ))}
           </div>
+          <p>
+            Whether it’s a USB modem, Wi-Fi dongle, or 4G stick, it enables
+            secure online recharge with a few simple steps.
+          </p>
         </div>
       </section>
 
       {/* Benefits */}
       <section className="py-5 bg-light">
         <div className="container">
-          <h2 className="fw-bold text-center mb-5">Why Choose ABDKS?</h2>
+          <h2 className="fw-bold text-center mb-5">
+            Why choose SevenUnique for Datakard Recharge?
+          </h2>
           <div className="row g-4">
             {datacardBenefits.map((b, i) => (
               <div key={i} className="col-md-4">
@@ -160,10 +194,34 @@ const FAQDataCardRecharge = () => {
         </div>
       </section>
 
+      <section className="py-5">
+        <div className="container">
+          <h4 className="fw-bold mb-4 text-center text-theme">
+            For Retailers & Digital Service Points
+          </h4>
+          <p className="text-center col-md-8 mx-auto mb-3">
+            If you run a cyber café, recharge shop, CSC center, or local store,
+            you can earn by offering datacard recharge services :
+          </p>
+
+          <div class="d-flex justify-content-center">
+            <ul class="list-unstyled text-center">
+              <li>Serve internet users in your locality</li>
+              <li>Add a high-demand digital service to your offering</li>
+              <li>No technical setup required – just login and start</li>
+              <li>Track commissions and reports in real-time</li>
+              <li>Get onboarding and support from our Jaipur-based team</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       {/* FAQs */}
       <section className="py-5">
         <div className="container">
-          <h2 className="fw-bold text-center mb-5">Frequently Asked Questions</h2>
+          <h2 className="fw-bold text-center mb-5">
+            Frequently Asked Questions
+          </h2>
           {isMobile ? (
             <Accordion>
               {datacardFAQs.map((faq, i) => (
@@ -178,7 +236,11 @@ const FAQDataCardRecharge = () => {
               {datacardFAQs.map((faq, i) => (
                 <div key={i} className="col-md-6 mb-4">
                   <div className="p-3 border rounded shadow-sm bg-white h-100">
-                    <h5 className="fw-bold">{faq.title}</h5>
+                    <h5 className="fw-bold">
+                      <FaQuestion className="me-2 text-theme" />
+                      {faq.title}
+                    </h5>
+
                     <p className="text-muted small">{faq.content}</p>
                   </div>
                 </div>
@@ -191,13 +253,23 @@ const FAQDataCardRecharge = () => {
       {/* CTA */}
       <section className="grediant-bg2 text-white py-5 text-center mb-3">
         <div className="container">
-          <h2 className="display-5 fw-bold mb-3">Stay Connected, Always</h2>
+          <h2 className="display-5 fw-bold mb-3 text-white">
+            Keep Your Internet Running with SevenUnique{" "}
+          </h2>
           <p className="lead col-lg-8 mx-auto mb-4">
-            Keep your internet running with fast and reliable datacard recharges from ABDKS.
+            Whether you're at home, traveling, or running a business, the
+            datacard recharge system keeps your internet running smoothly.
+            <br />
+            Recharge online in seconds and enjoy uninterrupted browsing—anytime,
+            anywhere.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <button className="btn btn-light text-theme fw-bold px-4 py-2">Recharge Now</button>
-            <button className="btn btn-outline-light fw-bold px-4 py-2">Join as a Retailer</button>
+            <button className="btn btn-light text-theme fw-bold px-4 py-2">
+              Recharge Now
+            </button>
+            <button className="btn btn-outline-light fw-bold px-4 py-2">
+              Join as a Retailer
+            </button>
           </div>
         </div>
       </section>

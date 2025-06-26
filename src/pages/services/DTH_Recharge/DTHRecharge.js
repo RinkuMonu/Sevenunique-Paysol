@@ -36,16 +36,18 @@ const DTHRecharge = () => {
       <div className="p-5" style={{backgroundColor:"#EFF8FF"}}>
         <Row>
           <Col md={6} className="text-center text-md-start">
-            <h2 className="fw-bold" style={{color:"#872D67"}}>
-              DTH Recharge: Uninterrupted Entertainment!
+            <h2 className="fw-bold text-orange">
+             DTH recharge services with SevenUnique
+
             </h2>
             <h3>
-              Elevate your entertainment with hassle-free DTH recharges that put
-              you in control of your TV experience.
+              Recharge your DTH connection instantly with our BBPS-compliant platform.
+
+
             </h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="images/dth.png"
+                src="/assets/Home/dth-vec.png"
                 alt="Image"
                 height="300"
                 className="item-center"
@@ -58,7 +60,7 @@ const DTHRecharge = () => {
               className="p-4 rounded bg-white shadow"
               style={{ maxWidth: "500px", margin: "0 auto" }}
             >
-              <h3 className="mb-4" style={{color:"#872D67",fontWeight:"bold"}}>DTH Recharge</h3>
+              <h3 className="mb-4 text-orange fw-bold">DTH Recharge</h3>
               <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="operator">
                   <div className="d-flex justify-content-between align-items-center">
@@ -115,7 +117,7 @@ const DTHRecharge = () => {
                   variant="primary"
                   type="submit"
                   className="w-100"
-                  style={{ backgroundColor: "#872D67", color: "white" }}
+                  style={{ backgroundColor: "#b53008", color: "white" }}
                   disabled={!isFormValid}
                 >
                   Confirm

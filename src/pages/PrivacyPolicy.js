@@ -3,398 +3,222 @@ import React from "react";
 export default function PrivacyPolicy() {
   return (
     <>
-      <section class="page-title">
-        <img src="/assets/Home/privacy.svg" alt="TERMS" />
-        <div className="container text-secondary">
-          <div className="row my-5">
-            <div className="col-lg-12 col-md-12 text-left">
-              <div className="service-item style-2">
-                <div className="service-desc abt">
-                  <div className="service-title">
-                    <h4>1 . INTRODUCTION</h4>
-                  </div>
-                  <p>
-                    Welcome to ABDKS Solutions Private Limited ("ABDKS," "we,"
-                    "our," or "us"). We are committed to respecting and
-                    protecting the privacy of our users, clients, merchants,
-                    distributors, and partners. This Privacy Policy outlines how
-                    we collect, use, disclose, store, and protect your personal
-                    and business information when you interact with our services
-                    via our website, mobile apps, APIs, and associated digital
-                    platforms (collectively, the "Services"). By using our
-                    Services, you consent to the terms outlined in this Privacy
-                    Policy. If you do not agree with any part of this policy,
-                    please refrain from accessing or using our Services.
-                  </p>
-
-                  <div className="service-title">
-                    <h4>2 . SCOPE</h4>
-                  </div>
-                  <p>This Privacy Policy applies to:</p>
-                  <ul>
-                    <li>
-                      All users who visit or interact with the ABDKS website
-                      (www.abdks.com)
-                    </li>
-                    <li>Users of ABDKS mobile applications</li>
-                    <li>
-                      Distributors, Retailers, and Agents registered with our
-                      platform
-                    </li>
-                    <li>
-                      Partners and merchants who engage with our B2B fintech
-                      ecosystem
-                    </li>
-                    <li>
-                      Any services operated by ABDKS Solutions Pvt. Ltd.,
-                      including BBPS, AEPS, Recharge, Bill Payments, DTH
-                      services, PAN Verification, EMI Collection, and more
-                    </li>
-                  </ul>
-                  <p>
-                    It does not apply to third-party websites or services that
-                    may be linked through our platform.
-                  </p>
-                  <div className="service-title">
-                    <h4>3. INFORMATION WE COLLECT</h4>
-                  </div>
-                  <p>
-                    ABDKS may collect the following categories of information
-                    from different stakeholders including customers, partners,
-                    agents, retailers, and distributors:
-                  </p>
-                  <h6> 3.1 Personal Information</h6>
-                  <ul>
-                    <li>Full Name</li>
-                    <li>Email Address</li>
-                    <li>Mobile Number</li>
-                    <li>Date of Birth</li>
-                    <li>PAN Card, Aadhaar Number</li>
-                    <li>Bank Account Details (Account Number, IFSC, UPI ID)</li>
-                    <li>Address and Location Information</li>
-                  </ul>
-                  <h6> 3.2 Business & Retailer Information</h6>
-                  <ul>
-                    <li>Shop/Business Name</li>
-                    <li>Distributor/Retailer ID</li>
-                    <li>Business PAN/GST details</li>
-                    <li>Location and service preferences</li>
-                    <li>Commission slabs and earnings reports</li>
-                  </ul>
-
-                  <h6> 3.3 Authentication and KYC</h6>
-                  <ul>
-                    <li>
-                      Scanned copies or images of PAN card, Aadhaar card,
-                      passport, or other government IDs
-                    </li>
-                    <li>Live verification photos</li>
-                    <li>
-                      Signature and biometrics (in AEPS or authorized biometric
-                      devices)
-                    </li>
-                  </ul>
-
-                  <h6> 3.4 Transactional Information</h6>
-                  <ul>
-                    <li>
-                      Transaction history (recharges, bill payments, wallet
-                      usage)
-                    </li>
-                    <li>Amount, service type, status, and timestamps</li>
-                    <li>
-                      Beneficiary account details (for DMT, payouts, BBPS)
-                    </li>
-                    <li>Settlement and commission logs</li>
-                  </ul>
-
-                  <h6> 3.5 Device & Log Information</h6>
-                  <ul>
-                    <li>Device type, operating system, browser type</li>
-                    <li>IP Address, MAC address, and device identifiers</li>
-                    <li>Access time, session duration, error logs</li>
-                  </ul>
-
-                  <h6> 3.6 Location Data</h6>
-                  <ul>
-                    <li>
-                      Geo-location (GPS-based, IP-based) while using services
-                    </li>
-                  </ul>
-
-                  <h6> 3.7 Cookies and Tracking Technologies</h6>
-                  <ul>
-                    <li>Session cookies for login retention</li>
-                    <li>Analytics cookies (e.g., Google Analytics)</li>
-                    <li>
-                      Behavioral and ad-targeting pixels (where applicable)
-                    </li>
-                  </ul>
-                  <div className="service-title">
-                    <h4>4. PURPOSE OF COLLECTION</h4>
-                  </div>
-
-                  <h6> 4.1 Service Delivery</h6>
-                  <ul>
-                    <li>
-                      To process your bill payments, recharges, wallet top-ups,
-                      and fund transfers
-                    </li>
-                    <li>
-                      To provide BBPS, AEPS, and DMT services securely and
-                      efficiently
-                    </li>
-                    <li>
-                      To offer personalized reports and transaction dashboards
-                      to partners
-                    </li>
-                  </ul>
-
-                  <h6> 4.2 Account Creation & Verification</h6>
-                  <ul>
-                    <li>To verify your identity and perform KYC checks</li>
-                    <li>
-                      To register retailers and distributors under appropriate
-                      roles
-                    </li>
-                    <li>To prevent fraudulent or duplicate sign-ups</li>
-                  </ul>
-
-                  <h6> 4.3 Communications</h6>
-                  <ul>
-                    <li>
-                      To send OTPs, alerts, receipts, service messages, and
-                      promotional emails
-                    </li>
-                    <li>
-                      To communicate commission updates, offer alerts, and
-                      service announcements
-                    </li>
-                  </ul>
-
-                  <h6> 4.4 Personalization & Improvements</h6>
-                  <ul>
-                    <li>To improve user experience via usage analytics</li>
-                    <li>To suggest offers and service recommendations</li>
-                    <li>
-                      To provide insights and business analytics to our
-                      distributor/retailer network
-                    </li>
-                  </ul>
-
-                  <h6> 4.5 Regulatory & Legal Compliance</h6>
-                  <ul>
-                    <li>To meet RBI, NPCI, UIDAI, SEBI, and TRAI compliance</li>
-                    <li>
-                      To store data as per Indian legal frameworks such as the
-                      IT Act, 2000 and DPDP Act
-                    </li>
-                  </ul>
-
-                  <h6> 4.6 Safety & Risk Management</h6>
-                  <ul>
-                    <li>
-                      To identify and block suspicious or fraudulent
-                      transactions
-                    </li>
-                    <li>
-                      To maintain platform integrity and retailer compliance
-                    </li>
-                  </ul>
-                  <div className="service-title">
-                    <h4>5. SHARING OF INFORMATION</h4>
-                  </div>
-                  <p>
-                    We may share your information under the following
-                    circumstances:
-                  </p>
-                  <h6> 5.1 With Authorized Service Providers</h6>
-                  <ul>
-                    <li>
-                      Banks, payment gateways, BBPS aggregators, telecom/DTH
-                      companies
-                    </li>
-                    <li>KYC verification partners and API service providers</li>
-                  </ul>
-
-                  <h6> 5.1 With Authorized Service Providers</h6>
-                  <ul>
-                    <li>
-                      Banks, payment gateways, BBPS aggregators, telecom/DTH
-                      companies
-                    </li>
-                    <li>KYC verification partners and API service providers</li>
-                  </ul>
-
-                  <h6> 5.2 With Government or Legal Authorities</h6>
-                  <ul>
-                    <li>
-                      RBI, NPCI, UIDAI, SEBI, Income Tax Department (in case of
-                      lawful requests)
-                    </li>
-                    <li>
-                      Police, Courts, Enforcement Directorate (upon issuance of
-                      proper notice)
-                    </li>
-                  </ul>
-                  <h6> 5.3 With Group Companies or Affiliates</h6>
-                  <ul>
-                    <li>
-                      For common infrastructure, consolidated reporting, or
-                      cross-selling
-                    </li>
-                  </ul>
-
-                  <h6> 5.4 With Distributors or Area Heads</h6>
-                  <ul>
-                    <li>
-                      In some cases, limited data such as retailer activity and
-                      commission logs may be visible to mapped distributors for
-                      operational and support purposes. Distributors must follow
-                      data confidentiality guidelines provided by ABDKS.
-                    </li>
-                  </ul>
-
-                  <h6> 5.5 In Business Transfers</h6>
-                  <ul>
-                    <li>
-                      In case of acquisition, merger, sale of assets,
-                      bankruptcy, or restructuring
-                    </li>
-                  </ul>
-                  <div className="service-title">
-                    <h4>6 . USER RESPONSIBILITIES</h4>
-                  </div>
-                  <p>As a user of ABDKS services, you are responsible for:</p>
-
-                  <ul>
-                    <li>
-                      Maintaining the confidentiality of your login credentials
-                    </li>
-                    <li>
-                      Ensuring all personal or business information shared is
-                      accurate
-                    </li>
-                    <li>
-                      Not using our services for unlawful or fraudulent purposes
-                    </li>
-                    <li>Reporting any unauthorized use of your account</li>
-                    <li>Complying with all applicable data protection laws</li>
-                  </ul>
-                  <p>
-                    ABDKS is not liable for any loss caused due to your
-                    negligence or failure to comply with these responsibilities.
-                  </p>
-
-                  <div className="service-title">
-                    <h4>7 . AI-BASED FRAUD DETECTION & MONITORIING</h4>
-                  </div>
-                  <p>
-                    We use Artificial Intelligence and machine learning
-                    algorithms to:
-                  </p>
-
-                  <ul>
-                    <li>Monitor real-time transaction patterns</li>
-                    <li>Detect unusual activity that may indicate fraud</li>
-                    <li>Analyze location-based behavior inconsistencies</li>
-                    <li>
-                      Flag multiple failed attempts or access from suspicious IP
-                      addresses
-                    </li>
-                  </ul>
-                  <p>
-                    These tools are used solely for risk mitigation and do not
-                    make decisions that affect users without human oversight.
-                  </p>
-
-                  <div className="service-title">
-                    <h4>8 . DATA PORTABILITY & EXPORT</h4>
-                  </div>
-                  <p>Users can request to:</p>
-
-                  <ul>
-                    <li>
-                      Export transaction history and personal data in
-                      machine-readable formats
-                    </li>
-                    <li>
-                      Transfer essential business data for reporting or audits
-                    </li>
-                  </ul>
-                  <p>
-                    ABDKS may take up to 7 working days to fulfill such
-                    requests, subject to verification.
-                  </p>
-
-                  <div className="service-title">
-                    <h4>9 . PARTNER & DISTRIBUTOR INFORMATION USE</h4>
-                  </div>
-                  <p>
-                    We collect business-related data from our authorized
-                    partners, including:
-                  </p>
-
-                  <ul>
-                    <li>
-                      Retailer onboarding info (PAN, address, shop type, etc.)
-                    </li>
-                    <li>Distributor-led onboarding details and mapping</li>
-                    <li>Monthly transaction performance reports</li>
-                    <li>Commission summaries</li>
-                  </ul>
-                  <p>
-                    This data is only accessible to mapped users within their
-                    business hierarchy and is not disclosed publicly.
-                  </p>
-
-                  <div className="service-title">
-                    <h4>
-                      10 . INTERNATIONAL REGULATIONS (GDPR & DPDP COMPLIANCE)
-                    </h4>
-                  </div>
-                  <p>
-                    While ABDKS primarily operates in India, we align our
-                    policies with global privacy laws:
-                  </p>
-
-                  <ul>
-                    <li>General Data Protection Regulation (GDPR – EU)</li>
-                    <li>Digital Personal Data Protection Act (DPDP – India)</li>
-                  </ul>
-                  <p>Users can:</p>
-                  <ul>
-                    <li>Access or correct their data</li>
-                    <li>Opt out of data processing</li>
-                    <li>Request data deletion under specific conditions</li>
-                  </ul>
-
-                  <div className="service-title">
-                    <h4>11 . JURISDICTION & DISPUTE RESOLUTION</h4>
-                  </div>
-                  <p>
-                    This policy is governed by the laws of India. All disputes
-                    shall be resolved under the jurisdiction of courts located
-                    in Jaipur, Rajasthan. In case of grievances, users must
-                    first contact our Grievance Officer before initiating legal
-                    action.
-                  </p>
-
-                  <h4>12 . CHANGES TO THIS POLICY</h4>
-                </div>
-                <p>
-                  We review this policy annually and update it as needed based
-                  on new regulations or services. Any changes will be notified
-                  via email or banners on our platform. Users are encouraged to
-                  review this policy regularly.
-                </p>
+     <section className="page-title">
+       <div className="position-relative w-100">
+          <img
+            src="/assets/Home/privacy-banner.jpg"
+            alt="TERMS"
+            className="img-fluid w-100"
+            style={{ objectFit: "cover", height: "100%", minHeight: "500px" }}
+          />
+        </div>
 
 
-              </div>
-            </div>
+  <div className="container text-secondary">
+    <div className="row my-5">
+      <div className="col-lg-12 col-md-12 text-left">
+        <div className="service-item style-2">
+          <div className="service-desc abt">
+            <h4>1. Introduction and Scope</h4>
+            <p>
+              Sevenunique Tech Solution Private Limited ("Sevenunique", "we", "our", or "us") is committed to protecting the privacy and security of the personal data of individuals who use our services. We operate a digital utility payment platform compliant with RBI's Bharat Bill Payment System (BBPS) framework, offering services such as mobile and DTH recharges, electricity bill payments, gas, water, broadband, and other related utility payments.
+            </p>
+            <p>
+              This Privacy Policy outlines how we collect, process, store, share, and protect your personal data in compliance with the following Indian regulations:
+              <ul>
+                <li>The Information Technology Act, 2000, and the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011 ("SPDI Rules")</li>
+                <li>The Digital Personal Data Protection Act, 2023 ("DPDP Act")</li>
+                <li>Reserve Bank of India (RBI) BBPS Operating Guidelines</li>
+                <li>NPCI circulars and RBI-mandated IT frameworks</li>
+              </ul>
+              This Policy applies to all individuals using our website, mobile application, or associated services. By using our services, you agree to the practices described in this Privacy Policy.
+            </p>
+
+            <h4>2. Definitions and Interpretations</h4>
+            <p>To ensure clarity, the following terms are used with the meanings defined below:</p>
+            <ul>
+              <li><strong>Personal Data:</strong> Any data about an individual who is identifiable by or in relation to such data.</li>
+              <li><strong>Sensitive Personal Data or Information (SPDI):</strong> Includes financial data, passwords, biometric information, etc.</li>
+              <li><strong>Processing:</strong> Any operation performed on personal data, including collection, storage, use, disclosure, or deletion.</li>
+              <li><strong>Data Principal:</strong> The individual whose data is collected.</li>
+              <li><strong>Data Fiduciary:</strong> Sevenunique Tech Solution Private Limited.</li>
+              <li><strong>Third Parties:</strong> Regulated external entities contractually bound to handle data securely.</li>
+              <li><strong>Consent:</strong> Free, specific, informed, and unambiguous agreement for data processing.</li>
+            </ul>
+
+            <h4>3. What Data We Collect</h4>
+            <h6>a) Personal Data</h6>
+            <ul>
+              <li>Full name</li>
+              <li>Date of birth</li>
+              <li>Mobile number</li>
+              <li>Email address</li>
+              <li>Residential or billing address</li>
+              <li>Government-issued identification numbers</li>
+            </ul>
+            <h6>b) Financial and Transactional Data</h6>
+            <ul>
+              <li>Bank account number (masked)</li>
+              <li>UPI ID</li>
+              <li>Payment transaction details</li>
+              <li>Bill details</li>
+            </ul>
+            <h6>c) Technical and Device Information</h6>
+            <ul>
+              <li>IP address</li>
+              <li>Browser type and version</li>
+              <li>Operating system and device specs</li>
+              <li>Device identifiers and location</li>
+            </ul>
+            <h6>d) Cookies and Analytical Data</h6>
+            <ul>
+              <li>Session cookies</li>
+              <li>Preference cookies</li>
+              <li>Site analytics</li>
+            </ul>
+
+            <h4>4. How We Collect Data</h4>
+            <h6>a) Directly from You</h6>
+            <ul>
+              <li>During registration or payments</li>
+              <li>Customer support or forms</li>
+            </ul>
+            <h6>b) Automatically</h6>
+            <ul>
+              <li>Cookies and session logs</li>
+            </ul>
+            <h6>c) From Third Parties</h6>
+            <ul>
+              <li>NPCI/BBPS APIs</li>
+              <li>UIDAI/PAN APIs</li>
+              <li>Banks/payment gateways</li>
+            </ul>
+
+            <h4>5. Purpose of Processing</h4>
+            <h6>General Purposes</h6>
+            <ul>
+              <li>Registration, verification, support</li>
+              <li>Fraud detection</li>
+            </ul>
+            <h6>Payment and Transaction Processing</h6>
+            <ul>
+              <li>Execute payments</li>
+              <li>Send confirmations</li>
+            </ul>
+            <h6>Compliance and Legal Obligations</h6>
+            <ul>
+              <li>Reporting to RBI, NPCI</li>
+              <li>Fraud audits</li>
+            </ul>
+            <h6>Platform and Service Improvement</h6>
+            <ul>
+              <li>Analytics, performance, surveys</li>
+            </ul>
+
+            <h4>6. Legal Basis of Processing</h4>
+            <p>We rely on:</p>
+            <ul>
+              <li>Consent</li>
+              <li>Contractual necessity</li>
+              <li>Legal obligation</li>
+              <li>Legitimate interest</li>
+            </ul>
+
+            <h4>7. Data Storage, Security, and Encryption Practices</h4>
+            <ul>
+              <li>Stored in India only</li>
+              <li>AES-256 & TLS/SSL encryption</li>
+              <li>Access control policies</li>
+              <li>Compliant with ISO 27001 and PCI-DSS</li>
+            </ul>
+
+            <h4>8. How and Why We Share Data</h4>
+            <h6>a) With Regulators</h6>
+            <ul>
+              <li>RBI, NPCI</li>
+            </ul>
+            <h6>b) With Financial and Technical Partners</h6>
+            <ul>
+              <li>Banks, Payment Gateways, APIs</li>
+            </ul>
+            <h6>c) With Service Providers</h6>
+            <ul>
+              <li>Cloud providers, analytics, SMS/email tools</li>
+            </ul>
+
+            <h4>9. User Rights</h4>
+            <ul>
+              <li>Access</li>
+              <li>Correction</li>
+              <li>Deletion</li>
+              <li>Withdraw Consent</li>
+              <li>Grievance Redressal</li>
+              <li>Nominate</li>
+            </ul>
+            <p>Email: privacy@7uniques.in</p>
+
+            <h4>10. Cookies, Trackers, and Analytics Tools</h4>
+            <ul>
+              <li>Essential Functionality</li>
+              <li>Performance Monitoring</li>
+              <li>Marketing (with consent)</li>
+            </ul>
+
+            <h4>11. Grievance Redressal Mechanism</h4>
+            <p>
+              <strong>Mr. Dinesh Kumar</strong><br/>
+              Email: grievance@7unique.in<br/>
+              Jaipur, Rajasthan<br/>
+              Timing: Mon–Fri, 10 AM – 6 PM
+            </p>
+
+            <h4>12. Children’s Data and Age Limits</h4>
+            <p>Not intended for users below 18 years. Data deleted if collected unknowingly.</p>
+
+            <h4>13. Policy Changes and Notification Procedure</h4>
+            <p>We may revise this policy with notices via email, app, or website.</p>
+
+            <h4>14. Retention and Deletion Policy</h4>
+            <ul>
+              <li>Transaction records: up to 8 years</li>
+              <li>Inactive accounts: data deleted/anonymized</li>
+              <li>Cookies: 12 months</li>
+            </ul>
+
+            <h4>15. Data Protection Commitments Under DPDP Act, 2023</h4>
+            <ul>
+              <li>Consent management system</li>
+              <li>User rights dashboard (planned)</li>
+              <li>DPO to be appointed</li>
+            </ul>
+
+            <h4>16. Jurisdiction and Governing Law</h4>
+            <p>Courts in Jaipur, Rajasthan have jurisdiction.</p>
+
+            <h4>17. Contact Details</h4>
+            <p>
+              Sevenunique Tech Solution Private Limited<br/>
+              Jaipur, Rajasthan – 302017<br/>
+              Email: support@7unique.in<br/>
+              Website: https://www.sevenuniques.com
+            </p>
+
+            <h4>18. Disclaimers and User Responsibility</h4>
+            <ul>
+              <li>Keep credentials secure</li>
+              <li>No liability for user negligence</li>
+              <li>Absolute data security not guaranteed</li>
+            </ul>
+            <p>
+              For more information, refer to our <a href="https://www.sevenuniques.com/terms" target="_blank">Terms of Service</a>.
+            </p>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
     </>
   );
 }
