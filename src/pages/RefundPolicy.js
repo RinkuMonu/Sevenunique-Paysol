@@ -11,6 +11,19 @@ export default function RefundPolicy() {
             className="img-fluid w-100"
             style={{ objectFit: "cover", height: "100%", minHeight: "500px" }}
           />
+           <h1
+            className="text-white text-right fw-bold"
+            style={{
+              position: "absolute",
+              top: "30%",
+              left: "40%",
+              transform: "translate(-50%, 0%)",
+              fontSize: "5rem",
+              zIndex: 2,
+            }}
+          >
+     REFUND & CANCELLATION
+          </h1>
         </div>
 
         <div className="container text-secondary">

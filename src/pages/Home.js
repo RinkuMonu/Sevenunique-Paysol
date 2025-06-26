@@ -13,6 +13,23 @@ const Home = () => {
             className="img-fluid w-100"
             style={{ objectFit: "cover", height: "100%", minHeight: "500px" }}
           />
+            <h1
+            className="text-white text-right fw-bold"
+            style={{
+              position: "absolute",
+              top: "30%",
+              right: "10%",
+              transform: "translate(-50%, 0%)",
+              fontSize: "8rem",
+              zIndex: 2,
+            }}
+          >
+            BBPS
+            <p style={{
+              fontSize: "3rem",
+
+            }}>Bill Payment</p>
+          </h1>
         </div>
 
         {/* SVG Animated Shape */}
