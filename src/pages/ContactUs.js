@@ -135,32 +135,46 @@ const ContactUs = () => {
                     <li>
                       <i className="bi bi-globe-americas fs-3"></i>
                       <div>
-                        <span>Visit Our Location</span>
-                        <b>SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. </b>
+                        <span>Head Office</span>
+                        <b>ABDKS Solutions Pvt. Ltd.
+                        </b>
                         <p>
-                          Plot No 97, Dakshinpuri - I, Shrikishan, Sanganer, Jagatpura, Jaipur Rajasthan, India, 302017
+                          Plot No. 97, Dakshinpuri - I,
+                          Shrikishan, Sanganer, Jagatpura,
+                          Jaipur, Rajasthan, India – 302017
                         </p>
                       </div>
                     </li>
                     <li>
                       <i className="bi bi-envelope fs-3"></i>
                       <div>
-                        <span>Send Us Email</span>
-                        <a href="mailto:info@7unique.in" className="text-decoration-none">
+                        <span>Customer Support</span>
+                  
+                          <p className="fw-bold fs-6">Phone</p>
+                          <a
+                            href="tel:01414511098"
+                            className="text-decoration-none fs-6"
+                          >+91-XXXXXXXXXX
+                          </a>
+                      <p className="fw-bold  fs-6">WhatsApp</p>
+                          <a
+                            href="tel:01414511098"
+                            className="text-decoration-none  fs-6"
+                          >+91-XXXXXXXXXX
+                          </a>
+                        <p className="fw-bold  fs-6">Email</p>
+                        <a href="mailto:info@7unique.in" className="text-decoration-none  fs-6">
                           info@7unique.in
                         </a>
+
                       </div>
                     </li>
                     <li>
-                      <i className="bi bi-telephone-outbound fs-3"></i>
+                      <i className="bi bi-clock fs-3"></i>
                       <div>
-                        <span>Phone No.</span>
-                        <a
-                          href="tel:01414511098"
-                          className="text-decoration-none"
-                        >
-                        01414511098
-                        </a>
+                        <span>Business Hours</span>
+                        24x7 Assistance for All BBPS Partners
+
                       </div>
                     </li>
                   </ul>
@@ -182,6 +196,13 @@ const ContactUs = () => {
             </div>
           </div>
         </section>
+      </div>
+      <div className="text-center mb-3 pt-4 border-top">
+        <h5 className="fw-bold mb-3"> Partner With Us</h5>
+        <p className="text-muted small">
+          Interested in becoming an ABDKS BBPS retailer, distributor, or service partner?
+        </p>
+        <button className="btn text-theme fw-semibold rounded-pill px-4 ">Become a Partner →</button>
       </div>
     </div>
   );

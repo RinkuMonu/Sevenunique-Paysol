@@ -10,11 +10,12 @@ const RedeemPayback = () => {
       <Row>
         {/* Left Side Content */}
         <Col md={6} className="text-center text-md-start">
-          <h2 className="fw-bold" style={{color:"#872D67"}}>
-            The best reward for loyalty? Money.
+          <h2 className="fw-bold text-theme" >
+           The Best Reward for Loyalty? Real Money.
           </h2>
           <h3>
-            Redeem your Payback Points at SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. .!
+           Redeem Your Payback Points Instantly with ABDKS Solutions Pvt. Ltd.
+
           </h3>
         </Col>
 
@@ -26,15 +27,23 @@ const RedeemPayback = () => {
             style={{ maxWidth: "400px" }}
           >
            
-            <h3 className='fw-bold' style={{color:"#872D67"}}>Login with phone number linked with PAYBACK </h3>
+            <h3 className='fw-bold text-theme' >Login with phone number linked with PAYBACK </h3>
             
-            <Button
-              variant="primary"
-              className="mt-3 w-100"
-              style={{ backgroundColor: "#872D67", color: "white" }}
-            >
-              Login
-            </Button>
+      <ul className="list-unstyled mt-3">
+      <li>✔ Quick Redemption Process</li>
+      <li>✔ Instant Discount on Transactions</li>
+      <li>✔ No Hidden Charges</li>
+      <li>✔ Works Across All ABDKS Partnered Services</li>
+    </ul>
+    <div className="mt-4 d-flex justify-content-center gap-3 flex-wrap">
+      <a href="#check-balance" className="btn btn-light border-light  text-theme fw-semibold px-4 py-2 rounded-pill">
+        Check Payback Balance
+      </a>
+      <a href="#redeem" className="btn border-light text-theme fw-semibold px-4 py-2 rounded-pill">
+        Redeem Now
+      </a>
+    </div>
+
           </div>
         </Col>
       </Row>

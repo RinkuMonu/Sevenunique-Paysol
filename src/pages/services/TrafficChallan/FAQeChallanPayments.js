@@ -1,5 +1,104 @@
 import React, { useState, useEffect } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
+import {
+  FaCarCrash,
+  FaReceipt,
+  FaShieldAlt,
+  FaCheckCircle,
+  FaClock,
+  FaMobileAlt,
+  FaStore,
+  FaFileInvoiceDollar,
+} from "react-icons/fa";
+
+const challanSteps = [
+  "Visit the Challan Payment section on the ABDKS app or website.",
+  "Enter your vehicle number or challan number.",
+  "The system auto-fetches any pending fines.",
+  "Verify the fine details and amount.",
+  "Make payment using UPI, debit/credit card, wallet, or net banking.",
+  "Receive instant confirmation and digital receipt.",
+];
+
+const challanTypes = [
+  "E-Challans issued by traffic police",
+  "Speeding fines",
+  "Red light violations",
+  "No parking penalties",
+  "Helmet/seatbelt violations",
+  "Vehicle document-related fines",
+  "Road tax-related challans (supported regions)",
+];
+
+const supportedStates = [
+  "Rajasthan (Jaipur, Jodhpur, Udaipur, etc.)",
+  "Delhi",
+  "Maharashtra (Mumbai, Pune)",
+  "Uttar Pradesh",
+  "Telangana",
+  "Karnataka",
+  "Other states via Parivahan integration",
+];
+
+const features = [
+  {
+    icon: <FaClock />,
+    title: "24x7 Access",
+    desc: "Pay fines anytime, on any device – mobile or desktop.",
+  },
+  {
+    icon: <FaShieldAlt />,
+    title: "Secure Transactions",
+    desc: "Encrypted payments via RBI-compliant gateways.",
+  },
+  {
+    icon: <FaCheckCircle />,
+    title: "Real-Time Status",
+    desc: "Fines updated instantly on government records.",
+  },
+  {
+    icon: <FaMobileAlt />,
+    title: "No Office Visit Needed",
+    desc: "Skip the traffic police station – pay from home.",
+  },
+  {
+    icon: <FaReceipt />,
+    title: "Digital Receipts",
+    desc: "Get immediate proof of payment after each transaction.",
+  },
+];
+
+const retailerBenefits = [
+  {
+    icon: <FaStore />,
+    title: "Serve Local Customers",
+    desc: "Help walk-in customers settle fines from your shop.",
+  },
+  {
+    icon: <FaFileInvoiceDollar />,
+    title: "Earn Margins",
+    desc: "Get commissions on each successful challan payment.",
+  },
+];
+
+const faqs = [
+  {
+    title: "Is it safe to pay traffic fines through ABDKS?",
+    content: "Yes. All transactions are securely routed through official government-authorized portals.",
+  },
+  {
+    title: "Can I pay a challan for someone else?",
+    content: "Yes. You just need their vehicle number or challan number.",
+  },
+  {
+    title: "Is the payment updated with the government?",
+    content: "Yes. The settlement is reflected in the respective traffic police system immediately.",
+  },
+  {
+    title: "Are there any extra charges?",
+    content: "No. ABDKS does not charge additional service fees for standard challan payments.",
+  },
+];
 
 const FAQeChallanPayments = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -17,102 +116,145 @@ const FAQeChallanPayments = () => {
     };
   }, []);
 
-  const content = [
-    {
-      title: 'How To Do eChallan Payment Online From SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. .?',
-      body: (
-        <>
-          <p>
-            Following traffic rules is each and everyone’s duty to ensure not only one’s safety but of other people as well. However, one may need to pay for a traffic challan issued to them for violating traffic rules of the Motor Vehicles Act, 1988, or for not following them at all. Some of the violations typically include not wearing a helmet, driving without a valid license, over speeding the vehicle, not following signal lights, etc.
-          </p>
-        </>
-      ),
-    },
-    {
-      title: 'What is eChallan Payment?',
-      body: (
-        <>
-          <p>
-            The introduction of eChallan online payment is an initiative taken by the Government of India to ensure the transparency of records and enhance its traffic services. Nowadays, almost every procedure is being digitized, so traffic rules violators can also use the online service to pay for the penalties.
-          </p>
-          <p>
-            The government’s main aim to introduce eChallan payment is to negate the bribing process by eliminating cash transactions and making every record maintained online.
-          </p>
-        </>
-      ),
-    },
-    {
-      title: 'How is eChallan Generated?',
-      body: (
-        <>
-          <p>
-            The traffic police have the swiping machine that enables them to create a printed eChallan in no time. So, in a situation where they spot a traffic violator, they can make a real-time entry and print the challan against the traffic rule violator’s name.
-          </p>
-          <p>
-            Using these machines makes it easy for the traffic police to collect the fine on the spot. Once the payment is received, the police issue the traffic violator a formal receipt stating the fine payment has been received successfully.
-          </p>
-        </>
-      ),
-    },
-    {
-      title: 'How to Make eChallan Payment Online Using SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. .?',
-      body: (
-        <>
-          <p>
-            SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . has introduced its new service for its users to pay challan online in a hassle-free manner. Without worrying about the security and authenticity of the payment, you can easily opt for eChallan Online Payment using SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . in just a few simple steps.
-          </p>
-          <ol>
-            <li>Login to your SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . user account.</li>
-            <li>Look for the 'Recharge and Bill Pay' option.</li>
-            <li>Select “Traffic Challan" out of the various services offered.</li>
-            <li>Submit details such as the Traffic police authority of your locality, Challan number, RC number, DL number, etc.</li>
-            <li>The system will automatically fetch your challan amount.</li>
-            <li>Pay using any preferred payment options available at SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. ., such as Debit Card, Credit Card, UPI, Wallet, Net Banking, or SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. . ZIP - Pay Later.</li>
-          </ol>
-          <p>
-            Online challan payment can be done from anywhere: home, office, college, etc., avoiding all the paperwork and formalities with SEVENUNIQUE TECH SOLUTION PRIVATE LIMITED. .’s eChallan pay online service.
-          </p>
-        </>
-      ),
-    },
-    {
-      title: 'FAQs',
-      body: (
-        <ul>
-          <li>
-            <strong>What can be the challan amount for driving without a valid driving license?</strong><br />
-            The challan amount will depend upon one traffic authority to another. According to the new Motor Vehicle Bill, 2019, you may get a penalty of up to 5000 INR for driving without a valid DL.
-          </li>
-          <li>
-            <strong>By what time do I need to make my traffic challan payment from the date of issue?</strong><br />
-            You must pay for your challan within 15 days after the issue. In case you fail to pay within due time, a late payment fee of INR 10 will be imposed.
-          </li>
-        </ul>
-      ),
-    },
-  ];
+  
 
   return (
     <>
-      {isMobile ? (
-        <Accordion>
-          {content.map((item, index) => (
-            <Accordion.Item eventKey={index.toString()} key={index}>
-              <Accordion.Header>{item.title}</Accordion.Header>
-              <Accordion.Body>{item.body}</Accordion.Body>
-            </Accordion.Item>
-          ))}
-        </Accordion>
-      ) : (
-        <div className='p-5'>
-          {content.map((item, index) => (
-            <div key={index} style={{ marginBottom: '1rem' }}>
-              <h3>{item.title}</h3>
-              {item.body}
-            </div>
-          ))}
+      {/* Hero */}
+      <section className="py-5 text-center">
+        <div className="container">
+          <h1 className="display-5 fw-bold">Hassle-Free Traffic Ticket Settlement</h1>
+          <p className="lead mt-3">
+            Pay traffic challans instantly online – fast, safe, and fully verified with ABDKS.
+          </p>
         </div>
-      )}
+      </section>
+
+      {/* What Can You Pay */}
+      <section className="py-5 bg-light text-center">
+        <div className="container">
+          <h2 className="fw-bold mb-4">What Can You Pay?</h2>
+          <div className="row justify-content-center">
+            {challanTypes.map((type, i) => (
+              <div key={i} className="col-md-4 mb-3">
+                <div className="primary-bg text-white p-3 rounded shadow-sm">
+                  {type}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Steps */}
+      <section className="py-5">
+        <div className="container">
+          <h2 className="fw-bold text-center mb-5">How to Pay Traffic Challan via ABDKS</h2>
+          <div className="row g-4">
+            {challanSteps.map((step, i) => (
+              <div key={i} className="col-md-6">
+                <div className="p-3 bg-light rounded-4 shadow-sm h-100 d-flex align-items-start" style={{ borderLeft: "4px solid #b53008" }}>
+                  <div className="me-3 fs-4 fw-bold text-theme">{i + 1}</div>
+                  <div>{step}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Supported Regions */}
+      <section className="py-5 text-center">
+        <div className="container">
+          <h2 className="fw-bold mb-4">Supported States & Traffic Authorities</h2>
+          <div className="row justify-content-center">
+            {supportedStates.map((state, i) => (
+              <div key={i} className="col-md-4 mb-3">
+                <div className="bg-light p-3 rounded shadow-sm">{state}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="py-5 bg-light">
+        <div className="container">
+          <h2 className="fw-bold text-center mb-5">Why Use ABDKS for Challan Payment?</h2>
+          <div className="row g-4">
+            {features.map((f, i) => (
+              <div key={i} className="col-md-4">
+                <div className="bg-white p-4 rounded-4 shadow-sm text-center h-100">
+                  <div className="text-theme fs-2 mb-3">{f.icon}</div>
+                  <h5 className="fw-semibold">{f.title}</h5>
+                  <p className="text-muted small">{f.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Retailers */}
+      <section className="py-5 text-center">
+        <div className="container">
+          <h2 className="fw-bold mb-4">For Retailers & Digital Partners</h2>
+          <p className="lead mb-5">Offer traffic fine settlement services from your store or CSC center.</p>
+          <div className="row g-4">
+            {retailerBenefits.map((r, i) => (
+              <div key={i} className="col-md-6">
+                <div className="bg-light p-4 rounded-4 shadow-sm h-100">
+                  <div className="text-theme fs-2 mb-3">{r.icon}</div>
+                  <h5>{r.title}</h5>
+                  <p className="small text-muted">{r.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="py-5 bg-white">
+        <div className="container">
+          <h2 className="fw-bold text-center mb-5">Frequently Asked Questions</h2>
+          {isMobile ? (
+            <Accordion>
+              {faqs.map((faq, i) => (
+                <Accordion.Item eventKey={i.toString()} key={i}>
+                  <Accordion.Header>{faq.title}</Accordion.Header>
+                  <Accordion.Body>{faq.content}</Accordion.Body>
+                </Accordion.Item>
+              ))}
+            </Accordion>
+          ) : (
+            <div className="row">
+              {faqs.map((faq, i) => (
+                <div key={i} className="col-md-6 mb-4">
+                  <div className="p-3 bg-light shadow-sm rounded border h-100">
+                    <h5 className="fw-bold">{faq.title}</h5>
+                    <p className="text-muted small">{faq.content}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-5 grediant-bg2 text-white text-center mb-3">
+        <div className="container">
+          <h2 className="display-5 fw-bold mb-3 text-white">Settle Traffic Fines Online – The Smart Way</h2>
+          <p className="lead col-lg-8 mx-auto mb-4">
+            Avoid penalties and clear your challans instantly with ABDKS.
+          </p>
+          <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+            <button className="btn btn-light text-theme fw-bold px-4 py-2">Pay Traffic Challan Now</button>
+            <button className="btn btn-outline-light fw-bold px-4 py-2">Become a Digital Partner</button>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
