@@ -322,8 +322,20 @@ OUR PARTNERS
            We are already related to 1000+  active retailers and distributors across Rajasthan and expanding every day. Whether you are launching your first fintech venture or scaling an existing business, SevenUnique is your entrance for the digital revolution run by BBPS.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <button className="btn btn-light text-theme fw-bold px-4 py-2">Join as a retail partner</button>
-            <button className="btn btn-light text-theme fw-bold px-4 py-2">Apply as a distributor</button>
+            <a
+            href="/registerform"
+            className="btn btn-light text-theme fw-bold px-4 py-2"
+          >
+            Join as a retail partner
+          </a>
+              <a
+            href="/registerform"
+            className="btn btn-light text-theme fw-bold px-4 py-2"
+          >
+            Apply as a distributor
+          </a>
+
+
           </div>
         </div>
       </section>

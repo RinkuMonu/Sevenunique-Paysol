@@ -12,6 +12,7 @@ import {
 } from "react-icons/fa";
 import { TiStarburst } from "react-icons/ti";
 import { MdOutlineSupportAgent } from "react-icons/md";
+import { Link } from 'react-router-dom';
 
 const gasProviders = [
   "Indraprastha Gas Limited (IGL)",
@@ -251,8 +252,8 @@ return (
             Stay safe, save time, and never miss a due date again. With SevenUnique , paying gas bills is quick, convenient, and secure.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <button className="btn btn-light text-theme fw-bold px-4 py-2">Pay Your Gas Bill Now</button>
-            <button className="btn btn-outline-light fw-bold px-4 py-2">Join as a Retailer</button>
+            <a href="#top" className="btn btn-light text-theme fw-bold px-4 py-2">Pay Your Gas Bill Now</a>
+            <Link to="/registerform" className="btn btn-outline-light fw-bold px-4 py-2">Join as a Retailer</Link>
           </div>
         </div>
       </section>

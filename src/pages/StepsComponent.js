@@ -4,6 +4,7 @@ import {
   FaMoneyCheckAlt,
   FaQuoteLeft,
 } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 export default function StepsComponent() {
   const steps = [
@@ -64,8 +65,8 @@ export default function StepsComponent() {
                   >
                     {step.icon}
                   </div>
-                  <h5 className="fw-bold fs-5">{step.title}</h5>
-                  <p className="text-muted fs-6">{step.desc}</p>
+                  <h5 className="fw-bold fs-4">{step.title}</h5>
+                  <p className="text-muted fs-5">{step.desc}</p>
                 </div>
               </div>
             ))}
@@ -108,12 +109,12 @@ export default function StepsComponent() {
             </p>
 
             <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center mb-3">
-              <button className="btn primary-bg text-white btn-lg px-5 py-3 fw-bold fs-6">
+              <Link to="/ContactUs" className="btn primary-bg text-white btn-lg px-5 py-3 fw-bold fs-6">
                 Join Now
-              </button>
-              <button className="btn border-light text-theme btn-lg px-5 py-3 fw-bold fs-6">
+              </Link>
+              <Link to="/registerform" className="btn border-light text-theme btn-lg px-5 py-3 fw-bold fs-6">
                 Schedule a Demo in Jaipur
-              </button>
+              </Link>
             </div>
           </div>
         </div>

@@ -14,6 +14,7 @@ import { BiSolidCylinder } from "react-icons/bi";
 import { RiTeamFill,RiCustomerService2Fill } from "react-icons/ri";
 import { MdIntegrationInstructions } from "react-icons/md";
 import { FaPeopleGroup } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
 const gasSteps = [
   " Head over to the Gas Booking section on the app or website.",
@@ -246,8 +247,8 @@ const FAQLpgGasBooking = () => {
           <p className="lead col-lg-8 mx-auto mb-4">Choose our BBPS platform for quick, reliable, and secure LPG gas booking — available 24x7 for you and your customers.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <button className="btn btn-light text-theme fw-bold px-4 py-2">Book Now</button>
-            <button className="btn btn-outline-light fw-bold px-4 py-2">Become a Gas Booking Agent</button>
+            <a href="#top" className="btn btn-light text-theme fw-bold px-4 py-2">Book Now</a>
+            <Link to="/registerform" className="btn btn-outline-light fw-bold px-4 py-2">Become a Gas Booking Agent</Link>
           </div>
         </div>
       </section>

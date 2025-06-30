@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
+import { Link } from 'react-router-dom';
 
 import {
   FaCreditCard,
@@ -276,12 +277,14 @@ const FAQCreditCardPayment = () => {
             trusted across India.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <button className="btn btn-light text-theme fw-bold px-4 py-2">
+
+<a href="#top" className="btn btn-light text-theme fw-bold px-4 py-2">
               Pay Now
-            </button>
+            </a>
+           <Link to="/registerform">
             <button className="btn btn-outline-light fw-bold px-4 py-2">
               Become a Partner
-            </button>
+            </button></Link>
           </div>
         </div>
       </section>

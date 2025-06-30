@@ -9,6 +9,7 @@ import {
   FaMobileAlt,
    FaQuestion
 } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const emiTypes = [
   "Personal Loans",
@@ -322,12 +323,12 @@ Say goodbye to missed due dates, long lines, and payment delays. With our platfo
             Avoid late fees and maintain a good credit score by paying EMIs on time — powered by SevenUnique.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <button className="btn btn-light text-theme fw-bold px-4 py-2">
+            <a href="#top" className="btn btn-light text-theme fw-bold px-4 py-2">
               Pay EMI Now
-            </button>
-            <button className="btn btn-outline-light fw-bold px-4 py-2">
+            </a>
+            <Link to="/registerform" className="btn btn-outline-light fw-bold px-4 py-2">
               Become a Retail Partner
-            </button>
+            </Link>
           </div>
         </div>
       </section>

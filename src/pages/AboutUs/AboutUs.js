@@ -210,7 +210,7 @@ const AboutUs = () => {
               <h2 className="card-title text-center mb-4 fw-bold text-theme">
                 From Vision to Fintech Powerhouse—The SevenUnique Story
               </h2>
-              <p className="card-text">
+              <p className="fs-5">
                 Fintech innovators <strong>Mr. Dinesh Kumar</strong> and{" "}
                 <strong> Mr. Amit Balotia</strong> founded{" "}
                 <strong>SevenUnique Tech Solutions Private Limited</strong>,
@@ -221,13 +221,13 @@ const AboutUs = () => {
                 Payments, Mobile and DTH Recharge BBPS, and Credit Card Swipe
                 Solutions.
               </p>
-              <p className="card-text">
+              <p className="fs-5">
                 At <strong>SevenUnique Tech Solutions</strong>, we believe in
                 innovation, transparency, and influence. Our goal is to lead
                 India's digital payment revolution - a BBPS transaction at a
                 time.
               </p>
-              <p className="card-text">
+              <p className="fs-5">
                 With <strong>innovation</strong>, <strong>integrity</strong>,
                 and <strong>impact-driven results</strong> at the core, we aim
                 to lead India’s fintech evolution —{" "}
@@ -275,14 +275,14 @@ const AboutUs = () => {
 
                 <div className="col-lg-6 col-md-12 mt-6 mt-lg-0 ps-lg-10 text-secondary px-3">
                   <div className="theme-title mb-4 ">
-                    <h4 className="text-theme">WHO WE ARE</h4>
-                    <p>
+                    <h4 className="text-theme fs-4">WHO WE ARE</h4>
+                    <p className="fs-5">
                       We are happy to introduce you about SEVENUNIQUE TECH
                       SOLUTIONS PRIVATE LIMITED. , is service provider company
                       which is providing Recharge and BillPayment - BBPS
                       services to our valuable retailers/merchants
                     </p>
-                    <p>
+                    <p className="fs-5">
                       SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. has taken a
                       step forward in the field of Financial Inclusion through a
                       partnership with Multiple Banks &amp; Other Parties.
@@ -340,7 +340,7 @@ const AboutUs = () => {
               <h3 className="text-center fw-bold mb-4 text-theme">
                 Our Core Values
               </h3>
-              <h4 className="text-center mb-5">
+              <h4 className="text-center mb-5 fs-5">
                 The main principle that powers SevenUnique{" "}
               </h4>
               <div className="row g-4">
@@ -350,9 +350,9 @@ const AboutUs = () => {
                       <div className="card-body service-item-inner service-active">
                         <h5 className="card-title fw-semibold text-theme d-flex align-items-center">
                           {value.icon}
-                          {value.title}
+                        <span className="fs-4">  {value.title}</span>
                         </h5>
-                        <p className="card-text">{value.description}</p>
+                        <p className="fs-5">{value.description}</p>
                       </div>
                     </div>
                   </div>

@@ -261,8 +261,8 @@ const FAQBroadbandBillPayment = () => {
             Whether you're a user or a digital service provider, we helps you stay connected with fast, secure broadband bill payments—all in one place.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <button className="btn btn-light text-theme fw-bold px-4 py-2">Pay Now</button>
-            <button className="btn btn-outline-light fw-bold px-4 py-2">Join as a Partner</button>
+            <a href="#top" className="btn btn-light text-theme fw-bold px-4 py-2">Pay Now</a>
+            <a href="/registerform" className="btn btn-outline-light fw-bold px-4 py-2">Join as a Partner</a>
           </div>
         </div>
       </section>

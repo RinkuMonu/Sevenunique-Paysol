@@ -117,6 +117,7 @@ const FAQMobileRecharge = () => {
   return (
     <>
       {/* Hero */}
+<div>
       <section className="py-5 text-center">
         <div className="container">
           <h1 className="display-5 fw-bold">Mobile Recharge Services</h1>
@@ -263,11 +264,12 @@ const FAQMobileRecharge = () => {
            Whether you're a new retailer or want to add services to your existing shop, SevenUnique makes mobile recharges fast, secure, and commission-generating. Tap into India’s growing demand for digital transactions with our prepaid recharge BBPS and postpaid payment tools.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <button className="btn btn-light text-theme fw-bold px-4 py-2">Recharge Now</button>
-            <button className="btn btn-outline-light fw-bold px-4 py-2">Become a BBPS Recharge Partner</button>
+            <a href="#top" className="btn btn-light text-theme fw-bold px-4 py-2">Recharge Now</a>
+            <a href="/registerform" className="btn btn-outline-light fw-bold px-4 py-2">Become a BBPS Recharge Partner</a>
           </div>
         </div>
       </section>
+</div>
     </>
   );
 };

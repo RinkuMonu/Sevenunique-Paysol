@@ -1,0 +1,842 @@
+/* Refund Policy Custom Styles */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
+
+:root {
+  --primary-color: #b84f31;
+  --secondary-color: #8e4e42;
+  --tertiary-color: #2c4a4f;
+  --accent-color: #00b3c9;
+  --light-bg: #f8f9fa;
+  --white: #ffffff;
+  --text-dark: #333333;
+  --text-muted: #6c757d;
+  --success-color: #28a745;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+}
+
+.refund-container {
+  background: linear-gradient(135deg, rgba(184, 79, 49, 0.05) 0%, rgba(0, 179, 201, 0.05) 100%);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-top: -50px;
+  position: relative;
+  z-index: 3;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(44, 74, 79, 0.3) 0%, rgba(184, 79, 49, 0.3) 100%);
+  z-index: 1;
+}
+
+.banner-title {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+}
+
+.refund-card {
+  background: var(--white);
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(184, 79, 49, 0.1);
+}
+
+.refund-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.card-header-custom {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  padding: 1.5rem;
+  border-bottom: 3px solid var(--accent-color);
+}
+
+.section-title {
+  color: var(--white);
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.section-number {
+  background: var(--accent-color);
+  color: var(--white);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 1rem;
+  font-size: 1.1rem;
+}
+
+.card-body-custom {
+  padding: 2rem;
+  line-height: 1.7;
+}
+
+.intro-text {
+  font-size: 1.05rem;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.highlight-box {
+  background: linear-gradient(135deg, rgba(0, 179, 201, 0.1) 0%, rgba(44, 74, 79, 0.1) 100%);
+  border-left: 4px solid var(--accent-color);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 10px 10px 0;
+}
+
+.regulation-list {
+  margin: 1rem 0;
+}
+
+.regulation-list li {
+  margin-bottom: 0.8rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.regulation-list li::before {
+  content: "✓";
+  color: var(--accent-color);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.policy-scope {
+  background: rgba(184, 79, 49, 0.1);
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-top: 1.5rem;
+}
+
+.platform-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.platform-item {
+  display: flex;
+  align-items: center;
+  background: var(--white);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.platform-icon {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  margin-right: 0.8rem;
+}
+
+/* Scenario Cards */
+.scenario-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.scenario-card {
+  background: linear-gradient(135deg, rgba(0, 179, 201, 0.05) 0%, rgba(44, 74, 79, 0.05) 100%);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid rgba(0, 179, 201, 0.2);
+  transition: all 0.3s ease;
+}
+
+.scenario-card:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 179, 201, 0.15);
+}
+
+.scenario-title {
+  color: var(--tertiary-color);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.scenario-list {
+  list-style: none;
+  padding: 0;
+}
+
+.scenario-list li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--text-dark);
+}
+
+.scenario-list li::before {
+  content: "→";
+  color: var(--primary-color);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.compliance-note {
+  background: rgba(40, 167, 69, 0.1);
+  border-left: 4px solid var(--success-color);
+  padding: 1rem;
+  border-radius: 0 8px 8px 0;
+  margin-top: 1.5rem;
+  font-weight: 500;
+}
+
+/* Non-Refundable Scenarios */
+.non-refund-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.non-refund-card {
+  background: linear-gradient(135deg, rgba(220, 53, 69, 0.05) 0%, rgba(142, 78, 66, 0.05) 100%);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid rgba(220, 53, 69, 0.2);
+  transition: all 0.3s ease;
+}
+
+.non-refund-card:hover {
+  border-color: var(--danger-color);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(220, 53, 69, 0.15);
+}
+
+.non-refund-title {
+  color: var(--danger-color);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--danger-color);
+}
+
+.non-refund-list {
+  list-style: none;
+  padding: 0;
+}
+
+.non-refund-list li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--text-dark);
+}
+
+.non-refund-list li::before {
+  content: "✗";
+  color: var(--danger-color);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* Process Steps */
+.process-section {
+  margin: 2rem 0;
+}
+
+.process-title {
+  color: var(--tertiary-color);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.steps-container {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  background: var(--light-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--accent-color);
+}
+
+.step-number {
+  background: var(--accent-color);
+  color: var(--white);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-sub-list {
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+}
+
+.email-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.email-link:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+/* Timeline Section */
+.timeline-section {
+  margin: 2rem 0;
+  background: rgba(255, 193, 7, 0.1);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-left: 4px solid var(--warning-color);
+}
+
+.timeline-title {
+  color: var(--tertiary-color);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.timeline-info {
+  display: grid;
+  gap: 1rem;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  background: var(--white);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.timeline-icon {
+  color: var(--warning-color);
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+
+/* Refund Mode Section */
+.refund-mode-section {
+  margin: 2rem 0;
+}
+
+.mode-title {
+  color: var(--tertiary-color);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.mode-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.mode-item {
+  display: flex;
+  align-items: center;
+  background: rgba(0, 179, 201, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-color);
+}
+
+.mode-icon {
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+
+/* Communication Section */
+.communication-section {
+  margin: 2rem 0;
+}
+
+.communication-title {
+  color: var(--tertiary-color);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.communication-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.comm-item {
+  display: flex;
+  align-items: center;
+  background: var(--light-bg);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.comm-icon {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+
+/* Documentation Section */
+.documentation-section {
+  margin: 2rem 0;
+}
+
+.doc-title {
+  color: var(--tertiary-color);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.required-docs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.doc-item {
+  display: flex;
+  align-items: center;
+  background: var(--light-bg);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-color);
+}
+
+.doc-icon {
+  color: var(--accent-color);
+  font-size: 1.1rem;
+  margin-right: 1rem;
+}
+
+.fraud-docs-section {
+  margin: 2rem 0;
+  background: rgba(220, 53, 69, 0.05);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-left: 4px solid var(--danger-color);
+}
+
+.fraud-title {
+  color: var(--danger-color);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.fraud-requirements {
+  display: grid;
+  gap: 1rem;
+}
+
+.fraud-item {
+  background: var(--white);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 3px solid var(--danger-color);
+}
+
+.crn-section {
+  margin: 2rem 0;
+  background: rgba(0, 179, 201, 0.1);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-left: 4px solid var(--accent-color);
+}
+
+.crn-title {
+  color: var(--tertiary-color);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Escalation Levels */
+.escalation-levels {
+  display: grid;
+  gap: 2rem;
+}
+
+.level-card {
+  background: var(--light-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid rgba(0, 179, 201, 0.2);
+}
+
+.level-title {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.level-content {
+  line-height: 1.6;
+}
+
+.support-details {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.support-item {
+  display: flex;
+  align-items: center;
+  background: var(--white);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.support-icon {
+  color: var(--accent-color);
+  font-size: 1.1rem;
+  margin-right: 1rem;
+}
+
+.gro-contact {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+  border: 1px solid rgba(0, 179, 201, 0.2);
+}
+
+.contact-item {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--light-bg);
+}
+
+.contact-item:last-child {
+  border-bottom: none;
+}
+
+.final-escalation {
+  display: grid;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.escalation-option {
+  display: flex;
+  align-items: center;
+  background: var(--white);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--tertiary-color);
+}
+
+.escalation-icon {
+  color: var(--tertiary-color);
+  font-size: 1.1rem;
+  margin-right: 1rem;
+}
+
+.escalation-note {
+  background: rgba(255, 193, 7, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--warning-color);
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+/* Fraud Sections */
+.fraud-sections {
+  display: grid;
+  gap: 2rem;
+}
+
+.fraud-section {
+  background: var(--light-bg);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-left: 4px solid var(--secondary-color);
+}
+
+.fraud-section-title {
+  color: var(--secondary-color);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.verification-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.verification-item {
+  background: var(--white);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent-color);
+}
+
+.hold-conditions {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.hold-item {
+  display: flex;
+  align-items: center;
+  background: var(--white);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.hold-icon {
+  color: var(--warning-color);
+  font-size: 1.1rem;
+  margin-right: 1rem;
+}
+
+.reporting-actions {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.reporting-item {
+  background: var(--white);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 3px solid var(--danger-color);
+}
+
+.fraud-note {
+  background: rgba(40, 167, 69, 0.1);
+  border-left: 4px solid var(--success-color);
+  padding: 1rem;
+  border-radius: 0 8px 8px 0;
+  margin-top: 1.5rem;
+  font-style: italic;
+}
+
+/* Policy Changes */
+.policy-changes {
+  display: grid;
+  gap: 2rem;
+}
+
+.change-section {
+  background: var(--light-bg);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-left: 4px solid var(--tertiary-color);
+}
+
+.change-title {
+  color: var(--tertiary-color);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.notification-methods {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.notification-item {
+  display: flex;
+  align-items: center;
+  background: var(--white);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.notification-icon {
+  color: var(--accent-color);
+  font-size: 1.1rem;
+  margin-right: 1rem;
+}
+
+.regulatory-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.regulatory-item {
+  background: var(--white);
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  border: 2px solid var(--accent-color);
+  font-weight: 500;
+  color: var(--tertiary-color);
+}
+
+.compliance-note {
+  background: rgba(255, 193, 7, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--warning-color);
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+/* Contact Information */
+.contact-sections {
+  display: grid;
+  gap: 2rem;
+}
+
+.contact-section {
+  background: var(--light-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid rgba(0, 179, 201, 0.2);
+}
+
+.contact-section-title {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.contact-details {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-detail {
+  display: flex;
+  align-items: center;
+  background: var(--white);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-color);
+}
+
+.contact-icon {
+  color: var(--accent-color);
+  font-size: 1.1rem;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.closing-message {
+  background: linear-gradient(135deg, rgba(0, 179, 201, 0.1) 0%, rgba(44, 74, 79, 0.1) 100%);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid var(--accent-color);
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.closing-message p {
+  margin-bottom: 1rem;
+}
+
+.closing-message p:last-child {
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .refund-container {
+    padding: 1rem;
+    margin-top: -30px;
+  }
+
+  .banner-title {
+    font-size: 3rem !important;
+    left: 50% !important;
+  }
+
+  .card-body-custom {
+    padding: 1.5rem;
+  }
+
+  .scenario-grid,
+  .non-refund-grid,
+  .platform-list,
+  .required-docs,
+  .communication-methods,
+  .regulatory-list {
+    grid-template-columns: 1fr;
+  }
+
+  .steps-container {
+    gap: 1rem;
+  }
+
+  .step-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .step-number {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 1.2rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .section-number {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .banner-title {
+    font-size: 2.5rem !important;
+  }
+
+  .escalation-levels,
+  .fraud-sections,
+  .policy-changes,
+  .contact-sections {
+    gap: 1rem;
+  }
+}

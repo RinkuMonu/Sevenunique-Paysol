@@ -183,12 +183,12 @@ const SevenUniqueElectricityBill = () => {
             Whether you're in Rajasthan, Delhi, Maharashtra, or Karnataka, we offer a fast, secure, and commission-free BBPS electricity bill payment solution. Enjoy nationwide service, user-friendly experience, and complete transaction peace of mind.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <button className="btn btn-light text-theme fw-bold px-4 py-2">
+            <a href="/registerform" className="btn btn-light text-theme fw-bold px-4 py-2">
               Pay Your Electricity Bill Now
-            </button>
-            <button className="btn btn-outline-light fw-bold px-4 py-2">
+            </a>
+            <a href="#top" className="btn btn-outline-light fw-bold px-4 py-2">
               Become a BBPS Partner
-            </button>
+            </a>
           </div>
         </div>
       </section>

@@ -1,0 +1,137 @@
+/* Custom CSS for Blog Detail Page */
+
+.blog-content {
+  padding-right: 2rem;
+}
+
+.back-link a {
+  color: #8b7355 !important;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.back-link a:hover {
+  color: #6b5b47 !important;
+}
+
+.blog-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #6c757d;
+}
+
+.section-content {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  padding-left: 2rem;
+  border-left: 1px solid #eee;
+}
+
+.trending-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.trending-icon {
+  color: #ff6b35;
+  font-size: 1.1rem;
+}
+
+.trending-post {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.trending-post:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.post-thumbnail {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.post-rank {
+  background-color: #ff6b35;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  min-width: 28px;
+  text-align: center;
+}
+
+.post-category {
+  color: #666;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.post-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.post-views {
+  color: #999;
+  font-size: 0.85rem;
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) {
+  .blog-content {
+    padding-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .sidebar {
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid #eee;
+    padding-top: 2rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .trending-post {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .post-image-container {
+    margin-right: 0 !important;
+    margin-bottom: 1rem;
+    align-self: center;
+  }
+
+  .post-details {
+    text-align: left;
+  }
+}
+
+
+.text-brightorange{
+color: #ff6b35;
+}
+
+/* Font Awesome Icons (if not already included) */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");

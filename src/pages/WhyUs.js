@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import { LuBaggageClaim } from "react-icons/lu";
 import { GiReceiveMoney } from "react-icons/gi";
+import { Link } from 'react-router-dom';
 
 
 const WhyUs = () => {
@@ -125,12 +126,12 @@ const WhyUs = () => {
 </h4>
 <p className="mb-5">Be a part of India's growing BBPS digital revolution. Participate with SevenUnique today to distribute fast, safe, and profitable financial services - and empower your customers with every transaction.</p>
  <div className="d-flex flex-column flex-md-row justify-content-center gap-3">
-            <button className="btn btn-light text-theme fw-semibold px-4 py-2 rounded-pill shadow-sm">
+            <Link to="/registerform" className="btn btn-light text-theme fw-semibold px-4 py-2 rounded-pill shadow-sm">
               Be a BBPS partner
-            </button>
-            <button className="btn btn-light text-theme fw-semibold px-4 py-2 rounded-pill shadow-sm">
+            </Link>
+            <Link to="/ContactUs" className="btn btn-light text-theme fw-semibold px-4 py-2 rounded-pill shadow-sm">
               contact support
-            </button>
+            </Link>
           </div>
 
         </div>

@@ -231,12 +231,12 @@ const FAQDthRecharge = () => {
             ready to power your digital service business.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <button className="btn btn-light text-theme fw-bold px-4 py-2">
+            <a href="/registerform" className="btn btn-light text-theme fw-bold px-4 py-2">
               Become a Partner
-            </button>
-            <button className="btn btn-outline-light fw-bold px-4 py-2">
+            </a>
+            <a href="#top" className="btn btn-outline-light fw-bold px-4 py-2">
               Recharge Now
-            </button>
+            </a>
           </div>
         </div>
       </section>

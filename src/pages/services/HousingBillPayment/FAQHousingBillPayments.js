@@ -19,6 +19,7 @@ import {
   FaExclamationTriangle,
 } from "react-icons/fa";
 import { FaUsersViewfinder } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
 
 const housingSteps = [
@@ -305,8 +306,8 @@ With our platform, paying your housing society bills is not just convenient, but
            Avoid late fees and manual paperwork. Choose our platform for fast, secure, and easy housing society bill payments — for yourself or your customers.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <button className="btn btn-light text-theme fw-bold px-4 py-2">Pay Housing Bill Now</button>
-            <button className="btn btn-outline-light fw-bold px-4 py-2">Become a Service Partner</button>
+            <a href="#top" className="btn btn-light text-theme fw-bold px-4 py-2">Pay Housing Bill Now</a>
+            <Link to="/registerform" className="btn btn-outline-light fw-bold px-4 py-2">Become a Service Partner</Link>
           </div>
         </div>
       </section>

@@ -16,6 +16,7 @@ import {
 
 import { FaHandshake } from "react-icons/fa6";
 import { MdMoneyOff } from "react-icons/md";
+import { Link } from 'react-router-dom';
 
 
 
@@ -286,8 +287,8 @@ const FAQInsurancePayment = () => {
             Never miss a renewal again. Whether you're paying for yourself or assisting customers, our platform makes insurance payments smooth, secure, and on time.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <button className="btn btn-light text-theme fw-bold px-4 py-2">Pay Insurance Now</button>
-            <button className="btn btn-outline-light fw-bold px-4 py-2">Become a Service Partner</button>
+            <a href="#top" className="btn btn-light text-theme fw-bold px-4 py-2">Pay Insurance Now</a>
+            <Link to="/registerform" className="btn btn-outline-light fw-bold px-4 py-2">Become a Service Partner</Link>
           </div>
         </div>
       </section>
