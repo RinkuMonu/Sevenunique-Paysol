@@ -6,7 +6,7 @@ const RedeemPayback = () => {
   return (
     <>
 
-    <Container className="py-5 marginTop">
+    <Container id="redeemtop" className="py-5 marginTop">
       <Row>
         {/* Left Side Content */}
         <Col md={6} className="text-center text-md-start">

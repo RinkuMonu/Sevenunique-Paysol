@@ -9,6 +9,7 @@ import {
   FaWallet,
   FaQuestion,
 } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const datacardOperators = [
   "JioFi Datacard",
@@ -264,12 +265,12 @@ const FAQDataCardRecharge = () => {
             anywhere.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <button className="btn btn-light text-theme fw-bold px-4 py-2">
+            <a href="#top" className="btn btn-light text-theme fw-bold px-4 py-2">
               Recharge Now
-            </button>
-            <button className="btn btn-outline-light fw-bold px-4 py-2">
+            </a>
+            <Link to="/registerform" className="btn btn-outline-light fw-bold px-4 py-2">
               Join as a Retailer
-            </button>
+            </Link>
           </div>
         </div>
       </section>

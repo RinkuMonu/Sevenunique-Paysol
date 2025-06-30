@@ -49,7 +49,7 @@ export default function FeaturesSection() {
                 >
                   {feature.icon}
                 </div>
-                <p className="fw-semibold text-dark small mb-0">
+                <p className="fw-semibold text-dark fs-5 mb-0">
                   {feature.title}
                 </p>
               </div>

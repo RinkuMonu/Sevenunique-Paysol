@@ -31,18 +31,18 @@ function PageContent() {
                         </div>
                         <div className="col-lg-6 col-md-12 mt-6 mt-lg-0 ps-lg-10">
                             <div className="theme-title mb-4">
-                                <h6>About Us</h6>
-                                <h2>
+                                <h6 className="theme-title fs-2">About Us</h6>
+                                <h2 className="fs-3">
                                     Fast BBPS recharge solution to provide Your digital business in India
                                 </h2>
-                                <p>
+                                <p className="fs-5">
                                     Sevenunique  is a Jaipur-based fintech platform that is changing how retail vendors have distributed the BBPS biller recharge system. We offer a fast DTH recharge BBPS platform, prepaid and postpaid recharge BBPS, and seamless utility bill payment software to empower traders to operate smartly.
                                     <br></br>
                                     We are dedicated to the creation of BBPS solutions with secure, scalable and intuitive BBPS solutions for digital financial development all over India.
                                 </p>
                             </div>
                             <div className="row">
-                                <p className="fs-6 text-theme fw-bold">Why Choose ABDKS?</p>
+                                <p className="fs-4 text-theme fw-bold">Why Choose ABDKS?</p>
                                 <div className="col-sm-6 mb-3">
                                     <ul className="list-unstyled list-icon style-1">
                                         <li>
@@ -83,13 +83,13 @@ function PageContent() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12 MB40">
-                            <h4>The Next Generation Payment Method</h4>
-                            <p>
+                            <h4 className="fs-3">The Next Generation Payment Method</h4>
+                            <p className="fs-5">
                                 Accept Payments easily & globally. The one single integration
                                 platform that you control in your new life.
                             </p>
-                            <h4>Growth Is Our Only Obsession</h4>
-                            <p>
+                            <h4 className="fs-3">Growth Is Our Only Obsession</h4>
+                            <p className="fs-5">
                                 Sevenunique makes your work easier and faster. Our strongest motive
                                 is to provide the best possible services to our customers.
                             </p>
@@ -156,9 +156,9 @@ function PageContent() {
                                 </div>
                                 <div className="featured-desc">
                                     <div className="featured-title">
-                                        <h4>Explore Unlimited Business Opportunities</h4>
+                                        <h4 className="fs-4">Explore Unlimited Business Opportunities</h4>
                                     </div>
-                                    <p>
+                                    <p className="fs-6">
                                         Sevenunique is easy to operate and it also makes your work easier and faster.
                                         We will always have a wide variety of options as per your needs. You are always
                                         privileged to choose how to go forward. After all, You are Important to us.
@@ -173,9 +173,9 @@ function PageContent() {
                                 </div>
                                 <div className="featured-desc">
                                     <div className="featured-title">
-                                        <h4>Supportive Team</h4>
+                                        <h4 className="fs-4">Supportive Team</h4>
                                     </div>
-                                    <p>
+                                    <p className="fs-6">
                                         Our customer service is best in class and committed to serve you 24x7 for your queries and questions.
                                         We're just one call away.
                                     </p>
@@ -196,11 +196,11 @@ function PageContent() {
             style={{ backgroundColor: "rgb(202, 110, 68)" }}
           >
             <div className="container">
-              <h1 className="fw-bold text-white mb-3 fs-3 fs-md-1">
+              <h1 className="fw-bold text-white mb-3 fs-2 fs-md-1">
                 Empowering Jaipur's Retailers with Seamless Digital Payments
               </h1>
 
-              <p className="fs-6 fs-md-5 mb-4">
+              <p className="fs-5 fs-md-5 mb-4">
                 Recharge, Pay Bills & Earn Commissions with One Powerful
                 Platform in India
               </p>
@@ -208,19 +208,19 @@ function PageContent() {
               <div className="d-grid gap-3 d-md-flex justify-content-center">
                 <a
                   href="/ContactUs"
-                  className="btn text-white btn-lg px-4 primary-bg fs-6"
+                  className="btn text-white btn-lg px-4 primary-bg fs-5"
                 >
                   Start Your Digital Business
                 </a>
                 <a
                   href="/ContactUs"
-                  className="btn btn-light btn-lg text-theme px-4 fs-6"
+                  className="btn btn-light btn-lg text-theme px-4 fs-5"
                 >
                   Become a Retail Partner
                 </a>
               </div>
 
-              <p className="mt-4 fs-6 text-light">
+              <p className="mt-4 fs-5 text-light">
                 Fast. Secure. Scalable. Trusted by 1000+ Retailers Across
                 Rajasthan.
               </p>
@@ -241,7 +241,7 @@ function PageContent() {
                             <div className="theme-title">
                                 <h6 className="fz40">Our Core Fintech Services in India
                                 </h6>
-                                <p>
+                                <p className="fs-5">
                                     Services that we offer to our clients at a glance. We have earned 3+ years of expertise in services. You just need to tell us about your requirements, we will strictly take care of that. You are just one click away!! Start your own business with Sevenunique services and provide Recharge and Bill Payment (BBPS) to your customers.
 
                                 </p>
@@ -259,10 +259,10 @@ function PageContent() {
                                             </div>
                                             <div className="service-desc">
                                                 <div className="service-title">
-                                                    <h4>Prepaid & Postpaid Recharge BBPS
+                                                    <h4 className="fs-4">Prepaid & Postpaid Recharge BBPS
 </h4>
                                                 </div>
-                                                <p>
+                                                <p className="fs-6">
                                                     Fast mobile recharge solutions for all telecom providers with real-time confirmation.
 
 
@@ -284,10 +284,10 @@ function PageContent() {
                                             </div>
                                             <div className="service-desc">
                                                 <div className="service-title">
-                                                    <h4>DTH Recharge BBPS Platform
+                                                    <h4 className="fs-4">DTH Recharge BBPS Platform
 </h4>
                                                 </div>
-                                                <p>
+                                                <p className="fs-6">
                                                     Recharge all major DTH services instantly using our secure BBPS-powered platform.
 
                                                 </p>
@@ -308,9 +308,9 @@ function PageContent() {
                                             </div>
                                             <div className="service-desc">
                                                 <div className="service-title">
-                                                    <h4>BBPS Utility Bill Payments in Rajasthan</h4>
+                                                    <h4 className="fs-4">BBPS Utility Bill Payments in Rajasthan</h4>
                                                 </div>
-                                                <p>
+                                                <p className="fs-6">
                                                      Pay electricity, gas, water, insurance, and broadband bills through our unified BBPS system.
                                                 </p>
                                                 <a className="arrow-btn" href="#">
@@ -330,9 +330,9 @@ function PageContent() {
                                             </div>
                                             <div className="service-desc">
                                                 <div className="service-title">
-                                                    <h4>Card Swipe Solutions for Local Retailers</h4>
+                                                    <h4 className="fs-4">Card Swipe Solutions for Local Retailers</h4>
                                                 </div>
-                                                <p>
+                                                <p className="fs-6">
                                                      Accept secure card payments with fast settlements and simplified merchant onboarding.
 
                                                 </p>
@@ -353,9 +353,9 @@ function PageContent() {
                                             </div>
                                             <div className="service-desc">
                                                 <div className="service-title">
-                                                    <h4>Utility Bill Payment Software</h4>
+                                                    <h4 className="fs-4">Utility Bill Payment Software</h4>
                                                 </div>
-                                                <p>
+                                                <p className="fs-6">
                                                     Offer customers seamless bill payment via debit cards, credit cards, and UPI – powered by BBPS.
                                                 </p>
                                                 <a className="arrow-btn" href="#">

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Modal } from "react-bootstrap";
+import { useLocation, useNavigate, Outlet } from "react-router-dom";
+
 import {
   FaMobileAlt,
   FaSatelliteDish,
@@ -20,47 +22,35 @@ import {
 } from "react-icons/gi";
 import { HiCurrencyRupee } from "react-icons/hi";
 import { FaHouseChimney } from "react-icons/fa6";
-import MobileRechargeUI from "./Mobile_Recharge/MobileRechargeUI";
-import DTHRecharge from "./DTH_Recharge/DTHRecharge";
-import ElectricityBillPayment from "./ElectricityBillPayment/ElectricityBillPayment";
-import CreditCardPayment from "./CreditCardPayment/CreditCardPayment";
-import DataCardRecharge from "./DataCard/DataCardRecharge";
-import Landline from "./Landline/Landline";
-import Broadband from "./Broadband/Broadband";
-import PipedGas from "./PipedGas/PipedGas";
-import Insurance from "./Insurance/Insurance";
-import Water from "./Water/Water";
-import GooglePlay from "./GooglePlay/GooglePlay";
-import Cable from "./Cable/Cable";
-import Municipality from "./Municipality/Municipality";
-import Emi from "./EMI/Emi";
-import TrafficChallan from "./TrafficChallan/TrafficChallan";
-import HousingBillPayment from "./HousingBillPayment/HousingBillPayment";
-import LpgBooking from "./LpgBooking/LpgBooking";
 
 const BillPayUI = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const shouldShowNav = location.pathname.startsWith("/recharge");
+
   const [activeMenu, setActiveMenu] = useState("Mobile");
   const [showModal, setShowModal] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
   const allItems = [
-    { name: "Mobile", icon: <FaMobileAlt size={24} /> },
-    { name: "DTH", icon: <FaSatelliteDish size={24} /> },
-    { name: "Electricity", icon: <MdElectricBolt size={24} /> },
-    { name: "Credit Card", icon: <MdCreditCard size={24} /> },
-    { name: "Datacard", icon: <GiUsbKey size={24} /> },
-    { name: "Landline", icon: <BiPhoneCall size={24} /> },
-    { name: "Broadband", icon: <GiWifiRouter size={24} /> },
-    { name: "Piped Gas", icon: <FaGasPump size={24} /> },
-    { name: "Insurance", icon: <FaUmbrella size={24} /> },
-    { name: "Water", icon: <GiTap size={24} /> },
-    { name: "Google Play", icon: <FaGooglePlay size={24} /> },
-    { name: "Cable", icon: <GiTv size={24} /> },
-    { name: "Municipality", icon: <GiVikingLonghouse size={24} /> },
-    { name: "EMI", icon: <HiCurrencyRupee size={24} /> },
-    { name: "Housing", icon: <FaHouseChimney size={24} /> },
-    { name: "LPG Booking", icon: <GiGasStove size={24} /> },
-    { name: "Challan", icon: <FaTrafficLight size={24} /> },
+    { name: "Mobile", icon: <FaMobileAlt size={24} />, path: "mobile" },
+    { name: "DTH", icon: <FaSatelliteDish size={24} />, path: "dth" },
+    { name: "Electricity", icon: <MdElectricBolt size={24} />, path: "electricity" },
+    { name: "Credit Card", icon: <MdCreditCard size={24} />, path: "credit-card" },
+    { name: "Datacard", icon: <GiUsbKey size={24} />, path: "datacard" },
+    { name: "Landline", icon: <BiPhoneCall size={24} />, path: "landline" },
+    { name: "Broadband", icon: <GiWifiRouter size={24} />, path: "broadband" },
+    { name: "Piped Gas", icon: <FaGasPump size={24} />, path: "piped-gas" },
+    { name: "Insurance", icon: <FaUmbrella size={24} />, path: "insurance" },
+    { name: "Water", icon: <GiTap size={24} />, path: "water" },
+    { name: "Google Play", icon: <FaGooglePlay size={24} />, path: "google-play" },
+    { name: "Cable", icon: <GiTv size={24} />, path: "cable" },
+    { name: "Municipality", icon: <GiVikingLonghouse size={24} />, path: "municipality" },
+    { name: "EMI", icon: <HiCurrencyRupee size={24} />, path: "emi" },
+    { name: "Housing", icon: <FaHouseChimney size={24} />, path: "housing" },
+    { name: "LPG Booking", icon: <GiGasStove size={24} />, path: "lpg-booking" },
+    { name: "Challan", icon: <FaTrafficLight size={24} />, path: "challan" },
   ];
 
   const [menuItems, setMenuItems] = useState([]);
@@ -94,124 +84,114 @@ const BillPayUI = () => {
     if (menu === "More") {
       setShowModal(true);
     } else {
-      setActiveMenu(menu);
+      const found = allItems.find((item) => item.name === menu);
+      if (found) {
+        setActiveMenu(menu);
+        navigate(`/recharge/${found.path}`);
+      }
     }
   };
 
   const handleMoreItemClick = (menu) => {
-    const selectedModalItemIndex = moreItems.findIndex(
-      (item) => item.name === menu
-    );
-
+    const selectedModalItemIndex = moreItems.findIndex((item) => item.name === menu);
     if (selectedModalItemIndex !== -1) {
       const selectedModalItem = moreItems[selectedModalItemIndex];
-      const lastVisibleItem = menuItems[menuItems.length - 2]; // Last visible item before "More"
+      const lastVisibleItem = menuItems[menuItems.length - 2];
 
-      // Update the navbar menu items
       setMenuItems((prevMenuItems) => [
-        ...prevMenuItems.slice(0, -2), // Remove the last item and "More"
-        { name: selectedModalItem.name, icon: selectedModalItem.icon }, // Add the selected modal item
-        { name: "More", icon: `+${moreItems.length}` }, // Keep "More" with the same count
+        ...prevMenuItems.slice(0, -2),
+        { name: selectedModalItem.name, icon: selectedModalItem.icon },
+        { name: "More", icon: `+${moreItems.length}` },
       ]);
 
-      // Update the modal items
       setMoreItems((prevMoreItems) => [
-        ...prevMoreItems.filter((item) => item.name !== menu), // Remove selected modal item
-        { name: lastVisibleItem.name, icon: lastVisibleItem.icon }, // Add the last navbar item to modal
+        ...prevMoreItems.filter((item) => item.name !== menu),
+        { name: lastVisibleItem.name, icon: lastVisibleItem.icon },
       ]);
 
-      setActiveMenu(menu); // Set the active menu to the selected item
-      setShowModal(false); // Close the modal
+      setActiveMenu(menu);
+      navigate(`/recharge/${selectedModalItem.path}`);
+      setShowModal(false);
     }
   };
 
   useEffect(() => {
-    // Dynamically update "More" count
     setMenuItems((prevMenuItems) => [
       ...prevMenuItems.slice(0, -1),
       { name: "More", icon: `+${moreItems.length}` },
     ]);
   }, [moreItems]);
 
+  useEffect(() => {
+    // Auto-set activeMenu based on path
+    const currentPath = location.pathname.split("/recharge/")[1];
+    const activeItem = allItems.find((item) => item.path === currentPath);
+    if (activeItem) {
+      setActiveMenu(activeItem.name);
+    }
+  }, [location.pathname]);
+
   return (
     <>
-      <nav className="py-4 bg-light border-bottom" style={{marginTop:"95px"}}>
-        <Container>
-          <Row className="text-center">
-            {menuItems.map((item) => (
-              <Col
-                key={item.name}
-                onClick={() => handleMenuClick(item.name)}
-                className="menu-item"
-                style={{ cursor: "pointer" }}
-              >
-                <div
-                  className={`d-flex flex-column align-items-center ${
-                    activeMenu === item.name ? "active" : ""
-                  }`}
+      {shouldShowNav && (
+        <nav className="py-4 bg-light border-bottom" id="top" style={{ marginTop: "95px" }}>
+          <Container>
+            <Row className="text-center">
+              {menuItems.map((item) => (
+                <Col
+                  key={item.name}
+                  onClick={() => handleMenuClick(item.name)}
+                  className="menu-item"
+                  style={{ cursor: "pointer" }}
                 >
                   <div
-                    style={{
-
-                      color: activeMenu === item.name ? "var(--themeht-primary-color)" : "var(--themeht-primary-color)",
-
-                    }}
+                    className={`d-flex flex-column align-items-center ${
+                      activeMenu === item.name ? "active" : ""
+                    }`}
                   >
-                    {item.icon}
+                    <div
+                      style={{
+                        color: "var(--themeht-primary-color)",
+                      }}
+                    >
+                      {item.icon}
+                    </div>
+                    <p
+                      className="mb-0"
+                      style={{
+                        color: "var(--themeht-primary-color)",
+                        fontWeight: "bold",
+                        position: "relative",
+                        display: "inline-block",
+                      }}
+                    >
+                      {item.name}
+                      {activeMenu === item.name && (
+                        <span
+                          style={{
+                            position: "absolute",
+                            bottom: "-5px",
+                            left: "0",
+                            right: "0",
+                            height: "4px",
+                            backgroundColor: "var(--themeht-primary-color)",
+                            borderRadius: "20px",
+                          }}
+                        ></span>
+                      )}
+                    </p>
                   </div>
-                  <p
-                    className="mb-0"
-                    style={{
+                </Col>
+              ))}
+            </Row>
+          </Container>
+        </nav>
+      )}
 
-                      color: activeMenu === item.name ? "var(--themeht-primary-color)" : "var(--themeht-primary-color)",
-                      fontWeight: activeMenu === item.name ? "bold" : "bold",
-                      position: "relative",
-                      display: "inline-block",
-                    }}
-                  >
-                    {item.name}
-                    {activeMenu === item.name && (
-                      <span
-                        style={{
-                          position: "absolute",
-                          bottom: "-5px",
-                          left: "0",
-                          right: "0",
-                          height: "4px",
-                          backgroundColor: "var(--themeht-primary-color)",
+      {/* Outlet renders the selected service component */}
+      <Outlet />
 
-                          borderRadius: "20px",
-                        }}
-                      ></span>
-                    )}
-                  </p>
-                </div>
-              </Col>
-            ))}
-          </Row>
-        </Container>
-      </nav>
-
-      <div>
-        {activeMenu === "Mobile" && <MobileRechargeUI />}
-        {activeMenu === "DTH" && <DTHRecharge />}
-        {activeMenu === "Electricity" && <ElectricityBillPayment />}
-        {activeMenu === "Credit Card" && <CreditCardPayment />}
-        {activeMenu === "Datacard" && <DataCardRecharge />}
-        {activeMenu === "Landline" && <Landline />}
-        {activeMenu === "Broadband" && <Broadband />}
-        {activeMenu === "Piped Gas" && <PipedGas />}
-        {activeMenu === "Insurance" && <Insurance />}
-        {activeMenu === "Water" && <Water />}
-        {activeMenu === "Google Play" && <GooglePlay />}
-        {activeMenu === "Cable" && <Cable />}
-        {activeMenu === "Municipality" && <Municipality />}
-        {activeMenu === "EMI" && <Emi />}
-        {activeMenu === "Challan" && <TrafficChallan />}
-        {activeMenu === "Housing" && <HousingBillPayment />}
-        {activeMenu === "LPG Booking" && <LpgBooking />}
-      </div>
-
+      {/* Modal for More */}
       <Modal show={showModal} onHide={() => setShowModal(false)} centered>
         <Modal.Body>
           <Container>
@@ -225,7 +205,7 @@ const BillPayUI = () => {
                   onClick={() => handleMoreItemClick(item.name)}
                   style={{ cursor: "pointer" }}
                 >
-                  <div className="icon text-theme " style={{ fontSize: "24px", }}>
+                  <div className="icon text-theme" style={{ fontSize: "24px" }}>
                     {item.icon}
                   </div>
                   <p className="mb-0 text-theme">{item.name}</p>

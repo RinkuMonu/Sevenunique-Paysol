@@ -15,6 +15,7 @@ import {
 import { FaTruckPlane } from "react-icons/fa6";
 import { GrServers } from "react-icons/gr";
 import { TbArrowsCross } from "react-icons/tb";
+import { Link } from 'react-router-dom';
 
 
 
@@ -269,8 +270,8 @@ const FAQGooglePlayPayments = () => {
            Whether for your own use or as a retailer service, Google Play recharge through our platform is fast, reliable, and always available.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <button className="btn btn-light text-theme fw-bold px-4 py-2">Buy Now</button>
-            <button className="btn btn-outline-light fw-bold px-4 py-2">Register as a Retailer</button>
+            <a href="#top" className="btn btn-light text-theme fw-bold px-4 py-2">Buy Now</a>
+            <Link to="/registerform" className="btn btn-outline-light fw-bold px-4 py-2">Register as a Retailer</Link>
           </div>
         </div>
       </section>

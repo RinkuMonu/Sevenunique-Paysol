@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
 import React, { useState } from "react";
 import "./styles/contact.css";
+import { IoLocationSharp } from "react-icons/io5";
+import { Link } from 'react-router-dom';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -25,23 +27,35 @@ const ContactUs = () => {
     setResponseMessage(null);
 
     try {
-      const response = await fetch("https://finpay-b2c-backend.onrender.com/api/query/submit-form", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://finpay-b2c-backend.onrender.com/api/query/submit-form",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       const result = await response.json();
       if (response.ok) {
-        setResponseMessage({ type: "success", text: "Message sent successfully!" });
+        setResponseMessage({
+          type: "success",
+          text: "Message sent successfully!",
+        });
         setFormData({ fullName: "", email: "", number: "", message: "" });
       } else {
-        setResponseMessage({ type: "error", text: result.message || "Something went wrong!" });
+        setResponseMessage({
+          type: "error",
+          text: result.message || "Something went wrong!",
+        });
       }
     } catch (error) {
-      setResponseMessage({ type: "error", text: "Failed to send message. Try again later." });
+      setResponseMessage({
+        type: "error",
+        text: "Failed to send message. Try again later.",
+      });
     } finally {
       setLoading(false);
     }
@@ -49,8 +63,8 @@ const ContactUs = () => {
 
   return (
     <div>
- <section className="page-title pb-0 border-0">
-   <div className="position-relative w-100 ">
+      <section className="page-title pb-0 border-0">
+        <div className="position-relative w-100 ">
           <img
             src="/assets/Home/contact-banner.jpg"
             alt="Banner"
@@ -58,8 +72,7 @@ const ContactUs = () => {
             style={{ objectFit: "cover", height: "100%", minHeight: "500px" }}
           />
 
-
-        <h1
+          <h1
             className="text-white text-right fw-bold"
             style={{
               position: "absolute",
@@ -70,22 +83,21 @@ const ContactUs = () => {
               zIndex: 2,
             }}
           >
-     CONTACT US
+            CONTACT US
           </h1>
         </div>
-
       </section>
-
-
-
 
       <section className="py-5 text-center">
         <div className="container">
-          <h3 className="display-5 fw-bold text-theme">We are here to help - Anywhere, Anytime </h3>
+          <h3 className="display-5 fw-bold text-theme">
+            We are here to help - Anywhere, Anytime{" "}
+          </h3>
           <p className="lead mt-3">
-           Whether you are a retailer who is ready to join our BBPS network, a distributor searching for a fintech partnership, or a customer support, the SevenUnique team is available 24/7 to assist you with fast, reliable service.
-
-
+            Whether you are a retailer who is ready to join our BBPS network, a
+            distributor searching for a fintech partnership, or a customer
+            support, the SevenUnique team is available 24/7 to assist you with
+            fast, reliable service.
           </p>
         </div>
       </section>
@@ -97,10 +109,18 @@ const ContactUs = () => {
               <div className="col-lg-7 col-md-12 ps-lg-10 order-lg-1">
                 <div className="theme-title">
                   <h2>Stay in touch</h2>
-                  <p>Fill out the form, and our team will soon return to you.</p>
+                  <p>
+                    Fill out the form, and our team will soon return to you.
+                  </p>
                 </div>
                 {responseMessage && (
-                  <div className={`alert ${responseMessage.type === "success" ? "alert-success" : "alert-danger"}`}>
+                  <div
+                    className={`alert ${
+                      responseMessage.type === "success"
+                        ? "alert-success"
+                        : "alert-danger"
+                    }`}
+                  >
                     {responseMessage.text}
                   </div>
                 )}
@@ -157,7 +177,11 @@ const ContactUs = () => {
                       onChange={handleChange}
                     ></textarea>
                   </div>
-                  <button type="submit" className="themeht-btn primary-btn mt-4" disabled={loading}>
+                  <button
+                    type="submit"
+                    className="themeht-btn primary-btn mt-4"
+                    disabled={loading}
+                  >
                     <span>{loading ? "Sending..." : "Submit"}</span>
                     <i className="bi bi-arrow-right"></i>
                   </button>
@@ -171,44 +195,48 @@ const ContactUs = () => {
                   </div>
                   <ul className="contact-info list-unstyled">
                     <li>
-                      <i className="bi bi-globe-americas fs-3"></i>
-                      <div>
-                        <span>Head Office</span>
-                        <b>SevenUnique Tech Solutions Private Limited
-                        </b>
-                        <p>
-                         SevenUnique Tech Solutions Private Limited
- Plot number 97, Darakshapuri - I,
- Srikishan, Sangner, Jagatpura,
- Jaipur, Rajasthan, India - 302017
-
-
+                      <i className="bi bi-globe-americas fs-3 "></i>
+                      <span className="fs-4">SevenUnique Tech Solutions Private Limited</span>
+                      <div className="border border-dark rounded p-3 shadow">
+                        <b className="text-theme"><IoLocationSharp /> Head Office - Jaipur</b>
+                        <p className="fs-6">
+                          SevenUnique Tech Solutions Private Limited Plot number
+                          97, Darakshapuri - I, Srikishan, Sangner, Jagatpura,
+                          Jaipur, Rajasthan, India - 302017
                         </p>
                       </div>
                     </li>
                     <li>
+
+                      <div className="border border-dark rounded p-3  shadow"> <b className="text-theme"><IoLocationSharp />  Corporate Office - Mumbai</b>
+                        <p className="fs-6">
+                          Office No. 101/2, ‘Vakratunda Corporate Park Premises
+                          Co-operative Society Limited, Off. Aarey Road,
+                          Goregaon (East), Mumbai - 400 063
+                        </p>
+                      </div>
+                    </li>
+
+                    <li>
                       <i className="bi bi-envelope fs-3"></i>
                       <div>
                         <span>Customer Support</span>
-                  
-                          <p className="fw-bold fs-6">Phone</p>
-                          <a
-                            href="tel:01414511098"
-                            className="text-decoration-none fs-6"
-                          >+91-XXXXXXXXXX
-                          </a>
-                      <p className="fw-bold  fs-6">WhatsApp</p>
-                          <a
-                            href="tel:01414511098"
-                            className="text-decoration-none  fs-6"
-                          >+91-XXXXXXXXXX
-                          </a>
-                        <p className="fw-bold  fs-6">Email</p>
-                        <a href="mailto:info@7unique.in" className="text-decoration-none  fs-6">
-                          Support@7unique.in
+
+                        <p className="fw-bold fs-6">Phone</p>
+                        <a
+                          href="tel:01414511098"
+                          className="text-decoration-none fs-6"
+                        >
+                          0141-4511098
                         </a>
 
-
+                        <p className="fw-bold  fs-6">Email</p>
+                        <a
+                          href="mailto:info@7unique.in"
+                          className="text-decoration-none  fs-6"
+                        >
+                          Support@7unique.in
+                        </a>
                       </div>
                     </li>
                     <li>
@@ -216,7 +244,6 @@ const ContactUs = () => {
                       <div>
                         <span>Professional Hours</span>
                         24/7 assistance for all BBPS partners
-
                       </div>
                     </li>
                   </ul>
@@ -240,12 +267,17 @@ const ContactUs = () => {
         </section>
       </div>
       <div className="text-center mb-3 pt-4 border-top">
-<h5 className="text-theme fw-bold"> Partner with us</h5>
-        <h5 className="fw-bold mb-3"> At SevenUnique  BBPS willing to become retailers, distributors, or service partners?
- Let's increase India's digital payment future simultaneously.
-</h5>
+        <h5 className="text-theme fw-bold"> Partner with us</h5>
+        <h5 className="fw-bold mb-3">
+          {" "}
+          At SevenUnique BBPS willing to become retailers, distributors, or
+          service partners? Let's increase India's digital payment future
+          simultaneously.
+        </h5>
 
-        <button className="btn text-theme fw-semibold rounded-pill px-4 ">Be a Partner →</button>
+        <Link to="/registerform" className="btn text-theme fw-semibold rounded-pill px-4 ">
+          Be a Partner →
+        </Link>
       </div>
     </div>
   );

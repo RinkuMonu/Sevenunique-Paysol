@@ -16,6 +16,7 @@ import { FaTruckPlane } from "react-icons/fa6";
 import { MdIntegrationInstructions } from "react-icons/md";
 import { RiCustomerService2Fill,} from "react-icons/ri";
 import { GrServers } from "react-icons/gr";
+import { Link } from 'react-router-dom';
 
 const challanSteps = [
   "Go to the challan payment section on the app or website",
@@ -281,8 +282,8 @@ Our mission is to make digital traffic fine payments easy, transparent, and stre
             Avoid delays, penalties, or legal issues. Choose our platform for hassle-free, secure, and verified traffic challan settlement—available 24x7 for individuals and retailers alike.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <button className="btn btn-light text-theme fw-bold px-4 py-2">Pay Traffic Challan Now</button>
-            <button className="btn btn-outline-light fw-bold px-4 py-2">Become a Digital Partner</button>
+            <a href="#top" className="btn btn-light text-theme fw-bold px-4 py-2">Pay Traffic Challan Now</a>
+            <Link to="/registerform" className="btn btn-outline-light fw-bold px-4 py-2">Become a Digital Partner</Link>
           </div>
         </div>
       </section>

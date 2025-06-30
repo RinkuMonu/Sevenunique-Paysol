@@ -13,6 +13,7 @@ import {
    FaQuestion
 } from "react-icons/fa";
 import { TbArrowsCross } from "react-icons/tb";
+import { Link } from 'react-router-dom';
 
 const emiSteps = [
   "Go to the bill payment section on website or mobile app.",
@@ -249,8 +250,8 @@ Whether you are managing individual bills or a retailer offering services in you
             Avoid missed deadlines and late fees. With our platform, landline bill payments are quick, convenient, and accessible anytime — even from your mobile.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <button className="btn btn-light text-theme fw-bold px-4 py-2">Pay Your Landline Bill Now</button>
-            <button className="btn btn-outline-light fw-bold px-4 py-2">Become a Service Partner</button>
+            <a href="#top" className="btn btn-light text-theme fw-bold px-4 py-2">Pay Your Landline Bill Now</a>
+            <Link to="/registerform" className="btn btn-outline-light fw-bold px-4 py-2">Become a Service Partner</Link>
           </div>
         </div>
       </section>

@@ -16,6 +16,7 @@ import {
 import { FaArrowTrendUp ,FaHandshake } from "react-icons/fa6";
 import { GrServers } from "react-icons/gr";
 import { TbFileReport } from "react-icons/tb";
+import { Link } from 'react-router-dom';
 
 const challanSteps = [
 "Log in to our platform dashboard or mobile app",
@@ -293,8 +294,8 @@ Our service is designed for both individual users and digital agents looking to 
             Whether you're transferring funds for family, business, or community support — trust Sevenunique for fast, secure, and compliant online money transfers across India.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <button className="btn btn-light text-theme fw-bold px-4 py-2">Send Money Now</button>
-            <button className="btn btn-outline-light fw-bold px-4 py-2">Become a Money Transfer Agent</button>
+            <a href="#top" className="btn btn-light text-theme fw-bold px-4 py-2">Send Money Now</a>
+            <Link to="/registerform" className="btn btn-outline-light fw-bold px-4 py-2">Become a Money Transfer Agent</Link>
           </div>
         </div>
       </section>
