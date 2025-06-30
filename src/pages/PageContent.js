@@ -213,7 +213,7 @@ function PageContent() {
                   Start Your Digital Business
                 </a>
                 <a
-                  href="/ContactUs"
+                  href="/registerform"
                   className="btn btn-light btn-lg text-theme px-4 fs-5"
                 >
                   Become a Retail Partner
