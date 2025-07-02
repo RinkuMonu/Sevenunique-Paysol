@@ -146,7 +146,7 @@ const FAQDthRecharge = () => {
       <section className="py-5">
         <div className="container text-center">
           <h2 className="fw-bold mb-4">Supported DTH Operators</h2>
-          <p>
+          <p className="fs-5">
             We support immediate recharge for all major DTH service providers in
             India:
           </p>
@@ -159,7 +159,7 @@ const FAQDthRecharge = () => {
               </div>
             ))}
           </div>
-          <p>
+          <p className="fs-5">
             Whether you are a customer or a digital retailer, our DTH recharge
             BBPS system ensures easy access to all platforms.
           </p>
@@ -178,7 +178,7 @@ const FAQDthRecharge = () => {
                 <div className="bg-white p-4 rounded-4 shadow-sm h-100 text-center">
                   <div className="text-theme fs-2 mb-3">{b.icon}</div>
                   <h5 className="fw-semibold">{b.title}</h5>
-                  <p className="text-muted small">{b.desc}</p>
+                  <p className="text-muted fs-6">{b.desc}</p>
                 </div>
               </div>
             ))}
@@ -219,7 +219,7 @@ const FAQDthRecharge = () => {
       </section>
 
       {/* CTA */}
-      <section className="grediant-bg2 text-white py-5 text-center mb-3">
+      <section className="start-bgg text-white py-5 text-center mb-3">
         <div className="container">
           <h2 className="display-5 fw-bold mb-3 text-white">
             Start Earning with DTH Recharge Services
@@ -231,10 +231,10 @@ const FAQDthRecharge = () => {
             ready to power your digital service business.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <a href="/registerform" className="btn btn-light text-theme fw-bold px-4 py-2">
+            <a href="/registerform" className="btn custombtn-hover">
               Become a Partner
             </a>
-            <a href="#top" className="btn btn-outline-light fw-bold px-4 py-2">
+            <a href="#top" className="btn custombtn-hover">
               Recharge Now
             </a>
           </div>

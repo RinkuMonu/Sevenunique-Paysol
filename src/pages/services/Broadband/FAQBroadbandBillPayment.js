@@ -144,7 +144,7 @@ const FAQBroadbandBillPayment = () => {
       <section className="py-5  text-center">
         <div className="container">
           <h3 className="text-theme fw-bold fs-2">Broadband bill payment</h3>
-          <h4 className="fw-bold">Fast, secure, and convenient internet bill payment with our platform</h4>
+          <h4 className="fw-bold fs-4">Fast, secure, and convenient internet bill payment with our platform</h4>
           <p className="lead mt-3">Easily pay your broadband bill online .
             <br />
             Stay connected without hindrance. We offer a safe and spontaneous platform to pay your broadband bills online—anytime, anywhere. Whether you are managing your home Wi-Fi or offering bill payment services at a retail shop, Sevenunique ensures smooth transactions with immediate confirmation.
@@ -180,7 +180,7 @@ const FAQBroadbandBillPayment = () => {
               </div>
             ))}
           </div>
-          <p className="text-muted mt-3">*Coverage may vary based on region and provider.</p>
+          <p className="text-muted mt-3 fs-5">*Coverage may vary based on region and provider.</p>
         </div>
       </section>
 
@@ -194,7 +194,7 @@ const FAQBroadbandBillPayment = () => {
                 <div className="bg-white p-4 rounded-4 shadow-sm text-center h-100">
                   <div className="text-theme fs-2 mb-3">{benefit.icon}</div>
                   <h5 className="fw-semibold">{benefit.title}</h5>
-                  <p className="text-muted small">{benefit.desc}</p>
+                  <p className="text-muted fs-5">{benefit.desc}</p>
                 </div>
               </div>
             ))}
@@ -206,7 +206,7 @@ const FAQBroadbandBillPayment = () => {
       <section className="py-5 text-center">
         <div className="container">
           <h2 className="fw-bold mb-4">For retailers and agents</h2>
-<p>Add broadband bill payment services to your current setup:</p>
+<p className="fs-5">Add broadband bill payment services to your current setup:</p>
           <div className="row g-4">
             {broadbandRetailerInfo.map((item, i) => (
               <div key={i} className="col-md-4">
@@ -261,8 +261,8 @@ const FAQBroadbandBillPayment = () => {
             Whether you're a user or a digital service provider, we helps you stay connected with fast, secure broadband bill payments—all in one place.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <a href="#top" className="btn btn-light text-theme fw-bold px-4 py-2">Pay Now</a>
-            <a href="/registerform" className="btn btn-outline-light fw-bold px-4 py-2">Join as a Partner</a>
+            <a href="#top" className="btn custombtn-hover">Pay Now</a>
+            <a href="/registerform" className="btn custombtn-hover">Join as a Partner</a>
           </div>
         </div>
       </section>

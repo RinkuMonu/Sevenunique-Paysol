@@ -146,8 +146,8 @@ export default function ContactDetailsForm({ formData, updateFormData }) {
         </div>
       </div>
       {/* Account Type */}
-      {/* Account Type */}
-      <div className="col-6 mb-3">
+
+      {/* <div className="col-6 mb-3">
         <label htmlFor="accountType" className="form-label">
           Select Account Type <span className="text-danger">*</span>
         </label>
@@ -173,7 +173,7 @@ export default function ContactDetailsForm({ formData, updateFormData }) {
             <div className="invalid-feedback">{errors.accountType}</div>
           )}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

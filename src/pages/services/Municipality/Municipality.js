@@ -78,7 +78,7 @@ const Municipality = () => {
                 <Form.Group className="mb-3" controlId="houseNumber">
                   <Form.Label>House Number</Form.Label>
                   <Form.Control
-                    type="text"
+                    type="number"
                     placeholder="House Number"
                     value={formData.houseNumber}
                     onChange={handleChange}

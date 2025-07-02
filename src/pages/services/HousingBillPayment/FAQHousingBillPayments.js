@@ -188,7 +188,8 @@ With our platform, paying your housing society bills is not just convenient, but
 
                 <div className="p-3 bg-white rounded shadow-sm h-100 text-center ">
                    <div className='text-center text-theme fs-1'>{item.icon}</div>
-                   {item.title}</div>
+                   <h5 className='mt-3'>{item.title}</h5>
+                   </div>
               </div>
             ))}
           </div>
@@ -200,7 +201,7 @@ With our platform, paying your housing society bills is not just convenient, but
         <div className="container">
           <h2 className="fw-bold mb-4">Supported Housing & Property Management Systems
 </h2>
-<p className='text-center text-theme fs-5'>Our platform supports direct payments to:
+<p className='text-center fs-5'>Our platform supports direct payments to:
 </p>
           <div className="row justify-content-center">
             {housingSupport.map((type, i) => (
@@ -299,15 +300,15 @@ With our platform, paying your housing society bills is not just convenient, but
       </section>
 
       {/* CTA */}
-      <section className="py-5 grediant-bg2 text-white text-center mb-3">
+      <section className="py-5 start-bgg text-white text-center mb-3">
         <div className="container">
           <h2 className="display-5 fw-bold mb-3 text-white">Make Housing Payments Easy with our platform</h2>
           <p className="lead col-lg-8 mx-auto mb-4">
            Avoid late fees and manual paperwork. Choose our platform for fast, secure, and easy housing society bill payments — for yourself or your customers.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <a href="#top" className="btn btn-light text-theme fw-bold px-4 py-2">Pay Housing Bill Now</a>
-            <Link to="/registerform" className="btn btn-outline-light fw-bold px-4 py-2">Become a Service Partner</Link>
+            <a href="#top" className="btn custombtn-hover">Pay Housing Bill Now</a>
+            <Link to="/registerform" className="btn custombtn-hover">Become a Service Partner</Link>
           </div>
         </div>
       </section>

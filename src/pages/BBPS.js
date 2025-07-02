@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles/bbps.css";
 import { FaCheckCircle } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const features = [
   "Electricity Bill Payments",
@@ -125,8 +126,8 @@ BBPS
             </div>
             <div class="col-lg-6 col-md-12  ">
               <div class="mb-4">
-                <h3 className="text-theme fw-bold mt-5">What is BBPS?</h3>
-                <p>
+                <h3 className="text-theme fw-bold">What is BBPS?</h3>
+                <p className="fs-5">
                   BBPS (Bharat Bill Payment System) is a centralized payment
                   platform approved by the RBI and NPCI, offering an integrated
                   system for all utility bill payments. With SevenUnique, you
@@ -135,24 +136,24 @@ BBPS
                   payment, DTH recharge, and mobile postpaid payment through the
                   same platform.
                 </p>
-                <h4 className="fw-semibold mt-4">
+                <h4 className="fw-bold mt-4 fs-3">
                   Bill Categories Support On SevenUnique BBPS
                 </h4>
-                <p className="mb-3">SevenUnique supports all major BBPS biller categories:</p>
+                <p className="mb-3 fs-5">SevenUnique supports all major BBPS biller categories:</p>
                 <ul className="row list-unstyled">
                   {features.map((item, i) => (
                     <li
                       className="col-md-6 mb-2 d-flex align-items-start"
                       key={i}
                     >
-                      <FaCheckCircle className="me-2 text-success" /> {item}
+                      <FaCheckCircle className="me-2 text-success" /><span className="fs-5"> {item}</span>
                     </li>
                   ))}
                 </ul>
-                <h4 className="fw-semibold mt-5">
+                <h4 className="fw-bold mt-4 fs-3">
                   Benefits of Using BBPS with SevenUnique
                 </h4>
-                <p className="mb-3">
+                <p className="mb-3 fs-5">
                   Delivering BBPS services via SevenUnique provides retailers
                   and agents with several key benefits:
                 </p>
@@ -163,8 +164,8 @@ BBPS
                       key={i}
                     >
                       <FaCheckCircle className="me-2 mt-1 text-success fs-3" />
-                      <div className="text-muted small pt-2">{item.title}
-                      <div className="text-muted small pt-2">{item.desc}</div>
+                      <div className="fw-bold pt-2 fs-5">{item.title}
+                      <div className="text-muted pt-2 fs-6">{item.desc}</div>
 
                       </div>
                     </li>
@@ -179,7 +180,7 @@ BBPS
           <h3 className="fw-bold text-center mb-4">
             Who Can Use SevenUnique BBPS Platform?
           </h3>
-          <p className="text-center">
+          <p className="text-center fs-5">
             Our BBPS solution is ideal for a wide variety of businesses and
             service providers:
           </p>
@@ -194,10 +195,10 @@ BBPS
             ))}
           </div>
 
-          <h3 className="fw-bold text-center mb-4 px-2">
+          <h3 className="fw-bold text-center mb-4 px-2 mt-5">
             How to Start with SevenUnique BBPS
           </h3>
-          <p className="text-center">Being a BBPS partner with SevenUnique is quick and easy:</p>
+          <p className="text-center fs-5">Being a BBPS partner with SevenUnique is quick and easy:</p>
           <div className="row justify-content-center mb-5">
             <div className="col-lg-10">
               <div className="row g-4 px-3">
@@ -212,7 +213,7 @@ BBPS
                       <div className="me-3 fs-4 fw-bold text-theme">
                         {i + 1}
                       </div>
-                      <div className="text-dark fw-medium">{step}</div>
+                      <div className="text-dark fw-medium fs-5">{step}</div>
                     </div>
                   </div>
                 ))}
@@ -220,13 +221,13 @@ BBPS
             </div>
           </div>
 
-          <h3 className="fw-bold text-center mb-4">Why Choose SevenUnique?</h3>
-          <div className="row justify-content-center mb-5">
-            <div className="col-md-3">
+          <h3 className="fw-bold mb-4">Why Choose SevenUnique?</h3>
+          <div className="row mb-5">
+            <div className="col-md-12">
               <ul className="list-unstyled px-2">
                 {reasons.map((reason, i) => (
                   <li key={i} className="mb-3 d-flex">
-                    <FaCheckCircle className="text-theme fs-4 me-2 mt-1 align-self-center" />
+                    <FaCheckCircle className="text-theme fs-4 me-2 mt-1 a" />
                     <span>{reason}</span>
                   </li>
                 ))}
@@ -235,24 +236,27 @@ BBPS
           </div>
 
           <div className="text-center bg-light p-5 rounded-4 shadow-sm">
-            <h4 className="fw-bold mb-3">
+            <h4 className="fw-bold mb-3 fs-3">
             Start your BBPS business
             </h4>
-            <p className="mb-4">
+            <p className="mb-4 fs-5">
               Join SevenUnique Network and provide official, government-backed BBPS services to your customers. Whether you are in a city or village, you can create a powerful digital payment business, increase footfall, and earn a recurring commission through every transaction.
  </p>
             <div className="d-flex flex-column flex-md-row justify-content-center gap-3">
-              <button className="btn  primary-bg px-4 py-2 rounded-pill text-white">
+             <Link to="/registerform" >
+              <button className="btn custombtn-hover">
                 Be BBPS Partner
-              </button>
+              </button></Link>
+              <Link to="/ContactUs">
               <button
-                className="btn  px-4 py-2 rounded-pill text-theme"
+                className="btn custombtn-hover"
                 style={{
                   border: "1px solid #b53008",
                 }}
               >
                 Talk to Our team
               </button>
+              </Link>
             </div>
           </div>
         </section>

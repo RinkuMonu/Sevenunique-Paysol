@@ -182,7 +182,7 @@ function OurService() {
         </div>
       </section>
       <section className="container">
-        <h3 className="fw-bold text-center mb-4">Why choose SevenUnique?</h3>
+        <h2 className="fw-bold text-center mb-4">Why choose SevenUnique?</h2>
 
         <div className="d-flex flex-wrap gap-3">
           {reasons.map((reason, idx) => (
@@ -192,7 +192,7 @@ function OurService() {
               // style={{ minWidth: "280px", maxWidth: "48%" }}
             >
               <FaCheckCircle className="text-success me-2 mt-1 flex-shrink-0" />
-              <span>{reason}</span>
+              <span className="fs-5">{reason}</span>
             </div>
           ))}
         </div>
@@ -210,13 +210,13 @@ function OurService() {
         <div className="d-grid gap-3 d-md-flex justify-content-center">
           <a
             href="/registerform"
-            className="btn text-white btn-lg px-4 primary-bg fs-5"
+            className="btn custombtn-hover"
           >
             Be a Partner
           </a>
           <a
             href="/ContactUs"
-            className="btn btn-light btn-lg text-theme px-4 fs-5"
+            className="btn custombtn-hover"
           >
             Contact Us
           </a>

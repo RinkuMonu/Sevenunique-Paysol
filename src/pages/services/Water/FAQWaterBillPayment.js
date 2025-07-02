@@ -168,7 +168,7 @@ const FAQWaterBillPayment = () => {
       <section className="py-5 text-center">
         <div className="container">
           <h2 className="fw-bold mb-4">Supported Water Boards</h2>
-          <p>
+          <p className="lead">
             Our platform supports water bill payments for multiple state and
             city water supply departments, including:
           </p>
@@ -193,7 +193,7 @@ const FAQWaterBillPayment = () => {
                 <div className="bg-light p-4 text-center rounded-4 shadow-sm h-100">
                   <div className="text-theme fs-2 mb-3">{item.icon}</div>
                   <h5>{item.title}</h5>
-                  <p className="small text-muted">{item.desc}</p>
+                  <p className="fs-6 text-muted">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -251,7 +251,7 @@ const FAQWaterBillPayment = () => {
         </div>
       </section>
 
-      <section className="py-5 grediant-bg2 mb-3 text-white text-center">
+      <section className="py-5 start-bgg mb-3 text-white text-center">
         <div className="container">
           <h2 className="display-5 fw-bold mb-3 text-white">
             Pay Water Bills Effortlessly with our platform

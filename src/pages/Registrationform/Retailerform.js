@@ -87,7 +87,7 @@ export default function CreateAccount() {
           <div
             className="card-header"
             style={{
-              backgroundColor: "#FFB300",
+              backgroundColor: "rgb(196, 107, 80)",
               color: "#000",
               padding: "10px 20px",
               letterSpacing: "1px",
@@ -96,7 +96,7 @@ export default function CreateAccount() {
 
             }}
           >
-            <h5 className="my-1 text-black">{steps[currentStep].title}</h5>
+            <h5 className="my-1 text-white">{steps[currentStep].title}</h5>
           </div>
           <div className="card-body">
             <div className="row">
@@ -176,8 +176,8 @@ export default function CreateAccount() {
                   <button
                     className="btn"
                     style={{
-                      backgroundColor: "#FFB300",
-                      color: "#000",
+                      backgroundColor: "rgb(196, 107, 80)",
+                      color: "#fff",
                       padding: "10px 20px",
                       letterSpacing: "1px",
                       fontWeight: "700",

@@ -87,7 +87,7 @@ const HousingBillPayment = () => {
                 <Form.Group className="mb-3" controlId="amount">
                   <Form.Label>Amount</Form.Label>
                   <Form.Control
-                    type="text"
+                    type="number"
                     placeholder="₹ Amount"
                     value={formData.amount}
                     onChange={handleChange}

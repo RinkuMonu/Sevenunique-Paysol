@@ -66,7 +66,7 @@ const Cable = () => {
                 <Form.Group className="mb-3" controlId="subscriberCode">
                   <Form.Label>Subscriber Code</Form.Label>
                   <Form.Control
-                    type="text"
+                    type="number"
                     placeholder="Subscriber Code"
                     value={formData.subscriberCode}
                     onChange={handleChange}

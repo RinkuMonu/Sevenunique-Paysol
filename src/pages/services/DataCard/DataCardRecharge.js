@@ -73,10 +73,11 @@ const DataCardRecharge = () => {
                 <Form.Group className="mb-3" controlId="mobileNumber">
                   <Form.Label>Mobile Number</Form.Label>
                   <Form.Control
-                    type="text"
+                    type="number"
                     placeholder="Mobile Number"
                     value={formData.mobileNumber}
                     onChange={handleChange}
+
                   />
                 </Form.Group>
 

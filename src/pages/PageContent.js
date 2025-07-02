@@ -158,7 +158,7 @@ function PageContent() {
                                     <div className="featured-title">
                                         <h4 className="fs-4">Explore Unlimited Business Opportunities</h4>
                                     </div>
-                                    <p className="fs-6">
+                                    <p className="fs-5">
                                         Sevenunique is easy to operate and it also makes your work easier and faster.
                                         We will always have a wide variety of options as per your needs. You are always
                                         privileged to choose how to go forward. After all, You are Important to us.
@@ -175,7 +175,7 @@ function PageContent() {
                                     <div className="featured-title">
                                         <h4 className="fs-4">Supportive Team</h4>
                                     </div>
-                                    <p className="fs-6">
+                                    <p className="fs-5">
                                         Our customer service is best in class and committed to serve you 24x7 for your queries and questions.
                                         We're just one call away.
                                     </p>
@@ -208,13 +208,13 @@ function PageContent() {
               <div className="d-grid gap-3 d-md-flex justify-content-center">
                 <a
                   href="/ContactUs"
-                  className="btn text-white btn-lg px-4 primary-bg fs-5"
+                  className="btn custombtn-hover"
                 >
                   Start Your Digital Business
                 </a>
                 <a
                   href="/registerform"
-                  className="btn btn-light btn-lg text-theme px-4 fs-5"
+                  className="btn custombtn-hover"
                 >
                   Become a Retail Partner
                 </a>

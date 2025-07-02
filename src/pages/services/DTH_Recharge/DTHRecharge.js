@@ -6,6 +6,7 @@ import DTHBrowsePlans from "./DTHBrowsePlans";
 
 const DTHRecharge = () => {
   const [showModal, setShowModal] = useState(false);
+    const [operatorcheck, setoperatorCheck]=useState()
 
   const handleModalOpen = () => setShowModal(true);
   const handleModalClose = () => setShowModal(false);
@@ -86,11 +87,17 @@ const DTHRecharge = () => {
                 <Form.Group className="mb-3" controlId="customerId">
                   <Form.Label>Customer id</Form.Label>
                   <Form.Control
-                    type="text"
-                    placeholder="Customer id"
-                    value={formData.customerId}
-                    onChange={handleChange}
-                  />
+  type="text"
+  placeholder="Mobile Number"
+  value={operatorcheck}
+  inputMode="numeric"
+  pattern="[0-9]*"
+  maxLength={10} // optional
+  onChange={(e) => {
+    const onlyDigits = e.target.value.replace(/\D/g, '');
+    setoperatorCheck(onlyDigits);
+  }}
+/>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="amount">

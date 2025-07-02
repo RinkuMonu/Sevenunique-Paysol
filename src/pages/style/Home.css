@@ -31,7 +31,9 @@ section {
   padding: 50px 0 !important;
   position: relative;
 }
-
+.nav-link.active{
+  background-color: #b53008 !important;
+}
 .rounded {
   border-radius: 20px !important;
 }
@@ -1340,7 +1342,7 @@ input.form-product {
 }
 
 .text-white.step-item.style-1 h4 {
-  color: var(--themeht-white-color);
+  color: #8d3a3a;
 }
 
 .step-item.style-1 span {
@@ -1658,7 +1660,8 @@ input.form-product {
 p {
   line-height: 1.7;
   font-weight: 300;
-  font-size: 0.875rem;
+      font-size: 16px;
+    font-family:  var(--themeht-body-font-family) !important;;
 }
 .mask-img {
   -webkit-mask-image: url(../../../public/assets/Home/download.png);
@@ -2267,4 +2270,20 @@ p {
 }
 .box-bg{
   background-color: #ad4728;
+}
+.custombtn-hover {
+  color: #b53008;
+  border: 1px solid #fff;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.custombtn-hover:hover {
+  background-color: #b53008 !important;
+  border-color: #b53008 !important;
+  color: #fff  !important;
+}
+
+.start-bgg{
+ background-color: rgb(170, 71, 26);
 }

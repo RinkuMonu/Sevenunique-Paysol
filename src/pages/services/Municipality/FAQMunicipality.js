@@ -121,7 +121,7 @@ const FAQMunicipality = () => {
 
       <section className="py-5 text-center bg-light">
         <div className="container">
-          <h1 className="display-5 fw-bold">Introducing a Convenient, Transparent & Instant Civic Bill Payment Solution!</h1>
+          <h1 className="display-6 fw-bold">Introducing a Convenient, Transparent & Instant Civic Bill Payment Solution!</h1>
           <p className="lead mt-3">
              We’re all about making life easier for citizens and retailers alike. Our platform offers a straightforward and secure way to handle municipal payments online. Whether you need to pay property tax, water tax, sewerage charges, or municipal service fees, our digital solution lets you make quick payments and get real-time updates on your status—no more waiting in long lines!
           </p>
@@ -132,13 +132,13 @@ const FAQMunicipality = () => {
       <section className="py-5">
         <div className="container">
           <h2 className="fw-bold text-center mb-5">Types of Municipal Bills You Can Pay</h2>
-          <p className='text-center fs-5 text-theme'>Expand your digital services by offering municipal bill payments to your community:</p>
+          <p className='text-center fs-5'>Expand your digital services by offering municipal bill payments to your community:</p>
           <div className="row g-4">
             {services.map((service, i) => (
               <div className="col-md-4" key={i}>
                 <div className="bg-light p-4 text-center rounded-4 shadow-sm h-100">
 <h6 className='text-theme fs-2'>{service.icon}</h6>
-                  <h6>{service.title}</h6>
+                  <h5>{service.title}</h5>
                 </div>
               </div>
             ))}
@@ -194,8 +194,8 @@ const FAQMunicipality = () => {
               <div key={i} className="col-md-4">
                 <div className="bg-white p-4 rounded-4 shadow-sm text-center h-100">
  <h5 className="fw-semibold text-theme fs-2">{feature.icon}</h5>
-                  <h5 className="fw-semibold text-theme">{feature.title}</h5>
-                  <p className="text-muted small">{feature.desc}</p>
+                  <h5 className="fw-semibold">{feature.title}</h5>
+                  <p className="text-muted fs-6">{feature.desc}</p>
                 </div>
               </div>
             ))}
@@ -248,7 +248,7 @@ const FAQMunicipality = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-5 text-center grediant-bg2 text-white mb-3">
+      <section className="py-5 text-center start-bgg text-white mb-3">
         <div className="container">
           <h2 className="display-5 fw-bold mb-3 text-white">Make Civic Payments Simple & Stress-Free</h2>
           <p className="lead col-lg-8 mx-auto mb-4">
@@ -256,8 +256,8 @@ const FAQMunicipality = () => {
 
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <a href="#top" className="btn btn-light text-theme fw-bold px-4 py-2">Pay Municipal Bill Now</a>
-            <Link to="/registerform" className="btn btn-outline-light fw-bold px-4 py-2">Become a Service Partner</Link>
+            <a href="#top" className="btn custombtn-hover">Pay Municipal Bill Now</a>
+            <Link to="/registerform" className="btn custombtn-hover">Become a Service Partner</Link>
           </div>
         </div>
       </section>

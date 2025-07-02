@@ -136,7 +136,7 @@ const FAQCableBillPayments = () => {
       {/* Hero Section */}
       <section className="py-5 text-center">
         <div className="container">
-          <h1 className="display-5 fw-bold">
+          <h1 className="display-6 fw-bold">
             Simplifying Cable TV Payments for Every Household
           </h1>
           <p className="lead mt-3">
@@ -200,8 +200,8 @@ const FAQCableBillPayments = () => {
               <div key={i} className="col-md-4">
                 <div className="bg-light p-4 text-center rounded-4 shadow-sm h-100">
                   <div className="text-theme fs-2 mb-3">{item.icon}</div>
-                  <h5>{item.title}</h5>
-                  <p className="small text-muted">{item.desc}</p>
+                  <h5 className="fw-bold">{item.title}</h5>
+                  <p className="fs-6 text-muted">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -264,7 +264,7 @@ const FAQCableBillPayments = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-5 grediant-bg2 mb-3 text-white text-center">
+      <section className="py-5 start-bgg mb-3 text-white text-center">
         <div className="container">
           <h2 className="display-5 fw-bold mb-3 text-white">
             Pay Your Cable TV Bill Without Any Delay
@@ -274,10 +274,10 @@ const FAQCableBillPayments = () => {
             payments—quickly, securely, and without hassle.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <a to="#top" className="btn btn-light text-theme fw-bold px-4 py-2">
+            <a to="#top" className="btn custombtn-hover">
               Pay Cable Bill Now
             </a>
-            <Link to="/registerform" className="btn btn-outline-light fw-bold px-4 py-2">
+            <Link to="/registerform" className="btn custombtn-hover">
               Become a Retail Partner
             </Link>
           </div>

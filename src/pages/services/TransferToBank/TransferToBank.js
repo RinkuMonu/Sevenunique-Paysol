@@ -12,7 +12,14 @@ const TransferToBank = () => {
 
   const handleChange = (e) => {
     const { id, value } = e.target;
-    setFormData({ ...formData, [id]: value });
+
+    // Only allow letters in beneficiaryName
+    if (id === "beneficiaryName") {
+      const lettersOnly = value.replace(/[^a-zA-Z\s]/g, "");
+      setFormData({ ...formData, [id]: lettersOnly });
+    } else {
+      setFormData({ ...formData, [id]: value });
+    }
   };
 
   const isFormValid =
@@ -23,15 +30,12 @@ const TransferToBank = () => {
 
   return (
     <>
-      <div className="p-5 marginTop" style={{backgroundColor:"#EFF8FF"}}>
+      <div className="p-5 marginTop" style={{ backgroundColor: "#EFF8FF" }}>
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
             <h2 className="fw-bold text-orange">Online Money Transfer</h2>
-            <h3>
-              Send Money Securely Across India—Powered by Sevenunique
-
-            </h3>
+            <h3>Send Money Securely Across India—Powered by Sevenunique</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
                 src="/assets/Home/transfer-vec.png"
@@ -62,7 +66,7 @@ const TransferToBank = () => {
                 <Form.Group className="mb-3" controlId="accountNumber">
                   <Form.Label>Account Number</Form.Label>
                   <Form.Control
-                    type="text"
+                    type="number"
                     placeholder="Account Number"
                     value={formData.accountNumber}
                     onChange={handleChange}
@@ -103,7 +107,7 @@ const TransferToBank = () => {
           </Col>
         </Row>
       </div>
-        <FAQMoneyTransfer/>
+      <FAQMoneyTransfer />
     </>
   );
 };

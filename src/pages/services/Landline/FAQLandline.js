@@ -160,7 +160,7 @@ Whether you are managing individual bills or a retailer offering services in you
         <div className="container">
           <h2 className="fw-bold mb-4">We supported the landline operator
 </h2>
-<p>Our system allows for landline bill payment.</p>
+<p className="fs-5">Our system allows for landline bill payment.</p>
           <div className="row justify-content-center">
             {loanTypes.map((type, idx) => (
               <div key={idx} className="col-md-4 mb-3">
@@ -169,7 +169,7 @@ Whether you are managing individual bills or a retailer offering services in you
             ))}
           </div>
         </div>
-        <p>Coverage expands as per regional service availability.</p>
+        <p className="fs-5">Coverage expands as per regional service availability.</p>
       </section>
 
       {/* Key Features */}
@@ -182,7 +182,7 @@ Whether you are managing individual bills or a retailer offering services in you
                 <div className="bg-white p-4 rounded-4 shadow-sm text-center h-100">
                   <div className="text-theme fs-2 mb-3">{feature.icon}</div>
                   <h5 className="fw-semibold">{feature.title}</h5>
-                  <p className="text-muted small">{feature.desc}</p>
+                  <p className="text-muted fs-5">{feature.desc}</p>
                 </div>
               </div>
             ))}
@@ -194,7 +194,7 @@ Whether you are managing individual bills or a retailer offering services in you
       <section className="py-5 text-center">
         <div className="container">
           <h2 className="fw-bold mb-4">For retailers and business points</h2>
-          <p className="lead mb-5">
+          <p className="lead mb-5 fs-5">
             Provide landline bill payment services at your retail shop and earn commission:
           </p>
           <div className="row g-4">
@@ -203,7 +203,7 @@ Whether you are managing individual bills or a retailer offering services in you
                 <div className="p-4 bg-light rounded-4 shadow-sm h-100">
                   <div className="text-theme fs-2 mb-3">{point.icon}</div>
                   <h5>{point.title}</h5>
-                  <p className="small text-muted">{point.desc}</p>
+                  <p className="fs-5 text-muted">{point.desc}</p>
                 </div>
               </div>
             ))}
@@ -243,15 +243,15 @@ Whether you are managing individual bills or a retailer offering services in you
       </section>
 
       {/* CTA */}
-      <section className="py-5 grediant-bg2 text-white text-center mb-3">
+      <section className="py-5 start-bgg text-white text-center mb-3">
         <div className="container">
           <h2 className="display-5 fw-bold mb-3 text-white">Pay Landline Bills on Time, Every Time</h2>
           <p className="lead col-lg-8 mx-auto mb-4">
             Avoid missed deadlines and late fees. With our platform, landline bill payments are quick, convenient, and accessible anytime — even from your mobile.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <a href="#top" className="btn btn-light text-theme fw-bold px-4 py-2">Pay Your Landline Bill Now</a>
-            <Link to="/registerform" className="btn btn-outline-light fw-bold px-4 py-2">Become a Service Partner</Link>
+            <a href="#top" className="btn custombtn-hover">Pay Your Landline Bill Now</a>
+            <Link to="/registerform" className="btn custombtn-hover">Become a Service Partner</Link>
           </div>
         </div>
       </section>

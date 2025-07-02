@@ -126,7 +126,7 @@ const FAQLpgGasBooking = () => {
        {/* Hero */}
       <section className="py-5 text-center">
         <div className="container">
-          <h1 className="display-5 fw-bold">Say goodbye to the hassle of booking LPG refills!</h1>
+          <h1 className="display-6 fw-bold">Say goodbye to the hassle of booking LPG refills!</h1>
           <p className="lead mt-3">
            We make it super easy to order LPG gas cylinders online from all the major providers in India. With our Quick Gas Booking Service, you can arrange for a cylinder refill whenever you need it—no more trips to the gas agency or waiting in those long lines. Whether you're filling up for your home or assisting customers as a retailer, our platform guarantees a smooth, secure, and instant booking experience, complete with digital confirmation.
 
@@ -138,7 +138,7 @@ const FAQLpgGasBooking = () => {
       <section className="py-5 bg-light text-center">
         <div className="container">
           <h2 className="fw-bold mb-4">Looking to book a gas cylinder? </h2>
-          <p>Our platform has got you covered with major LPG distributors like </p>
+          <p className="fs-5">Our platform has got you covered with major LPG distributors like </p>
           <div className="row justify-content-center">
             {gasProviders.map((provider, i) => (
               <div key={i} className="col-md-4 mb-3">
@@ -148,7 +148,7 @@ const FAQLpgGasBooking = () => {
               </div>
             ))}
           </div>
-          <p className="mt-3 text-muted small">
+          <p className="mt-3 text-muted fs-5">
             You can easily book both regular and subsidized connections.
           </p>
         </div>
@@ -182,7 +182,7 @@ const FAQLpgGasBooking = () => {
                 <div className="bg-white p-4 rounded-4 shadow-sm text-center h-100">
                   <div className="text-theme fs-2 mb-3">{f.icon}</div>
                   <h5 className="fw-semibold">{f.title}</h5>
-                  <p className="text-muted small">{f.desc}</p>
+                  <p className="text-muted fs-6">{f.desc}</p>
                 </div>
               </div>
             ))}
@@ -241,14 +241,14 @@ const FAQLpgGasBooking = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-5 grediant-bg2 text-white text-center mb-3">
+      <section className="py-5 start-bgg text-white text-center mb-3">
         <div className="container">
           <h2 className="display-5 fw-bold mb-3 text-white">Book Your Gas Cylinder the Smart Way</h2>
           <p className="lead col-lg-8 mx-auto mb-4">Choose our BBPS platform for quick, reliable, and secure LPG gas booking — available 24x7 for you and your customers.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <a href="#top" className="btn btn-light text-theme fw-bold px-4 py-2">Book Now</a>
-            <Link to="/registerform" className="btn btn-outline-light fw-bold px-4 py-2">Become a Gas Booking Agent</Link>
+            <a href="#top" className="btn custombtn-hover">Book Now</a>
+            <Link to="/registerform" className="btn custombtn-hover">Become a Gas Booking Agent</Link>
           </div>
         </div>
       </section>

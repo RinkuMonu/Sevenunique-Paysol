@@ -69,7 +69,7 @@ const PipedGas = () => {
                 <Form.Group className="mb-3" controlId="caNumber">
                   <Form.Label>CA Number</Form.Label>
                   <Form.Control
-                    type="text"
+                    type="number"
                     placeholder="CA Number"
                     value={formData.caNumber}
                     onChange={handleChange}

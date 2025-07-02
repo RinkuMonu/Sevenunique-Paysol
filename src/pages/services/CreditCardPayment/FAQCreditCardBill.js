@@ -120,10 +120,10 @@ const FAQCreditCardPayment = () => {
     <>
       <section className="py-5 text-center position-relative ">
         <div className="container position-relative z-2">
-          <h1 className="display-4 fw-bold mb-3">
+          <h2 className="fw-bold mb-3">
             About Credit Card Bill Payment
-          </h1>
-          <p className="fs-6 mb-0 col-md-10 mx-auto ">
+          </h2>
+          <p className="fs-5 mb-0 col-md-11 mx-auto ">
             A credit card gives you access to short-term credit for immediate
             payments. However, forgetting your bill date can result in interest
             charges, late fees, and even a lower credit score. That’s why timely
@@ -155,7 +155,7 @@ const FAQCreditCardPayment = () => {
           <h2 className="text-center fw-bold mb-5">
             How to Pay Credit Card Bills
           </h2>
-          <p>
+          <p className="fs-5">
             Paying your credit card bill using our platform is quick and easy.
             Follow these steps:
           </p>
@@ -178,7 +178,7 @@ const FAQCreditCardPayment = () => {
       <section className="py-5">
         <div className="container text-center">
           <h2 className="fw-bold mb-4">Supported Credit Card Issuers</h2>
-          <p>You can make credit card bill payments for a wide range of banks and institutions, including:</p>
+          <p className="fs-5">You can make credit card bill payments for a wide range of banks and institutions, including:</p>
           <div className="row justify-content-center">
             {banks.map((bank, i) => (
               <div key={i} className="col-md-3 mb-3">
@@ -200,7 +200,7 @@ const FAQCreditCardPayment = () => {
                 <div className="bg-white p-4 rounded-4 shadow-sm h-100 text-center">
                   <div className="text-theme fs-2 mb-3">{b.icon}</div>
                   <h5 className="fw-semibold">{b.title}</h5>
-                  <p className="text-muted small">{b.desc}</p>
+                  <p className="text-muted fs-6">{b.desc}</p>
                 </div>
               </div>
             ))}
@@ -214,7 +214,7 @@ const FAQCreditCardPayment = () => {
 <section className="py-5">
         <div className="container">
           <h4 className="fw-bold mb-4 text-center text-theme">Retailer & Agent Benefits</h4>
-          <p className="text-center col-md-8 mx-auto mb-3">
+          <p className="text-center col-md-8 mx-auto mb-3 fs-5">
             If you're a retailer, CSC operator, or local service provider, helps you offer credit card bill payment services to your customers:
 
           </p>
@@ -266,7 +266,7 @@ const FAQCreditCardPayment = () => {
         </div>
       </section>
 
-      <section className="py-5 grediant-bg2 text-white text-center mb-3">
+      <section className="py-5 start-bgg text-white text-center mb-3">
         <div className="container">
           <h2 className="display-5 fw-bold mb-3 text-white">
             Start Paying Smart – Use SevenUnique for Credit Card Bill Payments
@@ -278,11 +278,11 @@ const FAQCreditCardPayment = () => {
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
 
-<a href="#top" className="btn btn-light text-theme fw-bold px-4 py-2">
+<a href="#top" className="btn custombtn-hover">
               Pay Now
             </a>
            <Link to="/registerform">
-            <button className="btn btn-outline-light fw-bold px-4 py-2">
+            <button className="btn custombtn-hover">
               Become a Partner
             </button></Link>
           </div>

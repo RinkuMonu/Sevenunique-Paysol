@@ -146,9 +146,9 @@ const FAQLoanEMIPayments = () => {
       {/* Hero Section */}
       <section className="py-5 text-center">
         <div className="container">
-          <h1 className="display-5 fw-bold">Discover the ultimate solution for managing all your EMI payments
+          <h1 className="display-6 fw-bold">Discover the ultimate solution for managing all your EMI payments
 </h1>
-          <p className="mt-3 fs-6">
+          <p className="mt-3 fs-5">
             Now, you can effortlessly pay your loan EMIs from the comfort of your home or at your nearest digital service point. Whether you have a personal loan, vehicle loan, home loan, or consumer durable loan, we guarantee secure, instant, and reliable EMI transactions with all major NBFCs and banks.
             <br />
 
@@ -181,7 +181,7 @@ Say goodbye to missed due dates, long lines, and payment delays. With our platfo
       <section className="py-5 text-center">
         <div className="container">
           <h2 className="fw-bold mb-4">Supported Loan Types</h2>
-          <p>You can pay EMIs for:</p>
+          <p className="fs-5">You can pay EMIs for:</p>
           <div className="row justify-content-center">
             {emiTypes.map((type, idx) => (
               <div key={idx} className="col-md-4 mb-3">
@@ -199,7 +199,7 @@ Say goodbye to missed due dates, long lines, and payment delays. With our platfo
         <div className="container">
           <h2 className="fw-bold mb-4">Partnered NBFCs & Banks
 </h2>
-<p>Our platform supports EMI collections for leading financial institutions like:
+<p className="fs-5">Our platform supports EMI collections for leading financial institutions like:
 </p>
           <div className="row justify-content-center">
             {emiPartners.map((partner, idx) => (
@@ -249,7 +249,7 @@ Say goodbye to missed due dates, long lines, and payment delays. With our platfo
                 <div className="bg-white p-4 rounded-4 shadow-sm h-100 text-center">
                   <div className="text-theme fs-2 mb-3">{b.icon}</div>
                   <h5 className="fw-semibold">{b.title}</h5>
-                  <p className="text-muted small">{b.desc}</p>
+                  <p className="text-muted fs-6">{b.desc}</p>
                 </div>
               </div>
             ))}
@@ -315,7 +315,7 @@ Say goodbye to missed due dates, long lines, and payment delays. With our platfo
       </section>
 
       {/* CTA */}
-      <section className="grediant-bg2 text-white py-5 text-center mb-3">
+      <section className="start-bgg text-white py-5 text-center mb-3">
         <div className="container">
           <h2 className="display-5 fw-bold mb-3 text-white">Stay On Track with Your EMI Payments
 </h2>
@@ -323,10 +323,10 @@ Say goodbye to missed due dates, long lines, and payment delays. With our platfo
             Avoid late fees and maintain a good credit score by paying EMIs on time — powered by SevenUnique.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <a href="#top" className="btn btn-light text-theme fw-bold px-4 py-2">
+            <a href="#top" className="btn custombtn-hover">
               Pay EMI Now
             </a>
-            <Link to="/registerform" className="btn btn-outline-light fw-bold px-4 py-2">
+            <Link to="/registerform" className="btn custombtn-hover">
               Become a Retail Partner
             </Link>
           </div>

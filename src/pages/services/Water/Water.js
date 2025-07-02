@@ -69,7 +69,7 @@ const Water = () => {
                 <Form.Group className="mb-3" controlId="rrNumber">
                   <Form.Label>RR Number</Form.Label>
                   <Form.Control
-                    type="text"
+                    type="number"
                     placeholder="RR Number"
                     value={formData.rrNumber}
                     onChange={handleChange}

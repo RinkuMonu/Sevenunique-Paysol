@@ -12,15 +12,15 @@ function ServiceItem({ icon, title, description , btn, features = []}){
         </div>
       <div className="service-desc">
         <div className="service-title">
-          <h4>{title}</h4>
+          <h4 className='fw-bold fs-5'>{title}</h4>
         </div>
-        <p>{description}</p>
+        <p className='fs-6'>{description}</p>
          {features.length > 0 && (
             <ul className="list-unstyled text-start mt-3 small mb-5">
               {features.map((feature, idx) => (
                 <li key={idx} className="d-flex align-items-start mb-2">
                   <span className="me-2 text-success">✔</span>
-                  <span>{feature}</span>
+                  <span className='fs-5'>{feature}</span>
 
                 </li>
               ))}
@@ -29,7 +29,7 @@ function ServiceItem({ icon, title, description , btn, features = []}){
 
           )}
           <div className="">
-        <Link to={btn} className="position-absolute  bottom-4 btn text-white px-4 primary-bg fs-6" style={{width:"max-content", bottom:"4%", left:"10%"}}>
+        <Link to={btn} className="position-absolute btn custombtn-hover" style={{width:"max-content", bottom:"4%", left:"10%"}}>
           Go to this page
         </Link>
       </div>

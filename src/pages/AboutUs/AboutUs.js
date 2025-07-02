@@ -26,6 +26,7 @@ import {
   FaThumbsUp,
 } from "react-icons/fa";
 import { FaEye } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
 const AboutUs = () => {
   const listItems = [
@@ -173,6 +174,7 @@ const AboutUs = () => {
       name: "Mohit Meena",
       role: "Retail Merchant  – Bihar",
     },
+
   ];
 
   return (
@@ -237,6 +239,27 @@ const AboutUs = () => {
           </div>
         </div>
 
+<div className="container">
+  <h4 className="text-theme fs-4 text-center fw-bold pt-3">WHO WE ARE</h4>
+                    <p className="fs-5 pt-3">
+                      We are happy to introduce you about SEVENUNIQUE TECH
+                      SOLUTIONS PRIVATE LIMITED. , is service provider company
+                      which is providing Recharge and BillPayment - BBPS
+                      services to our valuable retailers/merchants
+                    </p>
+                    <p className="fs-5">
+                      SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. has taken a
+                      step forward in the field of Financial Inclusion through a
+                      partnership with Multiple Banks &amp; Other Parties.
+                    </p>
+</div>
+
+
+
+
+
+
+
         {/* <div className="container my-5 bgcolor shadow-lg p-4 rounded">
           <div className="bg-white border rounded-4 p-5">
             <h3 className="fw-bold mb-4 text-center text-theme">
@@ -275,26 +298,14 @@ const AboutUs = () => {
 
                 <div className="col-lg-6 col-md-12 mt-6 mt-lg-0 ps-lg-10 text-secondary px-3">
                   <div className="theme-title mb-4 ">
-                    <h4 className="text-theme fs-4">WHO WE ARE</h4>
-                    <p className="fs-5">
-                      We are happy to introduce you about SEVENUNIQUE TECH
-                      SOLUTIONS PRIVATE LIMITED. , is service provider company
-                      which is providing Recharge and BillPayment - BBPS
-                      services to our valuable retailers/merchants
-                    </p>
-                    <p className="fs-5">
-                      SEVENUNIQUE TECH SOLUTIONS PRIVATE LIMITED. has taken a
-                      step forward in the field of Financial Inclusion through a
-                      partnership with Multiple Banks &amp; Other Parties.
-                    </p>
-                    <h4 className="text-theme mt-3">
-                      <FaEye className="text-theme fs-4 flex items-center me-2" />
+                    <h4 className="text-theme mt-3 fs-3 fw-bold">
+                      <FaEye className="text-theme fs-2 pb-1 flex items-center me-2" />
                       OUR VISION
                     </h4>
-                    <p className="fw-bold">
+                    <p className="fw-bold fs-4">
                       Creating a digital future that works for everyone
                     </p>
-                    <p>
+                    <p className="fs-5">
                       At SevenUnique, we imagine a future where every
                       Indian-oriented retailer to remote consumers can access
                       and benefit from BBPS-operated digital services. With
@@ -307,14 +318,14 @@ const AboutUs = () => {
                       run India's rise as a global economic leader, fueled by
                       platform scalable platform and nationwide BBPS innovation.
                     </p>
-                    <h4 className="text-theme mt-3">
-                      <FaBullseye className="text-theme fs-4 flex items-center me-2" />
+                    <h4 className="text-theme mt-3 fs-3 fw-bold">
+                      <FaBullseye className="text-theme fs-2 pb-1 flex items-center me-2" />
                       OUR MISSION
                     </h4>
-                    <p className="fw-bold">
+                    <p className="fw-bold fs-4">
                       Empowering businesses with BBPS-operated Technology
                     </p>
-                    <p>
+                    <p className="fs-5">
                       Our mission is to provide a strong, reliable, and
                       transparent BBPS recharge platform that empowers Indian
                       retailers, shop owners, and local traders. Whether you are
@@ -390,20 +401,20 @@ const AboutUs = () => {
           </section>
 
           <div className="container my-5">
-            <h3 className="text-center fw-bold mb-5 section-heading text-white">
+            <h3 className="text-center fw-bold mb-4 text-theme pt-5">
               Key Features
             </h3>
-            <h4 className="text-center mb-5">
+            <h4 className="text-center mb-5 fs-4">
               Built for Simplicity & Speed – Trusted in India
             </h4>
-            <div className="row g-4">
+            <div className="row g-4 border rounded shadow mt-3">
               {features.map((feature, index) => (
                 <div className="col-lg-4 col-md-6" key={index}>
                   <div className="feature-card d-flex align-items-start gap-3 p-4 rounded-4 h-100">
                     <div className="rounded-circle d-flex align-items-center fs-1 text-theme">
                       {index + 1}
                     </div>
-                    <p className="mb-0 feature-text fw-semibold fs-4 text-black">
+                    <p className="mb-1 mx-2 feature-text fw-semibold fs-4 text-black">
                       {feature}
                     </p>
                   </div>
@@ -412,21 +423,23 @@ const AboutUs = () => {
             </div>
           </div>
 
-          <div className="container my-5 bg rounded p-3">
-            <h3 className=" text-center text-theme fw-bold">HOW IT WORKS</h3>
-            <p className="text-center fw-bold howit-heading">
+          <div className="howitworks container my-5 bg rounded p-3 pt-5 mt-4">
+            <h3 className="text-center text-theme fw-bold">HOW IT WORKS</h3>
+            <h4 className="text-center fw-bold fs-4 pt-4">
               Get Started in 3 Simple Steps – Join as a BBPS Retailer Across
               India
-            </p>
-            <div className="row g-4 justify-content-center">
+            </h4>
+            <div className="row g-4 justify-content-center pt-3">
               {steps.map((step, index) => (
                 <div className="col-md-4" key={index}>
                   <div className="step-card p-4 text-center rounded-4 h-100 text-theme fs-5">
-                    {step.icon}
-                    <div className="step-number fw-bold fs-4 mb-2">
-                      Step {index + 1}
-                    </div>
+                    <span className="ms-5"> {step.icon}</span>
+                    <div className="d-flex">
+                      <span className="step-number align-item fw-bold fs-4 mb-2">
+                     {index + 1}
+                    </span>
                     <h5 className="fw-bold mb-2">{step.title}</h5>
+                      </div>
                   </div>
                 </div>
               ))}
@@ -434,15 +447,15 @@ const AboutUs = () => {
           </div>
 
           <div className="container  mt-5">
-            <h3 className="text-theme mt-5">Reviews section </h3>
-            <h4 className="mt-5 fw-bold mb-4 testimonials-heading">
+            <h3 className="text-theme mt-5 fw-bold">Reviews section </h3>
+            <h4 className="mt-3 fw-bold mb-4 testimonials-heading fs-4">
               What our Jaipur retailers say about SevenUnique Sample Review:
             </h4>
             <div className="row g-4 justify-content-center">
               {testimonials.map((testimonial, index) => (
                 <div className="col-md-6" key={index}>
                   <div className="testimonial-card p-4 rounded-4 shadow-sm h-100">
-                    <p className="testimonial-quote mb-4">
+                    <p className="testimonial-quote mb-4 fs-6">
                       "{testimonial.quote}"
                     </p>
                     <h6 className="mb-0 fw-bold">{testimonial.name}</h6>
@@ -455,20 +468,22 @@ const AboutUs = () => {
 
           <div className="cta-section text-center py-5 bgcolor mt-5">
             <div className="container">
-              <h4 className="cta-heading mb-3 text-white">
+              <h4 className="cta-heading mb-3 fw-bold text-white fs-2">
                 Start your digital BBPS Journey with SevenUnique
               </h4>
-              <p className="cta-subtext mb-4 fw-bold fs-4 text-white">
+              <p className="cta-subtext mb-4 fs-4 text-white mx-5">
                 Become a part of fastest-growing BBPS and utility bill payment
                 network. Easily activate fast, and start earning today.
               </p>
               <div className="d-flex justify-content-center gap-3 flex-wrap">
-                <button className="btn btn-primary-custom">
-                  Now join as a BBPS Retailer
-                </button>
-                <button className="btn btn-outline-custom">
+               <Link to="/registerform" > <button className="btn custombtn-hover border border-light">
+  Now join as a BBPS Retailer
+</button></Link>
+                <Link to="/registerform" >
+                <button className="btn custombtn-hover border border-light">
                   A demo schedule as Distributor
                 </button>
+                </Link>
               </div>
             </div>
           </div>

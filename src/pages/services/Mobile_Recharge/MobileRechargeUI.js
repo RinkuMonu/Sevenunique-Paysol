@@ -93,7 +93,7 @@ const MobileRechargeUI = () => {
               Recharge prepaid & postpaid numbers securely with the BBPS mobile portal.
               <br />
             </h3>
-            <p>Experience uninterrupted recharge using India's reliable BBPS recharge system.We provides a fully integrated mobile recharge BBPS platform, designed for individuals, retailers and fintech entrepreneurs. With support to all major telecommunications networks and real-time recharge confirmation, you can serve customers anytime, anywhere.</p>
+            <p className="fs-5 text-muted">Experience uninterrupted recharge using India's reliable BBPS recharge system.We provides a fully integrated mobile recharge BBPS platform, designed for individuals, retailers and fintech entrepreneurs. With support to all major telecommunications networks and real-time recharge confirmation, you can serve customers anytime, anywhere.</p>
             <div className="d-flex justify-content-center align-items-center">
               <img
                 src="/assets/Home/mobile-vec.png"
@@ -119,12 +119,18 @@ const MobileRechargeUI = () => {
               <Form>
                 <Form.Group className="mb-3" controlId="mobileNumber">
                   <Form.Label>Mobile Number</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="Mobile Number"
-                    value={operatorcheck}
-                    onChange={(e)=>setoperatorCheck(e.target.value)}
-                  />
+                 <Form.Control
+  type="text"
+  placeholder="Mobile Number"
+  value={operatorcheck}
+  inputMode="numeric"
+  pattern="[0-9]*"
+  maxLength={10} // optional
+  onChange={(e) => {
+    const onlyDigits = e.target.value.replace(/\D/g, '');
+    setoperatorCheck(onlyDigits);
+  }}
+/>
                 </Form.Group>
                 <button onClick={handleCheckOperator}></button>
                 {operatorInfo}

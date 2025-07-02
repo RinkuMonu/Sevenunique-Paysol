@@ -14,6 +14,7 @@ import {
   FaQuestion
 } from "react-icons/fa";
 import Accordion from "react-bootstrap/Accordion";
+import { Link } from 'react-router-dom';
 
 const mobileOperators = ["Jio", "Airtel", "Vodafone Idea (VI)", "BSNL"];
 
@@ -121,10 +122,10 @@ const FAQMobileRecharge = () => {
       <section className="py-5 text-center">
         <div className="container">
           <h1 className="display-5 fw-bold">Mobile Recharge Services</h1>
-          <p className="lead mt-3">
+          <p className="lead mt-3 fw-bold fs-4">
            Quick, safe, and Real-Time Recharge with SevenUnique
           </p>
-          <p>Experience uninterrupted recharge using India's reliable BBPS recharge system.We provides a fully integrated mobile recharge BBPS platform, designed for individuals, retailers and fintech entrepreneurs. With support to all major telecommunications networks and real-time recharge confirmation, you can serve customers anytime, anywhere.</p>
+          <p className="fs-5">Experience uninterrupted recharge using India's reliable BBPS recharge system.We provides a fully integrated mobile recharge BBPS platform, designed for individuals, retailers and fintech entrepreneurs. With support to all major telecommunications networks and real-time recharge confirmation, you can serve customers anytime, anywhere.</p>
         </div>
       </section>
 
@@ -132,7 +133,7 @@ const FAQMobileRecharge = () => {
       <section className="py-5 bg-light text-center">
         <div className="container">
           <h2 className="fw-bold mb-4">Operator supported across India</h2>
-           <p className="text-muted mt-3 small">
+           <p className="text-muted mt-3 fs-5">
             Our prepaid recharge BBPS platform and postpaid mobile bill payment system support all major telecom operators:
           </p>
           <div className="row justify-content-center">
@@ -143,7 +144,7 @@ const FAQMobileRecharge = () => {
                 </div>
               </div>
             ))}
-            <p>Support includes mobile recharge, BBPS postpaid bill payment, and integration with our comprehensive utility bill payment software.</p>
+            <p className="text-muted mt-3 fs-5">Support includes mobile recharge, BBPS postpaid bill payment, and integration with our comprehensive utility bill payment software.</p>
           </div>
 
         </div>
@@ -155,7 +156,7 @@ const FAQMobileRecharge = () => {
           <h2 className="fw-bold text-center mb-5">
             How to recharge using SevenUnique BBPS
           </h2>
-          <p className="pb-2 text-center">Follow these simple steps on the our platform or mobile dashboard:</p>
+          <p className="pb-2 text-center fs-5">Follow these simple steps on the our platform or mobile dashboard:</p>
           <div className="row g-4">
             {rechargeSteps.map((step, i) => (
               <div key={i} className="col-md-6">
@@ -169,7 +170,7 @@ const FAQMobileRecharge = () => {
           </div>
 
         </div>
-        <p className="mt-5 text-center">All transactions are processed through our RBI-anonymous BBPS recharge system.</p>
+        <p className="mt-5 text-center fs-5">All transactions are processed through our RBI-anonymous BBPS recharge system.</p>
       </section>
 
       {/* Features */}
@@ -255,7 +256,7 @@ const FAQMobileRecharge = () => {
     </section>
 
       {/* CTA */}
-      <section className="py-5 grediant-bg2 text-white text-center mb-3">
+      <section className="py-5 start-bgg text-white text-center mb-3">
         <div className="container">
           <h2 className="display-5 fw-bold mb-3 text-white">
             Start Mobile Recharge BBPS Business
@@ -264,8 +265,8 @@ const FAQMobileRecharge = () => {
            Whether you're a new retailer or want to add services to your existing shop, SevenUnique makes mobile recharges fast, secure, and commission-generating. Tap into India’s growing demand for digital transactions with our prepaid recharge BBPS and postpaid payment tools.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <a href="#top" className="btn btn-light text-theme fw-bold px-4 py-2">Recharge Now</a>
-            <a href="/registerform" className="btn btn-outline-light fw-bold px-4 py-2">Become a BBPS Recharge Partner</a>
+            <a href="#top" className="btn custombtn-hover">Recharge Now</a>
+            <Link to="/registerform" className="btn custombtn-hover">Become a BBPS Recharge Partner</Link>
           </div>
         </div>
       </section>
