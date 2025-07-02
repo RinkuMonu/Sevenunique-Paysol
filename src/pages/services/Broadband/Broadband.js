@@ -69,7 +69,7 @@ const Broadband = () => {
                 <Form.Group className="mb-3" controlId="telephoneNumber">
                   <Form.Label>Telephone Number</Form.Label>
                   <Form.Control
-                    type="text"
+                    type="number"
                     placeholder="Telephone Number"
                     value={formData.telephoneNumber}
                     onChange={handleChange}

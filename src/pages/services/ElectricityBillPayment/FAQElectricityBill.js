@@ -16,7 +16,7 @@ const SevenUniqueElectricityBill = () => {
           <h2 className="fw-bold text-center mb-4">
             Electricity bill payment online- BBPS- Powered, safe, and immediate
           </h2>
-          <p className="text-center col-md-10 mx-auto">
+          <p className="text-center col-md-10 mx-auto fs-5">
            Immediately pay electricity bills across India with the SevenUnique reliable BBPS platform that offers real-time updates, zero additional fees, and multi-operator coverage.
           </p>
         </div>
@@ -57,7 +57,7 @@ const SevenUniqueElectricityBill = () => {
       <section className="py-5 text-center">
         <div className="container">
           <h2 className="fw-bold mb-4">Supported Electricity Boards on SevenUnique BBPS</h2>
-          <p className="mb-4">
+          <p className="mb-4 fs-5">
             Our platform supports electricity bill payments across 25+ Indian states and regional electricity boards, including:
           </p>
           <div className="row justify-content-center">
@@ -76,7 +76,7 @@ const SevenUniqueElectricityBill = () => {
               </div>
             ))}
           </div>
-          <p>Our BBPS electricity bill payment system ensures nationwide coverage, fast access, and real-time syncing with operators.</p>
+          <p className="fs-5">Our BBPS electricity bill payment system ensures nationwide coverage, fast access, and real-time syncing with operators.</p>
         </div>
       </section>
 
@@ -88,7 +88,7 @@ const SevenUniqueElectricityBill = () => {
           </h2>
 
 
-<div className="row g-4">
+<div className="row g-4 fs-5">
   {[
     "BBPS-Compliant Platform – Secure, real-time connection to all major boards",
     "Zero Transaction Charges – Pay electricity bills online with no extra fees",
@@ -115,13 +115,13 @@ const SevenUniqueElectricityBill = () => {
       <section className="py-5">
         <div className="container">
           <h2 className="fw-bold mb-4 text-center text-theme">Electricity Bill Offers & Coupons</h2>
-          <p className="text-center col-md-8 mx-auto mb-5">
+          <p className="text-center col-md-8 mx-auto mb-5 fs-5">
             Enjoy 5% SuperCash up to ₹50 on your first electricity bill payment via our platform. Minimum transaction: ₹300. Maximum reward: ₹50. Visit our Electricity Bill Offers page regularly for updated coupons and cashback codes.
           </p>
-          <h3 className="fw-bold mb-3 text-center text-theme">Benefits for Retailers & BBPS Agents</h3>
-          <p>Retail shop owners, CSC operators, and entrepreneurs can use our platform to provide utility bill payment services and earn commissions on every successful transaction.
+          <h3 className="fw-bold mb-3 text-center text-theme ">Benefits for Retailers & BBPS Agents</h3>
+          <p className="fs-5">Retail shop owners, CSC operators, and entrepreneurs can use our platform to provide utility bill payment services and earn commissions on every successful transaction.
 </p>
-          <ul>
+          <ul className="fs-5">
             <li>Serve your local community with real-time bijli bill payments</li>
             <li>No complex setup – start with just a smartphone</li>
             <li>Instant commission credit on every bill payment</li>
@@ -174,7 +174,7 @@ const SevenUniqueElectricityBill = () => {
       </section>
 
       {/* CTA */}
-      <section className="grediant-bg2 text-white py-5 text-center mb-3">
+      <section className="start-bgg text-white py-5 text-center mb-3">
         <div className="container">
           <h2 className="display-5 fw-bold mb-3 text-white">
             Pay Electricity Bills the Smart Way – With SevenUnique
@@ -183,10 +183,10 @@ const SevenUniqueElectricityBill = () => {
             Whether you're in Rajasthan, Delhi, Maharashtra, or Karnataka, we offer a fast, secure, and commission-free BBPS electricity bill payment solution. Enjoy nationwide service, user-friendly experience, and complete transaction peace of mind.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <a href="/registerform" className="btn btn-light text-theme fw-bold px-4 py-2">
+            <a href="/registerform" className="btn custombtn-hover">
               Pay Your Electricity Bill Now
             </a>
-            <a href="#top" className="btn btn-outline-light fw-bold px-4 py-2">
+            <a href="#top" className="btn custombtn-hover">
               Become a BBPS Partner
             </a>
           </div>

@@ -156,7 +156,7 @@ const FAQGooglePlayPayments = () => {
        {/* Hero Section */}
       <section className="py-5 text-center bg-light">
         <div className="container">
-          <h1 className="display-5 fw-bold">Recharge Your Google Play Balance Anytime, Anywhere! </h1>
+          <h1 className="display-6 fw-bold">Recharge Your Google Play Balance Anytime, Anywhere! </h1>
           <p className="lead mt-3">
             Getting your Google Play recharge codes is super easy, safe, and available 24/7. Whether you’re looking to buy apps, games, in-game currency, or subscriptions, our platform lets you quickly top up your Google Play account without needing a debit or credit card. It’s perfect for personal use or for retailers catering to walk-in customers!
 
@@ -263,15 +263,15 @@ const FAQGooglePlayPayments = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-5 text-center grediant-bg2 mb-3 text-white">
+      <section className="py-5 text-center start-bgg mb-3 text-white">
         <div className="container">
           <h2 className="display-5 fw-bold mb-3 text-white">Recharge Google Play Instantly with our platform </h2>
           <p className="lead col-lg-8 mx-auto mb-4">
            Whether for your own use or as a retailer service, Google Play recharge through our platform is fast, reliable, and always available.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <a href="#top" className="btn btn-light text-theme fw-bold px-4 py-2">Buy Now</a>
-            <Link to="/registerform" className="btn btn-outline-light fw-bold px-4 py-2">Register as a Retailer</Link>
+            <a href="#top" className="btn custombtn-hover">Buy Now</a>
+            <Link to="/registerform" className="btn custombtn-hover">Register as a Retailer</Link>
           </div>
         </div>
       </section>

@@ -135,8 +135,8 @@ return (
        {/* Hero */}
       <section className="py-5  text-center">
         <div className="container">
-          <h1 className="display-5 fw-bold">Hassle-Free Piped and LPG Gas Bill Payments</h1>
-          <p className="lead mt-3">
+          <h1 className="display-6 fw-bold">Hassle-Free Piped and LPG Gas Bill Payments</h1>
+          <p className="lead mt-3 mx-5">
             Managing your household gas connection is now easier than ever with our platform. Whether it’s a piped gas bill or an LPG gas booking, our platform offers a secure, fast, and convenient way to make your payments online—anytime, from anywhere.
           </p>
         </div>
@@ -151,7 +151,7 @@ return (
               <div key={i} className="col-md-6">
                   <div className="p-3 shadow-sm rounded-4 bg-white h-100 d-flex align-items-start" style={{ borderLeft: "4px solid #b53008" }}>
                   <div className="me-3 fs-4 fw-bold text-theme">{i + 1}</div>
-                  <div>{step}</div>
+                  <div className="fs-6">{step}</div>
                 </div>
               </div>
             ))}
@@ -163,7 +163,7 @@ return (
       <section className="py-5 text-center">
         <div className="container">
           <h2 className="fw-bold mb-4">Supported Gas Providers</h2>
-          <p>Our platform supports bill payments and bookings for major gas service providers, including:
+          <p className="fs-5">Our platform supports bill payments and bookings for major gas service providers, including:
 </p>
           <div className="row justify-content-center">
             {gasProviders.map((provider, i) => (
@@ -186,7 +186,7 @@ return (
                 <div className="bg-white p-4 rounded-4 shadow-sm text-center h-100">
                   <div className="text-theme fs-2 mb-3">{benefit.icon}</div>
                   <h5 className="fw-semibold">{benefit.title}</h5>
-                  <p className="text-muted small">{benefit.desc}</p>
+                  <p className="text-muted fs-6">{benefit.desc}</p>
                 </div>
               </div>
             ))}
@@ -198,7 +198,7 @@ return (
       <section className="py-5 text-center">
         <div className="container">
           <h2 className="fw-bold mb-4">Benefits for Retailers & Local Agents</h2>
-          <p className="lead mb-5">If you run a digital service center, shop, or kiosk, offer gas bill payment services through our platform:</p>
+          <p className="lead mb-5 fs-5">If you run a digital service center, shop, or kiosk, offer gas bill payment services through our platform:</p>
           <div className="row g-4">
             {gasRetailerInfo.map((item, i) => (
               <div key={i} className="col-md-4">
@@ -245,15 +245,15 @@ return (
       </section>
 
       {/* CTA */}
-      <section className="py-5 grediant-bg2 text-white text-center mb-3">
+      <section className="py-5 start-bgg text-white text-center mb-3">
         <div className="container">
           <h2 className="display-5 fw-bold mb-3 text-white">Pay Your Gas Bill in Minutes with our Platform</h2>
           <p className="lead col-lg-8 mx-auto mb-4">
             Stay safe, save time, and never miss a due date again. With SevenUnique , paying gas bills is quick, convenient, and secure.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <a href="#top" className="btn btn-light text-theme fw-bold px-4 py-2">Pay Your Gas Bill Now</a>
-            <Link to="/registerform" className="btn btn-outline-light fw-bold px-4 py-2">Join as a Retailer</Link>
+            <a href="#top" className="btn custombtn-hover">Pay Your Gas Bill Now</a>
+            <Link to="/registerform" className="btn custombtn-hover">Join as a Retailer</Link>
           </div>
         </div>
       </section>

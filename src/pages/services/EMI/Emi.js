@@ -76,7 +76,7 @@ const Emi = () => {
                 <Form.Group className="mb-3" controlId="applicationId">
                   <Form.Label>Application ID</Form.Label>
                   <Form.Control
-                    type="text"
+                    type="number"
                     placeholder="Application ID"
                     value={formData.applicationId}
                     onChange={handleChange}

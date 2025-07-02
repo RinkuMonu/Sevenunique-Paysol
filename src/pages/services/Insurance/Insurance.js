@@ -76,7 +76,7 @@ const Insurance = () => {
                 <Form.Group className="mb-3" controlId="policyNumber">
                   <Form.Label>POLICY NO</Form.Label>
                   <Form.Control
-                    type="text"
+                    type="number"
                     placeholder="POLICY NO"
                     value={formData.policyNumber}
                     onChange={handleChange}
@@ -95,7 +95,7 @@ const Insurance = () => {
                 <Form.Group className="mb-3" controlId="mobileNumber">
                   <Form.Label>Mobile Number</Form.Label>
                   <Form.Control
-                    type="text"
+                    type="number"
                     placeholder="Mobile Number"
                     value={formData.mobileNumber}
                     onChange={handleChange}

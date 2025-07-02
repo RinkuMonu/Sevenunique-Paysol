@@ -98,10 +98,10 @@ export default function StepsComponent() {
       </section>
 
       {/* CTA Section */}
-      <section className="grediant-bg2 py-3 text-white position-relative mb-3">
+      <section className="start-bgg py-3 text-white position-relative mb-3">
         <div className="container py-5 position-relative">
           <div className="text-center mb-5">
-            <h4 className="display-4 text-white fw-bold mb-4">
+            <h4 className="display-4 text-white fw-bold mb-4 fs-3">
               Start Your Digital Journey with Sevenunique
             </h4>
             <p className="lead fs-5 mb-5 col-lg-8 mx-auto">
@@ -109,10 +109,10 @@ export default function StepsComponent() {
             </p>
 
             <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center mb-3">
-              <Link to="/ContactUs" className="btn primary-bg text-white btn-lg px-5 py-3 fw-bold fs-6">
+              <Link to="/ContactUs" className="btn custombtn-hover">
                 Join Now
               </Link>
-              <Link to="/registerform" className="btn border-light text-theme btn-lg px-5 py-3 fw-bold fs-6">
+              <Link to="/registerform" className="btn custombtn-hover">
                 Schedule a Demo in Jaipur
               </Link>
             </div>

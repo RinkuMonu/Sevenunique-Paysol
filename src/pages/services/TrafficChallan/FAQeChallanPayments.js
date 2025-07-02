@@ -144,7 +144,7 @@ const FAQeChallanPayments = () => {
       {/* Hero */}
       <section className="py-5 text-center">
         <div className="container">
-          <h1 className="display-5 fw-bold">Clear Traffic Fines in Just a Few Clicks</h1>
+          <h1 className="display-6 fw-bold">Clear Traffic Fines in Just a Few Clicks</h1>
           <p className="lead mt-3">
            We provide a fast and secure way to settle your traffic challans online. Whether you've gotten an e-challan for speeding, running a red light, or any other violations, our platform allows you to pay your traffic fines instantly, no matter where you are, without the hassle of visiting a traffic office.
            <br />
@@ -158,7 +158,7 @@ Our mission is to make digital traffic fine payments easy, transparent, and stre
       <section className="py-5 bg-light text-center">
         <div className="container">
           <h2 className="fw-bold mb-4">What Can You Pay?</h2>
-          <p>Our platform supports the settlement of:</p>
+          <p className='fs-5'>Our platform supports the settlement of:</p>
           <div className="row justify-content-center">
             {challanTypes.map((type, i) => (
               <div key={i} className="col-md-4 mb-3">
@@ -192,7 +192,7 @@ Our mission is to make digital traffic fine payments easy, transparent, and stre
       <section className="py-5 text-center">
         <div className="container">
           <h2 className="fw-bold mb-4">Supported States & Traffic Authorities</h2>
-          <p>Our platform integrates with official traffic departments in:</p>
+          <p className='fs-5'>Our platform integrates with official traffic departments in:</p>
           <div className="row justify-content-center">
             {supportedStates.map((state, i) => (
               <div key={i} className="col-md-4 mb-3">
@@ -200,7 +200,7 @@ Our mission is to make digital traffic fine payments easy, transparent, and stre
               </div>
             ))}
           </div>
-          <p>Coverage expands based on the availability of the traffic department.
+          <p className='fs-5'>Coverage expands based on the availability of the traffic department.
 </p>
         </div>
       </section>
@@ -215,7 +215,7 @@ Our mission is to make digital traffic fine payments easy, transparent, and stre
                 <div className="bg-white p-4 rounded-4 shadow-sm text-center h-100">
                   <div className="text-theme fs-2 mb-3">{f.icon}</div>
                   <h5 className="fw-semibold">{f.title}</h5>
-                  <p className="text-muted small">{f.desc}</p>
+                  <p className="text-muted fs-6">{f.desc}</p>
                 </div>
               </div>
             ))}
@@ -234,7 +234,7 @@ Our mission is to make digital traffic fine payments easy, transparent, and stre
                 <div className="bg-light p-4 rounded-4 shadow-sm h-100">
                   <div className="text-theme fs-2 mb-3">{r.icon}</div>
                   <h5>{r.title}</h5>
-                  <p className="small text-muted">{r.desc}</p>
+                  <p className="fs-6 text-muted">{r.desc}</p>
                 </div>
               </div>
             ))}
@@ -275,15 +275,15 @@ Our mission is to make digital traffic fine payments easy, transparent, and stre
 
 
       {/* CTA */}
-      <section className="py-5 grediant-bg2 text-white text-center mb-3">
+      <section className="py-5 start-bgg text-white text-center mb-3">
         <div className="container">
           <h2 className="display-5 fw-bold mb-3 text-white">Settle Traffic Fines Online—The Smart Way</h2>
           <p className="lead col-lg-8 mx-auto mb-4">
             Avoid delays, penalties, or legal issues. Choose our platform for hassle-free, secure, and verified traffic challan settlement—available 24x7 for individuals and retailers alike.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <a href="#top" className="btn btn-light text-theme fw-bold px-4 py-2">Pay Traffic Challan Now</a>
-            <Link to="/registerform" className="btn btn-outline-light fw-bold px-4 py-2">Become a Digital Partner</Link>
+            <a href="#top" className="btn custombtn-hover">Pay Traffic Challan Now</a>
+            <Link to="/registerform" className="btn custombtn-hover">Become a Digital Partner</Link>
           </div>
         </div>
       </section>

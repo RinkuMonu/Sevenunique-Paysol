@@ -154,8 +154,8 @@ const FAQInsurancePayment = () => {
        {/* Hero Section */}
       <section className="py-5  text-center">
         <div className="container">
-          <h1 className="display-5 fw-bold">One Platform for All Your Insurance Payment Needs</h1>
-          <p className="lead mt-3">
+          <h1 className="display-6 fw-bold">One Platform for All Your Insurance Payment Needs</h1>
+          <p className="lead mt-3 fs-5">
             We offer a fast, reliable, and secure solution to pay your insurance premiums online. Whether you’re paying for life, health, or vehicle insurance, our platform is designed to help you make payments effortlessly — with instant confirmation and support for leading insurers in India.
           </p>
         </div>
@@ -182,7 +182,7 @@ const FAQInsurancePayment = () => {
       <section className="py-5 text-center">
         <div className="container">
           <h2 className="fw-bold mb-4">Types of Insurance Supported</h2>
-          <p>Using our platform, you can pay premiums for:</p>
+          <p className="fs-5">Using our platform, you can pay premiums for:</p>
           <div className="row justify-content-center">
             {insuranceTypes.map((type, i) => (
               <div key={i} className="col-md-4 mb-3">
@@ -197,7 +197,7 @@ const FAQInsurancePayment = () => {
       <section className="py-5 bg-light">
         <div className="container text-center">
           <h2 className="fw-bold mb-4 text-theme">Insurance Providers Supported</h2>
-          <p>We support payments to major insurance companies including:</p>
+          <p className="fs-5">We support payments to major insurance companies including:</p>
           <div className="row justify-content-center">
             {insuranceProviders.map((provider, i) => (
               <div key={i} className="col-md-4 mb-3">
@@ -218,7 +218,7 @@ const FAQInsurancePayment = () => {
                 <div className="bg-light p-4 text-center rounded-4 shadow-sm h-100">
                   <div className="text-theme fs-2 mb-3">{item.icon}</div>
                   <h5>{item.title}</h5>
-                  <p className="small text-muted">{item.desc}</p>
+                  <p className="fs-6 text-muted">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -231,7 +231,7 @@ const FAQInsurancePayment = () => {
         <div className="container">
           <h2 className="fw-bold mb-4">Benefits for Retailers & Digital Service Centers
 </h2>
-          <p className="lead mb-5">
+          <p className="lead mb-5 fs-5">
             Offer insurance payment services at your shop and:
           </p>
           <div className="row g-4">
@@ -280,15 +280,15 @@ const FAQInsurancePayment = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-5 grediant-bg2 mb-3 text-white text-center">
+      <section className="py-5 start-bgg mb-3 text-white text-center">
         <div className="container">
           <h2 className="display-5 fw-bold mb-3 text-white">Pay Insurance Premiums Easily with our platform.</h2>
           <p className="lead col-lg-8 mx-auto mb-4">
             Never miss a renewal again. Whether you're paying for yourself or assisting customers, our platform makes insurance payments smooth, secure, and on time.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <a href="#top" className="btn btn-light text-theme fw-bold px-4 py-2">Pay Insurance Now</a>
-            <Link to="/registerform" className="btn btn-outline-light fw-bold px-4 py-2">Become a Service Partner</Link>
+            <a href="#top" className="btn custombtn-hover">Pay Insurance Now</a>
+            <Link to="/registerform" className="btn custombtn-hover">Become a Service Partner</Link>
           </div>
         </div>
       </section>

@@ -8,6 +8,9 @@ const ElectricityBillPayment = () => {
     consumerNumber: "",
   });
 
+const [operatorcheck, setoperatorCheck]=useState()
+
+
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormData((prevData) => ({
@@ -80,9 +83,15 @@ const ElectricityBillPayment = () => {
                   <Form.Label>Consumer Number</Form.Label>
                   <Form.Control
                     type="text"
-                    placeholder="Consumer Number"
-                    value={formData.consumerNumber}
-                    onChange={handleChange}
+  placeholder="Mobile Number"
+  value={operatorcheck}
+  inputMode="numeric"
+  pattern="[0-9]*"
+  maxLength={10} // optional
+  onChange={(e) => {
+    const onlyDigits = e.target.value.replace(/\D/g, '');
+    setoperatorCheck(onlyDigits);
+  }}
                   />
                 </Form.Group>
 

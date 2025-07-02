@@ -39,7 +39,7 @@ const LpgBooking = () => {
             </h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="images/lpgbooking.png"
+                src="/assets/Home/lpg-vec.png"
                 alt="Image"
                 height="300"
                 className="item-center"
@@ -79,7 +79,7 @@ const LpgBooking = () => {
                 <Form.Group className="mb-3" controlId="registeredContactNumber">
                   <Form.Label>Registered Contact Number</Form.Label>
                   <Form.Control
-                    type="text"
+                    type="number"
                     id="registeredContactNumber"
                     placeholder="Registered Contact Number"
                     value={formData.registeredContactNumber}

@@ -49,7 +49,7 @@ const CreditCardPayment = () => {
                 <Form.Group className="mb-3" controlId="creditCard">
                   <Form.Label>Credit Card Number</Form.Label>
                   <Form.Control
-                    type="text"
+                    type="number"
                     placeholder="Credit Card Number"
                     value={formData.creditCard}
                     onChange={handleChange}
@@ -59,7 +59,7 @@ const CreditCardPayment = () => {
                 <Form.Group className="mb-3" controlId="amount">
                   <Form.Label>Bill Amount</Form.Label>
                   <Form.Control
-                    type="text"
+                    type="number"
                     placeholder="₹ Bill Amount"
                     value={formData.amount}
                     onChange={handleChange}

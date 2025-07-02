@@ -81,7 +81,7 @@ export default function Header({ onLoginClick }) {
                   <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="nav navbar-nav ms-auto">
                       <li className="nav-item">
-                        <Link className="nav-link active" to={"/"}>
+                        <Link className="nav-link activee" to={"/"}>
                           Home
                         </Link>
                       </li>
@@ -247,7 +247,7 @@ export default function Header({ onLoginClick }) {
                       ) : (
                         <>
                           <li className="nav-item">
-                            {/* Trigger Button */}
+
                             <Link
                               to={"#"}
                               className="nav-link balance_link"

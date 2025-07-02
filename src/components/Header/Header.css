@@ -22,7 +22,7 @@
 }
 
 #site-header .navbar-nav .nav-link:hover,
-.navbar-nav .nav-item .nav-link.active {
+.navbar-nav .nav-item .nav-link.activee {
     color: #aa6544;
     cursor: pointer;
 }

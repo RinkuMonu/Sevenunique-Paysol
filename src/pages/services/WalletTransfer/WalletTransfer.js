@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button, Nav } from "react-bootstrap";
+import { Link } from 'react-router-dom';
 
 import {
   FaBolt,
@@ -17,8 +18,11 @@ import {
   FaStar,
   FaThumbsUp,
 } from "react-icons/fa";
+import Popup from "../../Popup/Popup";
+import Login from "../../Login/Login";
 
-const WalletTransfer = () => {
+const WalletTransfer = ({onLoginClick}) => {
+
   const [formData, setFormData] = useState({
     mobileNumber: "",
     amount: "",
@@ -223,7 +227,7 @@ const WalletTransfer = () => {
                   <Form.Group className="mb-3" controlId="mobileNumber">
                     <Form.Label>Mobile Number</Form.Label>
                     <Form.Control
-                      type="text"
+                      type="number"
                       placeholder="Enter Mobile Number"
                       value={formData.mobileNumber}
                       onChange={handleChange}
@@ -410,10 +414,14 @@ const WalletTransfer = () => {
           Whether you're growing a network of agents or managing a local team, sevenunique Wallet Transfer helps you move funds instantly, securely, and with full control.
         </p>
         <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <button className="btn btn-light text-theme fw-bold px-4 py-2">Login to Transfer Wallet Funds</button>
-            <button className="btn btn-light text-theme fw-bold px-4 py-2">Become a Distributor</button>
+
+            <Link to="/registerform" className="btn custombtn-hover">Login to Transfer Wallet Funds</Link>
+
+            <Link to="/registerform" >
+            <button className="btn custombtn-hover">Become a Distributor</button></Link>
           </div>
       </div>
+
     </>
   );
 };

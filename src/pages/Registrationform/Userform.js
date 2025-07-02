@@ -219,13 +219,14 @@ export default function UserAccountCreation() {
                     disabled={mobileVerified}
                   />
                   <button
-                    className="btn btn-warning text-white"
+                    className="btn text-white"
                     onClick={handleGetMobileOtp}
                     disabled={
                       formData.mobile.length !== 10 ||
                       showMobileOtp ||
                       mobileVerified
                     }
+style={{backgroundColor: "#b53008"}}
                   >
                     Get OTP
                   </button>
@@ -251,6 +252,7 @@ export default function UserAccountCreation() {
                       className="btn btn-warning text-white"
                       onClick={handleVerifyMobileOtp}
                       disabled={mobileOtp.length !== 6}
+
                     >
                       Verify OTP
                     </button>
@@ -489,9 +491,10 @@ export default function UserAccountCreation() {
 
             {currentStep < 5 ? (
               <button
-                className="btn btn-warning text-white"
+                className="btn text-white"
                 onClick={handleNextStep}
                 disabled={!canProceedToNext()}
+                style={{backgroundColor: "#b53008"}}
               >
                 Next Step
               </button>

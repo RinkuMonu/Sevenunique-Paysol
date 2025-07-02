@@ -2,16 +2,35 @@ import React from 'react';
 import {  Row, Col, Form, Button } from "react-bootstrap";
 import FAQeChallanPayments from './FAQeChallanPayments';
 import ShimmerUI from '../../ShimmerUI/ShimmerUI';
+import { useState } from 'react';
 
 const TrafficChallan = () => {
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   if (isFormValid) {
-  //     console.log("Form submitted:", formData);
-  //     // Add your form submission logic here
-  //   }
-  // };
+
+const [formData, setFormData] = useState({
+    operator: "",
+    registeredContactNumber: "",
+  });
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: value,
+    }));
+  };
+
+  const isFormValid = formData.operator && formData.registeredContactNumber.trim();
+
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (isFormValid) {
+      console.log("Form submitted:", formData);
+      // Add your form submission logic here
+    }
+  };
 
   return (
     <>
@@ -40,7 +59,7 @@ const TrafficChallan = () => {
               style={{ maxWidth: "500px", margin: "0 auto" }}
             >
               <h3 className="mb-4 text-orange fw-bold">Online Traffic Challan Payment</h3>
-              {/* <Form onSubmit={handleSubmit}>
+              <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="operator">
                   <Form.Label>Operator</Form.Label>
                   <Form.Select
@@ -55,7 +74,7 @@ const TrafficChallan = () => {
                 <Form.Group className="mb-3" controlId="subscriberCode">
                   <Form.Label>Subscriber Code</Form.Label>
                   <Form.Control
-                    type="text"
+                    type="number"
                     placeholder="Subscriber Code"
                     value={formData.subscriberCode}
                     onChange={handleChange}
@@ -71,8 +90,8 @@ const TrafficChallan = () => {
                 >
                   Confirm
                 </Button>
-              </Form> */}
-              <ShimmerUI/>
+              </Form>
+
             </div>
           </Col>
         </Row>

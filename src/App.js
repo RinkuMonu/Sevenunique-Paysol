@@ -6,6 +6,7 @@ import AboutUs from "./pages/AboutUs/AboutUs.js";
 import Home from "./pages/Home";
 import ContactUs from "./pages/ContactUs";
 import Blog from "./pages/Blog/Blog.js";
+import Sitemap from "./pages/Sitemap/Sitemap.js";
 import Blogdetails from "./pages/Blogdetails/Blogdetails.js";
 import AppLayout from "./components/AppLayout/AppLayout";
 import OurService from "./pages/OurService/OurService.js";
@@ -15,6 +16,7 @@ import OurPartner from "./pages/OurPartner";
 import BBPS from "./pages/BBPS";
 import Term from "./pages/Term";
 import PrivacyPolicy from "./pages/PrivacyPolicy.js";
+import BugBounty from "./pages/Bugbounty.js";
 import RefundPolicy from "./pages/RefundPolicy.js";
 import History from "./pages/History/History.js";
 import MyWallet from "./pages/My_Wallet/MyWallet.js";
@@ -50,8 +52,12 @@ import TrafficChallan from "./pages/services/TrafficChallan/TrafficChallan.js";
 import Retailerform from "./pages/Registrationform/Retailerform.js";
 import UserAccountCreation from "./pages/Registrationform/Userform.js";
 import ScrollToTop from "./components/ScrollToTop.js";
+import { useState } from "react";
+import Popup from "./pages/Popup/Popup.jsx";
+import Login from "./pages/Login/Login.js";
 
 function App() {
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -66,6 +72,7 @@ function App() {
         { path: "/AboutUs", element: <AboutUs /> },
         { path: "/ContactUs", element: <ContactUs /> },
         { path: "/Blog", element: <Blog /> },
+        { path: "/Sitemap", element: <Sitemap /> },
         { path: "/Blogdetails", element: <Blogdetails /> },
         { path: "/Services", element: <OurService /> },
         { path: "/WhyUs", element: <WhyUs /> },
@@ -73,13 +80,14 @@ function App() {
         { path: "/BBPS", element: <BBPS /> },
         { path: "/term", element: <Term /> },
         { path: "/privacypolicy", element: <PrivacyPolicy /> },
+        { path: "/BugBounty", element: <BugBounty /> },
         { path: "/RefundPolicy", element: <RefundPolicy /> },
         { path: "/paymentmode", element: <PaymentMode /> },
         { path: "/transfer-to-bank", element: <TransferToBank /> },
         { path: "/profilesetting", element: <ProfileSetting /> },
         { path: "/paymentcheck/:amount", element: <PaymentCheck /> },
         { path: "/redeem-payback-points", element: <RedeemPayback /> },
-        { path: "/wallet-transfer", element: <WalletTransfer /> },
+        { path: "/wallet-transfer", element: <WalletTransfer  /> },
         { path: "/mywallet", element: <MyWallet /> },
         { path: "/history", element: <History /> },
         { path: "/404", element: <Page404 /> },
@@ -124,6 +132,7 @@ function App() {
   ]);
 
   return <RouterProvider router={router} />;
+
 }
 
 export default App;

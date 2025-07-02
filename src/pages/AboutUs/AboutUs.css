@@ -79,3 +79,16 @@ background-color: #b53008;
 .about-heading{
 padding-top: 150px;
 }
+
+.custombtn-hover {
+  color: white;
+  border: 1px solid white;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.custombtn-hover:hover {
+  background-color: #fff !important;
+  border-color: #fff !important;
+  color: #b53008  !important;
+}

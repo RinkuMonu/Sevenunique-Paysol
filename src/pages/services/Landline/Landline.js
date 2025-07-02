@@ -68,7 +68,7 @@ const Landline = () => {
                 <Form.Group className="mb-3" controlId="landlineNumber">
                   <Form.Label>Landline Number (with STD Code)</Form.Label>
                   <Form.Control
-                    type="text"
+                    type="number"
                     placeholder="Landline Number (with STD Code)"
                     value={formData.landlineNumber}
                     onChange={handleChange}

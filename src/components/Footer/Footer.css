@@ -49,7 +49,7 @@ a{
 
 .primary-footer h5 {
     margin-bottom: 20px;
-    background: linear-gradient(115deg, var(--themeht-primary-color), var(--themeht-secondary-color));
+    background: linear-gradient(125deg, var(--themeht-white-color), var( --themeht-primary-color),var(--themeht-primary2-color));
     background-clip: border-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -157,5 +157,5 @@ a{
     z-index: -1;
 }
 .dark-bg {
-    background-color:#cd805c;
+    background: linear-gradient(45deg, var(--themeht-primary-color), var(--themeht-secondary-color));
 }

@@ -43,10 +43,10 @@ const RedeemPayback = () => {
       <li>✔ Available Across All our Partnered Services</li>
     </ul>
     <div className="mt-4 d-flex justify-content-center gap-3 flex-wrap">
-      <a href="#check-balance" className="btn btn-light border-light  text-theme fw-semibold px-4 py-2 rounded-pill">
+      <a href="#check-balance" className="btn custombtn-hover">
         Check Payback Balance
       </a>
-      <a href="#redeem" className="btn border-light text-theme fw-semibold px-4 py-2 rounded-pill">
+      <a href="#redeem" className="btn custombtn-hover">
         Redeem Now
       </a>
     </div>

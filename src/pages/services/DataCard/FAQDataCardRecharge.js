@@ -112,7 +112,7 @@ const FAQDataCardRecharge = () => {
           <h4 className="display-5 fw-bold">
             Data card recharge was simplified with SevenUnique.
           </h4>
-          <p className=" mt-3 fs-6">
+          <p className=" mt-3 fs-5">
             In today's digital-first world, uninterrupted internet is
             non-parasitic. Whether you are streaming, working from afar,
             participating in online classes, or gaming, your internet dongle or
@@ -156,7 +156,7 @@ const FAQDataCardRecharge = () => {
           <h2 className="fw-bold mb-4">
             Supported Datacard & Dongle Operators
           </h2>
-          <p>
+          <p classname="fs-5">
             Recharge supported for all major devices and internet providers:
           </p>
           <div className="row justify-content-center">
@@ -168,7 +168,7 @@ const FAQDataCardRecharge = () => {
               </div>
             ))}
           </div>
-          <p>
+          <p className="fs-5">
             Whether it’s a USB modem, Wi-Fi dongle, or 4G stick, it enables
             secure online recharge with a few simple steps.
           </p>
@@ -187,7 +187,7 @@ const FAQDataCardRecharge = () => {
                 <div className="bg-white p-4 rounded-4 shadow-sm h-100 text-center">
                   <div className="text-theme fs-2 mb-3">{b.icon}</div>
                   <h5 className="fw-semibold">{b.title}</h5>
-                  <p className="text-muted small">{b.desc}</p>
+                  <p className="text-muted fs-6">{b.desc}</p>
                 </div>
               </div>
             ))}
@@ -200,7 +200,7 @@ const FAQDataCardRecharge = () => {
           <h4 className="fw-bold mb-4 text-center text-theme">
             For Retailers & Digital Service Points
           </h4>
-          <p className="text-center col-md-8 mx-auto mb-3">
+          <p className="text-center col-md-8 mx-auto mb-3 fs-5">
             If you run a cyber café, recharge shop, CSC center, or local store,
             you can earn by offering datacard recharge services :
           </p>
@@ -252,7 +252,7 @@ const FAQDataCardRecharge = () => {
       </section>
 
       {/* CTA */}
-      <section className="grediant-bg2 text-white py-5 text-center mb-3">
+      <section className="start-bgg text-white py-5 text-center mb-3">
         <div className="container">
           <h2 className="display-5 fw-bold mb-3 text-white">
             Keep Your Internet Running with SevenUnique{" "}
@@ -265,10 +265,10 @@ const FAQDataCardRecharge = () => {
             anywhere.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <a href="#top" className="btn btn-light text-theme fw-bold px-4 py-2">
+            <a href="#top" className="btn custombtn-hover">
               Recharge Now
             </a>
-            <Link to="/registerform" className="btn btn-outline-light fw-bold px-4 py-2">
+            <Link to="/registerform" className="btn custombtn-hover">
               Join as a Retailer
             </Link>
           </div>

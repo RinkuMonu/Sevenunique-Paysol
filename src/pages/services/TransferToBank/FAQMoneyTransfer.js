@@ -287,15 +287,15 @@ Our service is designed for both individual users and digital agents looking to 
 
 
       {/* CTA */}
-      <section className="py-5 grediant-bg2 text-white text-center mb-3">
+      <section className="py-5 start-bgg text-white text-center mb-3">
         <div className="container">
           <h2 className="display-5 fw-bold mb-3 text-white">Send Money Online with Confidence</h2>
           <p className="lead col-lg-8 mx-auto mb-4">
             Whether you're transferring funds for family, business, or community support — trust Sevenunique for fast, secure, and compliant online money transfers across India.
           </p>
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <a href="#top" className="btn btn-light text-theme fw-bold px-4 py-2">Send Money Now</a>
-            <Link to="/registerform" className="btn btn-outline-light fw-bold px-4 py-2">Become a Money Transfer Agent</Link>
+            <a href="#top" className="btn custombtn-hover">Send Money Now</a>
+            <Link to="/registerform" className="btn custombtn-hover">Become a Money Transfer Agent</Link>
           </div>
         </div>
       </section>

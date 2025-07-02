@@ -7,19 +7,37 @@ const GooglePlay = () => {
     amount: ""
   });
 
+  const [amountError, setAmountError] = useState("");
+
   const handleChange = (e) => {
-    const { id, value } = e.target;
+    const { id, value, name } = e.target;
+
+    // Validate only for amount input
+    if (id === "amount" || name === "amount") {
+      const amountValue = parseInt(value, 10);
+      if (isNaN(amountValue) || amountValue < 10 || amountValue > 5000) {
+        setAmountError("Please enter an amount between ₹10 and ₹5000.");
+      } else {
+        setAmountError("");
+      }
+    }
+
+    // Update form data
     setFormData((prevData) => ({
       ...prevData,
       [id]: value,
     }));
   };
 
-  const isFormValid = formData.amount && !isNaN(formData.amount) && formData.amount >= 10 && formData.amount <= 5000;
+  const isFormValid =
+    formData.amount &&
+    !isNaN(formData.amount) &&
+    formData.amount >= 10 &&
+    formData.amount <= 5000;
 
   return (
     <>
-      <div className="p-5" style={{backgroundColor:"#EFF8FF"}}>
+      <div className="p-5" style={{ backgroundColor: "#EFF8FF" }}>
         <Row>
           {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
@@ -55,11 +73,16 @@ const GooglePlay = () => {
                 <Form.Group className="mb-3" controlId="amount">
                   <Form.Label>Amount (₹ 10 - ₹ 5000)</Form.Label>
                   <Form.Control
-                    type="text"
+                    type="number"
+                    name="amount"
                     placeholder="Amount (₹ 10 - ₹ 5000)"
                     value={formData.amount}
                     onChange={handleChange}
+                    isInvalid={!!amountError}
                   />
+                  <Form.Control.Feedback type="invalid">
+                    {amountError}
+                  </Form.Control.Feedback>
                 </Form.Group>
 
                 <Button
