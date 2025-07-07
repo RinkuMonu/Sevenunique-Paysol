@@ -104,7 +104,7 @@ export default function Header({ onLoginClick }) {
 
                         >
                           <li>
-                            <Link className="dropdown-item" to="/recharge">
+                            <Link className="dropdown-item" to="/billpayment">
                               <i class="bi bi-lightning-charge"></i>
                               Recharge & Bill Pay
                             </Link>

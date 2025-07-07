@@ -55,6 +55,7 @@ import ScrollToTop from "./components/ScrollToTop.js";
 import { useState } from "react";
 import Popup from "./pages/Popup/Popup.jsx";
 import Login from "./pages/Login/Login.js";
+import BillPaymentSystem from "./pages/services/BillPaymentSystem.js";
 
 function App() {
 
@@ -101,32 +102,33 @@ function App() {
           element: <UserAccountCreation />,
         },
         { path: "/registerform", element: <Retailerform /> },
-
+           { path: "billpayment", element: <BillPaymentSystem /> },
         // Nested recharge section
-        {
-          path: "/recharge",
-          element: <BillPayUI />,
-          children: [
-            { path: "", element: <MobileRechargeUI /> },
-            { path: "mobile", element: <MobileRechargeUI /> },
-            { path: "dth", element: <DTHRecharge /> },
-            { path: "electricity", element: <ElectricityBillPayment /> },
-            { path: "credit-card", element: <CreditCardPayment /> },
-            { path: "datacard", element: <DataCardRecharge /> },
-            { path: "landline", element: <Landline /> },
-            { path: "broadband", element: <Broadband /> },
-            { path: "piped-gas", element: <PipedGas /> },
-            { path: "insurance", element: <Insurance /> },
-            { path: "water", element: <Water /> },
-            { path: "google-play", element: <GooglePlay /> },
-            { path: "cable", element: <Cable /> },
-            { path: "municipality", element: <Municipality /> },
-            { path: "emi", element: <Emi /> },
-            { path: "housing", element: <HousingBillPayment /> },
-            { path: "lpg-booking", element: <LpgBooking /> },
-            { path: "challan", element: <TrafficChallan /> },
-          ],
-        },
+        // {
+        //   path: "/recharge",
+        //   element: <BillPayUI />,
+        //   children: [
+        //     { path: "", element: <MobileRechargeUI /> },
+        //     { path: "mobile", element: <MobileRechargeUI /> },
+        //     { path: "dth", element: <DTHRecharge /> },
+        //     { path: "electricity", element: <ElectricityBillPayment /> },
+        //     { path: "credit-card", element: <CreditCardPayment /> },
+        //     { path: "datacard", element: <DataCardRecharge /> },
+        //     { path: "landline", element: <Landline /> },
+        //     { path: "broadband", element: <Broadband /> },
+        //     { path: "piped-gas", element: <PipedGas /> },
+        //     { path: "insurance", element: <Insurance /> },
+        //     { path: "water", element: <Water /> },
+        //     { path: "google-play", element: <GooglePlay /> },
+        //     { path: "cable", element: <Cable /> },
+        //     { path: "municipality", element: <Municipality /> },
+        //     { path: "emi", element: <Emi /> },
+        //     { path: "housing", element: <HousingBillPayment /> },
+        //     { path: "lpg-booking", element: <LpgBooking /> },
+        //     { path: "challan", element: <TrafficChallan /> },
+        //     { path: "billpayment", element: <BillPaymentSystem /> },
+        //   ],
+        // },
       ],
     },
   ]);

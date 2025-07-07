@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'https://finpay-b2c-backend.onrender.com/api/', 
+  baseURL: 'https://server.finuniques.in/api/', 
   
   headers: {
     'Content-Type': 'application/json',
