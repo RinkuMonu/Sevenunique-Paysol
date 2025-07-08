@@ -99,7 +99,7 @@ const Cable1 = ({
             <h3>Simplifying Cable TV Payments for Every Household</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="/assets/cable bill.svg"
+                src="/assets/Home/cable-vec.png"
                 alt="Cable TV Bill Payment"
                 height="300"
                 className="item-center"

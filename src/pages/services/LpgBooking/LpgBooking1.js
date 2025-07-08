@@ -201,7 +201,7 @@ const LpgBooking1 = ({
               Book Your LPG Gas Cylinder Online
             </h2>
             <div className="d-flex justify-content-center align-items-center">
-              <img src="/assets/LPG Booking.svg" alt="LPG Booking" height="300" />
+              <img src="/assets/Home/lpg-vec.png" alt="LPG Booking" height="300" />
             </div>
           </Col>
 

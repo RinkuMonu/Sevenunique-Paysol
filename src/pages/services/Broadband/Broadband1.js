@@ -103,7 +103,7 @@ const Broadband1 = ({
             </h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="/assets/Broadband Bill Settlement.svg"
+                src="/assets/Home/broad-vec.png"
                 alt="Broadband"
                 height="300"
                 className="item-center broadbandSideImg"

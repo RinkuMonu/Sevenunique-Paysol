@@ -45,11 +45,11 @@ const DatacardPostpaidRecharge = ({
   const handleOperatorChange = (e) => {
     const value = e.target.value;
     const operator = filteredOperators.find(op => op.id === value);
-    
-    setFormData(prev => ({ 
-      ...prev, 
-      operator: value, 
-      mobileNumber: "" 
+
+    setFormData(prev => ({
+      ...prev,
+      operator: value,
+      mobileNumber: ""
     }));
     setSelectedOperator(value);
     setAccountNumber("");
@@ -79,28 +79,28 @@ const DatacardPostpaidRecharge = ({
   const handleSubmit = (e) => {
     e.preventDefault();
 
-     const token = localStorage.getItem("token");
-      if (!token) {
-    Swal.fire({
-      title: "Login Required",
-      text: "Please login to continue with Datacard Postpaid bill payment.",
-      icon: "warning",
-      confirmButtonColor: "#001e50",
-      confirmButtonText: "Login Now",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        window.location.href = "/login"; 
-      }
-    });
-    return;
-  }
+    const token = localStorage.getItem("token");
+    if (!token) {
+      Swal.fire({
+        title: "Login Required",
+        text: "Please login to continue with Datacard Postpaid bill payment.",
+        icon: "warning",
+        confirmButtonColor: "#001e50",
+        confirmButtonText: "Login Now",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "/login";
+        }
+      });
+      return;
+    }
     if (!formData.operator || !formData.mobileNumber) {
       setInputError("Please fill all required fields");
       return;
     }
-    
+
     if (inputError) return;
-    
+
     onProceed();
   };
 
@@ -117,7 +117,7 @@ const DatacardPostpaidRecharge = ({
             <h3>Recharge Your Datacard Postpaid Connection with ABDKS</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="/assets/datacard.svg"
+                src="/assets/Home/datacard-vec.png"
                 alt="Datacard Recharge"
                 height="300"
                 className="item-center postpaidSideImg"
@@ -191,8 +191,8 @@ const DatacardPostpaidRecharge = ({
                     {currentOperator?.regex && (
                       <Form.Text className="text-muted">
                         {currentOperator.displayname ? `${currentOperator.displayname} format: ` : "Format: "}
-                        {currentOperator.regex === "^[6789][0-9]{9}$" 
-                          ? "10 digit number starting with 6,7,8 or 9" 
+                        {currentOperator.regex === "^[6789][0-9]{9}$"
+                          ? "10 digit number starting with 6,7,8 or 9"
                           : currentOperator.regex}
                       </Form.Text>
                     )}

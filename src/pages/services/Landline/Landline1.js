@@ -94,7 +94,7 @@ const Landline1 = ({
             <h3>Pay Landline Bills Online Quickly & Securely with ABDKS</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="/assets/Landline .svg"
+                src="/assets/Home/landline-vec.png"
                 alt="Landline"
                 height="300"
                 className="item-center landlineSideImg"

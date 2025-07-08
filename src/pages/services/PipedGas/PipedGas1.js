@@ -4,7 +4,7 @@ import FAQGasBillPayment from "./FAQGasBillPayment";
 import "./pipegas.css";
 import Swal from "sweetalert2";
 
-const PipedGas1 = ({ 
+const PipedGas1 = ({
   selectedCategory,
   onProceed,
   selectedOperator,
@@ -39,7 +39,7 @@ const PipedGas1 = ({
     setSelectedOperator(value);
     setAccountNumber("");
     setInputError("");
-    
+
     const operator = operators.find(op => op.id === value);
     setCurrentOperator(operator);
   };
@@ -48,7 +48,7 @@ const PipedGas1 = ({
     const value = e.target.value;
     setFormData(prev => ({ ...prev, caNumber: value }));
     setAccountNumber(value);
-    
+
     // Validate input if operator has regex
     if (currentOperator?.regex) {
       try {
@@ -64,29 +64,29 @@ const PipedGas1 = ({
     }
   };
 
- const handleSubmit = (e) => {
-  e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const token = localStorage.getItem("token"); 
-  if (!token) {
-    Swal.fire({
-      title: "Login Required",
-      text: "Please login to continue with broadband bill payment.",
-      icon: "warning",
-      confirmButtonColor: "#001e50",
-      confirmButtonText: "Login Now",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        window.location.href = "/login"; 
-      }
-    });
-    return;
-  }
+    const token = localStorage.getItem("token");
+    if (!token) {
+      Swal.fire({
+        title: "Login Required",
+        text: "Please login to continue with broadband bill payment.",
+        icon: "warning",
+        confirmButtonColor: "#001e50",
+        confirmButtonText: "Login Now",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "/login";
+        }
+      });
+      return;
+    }
 
-  if (formData.operator && formData.telephoneNumber && !inputError) {
-    onProceed();
-  }
-};
+    if (formData.operator && formData.telephoneNumber && !inputError) {
+      onProceed();
+    }
+  };
   return (
     <>
       <div className="p-5" style={{ backgroundColor: "#EFF8FF" }}>
@@ -99,7 +99,7 @@ const PipedGas1 = ({
             <h3>Pay Your Gas Bills Online Safely and Instantly with ABDKS</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="/assets/Gas Bill Solution.svg"
+                src="/assets/Home/pipedgas-vec.png"
                 alt="piped gas"
                 height="300"
                 className="item-center pipegasSideImg"
@@ -150,7 +150,7 @@ const PipedGas1 = ({
                     <Form.Control
                       type="text"
                       placeholder={
-                        currentOperator?.displayname 
+                        currentOperator?.displayname
                           ? `Enter ${currentOperator.displayname}`
                           : "Enter CA Number"
                       }

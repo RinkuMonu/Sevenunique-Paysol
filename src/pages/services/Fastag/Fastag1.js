@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
-import FAQFastag from "./FAQFastag"; 
+import FAQFastag from "./FAQFastag";
 import Swal from "sweetalert2";
 
 
@@ -61,21 +61,21 @@ const Fastag1 = ({
   const handleSubmit = (e) => {
     e.preventDefault();
 
-     const token = localStorage.getItem("token");
-      if (!token) {
-    Swal.fire({
-      title: "Login Required",
-      text: "Please login to continue with Fastag bill payment.",
-      icon: "warning",
-      confirmButtonColor: "#001e50",
-      confirmButtonText: "Login Now",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        window.location.href = "/login"; 
-      }
-    });
-    return;
-  }
+    const token = localStorage.getItem("token");
+    if (!token) {
+      Swal.fire({
+        title: "Login Required",
+        text: "Please login to continue with Fastag bill payment.",
+        icon: "warning",
+        confirmButtonColor: "#001e50",
+        confirmButtonText: "Login Now",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "/login";
+        }
+      });
+      return;
+    }
     if (formData.operator && formData.vehicleNumber && !inputError) {
       onProceed();
     }
@@ -93,7 +93,7 @@ const Fastag1 = ({
             <h3>Recharge Your FASTag Instantly with ABDKS</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="/assets/fastag.svg" 
+                src="/assets/Home/fastag.svg"
                 alt="FASTag"
                 height="300"
                 className="item-center fastagSideImg"

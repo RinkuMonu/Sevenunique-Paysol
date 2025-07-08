@@ -92,7 +92,7 @@ const handleSubmit = (e) => {
             <h3>One Platform to Manage All Your EMI Payments</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="/assets/EMI payments.svg"
+                src="/assets/Home/emi-vec.png"
                 alt="EMI"
                 height="300"
                 className="item-center"
