@@ -20,11 +20,9 @@ const DatacardPostpaidRecharge = ({
   });
   const [currentOperator, setCurrentOperator] = useState(null);
 
-  // Filter only Datacard Postpaid operators
   const filteredOperators = operators.filter(op => op.category === "Datacard Postpaid");
 
   useEffect(() => {
-    // Initialize when operators load or selectedOperator changes
     if (selectedOperator) {
       const operator = filteredOperators.find(op => op.id === selectedOperator);
       setCurrentOperator(operator);
@@ -34,7 +32,6 @@ const DatacardPostpaidRecharge = ({
         mobileNumber: accountNumber || ""
       }));
     } else if (filteredOperators.length === 1) {
-      // Auto-select if only one operator exists
       const operator = filteredOperators[0];
       setFormData(prev => ({ ...prev, operator: operator.id }));
       setSelectedOperator(operator.id);
@@ -58,7 +55,7 @@ const DatacardPostpaidRecharge = ({
   };
 
   const handleMobileChange = (e) => {
-    const value = e.target.value.replace(/\D/g, ''); // Remove non-digit characters
+    const value = e.target.value.replace(/\D/g, ''); 
     setFormData(prev => ({ ...prev, mobileNumber: value }));
     setAccountNumber(value);
 

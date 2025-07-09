@@ -143,7 +143,6 @@ const FAQLoanEMIPayments = () => {
   return (
     <>
   
-      {/* Hero Section */}
       <section className="py-5 text-center">
         <div className="container">
           <h1 className="display-6 fw-bold">Discover the ultimate solution for managing all your EMI payments
@@ -158,7 +157,6 @@ Say goodbye to missed due dates, long lines, and payment delays. With our platfo
         </div>
       </section>
 
-      {/* EMI Steps */}
       <section className="py-5 bg-light">
         <div className="container">
           <h2 className="text-center fw-bold mb-5">
@@ -177,7 +175,6 @@ Say goodbye to missed due dates, long lines, and payment delays. With our platfo
         </div>
       </section>
 
-      {/* Supported EMI Types */}
       <section className="py-5 text-center">
         <div className="container">
           <h2 className="fw-bold mb-4">Supported Loan Types</h2>
@@ -194,7 +191,6 @@ Say goodbye to missed due dates, long lines, and payment delays. With our platfo
         </div>
       </section>
 
-      {/* Partner NBFCs */}
       <section className="py-5 bg-light text-center">
         <div className="container">
           <h2 className="fw-bold mb-4">Partnered NBFCs & Banks
@@ -236,7 +232,6 @@ Say goodbye to missed due dates, long lines, and payment delays. With our platfo
 
 
 
-      {/* Benefits */}
       <section className="py-5">
         <div className="container">
           <h2 className="fw-bold text-center mb-5">
@@ -283,7 +278,6 @@ Say goodbye to missed due dates, long lines, and payment delays. With our platfo
 
 
 
-      {/* FAQs */}
       <section className="py-5 bg-light">
         <div className="container">
           <h2 className="fw-bold text-center mb-5">Frequently Asked Questions</h2>
@@ -314,7 +308,6 @@ Say goodbye to missed due dates, long lines, and payment delays. With our platfo
         </div>
       </section>
 
-      {/* CTA */}
       <section className="start-bgg text-white py-5 text-center mb-3">
         <div className="container">
           <h2 className="display-5 fw-bold mb-3 text-white">Stay On Track with Your EMI Payments

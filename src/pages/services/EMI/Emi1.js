@@ -20,7 +20,6 @@ const Emi1 = ({
   });
   const [currentOperator, setCurrentOperator] = useState(null);
 
-  // Set default operator if only one exists
   useEffect(() => {
     if (operators.length === 1 && !selectedOperator) {
       setSelectedOperator(operators[0].id);
@@ -48,7 +47,6 @@ const Emi1 = ({
     setFormData(prev => ({ ...prev, applicationId: value }));
     setAccountNumber(value);
     
-    // Validate input if operator has regex
     if (currentOperator?.regex) {
       try {
         const regex = new RegExp(currentOperator.regex);
@@ -66,11 +64,11 @@ const Emi1 = ({
 const handleSubmit = (e) => {
   e.preventDefault();
 
-  const token = localStorage.getItem("token"); // Replace with your actual token key
+  const token = localStorage.getItem("token"); 
 
   if (!token) {
     Swal.fire("Login Required", "Please login to continue with EMI payment.", "warning").then(() => {
-      window.location.href = "/login"; // Adjust this path as per your route
+      window.location.href = "/login";
     });
     return;
   }
@@ -84,7 +82,6 @@ const handleSubmit = (e) => {
     <>
       <div className="p-5" style={{ backgroundColor: "#EFF8FF" }}>
         <Row>
-          {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
             <h2 className="fw-bold" style={{ color: "#001e50" }}>
               Pay Your Loan EMIs Online Quickly, Securely & Hassle-Free with ABDKS
@@ -100,7 +97,6 @@ const handleSubmit = (e) => {
             </div>
           </Col>
 
-          {/* Right Side Form */}
           <Col md={6}>
             <div
               className="p-4 rounded bg-white shadow"

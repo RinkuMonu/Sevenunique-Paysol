@@ -48,7 +48,6 @@ const DataCardRecharge = () => {
     <>
       <div className="p-5" style={{backgroundColor:"#EFF8FF"}}>
         <Row>
-          {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
             <h2 className="fw-bold text-orange"> SevenUnique BBPS Datacard Recharge Tool </h2>
             <h3> Recharge your Jio, Airtel, VI datacards with the BBPS platform.</h3>
@@ -62,7 +61,6 @@ const DataCardRecharge = () => {
             </div>
           </Col>
 
-          {/* Right Side Form */}
           <Col md={6}>
             <div
               className="p-4 rounded bg-white shadow"

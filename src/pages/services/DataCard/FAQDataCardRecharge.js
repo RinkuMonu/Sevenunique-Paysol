@@ -128,7 +128,6 @@ const FAQDataCardRecharge = () => {
         </div>
       </section>
 
-      {/* How To Steps */}
       <section className="py-5 bg-light">
         <div className="container">
           <h2 className="text-center fw-bold mb-5">
@@ -150,7 +149,6 @@ const FAQDataCardRecharge = () => {
         </div>
       </section>
 
-      {/* Supported Operators */}
       <section className="py-5 text-center">
         <div className="container">
           <h2 className="fw-bold mb-4">
@@ -175,7 +173,6 @@ const FAQDataCardRecharge = () => {
         </div>
       </section>
 
-      {/* Benefits */}
       <section className="py-5 bg-light">
         <div className="container">
           <h2 className="fw-bold text-center mb-5">
@@ -217,7 +214,6 @@ const FAQDataCardRecharge = () => {
         </div>
       </section>
 
-      {/* FAQs */}
       <section className="py-5">
         <div className="container">
           <h2 className="fw-bold text-center mb-5">
@@ -251,7 +247,6 @@ const FAQDataCardRecharge = () => {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="start-bgg text-white py-5 text-center mb-3">
         <div className="container">
           <h2 className="display-5 fw-bold mb-3 text-white">

@@ -397,19 +397,19 @@ export default function Header({ onLoginClick }) {
                                   }}
                                 >
                                   <Link
-                                    to="/register/useraccountcreation"
+                                    to="/register/useraccountcreation?role=User"
                                     className="dropdown-item"
                                   >
                                     User
                                   </Link>
                                   <Link
-                                    to="/registerform"
+                                    to="/registerform?role=Retailer"
                                     className="dropdown-item"
                                   >
                                     Retailer
                                   </Link>
                                   <Link
-                                     to="/registerform"
+                                     to="/registerform?role=Distributor"
                                     className="dropdown-item"
                                   >
                                     Distributor

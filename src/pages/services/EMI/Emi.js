@@ -22,7 +22,6 @@ const Emi = () => {
     e.preventDefault();
     if (isFormValid) {
       console.log("Form submitted:", formData);
-      // Add your form submission logic here (e.g., API call)
     }
   };
 
@@ -30,7 +29,6 @@ const Emi = () => {
     <>
       <div className="p-5" style={{backgroundColor:"#EFF8FF"}}>
         <Row>
-          {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
             <h2 className="fw-bold text-orange">Online EMI Payments
 </h2>
@@ -47,7 +45,6 @@ const Emi = () => {
             </div>
           </Col>
 
-          {/* Right Side Form */}
           <Col md={6}>
             <div
               className="p-4 rounded bg-white shadow"

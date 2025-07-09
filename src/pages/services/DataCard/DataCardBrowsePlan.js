@@ -85,7 +85,6 @@ const DataCardBrowsePlan = () => {
       </div>
 
       <div className="d-flex" style={{ height: "50vh" }}>
-        {/* side bar */}
         <div
           className="text-white p-2"
           style={{ width: "250px", minWidth: "210px" }}
@@ -114,9 +113,7 @@ const DataCardBrowsePlan = () => {
           </Nav>
         </div>
 
-        {/* Main Content */}
         <div className="flex-grow-1 p-2">
-          {/* Plans Table */}
           <div style={{ maxHeight: "50vh", overflowY: "auto" }}>
             <Table bordered hover responsive className="bg-white">
               <thead className="bg-light">
