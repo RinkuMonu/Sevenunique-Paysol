@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'http://192.168.1.88:8080/api/',                                                                           
+  baseURL: 'https://server.finuniques.in/api/',                                                                           
   
   headers: {
     'Content-Type': 'application/json',

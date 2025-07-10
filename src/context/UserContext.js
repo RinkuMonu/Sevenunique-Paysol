@@ -54,10 +54,20 @@ export const UserProvider = ({ children }) => {
   }, [usertoken]);
 
   return (
-    <UserContext.Provider
-      value={{ user, setUserToken, id, data, fetchUser,fetchUserfree, metaData, loading }}
-    >
-      {children}
-    </UserContext.Provider>
+   <UserContext.Provider
+  value={{
+    user,
+    setUserToken,
+    id,
+    data,
+    fetchUser,
+    fetchUserfree,
+    metaData,
+    loading,
+    isLoggedIn: !!user,  // ✅ Yeh line add karo
+  }}
+>
+  {children}
+</UserContext.Provider>
   );
 };

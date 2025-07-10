@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
 import FAQGasBillPayment from "./FAQGasBillPayment";
 import "./pipegas.css";
-import Swal from "sweetalert2";
+import LoginModal from "../../Login/LoginModal";
 
-const PipedGas1 = ({
+const PipedGas1 = ({ 
   selectedCategory,
   onProceed,
   selectedOperator,
@@ -20,6 +20,9 @@ const PipedGas1 = ({
     caNumber: "",
   });
   const [currentOperator, setCurrentOperator] = useState(null);
+  const [isValidating, setIsValidating] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [loginCallback, setLoginCallback] = useState(null);
 
   // Set default operator if only one exists
   useEffect(() => {
@@ -39,7 +42,7 @@ const PipedGas1 = ({
     setSelectedOperator(value);
     setAccountNumber("");
     setInputError("");
-
+    
     const operator = operators.find(op => op.id === value);
     setCurrentOperator(operator);
   };
@@ -48,7 +51,7 @@ const PipedGas1 = ({
     const value = e.target.value;
     setFormData(prev => ({ ...prev, caNumber: value }));
     setAccountNumber(value);
-
+    
     // Validate input if operator has regex
     if (currentOperator?.regex) {
       try {
@@ -64,29 +67,75 @@ const PipedGas1 = ({
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsValidating(true);
 
+    // 1. Check if user is logged in
     const token = localStorage.getItem("token");
     if (!token) {
-      Swal.fire({
-        title: "Login Required",
-        text: "Please login to continue with broadband bill payment.",
-        icon: "warning",
-        confirmButtonColor: "#001e50",
-        confirmButtonText: "Login Now",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          window.location.href = "/login";
-        }
+      // Store the callback function to proceed after login
+      setLoginCallback(() => () => {
+        validateAndProceed();
       });
+      setShowLoginModal(true);
+      setIsValidating(false);
       return;
     }
 
-    if (formData.operator && formData.telephoneNumber && !inputError) {
-      onProceed();
+    // If user is logged in, proceed with validation
+    validateAndProceed();
+  };
+
+  const validateAndProceed = () => {
+    // 2. Validate operator is selected
+    if (!formData.operator) {
+      setInputError("Please select a gas provider");
+      setIsValidating(false);
+      return;
+    }
+
+    // 3. Validate CA number is entered
+    if (!formData.caNumber) {
+      setInputError(
+        `Please enter your ${currentOperator?.displayname || "CA number"}`
+      );
+      setIsValidating(false);
+      return;
+    }
+
+    // 4. Validate against regex pattern if exists
+    if (currentOperator?.regex) {
+      try {
+        const regex = new RegExp(currentOperator.regex);
+        if (!regex.test(formData.caNumber)) {
+          setInputError(
+            `Please enter a valid ${currentOperator.displayname || "CA number"}`
+          );
+          setIsValidating(false);
+          return;
+        }
+      } catch (err) {
+        console.error("Invalid regex pattern:", currentOperator.regex);
+        setInputError("Invalid validation pattern. Please contact support.");
+        setIsValidating(false);
+        return;
+      }
+    }
+
+    // All validations passed
+    setInputError("");
+    onProceed();
+    setIsValidating(false);
+  };
+
+  const handleLoginSuccess = () => {
+    setShowLoginModal(false);
+    if (loginCallback) {
+      loginCallback();
     }
   };
+
   return (
     <>
       <div className="p-5" style={{ backgroundColor: "#EFF8FF" }}>
@@ -99,7 +148,7 @@ const PipedGas1 = ({
             <h3>Pay Your Gas Bills Online Safely and Instantly with ABDKS</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="/assets/Home/pipedgas-vec.png"
+                src="/assets/Gas Bill Solution.svg"
                 alt="piped gas"
                 height="300"
                 className="item-center pipegasSideImg"
@@ -132,6 +181,7 @@ const PipedGas1 = ({
                   <Form.Select
                     value={formData.operator}
                     onChange={handleOperatorChange}
+                    required
                   >
                     <option value="">Select Operator</option>
                     {operators.map((operator) => (
@@ -150,12 +200,13 @@ const PipedGas1 = ({
                     <Form.Control
                       type="text"
                       placeholder={
-                        currentOperator?.displayname
+                        currentOperator?.displayname 
                           ? `Enter ${currentOperator.displayname}`
                           : "Enter CA Number"
                       }
                       value={formData.caNumber}
                       onChange={handleCaNumberChange}
+                      required
                     />
                     {currentOperator?.regex && (
                       <Form.Text className="text-muted">
@@ -174,9 +225,9 @@ const PipedGas1 = ({
                     type="submit"
                     className="w-100"
                     style={{ backgroundColor: "#001e50", color: "white" }}
-                    disabled={!!inputError}
+                    disabled={!!inputError || isValidating}
                   >
-                    Confirm
+                    {isValidating ? "Validating..." : "Confirm"}
                   </Button>
                 )}
               </Form>
@@ -185,6 +236,11 @@ const PipedGas1 = ({
         </Row>
       </div>
       <FAQGasBillPayment />
+      <LoginModal
+        show={showLoginModal}
+        onClose={() => setShowLoginModal(false)}
+        onLoginSuccess={handleLoginSuccess}
+      />
     </>
   );
 };

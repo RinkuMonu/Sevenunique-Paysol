@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
 import FAQLoanEMIPayments from "./FAQLoanEMIPayments";
 import Swal from "sweetalert2";
+import LoginModal from "../../Login/LoginModal";
 
 const Emi1 = ({ 
   selectedCategory,
@@ -19,7 +20,11 @@ const Emi1 = ({
     applicationId: "",
   });
   const [currentOperator, setCurrentOperator] = useState(null);
+  const [isValidating, setIsValidating] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [loginCallback, setLoginCallback] = useState(null);
 
+  // Set default operator if only one exists
   useEffect(() => {
     if (operators.length === 1 && !selectedOperator) {
       setSelectedOperator(operators[0].id);
@@ -47,6 +52,7 @@ const Emi1 = ({
     setFormData(prev => ({ ...prev, applicationId: value }));
     setAccountNumber(value);
     
+    // Validate input if operator has regex
     if (currentOperator?.regex) {
       try {
         const regex = new RegExp(currentOperator.regex);
@@ -61,27 +67,86 @@ const Emi1 = ({
     }
   };
 
-const handleSubmit = (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsValidating(true);
 
-  const token = localStorage.getItem("token"); 
+    // 1. Check if user is logged in
+    const token = localStorage.getItem("token");
+    if (!token) {
+      // Store the callback function to proceed after login
+      setLoginCallback(() => () => {
+        // Re-run the validation after login
+        validateAndProceed();
+      });
+      setShowLoginModal(true);
+      setIsValidating(false);
+      return;
+    }
 
-  if (!token) {
-    Swal.fire("Login Required", "Please login to continue with EMI payment.", "warning").then(() => {
-      window.location.href = "/login";
-    });
-    return;
-  }
+    // If user is logged in, proceed with validation
+    validateAndProceed();
+  };
 
-  if (formData.operator && formData.applicationId && !inputError) {
-    onProceed();
-  }
-};
+  const validateAndProceed = () => {
+    // 2. Validate operator is selected
+    if (!formData.operator) {
+      setInputError("Please select an operator");
+      setIsValidating(false);
+      return;
+    }
+
+    // 3. Validate application ID is entered
+    if (!formData.applicationId) {
+      setInputError(
+        `Please enter your ${currentOperator?.displayname || "application ID"}`
+      );
+      setIsValidating(false);
+      return;
+    }
+
+    // 4. Validate against regex pattern if exists
+    if (currentOperator?.regex) {
+      try {
+        const regex = new RegExp(currentOperator.regex);
+        if (!regex.test(formData.applicationId)) {
+          setInputError(
+            `Please enter a valid ${currentOperator.displayname || "application ID"}`
+          );
+          setIsValidating(false);
+          return;
+        }
+      } catch (err) {
+        console.error("Invalid regex pattern:", currentOperator.regex);
+        setInputError("Invalid validation pattern. Please contact support.");
+        setIsValidating(false);
+        return;
+      }
+    }
+
+    // 5. Clear any previous errors if all validations pass
+    setInputError("");
+
+    // 6. Only proceed if all validations pass
+    if (formData.operator && formData.applicationId && !inputError) {
+      onProceed();
+    }
+
+    setIsValidating(false);
+  };
+
+  const handleLoginSuccess = () => {
+    setShowLoginModal(false);
+    if (loginCallback) {
+      loginCallback();
+    }
+  };
 
   return (
     <>
       <div className="p-5" style={{ backgroundColor: "#EFF8FF" }}>
         <Row>
+          {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
             <h2 className="fw-bold" style={{ color: "#001e50" }}>
               Pay Your Loan EMIs Online Quickly, Securely & Hassle-Free with ABDKS
@@ -89,7 +154,7 @@ const handleSubmit = (e) => {
             <h3>One Platform to Manage All Your EMI Payments</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="/assets/Home/emi-vec.png"
+                src="/assets/EMI payments.svg"
                 alt="EMI"
                 height="300"
                 className="item-center"
@@ -97,6 +162,7 @@ const handleSubmit = (e) => {
             </div>
           </Col>
 
+          {/* Right Side Form */}
           <Col md={6}>
             <div
               className="p-4 rounded bg-white shadow"
@@ -121,6 +187,7 @@ const handleSubmit = (e) => {
                   <Form.Select
                     value={formData.operator}
                     onChange={handleOperatorChange}
+                    required
                   >
                     <option value="">Select Operator</option>
                     {operators.map((operator) => (
@@ -145,6 +212,7 @@ const handleSubmit = (e) => {
                       }
                       value={formData.applicationId}
                       onChange={handleApplicationIdChange}
+                      required
                     />
                     {currentOperator?.regex && (
                       <Form.Text className="text-muted">
@@ -163,9 +231,9 @@ const handleSubmit = (e) => {
                     type="submit"
                     className="w-100"
                     style={{ backgroundColor: "#001e50", color: "white" }}
-                    disabled={!!inputError}
+                    disabled={!!inputError || isValidating}
                   >
-                    Confirm
+                    {isValidating ? "Validating..." : "Confirm"}
                   </Button>
                 )}
               </Form>
@@ -174,6 +242,11 @@ const handleSubmit = (e) => {
         </Row>
       </div>
       <FAQLoanEMIPayments />
+      <LoginModal
+        show={showLoginModal} 
+        onClose={() => setShowLoginModal(false)}
+        onLoginSuccess={handleLoginSuccess}
+      />
     </>
   );
 };

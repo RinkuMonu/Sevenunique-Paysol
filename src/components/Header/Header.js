@@ -403,13 +403,13 @@ export default function Header({ onLoginClick }) {
                                     User
                                   </Link>
                                   <Link
-                                    to="/registerform?role=Retailer"
+                                    to="/createaccount?role=Retailer"
                                     className="dropdown-item"
                                   >
                                     Retailer
                                   </Link>
                                   <Link
-                                     to="/registerform?role=Distributor"
+                                     to="/createaccount?role=Distributor"
                                     className="dropdown-item"
                                   >
                                     Distributor

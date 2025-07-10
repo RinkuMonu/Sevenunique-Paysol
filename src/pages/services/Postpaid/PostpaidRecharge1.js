@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
 import FAQPostpaid from "./FAQPostpaid";
 import Swal from "sweetalert2";
+import LoginModal from "../../Login/LoginModal";
 
 
 const PostpaidRecharge1 = ({
@@ -13,18 +14,20 @@ const PostpaidRecharge1 = ({
   setAccountNumber,
   inputError,
   setInputError,
-  operators
+  operators,
 }) => {
   const [formData, setFormData] = useState({
     operator: "",
     mobileNumber: "",
   });
-
   const [currentOperator, setCurrentOperator] = useState(null);
+  const [isValidating, setIsValidating] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [loginCallback, setLoginCallback] = useState(null);
 
   useEffect(() => {
     if (selectedOperator) {
-      const operator = operators.find(op => op.id === selectedOperator);
+      const operator = operators.find((op) => op.id === selectedOperator);
       setCurrentOperator(operator);
     } else {
       setCurrentOperator(null);
@@ -33,51 +36,117 @@ const PostpaidRecharge1 = ({
 
   const handleOperatorChange = (e) => {
     const value = e.target.value;
-    setFormData(prev => ({ ...prev, operator: value, mobileNumber: "" }));
+    setFormData((prev) => ({ ...prev, operator: value, mobileNumber: "" }));
     setSelectedOperator(value);
     setAccountNumber("");
     setInputError("");
   };
 
   const handleMobileChange = (e) => {
-    const value = e.target.value;
-    setFormData(prev => ({ ...prev, mobileNumber: value }));
+    let value = e.target.value;
+
+    if (currentOperator?.type === "mobile") {
+      value = value.replace(/\D/g, "");
+    }
+
+    setFormData((prev) => ({ ...prev, mobileNumber: value }));
     setAccountNumber(value);
 
-    if (currentOperator?.regex) {
+    if (currentOperator?.regex && value) {
       try {
         const regex = new RegExp(currentOperator.regex);
         if (!regex.test(value)) {
-          setInputError(`Please enter a valid ${currentOperator.displayname || "mobile number"}`);
+          setInputError(
+            `Please enter a valid ${
+              currentOperator.displayname || "mobile number"
+            }`
+          );
         } else {
           setInputError("");
         }
       } catch (err) {
         console.error("Invalid regex pattern:", currentOperator.regex);
+        setInputError("Invalid validation pattern. Please contact support.");
       }
+    } else if (!value) {
+      setInputError("");
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsValidating(true);
 
-     const token = localStorage.getItem("token");
-      if (!token) {
-    Swal.fire({
-      title: "Login Required",
-      text: "Please login to continue with Postpaid bill payment.",
-      icon: "warning",
-      confirmButtonColor: "#001e50",
-      confirmButtonText: "Login Now",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        window.location.href = "/login"; 
+    // 1. Check if user is logged in
+    const token = localStorage.getItem("token");
+    if (!token) {
+      // Store the callback function to proceed after login
+      setLoginCallback(() => () => {
+        // Re-run the validation after login
+        validateAndProceed();
+      });
+      setShowLoginModal(true);
+      setIsValidating(false);
+      return;
+    }
+
+    // If user is logged in, proceed with validation
+    validateAndProceed();
+  };
+
+  const validateAndProceed = () => {
+    // 2. Validate operator is selected
+    if (!formData.operator) {
+      setInputError("Please select an operator");
+      setIsValidating(false);
+      return;
+    }
+
+    // 3. Validate mobile number/account number is entered
+    if (!formData.mobileNumber) {
+      setInputError(
+        `Please enter your ${currentOperator?.displayname || "mobile number"}`
+      );
+      setIsValidating(false);
+      return;
+    }
+
+    // 4. Validate against regex pattern if exists
+    if (currentOperator?.regex) {
+      try {
+        const regex = new RegExp(currentOperator.regex);
+        if (!regex.test(formData.mobileNumber)) {
+          setInputError(
+            `Please enter a valid ${
+              currentOperator.displayname || "mobile number"
+            }`
+          );
+          setIsValidating(false);
+          return;
+        }
+      } catch (err) {
+        console.error("Invalid regex pattern:", currentOperator.regex);
+        setInputError("Invalid validation pattern. Please contact support.");
+        setIsValidating(false);
+        return;
       }
-    });
-    return;
-  }
+    }
+
+    // 5. Clear any previous errors if all validations pass
+    setInputError("");
+
+    // 6. Only proceed if all validations pass
     if (formData.operator && formData.mobileNumber && !inputError) {
       onProceed();
+    }
+
+    setIsValidating(false);
+  };
+
+  const handleLoginSuccess = () => {
+    setShowLoginModal(false);
+    if (loginCallback) {
+      loginCallback();
     }
   };
 
@@ -93,7 +162,7 @@ const PostpaidRecharge1 = ({
             <h3>Pay Your Postpaid Bills Instantly with ABDKS</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="/assets/Home/mobile-vec.png" 
+                src="/assets/Mobile Recharge.svg"
                 alt="Postpaid Recharge"
                 height="300"
                 className="item-center postpaidSideImg"
@@ -107,7 +176,10 @@ const PostpaidRecharge1 = ({
               className="p-4 rounded bg-white shadow"
               style={{ maxWidth: "500px", margin: "0 auto" }}
             >
-              <h3 className="mb-4" style={{ color: "#002244", fontWeight: "bold" }}>
+              <h3
+                className="mb-4"
+                style={{ color: "#002244", fontWeight: "bold" }}
+              >
                 Pay Your Mobile Postpaid Bill
               </h3>
               <Form onSubmit={handleSubmit}>
@@ -123,6 +195,7 @@ const PostpaidRecharge1 = ({
                   <Form.Select
                     value={formData.operator}
                     onChange={handleOperatorChange}
+                    required
                   >
                     <option value="">Select Operator</option>
                     {operators.map((operator) => (
@@ -139,7 +212,7 @@ const PostpaidRecharge1 = ({
                       {currentOperator?.displayname || "Mobile Number"}
                     </Form.Label>
                     <Form.Control
-                      type="text"
+                      type={currentOperator?.inputType || "text"}
                       placeholder={
                         currentOperator?.displayname
                           ? `Enter ${currentOperator.displayname}`
@@ -147,6 +220,8 @@ const PostpaidRecharge1 = ({
                       }
                       value={formData.mobileNumber}
                       onChange={handleMobileChange}
+                      maxLength={currentOperator?.maxLength || 10}
+                      required
                     />
                     {currentOperator?.regex && (
                       <Form.Text className="text-muted">
@@ -165,9 +240,9 @@ const PostpaidRecharge1 = ({
                     type="submit"
                     className="w-100"
                     style={{ backgroundColor: "#002244", color: "white" }}
-                    disabled={!!inputError}
+                    disabled={!!inputError || isValidating}
                   >
-                    Confirm
+                    {isValidating ? "Validating..." : "Confirm"}
                   </Button>
                 )}
               </Form>
@@ -176,6 +251,11 @@ const PostpaidRecharge1 = ({
         </Row>
       </div>
       <FAQPostpaid />
+      <LoginModal 
+        show={showLoginModal} 
+        onClose={() => setShowLoginModal(false)}
+        onLoginSuccess={handleLoginSuccess}
+      />
     </>
   );
 };

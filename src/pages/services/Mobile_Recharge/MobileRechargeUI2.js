@@ -4,7 +4,10 @@ import { Row, Col, Form, Button, Modal } from "react-bootstrap";
 import FAQMobileRecharge from "./FAQMobileRecharge";
 import MobileBrowsePlans1 from "./MobileBrowsePlans1";
 import ConfirmRechargeModal1 from "./ConfirmRechargeModal1";
+
+import LoginModal from "../../Login/LoginModal";
 import axiosInstance from "../../../components/services/AxiosInstance";
+// import axiosInstance from "../../../components/services/AxiosInstance";
 
 const rechargeOperators = [
   "Airtel",
@@ -49,6 +52,7 @@ const circles = [
 const MobileRechargeUI2 = () => {
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [showPlansModal, setShowPlansModal] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
 
   const [formData, setFormData] = useState({
     mobileNumber: "",
@@ -67,7 +71,7 @@ const MobileRechargeUI2 = () => {
   const validateMobileNumber = (number) => /^[6-9]\d{9}$/.test(number);
   const validateAmount = (amount) => {
     const num = Number(amount);
-    return !isNaN(num) && num > 0;
+    return !isNaN(num) && num > 0 && /^\d+\.?\d*$/.test(amount);
   };
 
   const isFormValid =
@@ -101,17 +105,20 @@ const MobileRechargeUI2 = () => {
       return;
     }
 
-    // Amount validation
+    // Amount validation - only allow numbers and decimal points
     if (id === "amount") {
-      setFormData((prev) => ({ ...prev, amount: value }));
+      // Allow only numbers and decimal point
+      if (/^\d*\.?\d*$/.test(value)) {
+        setFormData((prev) => ({ ...prev, amount: value }));
 
-      if (!validateAmount(value)) {
-        setErrors((prev) => ({
-          ...prev,
-          amount: "Please enter a valid amount.",
-        }));
-      } else {
-        setErrors((prev) => ({ ...prev, amount: "" }));
+        if (!validateAmount(value)) {
+          setErrors((prev) => ({
+            ...prev,
+            amount: "Please enter a valid amount.",
+          }));
+        } else {
+          setErrors((prev) => ({ ...prev, amount: "" }));
+        }
       }
       return;
     }
@@ -135,8 +142,7 @@ const MobileRechargeUI2 = () => {
     const token = localStorage.getItem("token");
 
     if (!token) {
-      alert("Please login to continue with the recharge.");
-      window.location.href = "/login";
+      setShowLoginModal(true); // Show login modal instead of redirecting
       return;
     }
 
@@ -144,6 +150,11 @@ const MobileRechargeUI2 = () => {
   };
 
   const handleConfirmModalClose = () => setShowConfirmModal(false);
+
+  const handleLoginSuccess = () => {
+    setShowLoginModal(false);
+    setShowConfirmModal(true); // Show confirm modal after successful login
+  };
 
   const handleNumberBlur = async () => {
     if (!validateMobileNumber(formData.mobileNumber)) return;
@@ -179,7 +190,7 @@ const MobileRechargeUI2 = () => {
             <h3>Recharge your mobile number securely and instantly.</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="/assets/Home/mobile-vec.png"
+                src="/assets/Mobile Recharge.svg"
                 alt="Image"
                 height="300"
                 className="item-center"
@@ -249,7 +260,7 @@ const MobileRechargeUI2 = () => {
                   <Form.Label>Amount</Form.Label>
                   <div className="input-group">
                     <Form.Control
-                      type="number"
+                      type="text"
                       placeholder="₹ Amount"
                       value={formData.amount}
                       onChange={handleChange}
@@ -314,6 +325,12 @@ const MobileRechargeUI2 = () => {
           </Button>
         </Modal.Footer>
       </Modal>
+
+      <LoginModal
+        show={showLoginModal}
+        onClose={() => setShowLoginModal(false)}
+        onLoginSuccess={handleLoginSuccess}
+      />
     </>
   );
 };
