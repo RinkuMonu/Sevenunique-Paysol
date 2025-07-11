@@ -1,8 +1,10 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./styles/contact.css";
 import { IoLocationSharp } from "react-icons/io5";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import axios from "axios";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -12,49 +14,91 @@ const ContactUs = () => {
     message: "",
   });
 
-  const [responseMessage, setResponseMessage] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [contactInfo, setContactInfo] = useState(null);
+ const handleChange = (e) => {
+  const { name, value } = e.target;
 
-  // Handle input change
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  if (name === "number") {
+    const numericValue = value.replace(/\D/g, ""); 
+    setFormData((prev) => ({
+      ...prev,
+      [name]: numericValue,
+    }));
+  } else {
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  }
+};
 
-  // Handle form submission
+  useEffect(() => {
+    const fetchContactInfo = async () => {
+      try {
+        const res = await axios.get(
+          "https://cms.sevenunique.com/apis/contact/get-contact-details.php?website_id=8",
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: "Bearer jibhfiugh84t3324fefei#*fef",
+            },
+          }
+        );
+        if (res.data.status === "success") {
+          setContactInfo(res?.data?.data);
+        }
+      } catch (error) {
+        console.error("Failed to load contact info:", error);
+      }
+    };
+
+    fetchContactInfo();
+  }, []);
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setResponseMessage(null);
+
+    const postData = {
+      name: formData.fullName,
+      email: formData.email,
+      phone: formData.number,
+      message: formData.message,
+      service: "N/A",
+      website_id: 8,
+    };
 
     try {
-      const response = await fetch(
-        "https://finpay-b2c-backend.onrender.com/api/query/submit-form",
+      await axios.post(
+        "https://cms.sevenunique.com/apis/contact-query/set-contact-details.php",
+        postData,
         {
-          method: "POST",
           headers: {
             "Content-Type": "application/json",
+            Authorization: "Bearer jibhfiugh84t3324fefei#*fef",
           },
-          body: JSON.stringify(formData),
         }
       );
 
-      const result = await response.json();
-      if (response.ok) {
-        setResponseMessage({
-          type: "success",
-          text: "Message sent successfully!",
-        });
-        setFormData({ fullName: "", email: "", number: "", message: "" });
-      } else {
-        setResponseMessage({
-          type: "error",
-          text: result.message || "Something went wrong!",
-        });
-      }
+      Swal.fire({
+        icon: "success",
+        title: "Message Sent!",
+        text: "We have received your message and will get back to you soon.",
+      });
+
+      setFormData({
+        fullName: "",
+        email: "",
+        number: "",
+        message: "",
+      });
     } catch (error) {
-      setResponseMessage({
-        type: "error",
-        text: "Failed to send message. Try again later.",
+      Swal.fire({
+        icon: "error",
+        title: "Submission Failed",
+        text:
+          error.response?.data?.message ||
+          "Something went wrong. Please try again.",
       });
     } finally {
       setLoading(false);
@@ -63,15 +107,15 @@ const ContactUs = () => {
 
   return (
     <div>
+      {/* Banner */}
       <section className="page-title pb-0 border-0">
-        <div className="position-relative w-100 ">
+        <div className="position-relative w-100">
           <img
             src="/assets/Home/contact-banner.jpg"
             alt="Banner"
             className="img-fluid w-100"
             style={{ objectFit: "cover", height: "100%", minHeight: "500px" }}
           />
-
           <h1
             className="text-white text-right fw-bold"
             style={{
@@ -88,10 +132,11 @@ const ContactUs = () => {
         </div>
       </section>
 
+      {/* Info Section */}
       <section className="py-5 text-center">
         <div className="container">
           <h3 className="display-5 fw-bold text-theme">
-            We are here to help - Anywhere, Anytime{" "}
+            We are here to help - Anywhere, Anytime
           </h3>
           <p className="lead mt-3">
             Whether you are a retailer who is ready to join our BBPS network, a
@@ -102,6 +147,7 @@ const ContactUs = () => {
         </div>
       </section>
 
+      {/* Contact Form */}
       <div className="page-content">
         <section className="pb-lg-0 z-index-1 pt-0">
           <div className="container">
@@ -113,20 +159,11 @@ const ContactUs = () => {
                     Fill out the form, and our team will soon return to you.
                   </p>
                 </div>
-                {responseMessage && (
-                  <div
-                    className={`alert ${
-                      responseMessage.type === "success"
-                        ? "alert-success"
-                        : "alert-danger"
-                    }`}
-                  >
-                    {responseMessage.text}
-                  </div>
-                )}
+
                 <form onSubmit={handleSubmit}>
+                  {/* 1st Row: Name and Phone */}
                   <div className="row">
-                    <div className="col-md-4">
+                    <div className="col-md-6">
                       <div className="form-group">
                         <input
                           type="text"
@@ -139,7 +176,26 @@ const ContactUs = () => {
                         />
                       </div>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-6">
+                      <div className="form-group">
+                        <input
+                          type="tel"
+                          name="number"
+                          className="form-control"
+                          placeholder="Mobile Number"
+                          required
+                          pattern="[0-9]*"
+                          inputMode="numeric"
+                          value={formData.number}
+                          onChange={handleChange}
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 2nd Row: Email */}
+                  <div className="row">
+                    <div className="col-md-12">
                       <div className="form-group">
                         <input
                           type="email"
@@ -152,20 +208,9 @@ const ContactUs = () => {
                         />
                       </div>
                     </div>
-                    <div className="col-md-4">
-                      <div className="form-group">
-                        <input
-                          type="tel"
-                          name="number"
-                          className="form-control"
-                          placeholder="Phone"
-                          required
-                          value={formData.number}
-                          onChange={handleChange}
-                        />
-                      </div>
-                    </div>
                   </div>
+
+                  {/* 3rd Row: Message */}
                   <div className="form-group mb-4">
                     <textarea
                       name="message"
@@ -177,6 +222,8 @@ const ContactUs = () => {
                       onChange={handleChange}
                     ></textarea>
                   </div>
+
+                  {/* Submit Button */}
                   <button
                     type="submit"
                     className="themeht-btn primary-btn mt-4"
@@ -188,6 +235,7 @@ const ContactUs = () => {
                 </form>
               </div>
 
+              {/* Contact Info */}
               <div className="col-lg-5 col-md-12 mt-6 mt-lg-0">
                 <div className="contact-box">
                   <div className="theme-title">
@@ -195,48 +243,50 @@ const ContactUs = () => {
                   </div>
                   <ul className="contact-info list-unstyled">
                     <li>
-                      <i className="bi bi-globe-americas fs-3 "></i>
-                      <span className="fs-4">SevenUnique Tech Solutions Private Limited</span>
+                      <i className="bi bi-globe-americas fs-3"></i>
+                      <span className="fs-4">
+                        SevenUnique Tech Solutions Private Limited
+                      </span>
                       <div className="border border-dark rounded p-3 shadow">
-                        <b className="text-theme"><IoLocationSharp /> Head Office - Jaipur</b>
+                        <b className="text-theme">
+                          <IoLocationSharp /> Head Office - Jaipur
+                        </b>
                         <p className="fs-6">
-                          SevenUnique Tech Solutions Private Limited Plot number
-                          97, Darakshapuri - I, Srikishan, Sangner, Jagatpura,
-                          Jaipur, Rajasthan, India - 302017
+                          {contactInfo?.address?.split("|")[0].trim()}
                         </p>
                       </div>
                     </li>
                     <li>
-
-                      <div className="border border-dark rounded p-3  shadow"> <b className="text-theme"><IoLocationSharp />  Corporate Office - Mumbai</b>
+                      <div className="border border-dark rounded p-3 shadow">
+                        <b className="text-theme">
+                          <IoLocationSharp /> Corporate Office - Mumbai
+                        </b>
                         <p className="fs-6">
-                          Office No. 101/2, ‘Vakratunda Corporate Park Premises
-                          Co-operative Society Limited, Off. Aarey Road,
-                          Goregaon (East), Mumbai - 400 063
+                          {contactInfo?.address?.split("|")[1].trim()}
                         </p>
                       </div>
                     </li>
-
                     <li>
                       <i className="bi bi-envelope fs-3"></i>
                       <div>
                         <span>Customer Support</span>
-
                         <p className="fw-bold fs-6">Phone</p>
                         <a
-                          href="tel:01414511098"
-                          className="text-decoration-none fs-6"
+                          href={`tel:${contactInfo?.phone}`}
+                          className="text-decoration-none fs-6 d-block"
                         >
-                          0141-4511098
+                          {contactInfo?.phone}
                         </a>
-
-                        <p className="fw-bold  fs-6">Email</p>
-                        <a
-                          href="mailto:info@7unique.in"
-                          className="text-decoration-none  fs-6"
-                        >
-                          Support@7unique.in
-                        </a>
+                        <p className="fw-bold fs-6">Email</p>
+                        {contactInfo?.email?.split(",").map((email, idx) => (
+                          <a
+                            key={idx}
+                            href={`mailto:${email?.trim()}`}
+                            className="text-decoration-none fs-6 d-block"
+                          >
+                            {email?.trim()}
+                          </a>
+                        ))}
                       </div>
                     </li>
                     <li>
@@ -251,6 +301,7 @@ const ContactUs = () => {
               </div>
             </div>
 
+            {/* Map */}
             <div className="row my-4">
               <div className="col-12">
                 <iframe
@@ -266,16 +317,19 @@ const ContactUs = () => {
           </div>
         </section>
       </div>
+
+      {/* Partner CTA */}
       <div className="text-center mb-3 pt-4 border-top">
-        <h5 className="text-theme fw-bold"> Partner with us</h5>
+        <h5 className="text-theme fw-bold">Partner with us</h5>
         <h5 className="fw-bold mb-3">
-          {" "}
           At SevenUnique BBPS willing to become retailers, distributors, or
           service partners? Let's increase India's digital payment future
           simultaneously.
         </h5>
-
-        <Link to="/registerform" className="btn text-theme fw-semibold rounded-pill px-4 ">
+        <Link
+          to="/registerform"
+          className="btn text-theme fw-semibold rounded-pill px-4"
+        >
           Be a Partner →
         </Link>
       </div>

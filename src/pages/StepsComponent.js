@@ -112,7 +112,7 @@ export default function StepsComponent() {
               <Link to="/ContactUs" className="btn custombtn-hover">
                 Join Now
               </Link>
-              <Link to="/registerform" className="btn custombtn-hover">
+              <Link to="/createaccount?role=Retailer" className="btn custombtn-hover">
                 Schedule a Demo in Jaipur
               </Link>
             </div>

@@ -208,7 +208,7 @@ function App() {
         { path: "/ContactUs", element: <ContactUs /> },
         { path: "/Blog", element: <Blog /> },
         { path: "/Sitemap", element: <Sitemap /> },
-        { path: "/Blogdetails", element: <Blogdetails /> },
+        { path: "/blog_details/:slug", element: <Blogdetails /> },
         { path: "/Services", element: <OurService /> },
         { path: "/WhyUs", element: <WhyUs /> },
         { path: "/OurPartner", element: <OurPartner /> },

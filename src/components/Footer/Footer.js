@@ -1,18 +1,62 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Footer.css";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Footer() {
+  const [contactInfo, setContactInfo] = useState(null);
+
+  const [socialLinks, setSocialLinks] = useState([]);
+
+  useEffect(() => {
+    fetch(
+      "https://cms.sevenunique.com/apis/social-media/get-social-accounts.php?website_id=8",
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer jibhfiugh84t3324fefei#*fef",
+        },
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.status === "success") {
+          setSocialLinks(data.data);
+        }
+      })
+      .catch((error) => console.error("Error fetching social links:", error));
+  }, []);
+
+  useEffect(() => {
+    const fetchContactInfo = async () => {
+      try {
+        const res = await axios.get(
+          "https://cms.sevenunique.com/apis/contact/get-contact-details.php?website_id=8",
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: "Bearer jibhfiugh84t3324fefei#*fef",
+            },
+          }
+        );
+        if (res.data.status === "success") {
+          setContactInfo(res?.data?.data);
+        }
+      } catch (error) {
+        console.error("Failed to load contact info:", error);
+      }
+    };
+
+    fetchContactInfo();
+  }, []);
+
   return (
     <footer className="footer">
       {/* Primary Footer Section */}
       <div className="primary-footer">
         <div className="container">
           <div className="row">
-
-
-
-  <div className="col-lg-3 mt-5 footer-menu ">
+            <div className="col-lg-3 mt-5 footer-menu ">
               <h5>Our Offerings</h5>
               <div className="d-flex flex-wrap">
                 <ul className="list-unstyled">
@@ -48,9 +92,6 @@ function Footer() {
                     </ul> */}
               </div>
             </div>
-
-
-
 
             {/* Company Overview */}
             <div className="col-lg-2 footer-menu mt-6">
@@ -90,43 +131,54 @@ function Footer() {
                   </ul>
                 </div> */}
 
-
-
             <div className="col-lg-4 mt-6 ">
               <h5>Contact Us</h5>
               <ul className="media-icon list-unstyled">
-                <li className="d-flex">
+                <li className="d-flex align-items-center mb-2">
                   <img src="/assets/Home/world.png" width={33} alt="location" />
                   <p className="mb-0 ms-2 text-white">
-                    Plot No 97, Dakshinpuri - I, Shrikishan, Sanganer,
-                    Jagatpura, Jaipur Rajasthan, India, 302017
+                    {contactInfo?.address?.split("|")[0].trim()}
                   </p>
                 </li>
-                <li className="d-flex">
+
+                <li className="d-flex align-items-center mb-2">
                   <img src="/assets/Home/world.png" width={33} alt="location" />
                   <p className="mb-0 ms-2 text-white">
-                    Office No. 101/2, Vakratunda Corporate Park, Off. Aarey
-                    Road, Goregaon (East), Mumbai - 400063
+                    {contactInfo?.address?.split("|")[1].trim()}
                   </p>
                 </li>
-                <li className="d-flex">
+
+                <li className="d-flex align-items-center mb-2">
                   <img
                     src="/assets/Home/send-mail.png"
                     width={33}
                     alt="email"
+                    className="me-2 mt-1"
                   />
-                  <a href="mailto:info@7unique.in" className="ms-2 text-white">
-                    info@7unique.in
-                  </a>
+                  <div>
+                    {contactInfo?.email?.split(",").map((email, idx) => (
+                      <a
+                        key={idx}
+                        href={`mailto:${email?.trim()}`}
+                        className="text-decoration-none fs-6 d-block mb-1 text-white ms-2"
+                      >
+                        {email?.trim()}
+                      </a>
+                    ))}
+                  </div>
                 </li>
-                <li className="d-flex">
+
+                <li className="d-flex align-items-center">
                   <img
                     src="/assets/Home/phone-call.png"
                     width={33}
                     alt="phone"
                   />
-                  <a href="tel:01414511098" className="ms-2 text-white">
-                    0141-4511098
+                  <a
+                    href={`tel:${contactInfo?.phone}`}
+                    className="text-decoration-none fs-6 d-block ms-2 text-white"
+                  >
+                    {contactInfo?.phone}
                   </a>
                 </li>
               </ul>
@@ -140,44 +192,13 @@ function Footer() {
                 custom software. From gaming and fintech to BBPS and e-commerce,
                 our solutions are tailored to drive real engagement.
               </div>
-              <div className="mt-3">
-                <h5>Connect with us</h5>
-                <ul className="list-inline ps-0 ms-0 footer-social">
-                  <li className="list-inline-item">
-                    <a href="https://www.facebook.com/profile.php?id=61556669918427">
-                      <i className="bi bi-facebook"></i>
-                    </a>
-                  </li>
-                  <li className="list-inline-item">
-                    <a href="https://www.instagram.com/sevenuniquetech/?hl=en">
-                      <i className="bi bi-instagram"></i>
-                    </a>
-                  </li>
-                  <li className="list-inline-item">
-                    <a href="https://x.com/Sevenuniqu42041">
-                      <i className="bi bi-twitter-x"></i>
-                    </a>
-                  </li>
-                  <li className="list-inline-item">
-                    <a href="https://www.linkedin.com/in/sevenuniquetechsolution/">
-                      <i className="bi bi-linkedin"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
+              
             </div>
 
             {/* Social Media Section */}
           </div>
         </div>
       </div>
-
-
-
-
-
-
-
 
       {/* Secondary Footer Section */}
       <div className="secondary-footer mt-5">
@@ -186,56 +207,53 @@ function Footer() {
             <div className="col-md-12 text-center">
               <p
                 className="mb-0 text-white fs-5 text-center"
-                style={{ zIndex: "99",  borderTop: "2px solid white"}}
+                style={{ zIndex: "99", borderTop: "2px solid white" }}
               >
-                © {new Date().getFullYear()}{" "}
-                <strong>Sevenunique Tech Solutions Private Limited.</strong> All
-                rights reserved.
+               
               </p>
             </div>
           </div>
         </div>
       </div>
 
- <div className="text-start mt-4 mb-1 ms-5">
+      <div className="text-start mt-4 mb-1 ms-5 d-flex justify-content-between flex-wrap">
+  {/* Left side: Footer Menu */}
+  <div className="footer-menu text-white">
+    <div className="mx-2">
+      © {new Date().getFullYear()}{" "}
+      <strong>Sevenunique Tech Solutions Private Limited.</strong> All rights reserved.
+    </div>
+    <div className="mt-2">
+      <Link to="/privacypolicy" className="text-white mx-2">Privacy Policy</Link>
+      <span className="text-white">|</span>
+      <Link to="/RefundPolicy" className="text-white mx-2">Cancellation & Refund Policy</Link>
+      <span className="text-white">|</span>
+      <Link to="/term" className="text-white mx-2">Terms of Use</Link>
+      <span className="text-white">|</span>
+      <Link to="/contentpolicy" className="text-white mx-2">Content Policy</Link>
+      <span className="text-white">|</span>
+      <Link to="/BugBounty" className="text-white mx-2">Bug Bounty</Link>
+    </div>
+  </div>
 
-          <div className="footer-menu">
-            <Link
-              to="/privacypolicy"
-              className="text-white mx-2"
-            >
-              Privacy Policy
-            </Link>
-            <span className="text-white ">|</span>
-            <Link
-              to="/RefundPolicy"
-              className="text-white mx-2"
-            >
-              Cancellation & Refund Policy
-            </Link>
-            <span className="text-white">|</span>
-            <Link
-              to="/term"
-              className="text-white mx-2"
-            >
-              Terms of Use
-            </Link>
-            <span className="text-white">|</span>
-<Link
-              to="/contentpolicy"
-              className="text-white mx-2"
-            >
-              Content Policy
-            </Link>
-              <span className="text-white">|</span>
-            <Link
-              to="/BugBounty"
-              className="text-white mx-2"
-            >
-              BugBounty
-            </Link>
-          </div>
-        </div>
+  {/* Right side: Social Media Links */}
+  <div className="footer-social text-white">
+    <h5>Connect with us</h5>
+    <ul className="list-inline ps-0 ms-0">
+      {socialLinks.map((item) => (
+        <li key={item.id} className="list-inline-item">
+          <a
+            href={item?.account_link}
+            target="_blank"
+            rel="noopener noreferrer"
+            dangerouslySetInnerHTML={{ __html: item?.icon_class }}
+          />
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>
+
 
       {/* Dark Background */}
       <div className="dark-bg ht-bg-move"></div>
