@@ -148,7 +148,7 @@ const PipedGas1 = ({
             <h3>Pay Your Gas Bills Online Safely and Instantly with ABDKS</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="/assets/Gas Bill Solution.svg"
+                src="/assets/Home/pipedgas-vec.png"
                 alt="piped gas"
                 height="300"
                 className="item-center pipegasSideImg"

@@ -61,7 +61,7 @@ function Footer() {
               <div className="d-flex flex-wrap">
                 <ul className="list-unstyled">
                   <li className="pb-2">
-                    <Link to="/recharge">Recharge & Bill Pay</Link>
+                    <Link to="/billpayment">Recharge & Bill Pay</Link>
                   </li>
                   <li className="py-2">
                     <Link to="/transfer-to-bank">Transfer to Bank</Link>

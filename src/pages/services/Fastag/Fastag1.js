@@ -140,7 +140,7 @@ const Fastag1 = ({
             <h3>Recharge Your FASTag Instantly with ABDKS</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="/assets/fastag.svg"
+                src="https://www.abdks.com/assets/fastag.svg"
                 alt="FASTag"
                 height="300"
                 className="item-center fastagSideImg"

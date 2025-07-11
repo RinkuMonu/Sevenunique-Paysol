@@ -162,7 +162,7 @@ const PostpaidRecharge1 = ({
             <h3>Pay Your Postpaid Bills Instantly with ABDKS</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="/assets/Mobile Recharge.svg"
+                src="https://www.abdks.com/assets/Mobile%20Recharge.svg"
                 alt="Postpaid Recharge"
                 height="300"
                 className="item-center postpaidSideImg"
