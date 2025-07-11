@@ -141,7 +141,7 @@ const Municipality1 = ({
             <h3>Convenient, Transparent & Instant Civic Bill Payment Solution</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="/assets/Municipal Bill Payments.svg"
+                src="/assets/Home/munic-vec.png"
                 alt="Municipality"
                 height="300"
                 className="item-center municipalitySideImg"

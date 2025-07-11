@@ -190,7 +190,7 @@ const MobileRechargeUI2 = () => {
             <h3>Recharge your mobile number securely and instantly.</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="/assets/Mobile Recharge.svg"
+                src="/assets/Home/mobile-vec.png"
                 alt="Image"
                 height="300"
                 className="item-center"

@@ -157,7 +157,7 @@ const ElectricityBillPayment1 = ({
             </h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="/assets/Electricity Bill.svg"
+                src="/assets/Home/electricity-vec.png"
                 alt="electricity bill"
                 height="300"
                 className="item-center elebillpaySideImg"

@@ -213,7 +213,7 @@ const Insurance1 = ({
             <h3>Pay Your Insurance Premiums Securely and On Time with ABDKS</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="/assets/Insurance.svg"
+                src="/assets/Home/insurance-vec.png"
                 alt="insurance"
                 height="300"
                 className="item-center InsuranceeSideImg"

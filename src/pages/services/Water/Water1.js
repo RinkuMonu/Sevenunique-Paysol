@@ -147,7 +147,7 @@ const Water1 = ({
             <h3>Simplified Water Bill Payments Across India</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="/assets/Water Bill.svg"
+                src="/assets/Home/water-vec.png"
                 alt="water bill"
                 height="300"
                 className="item-center"
