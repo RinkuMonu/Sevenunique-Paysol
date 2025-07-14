@@ -319,16 +319,16 @@ const ContactUs = () => {
       </div>
 
       {/* Partner CTA */}
-      <div className="text-center mb-3 pt-4 border-top">
-        <h5 className="text-theme fw-bold">Partner with us</h5>
-        <h5 className="fw-bold mb-3">
+      <div className="text-center mb-3 py-5 border-top primary-bg">
+        <h5 className="text-white fs-3 fw-bold">Partner with us</h5>
+        <h5 className="fw-bold text-white  mb-3">
           At SevenUnique BBPS willing to become retailers, distributors, or
           service partners? Let's increase India's digital payment future
           simultaneously.
         </h5>
         <Link
           to="/registerform"
-          className="btn text-theme fw-semibold rounded-pill px-4"
+          className="btn bg-white text-theme fw-semibold rounded-pill px-4"
         >
           Be a Partner →
         </Link>

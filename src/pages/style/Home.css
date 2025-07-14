@@ -1288,7 +1288,7 @@ input.form-product {
 
 .step-item.style-1 {
   text-align: center;
-  padding: 0 30px;
+  /* padding: 0 30px; */
 }
 
 .step-item.style-1 .step-icon {
@@ -1540,7 +1540,7 @@ input.form-product {
   position: relative;
   z-index: 1;
   transition: all 0.35s ease-in-out;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 }
 
 .abt h4 {

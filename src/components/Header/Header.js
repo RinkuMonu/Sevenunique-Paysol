@@ -378,7 +378,7 @@ export default function Header({ onLoginClick }) {
 <div className="nav-link header-right d-lg-flex align-items-center create-account">
                               <Link
                                 className="header-btn"
-                                onClick={() => {}}
+                                to="/register/useraccountcreation?role=User"
                                 style={{ cursor: "pointer" }}
                               >
                                 <i class="bi bi-person-add me-1"></i> Register

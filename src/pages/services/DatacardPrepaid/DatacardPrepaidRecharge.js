@@ -100,7 +100,7 @@ const DatacardPrepaidRecharge = ({
             <h3>Recharge Datacard Instantly with ABDKS</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="/assets/datacard.svg"
+                src="images/sevendataprepaid.png"
                 alt="Datacard"
                 height="300"
                 className="item-center landlineSideImg"

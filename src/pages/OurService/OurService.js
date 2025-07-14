@@ -54,7 +54,7 @@ function OurService() {
         "DTH Recharges",
       ],
       line: "Ensure quick processing and high uptime reliability, while competitive commissions help increase your revenue.",
-      btn: "/recharge/dth",
+      btn: "/billpayment",
     },
     {
       icon: <FaCreditCard />,
@@ -68,7 +68,7 @@ function OurService() {
         "Detailed Transaction Reports",
       ],
       line: "Provide flexibility to customers by achieving professional credibility for your business.",
-      btn: "/recharge/credit-card",
+      btn: "/billpayment",
     },
     {
       icon: <FaUniversity />,
@@ -78,7 +78,7 @@ function OurService() {
         "With our micro ATM solutions, distribute banking services to low financial access areas:",
       features: ["Cash Withdrawals", "Balance Enquiries", "Mini Statements"],
       line: "Become a financial center for your territory and increase your store footfall.",
-      btn: "/recharge/electricity",
+      btn: "/billpayment",
     },
     {
       icon: <FaFingerprint />,
@@ -88,7 +88,7 @@ function OurService() {
         "Use AEPS authentication to provide secure transactions to users without debit cards or internet access:",
       features: ["Cash Withdrawals", "Balance Checks", "Fund Transfers"],
       line: "All transactions are authenticated via biometric devices — perfect for semi-urban and rural use cases.",
-      btn: "/recharge/electricity",
+      btn: "/billpayment",
     },
     {
       icon: <FaIdCard />,
@@ -102,7 +102,7 @@ function OurService() {
         "Guidance and Support",
       ],
       line: "Deliver value by enabling access to essential government documentation.",
-      btn: "/recharge/electricity",
+      btn: "/billpayment",
     },
     {
       icon: <FaShieldAlt />,
@@ -112,7 +112,7 @@ function OurService() {
         "Participate with top insurers to offer several schemes from your local store:",
       features: ["Life Insurance", "Health Insurance", "General Insurance"],
       line: "Extend your business with highly deserved financial products supported by reliable providers.",
-      btn: "/recharge/insurance",
+      btn: "/billpayment",
     },
     {
       icon: <FaHandHoldingUsd />,
@@ -122,7 +122,7 @@ function OurService() {
         " Enable your customers to apply for a loan directly from your platform:",
       features: ["Personal Loans", "Business Loans", "Home Loans"],
       line: "Our directed application systems help users complete the eligibility check and easily use funding.",
-      btn: "/recharge/credit-card",
+      btn: "/billpayment",
     },
   ];
 
@@ -197,9 +197,9 @@ function OurService() {
           ))}
         </div>
       </section>
-      <div className="text-center mb-3 pt-4 border-top">
-        <h3 className="fw-bold mb-3 text-theme"> Partner With Us</h3>
-        <p className="text-muted fs-5">
+      <div className="text-center start-bgg mb-3 pt-4 border-top">
+        <h3 className="fw-bold mb-3 text-white"> Partner With Us</h3>
+        <p className="text-white fs-5">
           Join the digital financial Revolution
           <br />
           To become a certified SevenUnique retailer or distributor and increase
@@ -207,7 +207,7 @@ function OurService() {
           services. Serve your community, increase footfall, and earn with every
           transaction.
         </p>
-        <div className="d-grid gap-3 d-md-flex justify-content-center">
+        <div className="d-grid gap-3 d-md-flex justify-content-center pb-4">
           <a
             href="/registerform"
             className="btn custombtn-hover"
