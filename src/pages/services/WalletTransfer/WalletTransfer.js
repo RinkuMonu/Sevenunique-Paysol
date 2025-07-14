@@ -271,7 +271,7 @@ const WalletTransfer = ({onLoginClick}) => {
                   <Form.Group className="mb-3" controlId="accountNumber">
                     <Form.Label>Account Number</Form.Label>
                     <Form.Control
-                      type="text"
+                      type="number"
                       placeholder="Account Number"
                       value={formData.accountNumber}
                       onChange={handleChange}

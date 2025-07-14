@@ -146,27 +146,30 @@ function PageContent() {
               <div className="step-item style-1 text-white">
                 <div className="step-icon">
                   <img src="/assets/Home/identity.png" alt="IDENTITY CARD" />
+                  <h4>IDENTITY CARD</h4>
                 </div>
-                <h4>IDENTITY CARD</h4>
-                <span>1st Step</span>
+                
+                <span className="mt-5">1st Step</span>
               </div>
             </div>
             <div className="col-lg-3 col-md-6 mt-6 mt-lg-0 mb-4">
               <div className="step-item style-1 text-white step-bg">
                 <div className="step-icon">
                   <img src="/assets/Home/pancard.png" alt="VALID PAN CARD" />
+                   <h4>VALID PAN CARD</h4>
                 </div>
-                <h4>VALID PAN CARD</h4>
-                <span style={{ marginLeft: "27px" }}>2nd Step</span>
+               
+                <span className="mt-5" style={{ marginLeft: "27px" }}>2nd Step</span>
               </div>
             </div>
             <div className="col-lg-3 col-md-6 mt-6 mt-lg-0 mb-4">
               <div className="step-item style-1 text-white">
                 <div className="step-icon">
                   <img src="/assets/Home/secure.png" alt="SECURE PAYMENT" />
+                   <h4>SECURE PAYMENT</h4>
                 </div>
-                <h4>SECURE PAYMENT</h4>
-                <span>3rd Step</span>
+               
+                <span className="mt-5">3rd Step</span>
               </div>
             </div>
             <div className="col-lg-3 col-md-6 mt-6 mt-lg-0 mb-4">
@@ -176,9 +179,10 @@ function PageContent() {
                     src="/assets/Home/quality.png"
                     alt="100% QUALITY ASSURANCE"
                   />
+                   <h4>100% QUALITY ASSURANCE</h4>
                 </div>
-                <h4>100% QUALITY ASSURANCE</h4>
-                <span>4th Step</span>
+               
+                <span className="mt-5">4th Step</span>
               </div>
             </div>
           </div>
@@ -331,7 +335,7 @@ function PageContent() {
                           Fast mobile recharge solutions for all telecom
                           providers with real-time confirmation.
                         </p>
-                        <a className="arrow-btn" href="#">
+                        <a className="arrow-btn" href="/billpayment">
                           <i className="bi bi-arrow-up-right"></i>
                         </a>
                       </div>
@@ -358,7 +362,7 @@ function PageContent() {
                           Recharge all major DTH services instantly using our
                           secure BBPS-powered platform.
                         </p>
-                        <a className="arrow-btn" href="#">
+                        <a className="arrow-btn" href="/billpayment">
                           <i className="bi bi-arrow-up-right"></i>
                         </a>
                       </div>
@@ -383,7 +387,7 @@ function PageContent() {
                           Pay electricity, gas, water, insurance, and broadband
                           bills through our unified BBPS system.
                         </p>
-                        <a className="arrow-btn" href="#">
+                        <a className="arrow-btn" href="/billpayment">
                           <i className="bi bi-arrow-up-right"></i>
                         </a>
                       </div>
@@ -412,7 +416,7 @@ function PageContent() {
                           Accept secure card payments with fast settlements and
                           simplified merchant onboarding.
                         </p>
-                        <a className="arrow-btn" href="#">
+                        <a className="arrow-btn" href="/billpayment">
                           <i className="bi bi-arrow-up-right"></i>
                         </a>
                       </div>
@@ -437,7 +441,7 @@ function PageContent() {
                           Offer customers seamless bill payment via debit cards,
                           credit cards, and UPI – powered by BBPS.
                         </p>
-                        <a className="arrow-btn" href="#">
+                        <a className="arrow-btn" href="/billpayment">
                           <i className="bi bi-arrow-up-right"></i>
                         </a>
                       </div>

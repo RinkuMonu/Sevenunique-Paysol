@@ -109,10 +109,10 @@ export default function StepsComponent() {
             </p>
 
             <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center mb-3">
-              <Link to="/ContactUs" className="btn custombtn-hover">
+              <Link to="/createaccount?role=Retailer" className="btn custombtn-hover">
                 Join Now
               </Link>
-              <Link to="/createaccount?role=Retailer" className="btn custombtn-hover">
+              <Link to="/ContactUs" className="btn custombtn-hover">
                 Schedule a Demo in Jaipur
               </Link>
             </div>

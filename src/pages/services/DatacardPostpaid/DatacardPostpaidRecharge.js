@@ -137,7 +137,7 @@ const DatacardPostpaidRecharge = ({
                     <Form.Label>Operator</Form.Label>
                     <img
                       height={25}
-                      src="https://static.mobikwik.com/appdata/operator_icons/bbps_v2.png"
+                      src="images/sevenpostpaid1.png"
                       alt="BBPS"
                       loading="lazy"
                     />

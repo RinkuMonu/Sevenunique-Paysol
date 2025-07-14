@@ -479,7 +479,7 @@ const AboutUs = () => {
                <Link to="/registerform" > <button className="btn custombtn-hover border border-light">
   Now join as a BBPS Retailer
 </button></Link>
-                <Link to="/registerform" >
+                <Link to="/contactus" >
                 <button className="btn custombtn-hover border border-light">
                   A demo schedule as Distributor
                 </button>

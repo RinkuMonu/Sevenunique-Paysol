@@ -29,7 +29,7 @@ function ServiceItem({ icon, title, description , btn, features = []}){
 
           )}
           <div className="">
-        <Link to={btn} className="position-absolute btn custombtn-hover" style={{width:"max-content", bottom:"4%", left:"10%"}}>
+        <Link to={btn} className="position-absolute btn custombtn-hover" style={{width:"max-content", bottom:"4%", left:"10%" ,borderColor:"#b84f31" ,color:"#b84f31"}}>
           Go to this page
         </Link>
       </div>
