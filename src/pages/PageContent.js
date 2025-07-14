@@ -335,7 +335,7 @@ function PageContent() {
                           Fast mobile recharge solutions for all telecom
                           providers with real-time confirmation.
                         </p>
-                        <a className="arrow-btn" href="#">
+                        <a className="arrow-btn" href="/billpayment">
                           <i className="bi bi-arrow-up-right"></i>
                         </a>
                       </div>
@@ -362,7 +362,7 @@ function PageContent() {
                           Recharge all major DTH services instantly using our
                           secure BBPS-powered platform.
                         </p>
-                        <a className="arrow-btn" href="#">
+                        <a className="arrow-btn" href="/billpayment">
                           <i className="bi bi-arrow-up-right"></i>
                         </a>
                       </div>
@@ -387,7 +387,7 @@ function PageContent() {
                           Pay electricity, gas, water, insurance, and broadband
                           bills through our unified BBPS system.
                         </p>
-                        <a className="arrow-btn" href="#">
+                        <a className="arrow-btn" href="/billpayment">
                           <i className="bi bi-arrow-up-right"></i>
                         </a>
                       </div>
@@ -416,7 +416,7 @@ function PageContent() {
                           Accept secure card payments with fast settlements and
                           simplified merchant onboarding.
                         </p>
-                        <a className="arrow-btn" href="#">
+                        <a className="arrow-btn" href="/billpayment">
                           <i className="bi bi-arrow-up-right"></i>
                         </a>
                       </div>
@@ -441,7 +441,7 @@ function PageContent() {
                           Offer customers seamless bill payment via debit cards,
                           credit cards, and UPI – powered by BBPS.
                         </p>
-                        <a className="arrow-btn" href="#">
+                        <a className="arrow-btn" href="/billpayment">
                           <i className="bi bi-arrow-up-right"></i>
                         </a>
                       </div>
