@@ -2,42 +2,73 @@ import React, { useEffect, useState } from "react";
 import "../styles/blog.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
-// import fallbackImage from "../../Assets/images/homebnner.png";
-// import { useUser } from "../../context/UserContext";
-// import SEO from "../../components/SEO/SEO";
 
 function Blog() {
   const [blogs, setBlogs] = useState([]);
-  // const { seo } = useUser();
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [loading, setLoading] = useState(false);
+  const [hasMore, setHasMore] = useState(true);
+
+  const limit = 6; // Tumhare design ke hisab se
+
+  const fetchBlogs = async (currentPage = 1) => {
+    setLoading(true);
+    try {
+      const response = await axios.get(
+        `https://cms.sevenunique.com/apis/blogs/get-blogs.php?website_id=8&status=2&page=${currentPage}&limit=${limit}`,
+        {
+          headers: {
+            Authorization: "Bearer jibhfiugh84t3324fefei#*fef",
+          },
+        }
+      );
+
+      if (response.data.status === "success") {
+        const newBlogs = response.data.data || [];
+        const pagination = response.data.pagination || {};
+
+        setBlogs((prev) => [...prev, ...newBlogs]);
+
+        if (pagination.total_pages) {
+          setTotalPages(pagination.total_pages);
+        }
+
+        if (currentPage >= pagination.total_pages) {
+          setHasMore(false);
+        }
+      } else {
+        console.error("Blog API error:", response.data);
+      }
+    } catch (error) {
+      console.error("Error fetching blogs:", error);
+    }
+    setLoading(false);
+  };
 
   useEffect(() => {
-    const fetchBlogs = async () => {
-      try {
-        const response = await axios.get(
-          "https://cms.sevenunique.com/apis/blogs/get-blogs.php?website_id=8&status=2",
-          {
-            headers: {
-              Authorization: "Bearer jibhfiugh84t3324fefei#*fef",
-            },
-          }
-        );
+    fetchBlogs(1);
+  }, []);
 
-        if (response.data.status === "success") {
-          setBlogs(response.data.data);
-        } else {
-          console.error("Blog API error:", response.data);
-        }
-      } catch (error) {
-        console.error("Error fetching blogs:", error);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (
+        window.innerHeight + window.scrollY >= document.body.offsetHeight - 600 &&
+        !loading &&
+        hasMore
+      ) {
+        const nextPage = page + 1;
+        setPage(nextPage);
+        fetchBlogs(nextPage);
       }
     };
 
-    fetchBlogs();
-  }, []);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [loading, hasMore, page]);
 
   return (
     <div>
-      
       <section className="page-title pb-0 border-0">
         <div className="position-relative w-100">
           <img
@@ -46,7 +77,6 @@ function Blog() {
             className="img-fluid w-100"
             style={{ objectFit: "cover", height: "100%", minHeight: "500px" }}
           />
-
           <h1
             className="text-white text-right fw-bold"
             style={{
@@ -89,10 +119,9 @@ function Blog() {
                     >
                       <div className="card blog-card h-100 shadow-md">
                         <img
-                          src={post.image }
+                          src={post.image}
                           alt={post.title}
                           className="card-img-top rounded-top"
-                         
                           style={{ height: "200px", objectFit: "cover" }}
                         />
                         <div className="card-body">
@@ -110,6 +139,19 @@ function Blog() {
                   </div>
                 ))}
               </div>
+            )}
+
+            {/* Loader */}
+            {loading && (
+              <div className="flex justify-center mt-6">
+                <div className="spinner-border text-warning" role="status">
+                  <span className="visually-hidden">Loading...</span>
+                </div>
+              </div>
+            )}
+
+            {!hasMore && blogs.length > 0 && (
+              <p className="text-center mt-4 text-muted">No more blogs to load</p>
             )}
           </div>
         </div>
