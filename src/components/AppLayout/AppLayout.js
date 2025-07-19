@@ -14,7 +14,7 @@ const AppLayout = () => {
   return (
     <div>
      <Header onLoginClick={openPopup} />
-      <Outlet/>
+      <Outlet context={{ openPopup }}/>
       <Footer/>
       {isPopupOpen && (
        <Popup closePopup={closePopup}>

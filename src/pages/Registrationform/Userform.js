@@ -5,7 +5,7 @@ import { useState } from "react";
 import { BsPhone, BsPerson } from "react-icons/bs";
 // import axiosInstance from "../../axiosinstanse/axiosInstance";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 // import SEO from "../../components/SEO/SEO";
 // import { useUser } from "../../context/UserContext";
 import { Card, Col, Container, Row, Form, Button } from "react-bootstrap";
@@ -13,6 +13,7 @@ import statesCities from "../../states-cities.json";
 import axiosInstance from "../../components/services/AxiosInstance";
 
 export default function UserAccountCreation() {
+  const { openPopup } = useOutletContext();
   // const { seo } = useUser();
   const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(1);
@@ -134,7 +135,8 @@ export default function UserAccountCreation() {
 
       if (response.status === 200) {
         setShowSuccessPopup(true);
-        navigate("/login");
+        // navigate("/login");
+        openPopup();
       }
     } catch (error) {
       Swal.fire({
@@ -161,7 +163,7 @@ export default function UserAccountCreation() {
     formData.state;
 
   const handleNumericInput = (e, fieldName) => {
-    const value = e.target.value.replace(/\D/g, ""); 
+    const value = e.target.value.replace(/\D/g, "");
     setFormData({
       ...formData,
       [fieldName]: value,
@@ -171,17 +173,17 @@ export default function UserAccountCreation() {
   return (
     <>
       {/* <SEO
-        meta_title={seo?.meta_title}
-        meta_description={seo?.meta_description}
-        meta_keywords={seo?.meta_keywords}
-        og_title={seo?.og_title}
-        og_description={seo?.og_description}
-        og_type={seo?.og_type}
-        og_url={seo?.og_url}
-        og_image={seo?.og_image}
-        og_site_name={seo?.og_site_name}
-        canonical_tag={seo?.canonical_tag}
-      /> */}
+          meta_title={seo?.meta_title}
+          meta_description={seo?.meta_description}
+          meta_keywords={seo?.meta_keywords}
+          og_title={seo?.og_title}
+          og_description={seo?.og_description}
+          og_type={seo?.og_type}
+          og_url={seo?.og_url}
+          og_image={seo?.og_image}
+          og_site_name={seo?.og_site_name}
+          canonical_tag={seo?.canonical_tag}
+        /> */}
 
       <div
         className="container max-w-4xl mx-auto p-4 user-account-creation"
@@ -202,13 +204,12 @@ export default function UserAccountCreation() {
                 >
                   <div className="d-flex align-items-center w-100">
                     <div
-                      className={`d-flex align-items-center justify-content-center rounded-circle border-2 ${
-                        isCompleted
-                          ? "bg-success border-success text-white"
-                          : isActive
+                      className={`d-flex align-items-center justify-content-center rounded-circle border-2 ${isCompleted
+                        ? "bg-success border-success text-white"
+                        : isActive
                           ? "bg-primary border-primary text-white"
                           : "border-secondary text-secondary"
-                      }`}
+                        }`}
                       style={{ width: "40px", height: "40px" }}
                     >
                       {isCompleted ? (
@@ -219,21 +220,19 @@ export default function UserAccountCreation() {
                     </div>
                     {index < steps.length - 1 && (
                       <div
-                        className={`flex-grow-1 mx-2 ${
-                          isCompleted ? "bg-success" : "bg-light"
-                        }`}
+                        className={`flex-grow-1 mx-2 ${isCompleted ? "bg-success" : "bg-light"
+                          }`}
                         style={{ height: "2px" }}
                       />
                     )}
                   </div>
                   <span
-                    className={`mt-2 small fw-medium ${
-                      isActive
-                        ? "text-primary"
-                        : isCompleted
+                    className={`mt-2 small fw-medium ${isActive
+                      ? "text-primary"
+                      : isCompleted
                         ? "text-success"
                         : "text-muted"
-                    }`}
+                      }`}
                   >
                     {step.title}
                   </span>
@@ -245,7 +244,7 @@ export default function UserAccountCreation() {
 
         {/* Step Content */}
         <div className="card">
-         <div className="card-header">
+          <div className="card-header">
             <h5 className="card-title mb-1">
               Step {currentStep}: {steps[currentStep - 1].title}
             </h5>
@@ -294,7 +293,7 @@ export default function UserAccountCreation() {
                             onClick={handleSendOtp}
                             // variant="warning"
                             className="w-100 py-2 fw-semibold"
-                            style={{backgroundColor:"#7E3119"}}
+                            style={{ backgroundColor: "#7E3119" }}
                             disabled={formData.mobile.length !== 10 || isSendingOtp}
                           >
                             {isSendingOtp && (

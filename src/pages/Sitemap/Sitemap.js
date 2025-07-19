@@ -17,7 +17,7 @@ const Sitemap = () => {
           <ul className="list-unstyled">
             {['Mobile', 'DTH', 'Datacard', 'Landline', 'Electricity', 'Insurance'].map(item => (
               <li key={item} className="mb-2">
-                <Link to="/recharge" className="text-decoration-none text-dark custom-color-hover">{item}</Link>
+                <Link to="/billpayment" className="text-decoration-none text-dark custom-color-hover">{item}</Link>
               </li>
             ))}
             <li className="mb-2">

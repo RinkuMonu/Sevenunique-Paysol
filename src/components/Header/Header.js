@@ -273,9 +273,8 @@ export default function Header({ onLoginClick }) {
                             </Link>
                           </li>
                           <li
-                            className={`nav-item dropdown ${
-                              isDropdownOpen ? "show" : ""
-                            }`}
+                            className={`nav-item dropdown ${isDropdownOpen ? "show" : ""
+                              }`}
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
                           >
@@ -300,9 +299,8 @@ export default function Header({ onLoginClick }) {
                               />
                             </Link>
                             <ul
-                              className={`dropdown-menu profile-menu ${
-                                isDropdownOpen ? "show" : ""
-                              }`}
+                              className={`dropdown-menu profile-menu ${isDropdownOpen ? "show" : ""
+                                }`}
                               aria-labelledby="profileDropdown"
                             >
                               <div className="">
@@ -370,53 +368,53 @@ export default function Header({ onLoginClick }) {
                         </>
                       )}
 
-                     <li
-                            className="nav-item position-relative"
-                            onMouseEnter={() => setShowUserOptions(true)}
-                            onMouseLeave={() => setShowUserOptions(false)}
+                      <li
+                        className="nav-item position-relative"
+                        onMouseEnter={() => setShowUserOptions(true)}
+                        onMouseLeave={() => setShowUserOptions(false)}
+                      >
+                        <div className="nav-link header-right d-lg-flex align-items-center create-account">
+                          <Link
+                            className="header-btn"
+                            to="/register/useraccountcreation?role=User"
+                            style={{ cursor: "pointer" }}
                           >
-<div className="nav-link header-right d-lg-flex align-items-center create-account">
+                            <i class="bi bi-person-add me-1"></i> Register
+                          </Link>
+                          {showUserOptions && (
+                            <div
+                              className="position-absolute bg-white shadow rounded p-2"
+                              style={{
+                                top: "100%",
+                                left: 0,
+                                minWidth: "150px",
+                                zIndex: 1000,
+                                display: "flex",
+                                flexDirection: "column",
+                                gap: "5px",
+                              }}
+                            >
                               <Link
-                                className="header-btn"
                                 to="/register/useraccountcreation?role=User"
-                                style={{ cursor: "pointer" }}
+                                className="dropdown-item"
                               >
-                                <i class="bi bi-person-add me-1"></i> Register
+                                User
                               </Link>
-                              {showUserOptions && (
-                                <div
-                                  className="position-absolute bg-white shadow rounded p-2"
-                                  style={{
-                                    top: "100%",
-                                    left: 0,
-                                    minWidth: "150px",
-                                    zIndex: 1000,
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    gap: "5px",
-                                  }}
-                                >
-                                  <Link
-                                    to="/register/useraccountcreation?role=User"
-                                    className="dropdown-item"
-                                  >
-                                    User
-                                  </Link>
-                                  <Link
-                                    to="/createaccount?role=Retailer"
-                                    className="dropdown-item"
-                                  >
-                                    Retailer
-                                  </Link>
-                                  <Link
-                                     to="/createaccount?role=Distributor"
-                                    className="dropdown-item"
-                                  >
-                                    Distributor
-                                  </Link>
-                                </div>
-                              )}
+                              <Link
+                                to="/createaccount?role=Retailer"
+                                className="dropdown-item"
+                              >
+                                Retailer
+                              </Link>
+                              <Link
+                                to="/createaccount?role=Distributor"
+                                className="dropdown-item"
+                              >
+                                Distributorchv
+                              </Link>
                             </div>
+                          )}
+                        </div>
                       </li>
                     </ul>
                   </div>
