@@ -1,12 +1,13 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'https://server.finuniques.in/api/',                                                                           
+  // baseURL: 'https://server.finuniques.in/api/',                                                                           
+  baseURL: 'https://7qcwg3jk-5002.inc1.devtunnels.ms/api/',                                                                           
   
   headers: {
     'Content-Type': 'application/json',
   },
-});
+}); 
 
 axiosInstance.interceptors.request.use(
   (config) => {

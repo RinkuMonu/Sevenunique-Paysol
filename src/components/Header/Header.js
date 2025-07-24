@@ -4,9 +4,13 @@ import { Link, useNavigate } from "react-router-dom";
 import AddMoney from "./AddMoney";
 import { useDispatch } from "react-redux";
 import { logout } from "../../Features/Auth/authSlice";
+import { useUser } from "../../context/UserContext";
+
 export default function Header({ onLoginClick }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { data } = useUser();
+  console.log("Data", data);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [showUserOptions, setShowUserOptions] = useState(false);
 
@@ -101,7 +105,6 @@ export default function Header({ onLoginClick }) {
                         <ul
                           className="dropdown-menu"
                           aria-labelledby="servicesDropdown"
-
                         >
                           <li>
                             <Link className="dropdown-item" to="/billpayment">
@@ -247,7 +250,6 @@ export default function Header({ onLoginClick }) {
                       ) : (
                         <>
                           <li className="nav-item">
-
                             <Link
                               to={"#"}
                               className="nav-link balance_link"
@@ -264,7 +266,7 @@ export default function Header({ onLoginClick }) {
                                   fontSize: "12px",
                                 }}
                               >
-                                ₹0{" "}
+                                ₹{data?.eWallet || 0}
                                 <i
                                   class="bi bi-plus"
                                   style={{ color: "#404040", fontSize: "14px" }}
@@ -273,8 +275,9 @@ export default function Header({ onLoginClick }) {
                             </Link>
                           </li>
                           <li
-                            className={`nav-item dropdown ${isDropdownOpen ? "show" : ""
-                              }`}
+                            className={`nav-item dropdown ${
+                              isDropdownOpen ? "show" : ""
+                            }`}
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
                           >
@@ -299,8 +302,9 @@ export default function Header({ onLoginClick }) {
                               />
                             </Link>
                             <ul
-                              className={`dropdown-menu profile-menu ${isDropdownOpen ? "show" : ""
-                                }`}
+                              className={`dropdown-menu profile-menu ${
+                                isDropdownOpen ? "show" : ""
+                              }`}
                               aria-labelledby="profileDropdown"
                             >
                               <div className="">
@@ -311,20 +315,22 @@ export default function Header({ onLoginClick }) {
                                       Help?
                                     </Link>
                                   </div>
-                                  <h2 className="mb-1">Test User</h2>
-                                  <p className="mb-0">testuser@gmail.com</p>
-                                  <p>0123456789</p>
+                                  <h2 className="mb-1">{data?.name}</h2>
+                                  <p className="mb-0">{data?.email}</p>
+                                  <p>{data?.mobileNumber}</p>
 
                                   <div className="d-flex align-items-baseline justify-content-between">
-                                    <span>Available Balance: ₹0</span>
+                                    <span>
+                                      Available Balance: ₹{data?.eWallet || 0}
+                                    </span>
                                     <button className="btn btn-primary btn-sm mt-2">
                                       Add
                                     </button>
                                   </div>
-                                  {localStorage.getItem("USER") ? (
-                                    <>
-                                      <p>Your KYC is Completed</p>
-                                    </>
+                                  {data?.isKycVerified ? (
+                                    <p className="kycBtn">
+                                      Your KYC is Completed
+                                    </p>
                                   ) : (
                                     <Link
                                       to={"/kyc"}
@@ -368,54 +374,56 @@ export default function Header({ onLoginClick }) {
                         </>
                       )}
 
-                      <li
-                        className="nav-item position-relative"
-                        onMouseEnter={() => setShowUserOptions(true)}
-                        onMouseLeave={() => setShowUserOptions(false)}
-                      >
-                        <div className="nav-link header-right d-lg-flex align-items-center create-account">
-                          <Link
-                            className="header-btn"
-                            to="/register/useraccountcreation?role=User"
-                            style={{ cursor: "pointer" }}
-                          >
-                            <i class="bi bi-person-add me-1"></i> Register
-                          </Link>
-                          {showUserOptions && (
-                            <div
-                              className="position-absolute bg-white shadow rounded p-2"
-                              style={{
-                                top: "100%",
-                                left: 0,
-                                minWidth: "150px",
-                                zIndex: 1000,
-                                display: "flex",
-                                flexDirection: "column",
-                                gap: "5px",
-                              }}
+                      {!localStorage.getItem("token") && (
+                        <li
+                          className="nav-item position-relative"
+                          onMouseEnter={() => setShowUserOptions(true)}
+                          onMouseLeave={() => setShowUserOptions(false)}
+                        >
+                          <div className="nav-link header-right d-lg-flex align-items-center create-account">
+                            <Link
+                              className="header-btn"
+                              to="/register/useraccountcreation?role=User"
+                              style={{ cursor: "pointer" }}
                             >
-                              <Link
-                                to="/register/useraccountcreation?role=User"
-                                className="dropdown-item"
+                              <i className="bi bi-person-add me-1"></i> Register
+                            </Link>
+                            {showUserOptions && (
+                              <div
+                                className="position-absolute bg-white shadow rounded p-2"
+                                style={{
+                                  top: "100%",
+                                  left: 0,
+                                  minWidth: "150px",
+                                  zIndex: 1000,
+                                  display: "flex",
+                                  flexDirection: "column",
+                                  gap: "5px",
+                                }}
                               >
-                                User
-                              </Link>
-                              <Link
-                                to="/createaccount?role=Retailer"
-                                className="dropdown-item"
-                              >
-                                Retailer
-                              </Link>
-                              <Link
-                                to="/createaccount?role=Distributor"
-                                className="dropdown-item"
-                              >
-                                Distributorchv
-                              </Link>
-                            </div>
-                          )}
-                        </div>
-                      </li>
+                                <Link
+                                  to="/register/useraccountcreation?role=User"
+                                  className="dropdown-item"
+                                >
+                                  User
+                                </Link>
+                                <Link
+                                  to="/createaccount?role=Retailer"
+                                  className="dropdown-item"
+                                >
+                                  Retailer
+                                </Link>
+                                <Link
+                                  to="/createaccount?role=Distributor"
+                                  className="dropdown-item"
+                                >
+                                  Distributor
+                                </Link>
+                              </div>
+                            )}
+                          </div>
+                        </li>
+                      )}
                     </ul>
                   </div>
                 </nav>

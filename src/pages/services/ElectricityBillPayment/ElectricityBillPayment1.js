@@ -211,7 +211,7 @@ const ElectricityBillPayment1 = ({
                       type={currentOperator?.inputType || "text"}
                       placeholder={
                         currentOperator?.displayname 
-                          ? `Enter ${currentOperator.displayname} (Format: ${currentOperator.regex})`
+                          ? `Enter ${currentOperator.displayname} `
                           : "Enter Consumer Number"
                       }
                       value={formData.consumerNumber}
@@ -220,11 +220,11 @@ const ElectricityBillPayment1 = ({
                       required
                       isInvalid={!!inputError}
                     />
-                    {currentOperator?.regex && (
+                    {/* {currentOperator?.regex && (
                       <Form.Text className="text-muted">
                         Required format: {currentOperator.regex}
                       </Form.Text>
-                    )}
+                    )} */}
                     <Form.Control.Feedback type="invalid">
                       {inputError}
                     </Form.Control.Feedback>

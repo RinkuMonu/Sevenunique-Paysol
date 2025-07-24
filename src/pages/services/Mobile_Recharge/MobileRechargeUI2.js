@@ -4,10 +4,8 @@ import { Row, Col, Form, Button, Modal } from "react-bootstrap";
 import FAQMobileRecharge from "./FAQMobileRecharge";
 import MobileBrowsePlans1 from "./MobileBrowsePlans1";
 import ConfirmRechargeModal1 from "./ConfirmRechargeModal1";
-
-import LoginModal from "../../Login/LoginModal";
 import axiosInstance from "../../../components/services/AxiosInstance";
-// import axiosInstance from "../../../components/services/AxiosInstance";
+import LoginModal from "../../Login/LoginModal";
 
 const rechargeOperators = [
   "Airtel",
@@ -26,18 +24,18 @@ const rechargeOperators = [
 const circles = [
   "Andhra Pradesh",
   "Assam",
-  "Bihar & Jharkhand",
+  "Bihar Jharkhand",
   "Chennai",
   "Delhi NCR",
   "Gujarat",
   "Haryana",
   "Himachal Pradesh",
-  "Jammu & Kashmir",
+  "Jammu Kashmir",
   "Karnataka",
   "Kerala",
   "Kolkata",
-  "Madhya Pradesh & Chhattisgarh",
-  "Maharashtra & Goa",
+  "Madhya Pradesh Chhattisgarh",
+  "Maharashtra Goa",
   "Mumbai",
   "North East",
   "Odisha",
@@ -45,7 +43,7 @@ const circles = [
   "Rajasthan",
   "Tamil Nadu",
   "UP East",
-  "UP West & Uttarakhand",
+  "UP West Uttarakhand",
   "West Bengal",
 ];
 
@@ -53,6 +51,7 @@ const MobileRechargeUI2 = () => {
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [showPlansModal, setShowPlansModal] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
+  const [isFetchingDetails, setIsFetchingDetails] = useState(false);
 
   const [formData, setFormData] = useState({
     mobileNumber: "",
@@ -159,6 +158,7 @@ const MobileRechargeUI2 = () => {
   const handleNumberBlur = async () => {
     if (!validateMobileNumber(formData.mobileNumber)) return;
 
+    setIsFetchingDetails(true);
     try {
       const res = await axiosInstance.post("/v1/s3/recharge/hlrcheck", {
         number: formData.mobileNumber,
@@ -176,6 +176,8 @@ const MobileRechargeUI2 = () => {
       }
     } catch (err) {
       console.error("HLR API Error:", err);
+    } finally {
+      setIsFetchingDetails(false);
     }
   };
 
@@ -190,7 +192,7 @@ const MobileRechargeUI2 = () => {
             <h3>Recharge your mobile number securely and instantly.</h3>
             <div className="d-flex justify-content-center align-items-center">
               <img
-                src="/assets/Home/mobile-vec.png"
+                  src="/assets/Home/mobile-vec.png"
                 alt="Image"
                 height="300"
                 className="item-center"
@@ -224,6 +226,9 @@ const MobileRechargeUI2 = () => {
                   <Form.Control.Feedback type="invalid">
                     {errors.mobileNumber}
                   </Form.Control.Feedback>
+                  {isFetchingDetails && (
+                    <small className="text-muted">Fetching details...</small>
+                  )}
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="operator">
@@ -231,6 +236,7 @@ const MobileRechargeUI2 = () => {
                   <Form.Select
                     value={formData.operator}
                     onChange={handleChange}
+                    disabled={isFetchingDetails}
                   >
                     <option value="">Select Operator</option>
                     {rechargeOperators.map((op) => (
@@ -246,6 +252,7 @@ const MobileRechargeUI2 = () => {
                   <Form.Select
                     value={formData.circle}
                     onChange={handleChange}
+                    disabled={isFetchingDetails}
                   >
                     <option value="">Select Circle</option>
                     {circles.map((c) => (
@@ -270,6 +277,7 @@ const MobileRechargeUI2 = () => {
                       className="btn btn-outline-secondary"
                       type="button"
                       onClick={() => setShowPlansModal(true)}
+                      disabled={!formData.operator || !formData.circle}
                     >
                       Check Plans
                     </button>
@@ -284,10 +292,10 @@ const MobileRechargeUI2 = () => {
                   type="button"
                   className="w-100"
                   style={{ backgroundColor: "#001e50", color: "white" }}
-                  disabled={!isFormValid}
+                  disabled={!isFormValid || isFetchingDetails}
                   onClick={handleConfirmModalOpen}
                 >
-                  Confirm
+                  {isFetchingDetails ? "Processing..." : "Confirm"}
                 </Button>
               </Form>
             </div>

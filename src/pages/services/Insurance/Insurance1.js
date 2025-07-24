@@ -13,21 +13,40 @@ const Insurance1 = ({
   setAccountNumber,
   inputError,
   setInputError,
-  operators
+  operators,
+  additionalFields,
+  setAdditionalFields
 }) => {
   const [formData, setFormData] = useState({
     operator: "",
     policyNumber: "",
-    dateOfBirth: "",
+    dateofBirth: "",
+    emailId: "",
     mobileNumber: "",
   });
+ 
   const [currentOperator, setCurrentOperator] = useState(null);
-  const [additionalFields, setAdditionalFields] = useState([]);
+  const [additionalFormFields, setAdditionalFormFields] = useState([]);
   const [isValidating, setIsValidating] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [loginCallback, setLoginCallback] = useState(null);
+  const [showMobileNumber, setShowMobileNumber] = useState(false);
 
-  // Set default operator if only one exists
+  // Function to format date from YYYY-MM-DD to DD-MM-YYYY
+  const formatDateForAPI = (dateString) => {
+    if (!dateString) return "";
+    const [year, month, day] = dateString.split('-');
+    return `${day}-${month}-${year}`;
+  };
+
+  // Function to validate date format
+  const isValidDate = (dateString) => {
+    const regex = /^\d{4}-\d{2}-\d{2}$/;
+    if (!regex.test(dateString)) return false;
+    const date = new Date(dateString);
+    return !isNaN(date.getTime());
+  };
+
   useEffect(() => {
     if (operators.length === 1 && !selectedOperator) {
       setSelectedOperator(operators[0].id);
@@ -39,20 +58,39 @@ const Insurance1 = ({
     }
   }, [operators, selectedOperator, setSelectedOperator]);
 
-  // Set up additional fields based on operator
   useEffect(() => {
     if (currentOperator) {
       const fields = [];
-      if (currentOperator.ad1_name) {
-        fields.push({
-          id: currentOperator.ad1_name,
-          label: currentOperator.ad1_d_name || "Additional Field 1",
-          type: currentOperator.ad1_name === 'dateofBirth' ? 'date' : 'text',
-          regex: currentOperator.ad1_regex
-        });
+      let needsMobileNumber = false;
+      
+      for (let i = 1; i <= 3; i++) {
+        const adName = currentOperator[`ad${i}_name`];
+        const adDisplay = currentOperator[`ad${i}_d_name`];
+        const adRegex = currentOperator[`ad${i}_regex`];
+        
+        if (adName && adDisplay) {
+          let type = 'text';
+          if (adName.toLowerCase().includes('date') || adDisplay.toLowerCase().includes('date')) {
+            type = 'date';
+          } else if (adName.toLowerCase().includes('email')) {
+            type = 'email';
+          } else if (adName.toLowerCase().includes('mobile') || adDisplay.toLowerCase().includes('mobile')) {
+            type = 'tel';
+            needsMobileNumber = true;
+          }
+          
+          fields.push({
+            id: adName,
+            label: adDisplay,
+            type: type,
+            regex: adRegex,
+            required: true
+          });
+        }
       }
-      // Add more fields if needed (ad2, ad3)
-      setAdditionalFields(fields);
+      
+      setAdditionalFormFields(fields);
+      setShowMobileNumber(needsMobileNumber);
     }
   }, [currentOperator]);
 
@@ -61,7 +99,8 @@ const Insurance1 = ({
     setFormData({
       operator: value,
       policyNumber: "",
-      dateOfBirth: "",
+      dateofBirth: "",
+      emailId: "",
       mobileNumber: ""
     });
     setSelectedOperator(value);
@@ -77,11 +116,10 @@ const Insurance1 = ({
     setFormData(prev => ({ ...prev, policyNumber: value }));
     setAccountNumber(value);
     
-    // Validate input if operator has regex
     if (currentOperator?.regex) {
       try {
         const regex = new RegExp(currentOperator.regex);
-        if (!regex.test(value)) {
+        if (value && !regex.test(value)) {
           setInputError(`Please enter a valid ${currentOperator.displayname || "policy number"}`);
         } else {
           setInputError("");
@@ -95,6 +133,20 @@ const Insurance1 = ({
   const handleAdditionalFieldChange = (e) => {
     const { id, value } = e.target;
     setFormData(prev => ({ ...prev, [id]: value }));
+    
+    const field = additionalFormFields.find(f => f.id === id);
+    if (field?.regex) {
+      try {
+        const regex = new RegExp(field.regex);
+        if (value && !regex.test(value)) {
+          setInputError(`Please enter a valid ${field.label}`);
+        } else {
+          setInputError("");
+        }
+      } catch (err) {
+        console.error("Invalid regex pattern:", field.regex);
+      }
+    }
   };
 
   const handleMobileNumberChange = (e) => {
@@ -106,10 +158,8 @@ const Insurance1 = ({
     e.preventDefault();
     setIsValidating(true);
 
-    // 1. Check if user is logged in
     const token = localStorage.getItem("token");
     if (!token) {
-      // Store the callback function to proceed after login
       setLoginCallback(() => () => {
         validateAndProceed();
       });
@@ -118,19 +168,16 @@ const Insurance1 = ({
       return;
     }
 
-    // If user is logged in, proceed with validation
     validateAndProceed();
   };
 
   const validateAndProceed = () => {
-    // 2. Validate operator is selected
     if (!formData.operator) {
       setInputError("Please select an insurance provider");
       setIsValidating(false);
       return;
     }
 
-    // 3. Validate policy number
     if (!formData.policyNumber) {
       setInputError(
         `Please enter your ${currentOperator?.displayname || "policy number"}`
@@ -139,7 +186,6 @@ const Insurance1 = ({
       return;
     }
 
-    // 4. Validate against regex pattern if exists
     if (currentOperator?.regex) {
       try {
         const regex = new RegExp(currentOperator.regex);
@@ -158,31 +204,59 @@ const Insurance1 = ({
       }
     }
 
-    // 5. Validate mobile number
-    if (!formData.mobileNumber || formData.mobileNumber.length !== 10) {
+    if (showMobileNumber && (!formData.mobileNumber || formData.mobileNumber.length !== 10)) {
       setInputError("Please enter a valid 10-digit mobile number");
       setIsValidating(false);
       return;
     }
 
-    // 6. Validate additional required fields
-    for (const field of additionalFields) {
-      if (!formData[field.id]) {
+    for (const field of additionalFormFields) {
+      if (field.required && !formData[field.id]) {
         setInputError(`Please enter ${field.label}`);
         setIsValidating(false);
         return;
       }
+      
+      if (field.regex && formData[field.id]) {
+        try {
+          const regex = new RegExp(field.regex);
+          if (!regex.test(formData[field.id])) {
+            setInputError(`Please enter a valid ${field.label}`);
+            setIsValidating(false);
+            return;
+          }
+        } catch (err) {
+          console.error("Invalid regex pattern:", field.regex);
+        }
+      }
+
+      if (field.type === 'date' && formData[field.id]) {
+        if (!isValidDate(formData[field.id])) {
+          setInputError(`Please enter a valid ${field.label} in YYYY-MM-DD format`);
+          setIsValidating(false);
+          return;
+        }
+      }
     }
 
-    // All validations passed
     setInputError("");
-    onProceed({
-      ...formData,
-      additionalData: additionalFields.reduce((acc, field) => {
-        acc[field.id] = formData[field.id] || '';
-        return acc;
-      }, {})
+    
+    // Prepare additional fields data for parent component with formatted dates
+    const additionalFieldsData = {};
+    additionalFormFields.forEach(field => {
+      if (formData[field.id]) {
+        // Format date fields before sending to parent
+        additionalFieldsData[field.id] = field.type === 'date' 
+          ? formatDateForAPI(formData[field.id])
+          : formData[field.id];
+      }
     });
+    
+    // Update parent's additionalFields state
+    setAdditionalFields(additionalFieldsData);
+    
+    // Call parent's proceed handler
+    onProceed(additionalFieldsData);
     setIsValidating(false);
   };
 
@@ -194,10 +268,16 @@ const Insurance1 = ({
   };
 
   const isFormValid = () => {
+    const hasRequiredFieldsFilled = additionalFormFields.every(field => 
+      !field.required || formData[field.id]
+    );
+    
+    const mobileValid = !showMobileNumber || (formData.mobileNumber?.length === 10);
+    
     return formData.operator && 
            formData.policyNumber && 
-           formData.mobileNumber?.length === 10 &&
-           additionalFields.every(field => formData[field.id]) &&
+           mobileValid &&
+           hasRequiredFieldsFilled &&
            !inputError;
   };
 
@@ -205,7 +285,6 @@ const Insurance1 = ({
     <>
       <div className="p-5" style={{ backgroundColor: "#EFF8FF" }}>
         <Row>
-          {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
             <h2 className="fw-bold" style={{ color: "#001e50" }}>
               Insurance Payment Solution
@@ -221,7 +300,6 @@ const Insurance1 = ({
             </div>
           </Col>
 
-          {/* Right Side Form */}
           <Col md={6}>
             <div
               className="p-4 rounded bg-white shadow"
@@ -274,39 +352,64 @@ const Insurance1 = ({
                         onChange={handlePolicyNumberChange}
                         required
                       />
-                      {currentOperator?.regex && (
-                        <Form.Text className="text-muted">
-                          Required format: {currentOperator.regex}
-                        </Form.Text>
-                      )}
-                      {inputError && (
-                        <div className="text-danger">{inputError}</div>
-                      )}
                     </Form.Group>
 
-                    {additionalFields.map(field => (
+                    {additionalFormFields.map(field => (
                       <Form.Group key={field.id} className="mb-3" controlId={field.id}>
                         <Form.Label>{field.label}</Form.Label>
-                        <Form.Control
-                          type={field.type}
-                          value={formData[field.id] || ''}
-                          onChange={handleAdditionalFieldChange}
-                          required
-                        />
+                        {field.type === 'date' ? (
+                          <>
+                            <Form.Control
+                              type="date"
+                              id={field.id} 
+                              value={formData[field.id] || ''}
+                              onChange={handleAdditionalFieldChange}
+                              required={field.required}
+                              max={new Date().toISOString().split('T')[0]}
+                            />
+                            <Form.Text className="text-muted">
+                              Format: YYYY-MM-DD
+                            </Form.Text>
+                          </>
+                        ) : field.type === 'tel' ? (
+                          <Form.Control
+                            type="tel"
+                            placeholder={`Enter ${field.label}`}
+                            value={formData[field.id] || ''}
+                            onChange={handleAdditionalFieldChange}
+                            required={field.required}
+                            maxLength={10}
+                          />
+                        ) : (
+                          <Form.Control
+                            type={field.type}
+                            id={field.id}
+                            placeholder={`Enter ${field.label}`}
+                            value={formData[field.id] || ''}
+                            onChange={handleAdditionalFieldChange}
+                            required={field.required}
+                          />
+                        )}
                       </Form.Group>
                     ))}
 
-                    <Form.Group className="mb-3" controlId="mobileNumber">
-                      <Form.Label>Mobile Number</Form.Label>
-                      <Form.Control
-                        type="tel"
-                        placeholder="Enter 10-digit mobile number"
-                        value={formData.mobileNumber}
-                        onChange={handleMobileNumberChange}
-                        maxLength={10}
-                        required
-                      />
-                    </Form.Group>
+                    {showMobileNumber && (
+                      <Form.Group className="mb-3" controlId="mobileNumber">
+                        <Form.Label>Mobile Number</Form.Label>
+                        <Form.Control
+                          type="tel"
+                          placeholder="Enter 10-digit mobile number"
+                          value={formData.mobileNumber}
+                          onChange={handleMobileNumberChange}
+                          maxLength={10}
+                          required
+                        />
+                      </Form.Group>
+                    )}
+
+                    {inputError && (
+                      <div className="alert alert-danger">{inputError}</div>
+                    )}
                   </>
                 )}
 
@@ -318,7 +421,7 @@ const Insurance1 = ({
                     style={{ backgroundColor: "#001e50", color: "white" }}
                     disabled={!isFormValid() || isValidating}
                   >
-                    {isValidating ? "Validating..." : "Confirm"}
+                    {isValidating ? "Validating..." : "Proceed"}
                   </Button>
                 )}
               </Form>

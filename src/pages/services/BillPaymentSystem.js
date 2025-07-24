@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo, useCallback, useRef } from "react";
 import Swal from "sweetalert2";
 import BillDetailsSection from "./BillDetailsSection";
 import PaymentStatusSection from "./PaymentStatusSection";
+import PaymentSectionModal from "./PaymentSectionModal";
 import { Container, Row, Col, Modal } from "react-bootstrap";
 import {
   FaMobileAlt,
   FaMoneyBillWave,
   FaWifi,
   FaLightbulb,
-  
   FaShieldAlt,
   FaTint,
   FaSatelliteDish,
@@ -16,17 +16,11 @@ import {
   FaTv,
   FaCar,
   FaGasPump,
- 
   FaUniversity,
 } from "react-icons/fa";
 import { MdDataUsage } from "react-icons/md";
 import axiosInstance from "../../components/services/AxiosInstance";
-
-
-
 import ElectricityBillPayment from "./ElectricityBillPayment/ElectricityBillPayment";
-
-
 import Emi1 from "./EMI/Emi1";
 import Broadband1 from "./Broadband/Broadband1";
 import ElectricityBillPayment1 from "./ElectricityBillPayment/ElectricityBillPayment1";
@@ -38,23 +32,19 @@ import LpgBooking1 from "./LpgBooking/LpgBooking1";
 import Municipality1 from "./Municipality/Municipality1";
 import Landline1 from "./Landline/Landline1";
 import Fastag1 from "./Fastag/Fastag1";
-
 import PostpaidRecharge1 from "./Postpaid/PostpaidRecharge1";
 import DatacardPostpaidRecharge from "./DatacardPostpaid/DatacardPostpaidRecharge";
 import DatacardPrepaidRecharge from "./DatacardPrepaid/DatacardPrepaidRecharge";
 import MobileRechargeUI2 from "./Mobile_Recharge/MobileRechargeUI2";
 import DTHRecharge1 from "./DTH_Recharge/DTHRecharge1";
 import { useUser } from "../../context/UserContext";
-// import { useUser } from "../../context/UserContext";
 
 const BillPaymentSystem = () => {
-  // API endpoints
   const OPERATORS_API = "/v1/s3/bill/operators";
   const DETAILS_API = "/v1/s3/bill/details";
   const PAYMENT_API = "/v1/s3/bill/pay";
   const STATUS_API = "/v1/s3/bill/status";
 
-  // Stepper state
   const [step, setStep] = useState(1);
   const steps = [
     { id: 1, name: "Choose Operator" },
@@ -63,11 +53,12 @@ const BillPaymentSystem = () => {
     { id: 4, name: "Status" },
   ];
 
-  // State variables
   const [selectedCategory, setSelectedCategory] = useState("Prepaid");
   const [operators, setOperators] = useState([]);
   const [selectedOperator, setSelectedOperator] = useState("");
   const [accountNumber, setAccountNumber] = useState("");
+  const [additionalFields, setAdditionalFields] = useState({});
+  const [currentOperatorDetails, setCurrentOperatorDetails] = useState(null);
   const [billDetails, setBillDetails] = useState(null);
   const [mpin, setMpin] = useState("");
   const [referenceId] = useState(Math.floor(1000000 + Math.random() * 9000000));
@@ -78,19 +69,17 @@ const BillPaymentSystem = () => {
   const [menuItems, setMenuItems] = useState([]);
   const [moreItems, setMoreItems] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const {fetchUserfree} = useUser();
-  // Menu items data
+  const { fetchUserfree } = useUser();
+
   const allItems = [
     { name: "Prepaid", icon: <FaMobileAlt size={24} /> },
     { name: "Postpaid", icon: <FaMobileAlt size={24} /> },
-    // { name: "POST PAID", icon: <FaMobileAlt size={24} /> },
-    // { name: "POSTPAID", icon: <FaMobileAlt size={24} /> },
     { name: "DTH", icon: <FaSatelliteDish size={24} /> },
     { name: "EMI", icon: <FaMoneyBillWave size={24} /> },
     { name: "Broadband", icon: <FaWifi size={24} /> },
     { name: "Electricity", icon: <FaLightbulb size={24} /> },
-    // { name: "BILL PAYMENT", icon: <FaReceipt size={24} /> },
     { name: "Gas", icon: <FaGasPump size={24} /> },
     { name: "Insurance", icon: <FaShieldAlt size={24} /> },
     { name: "Water", icon: <FaTint size={24} /> },
@@ -98,39 +87,34 @@ const BillPaymentSystem = () => {
     { name: "Cable", icon: <FaTv size={24} /> },
     { name: "Fastag", icon: <FaCar size={24} /> },
     { name: "LPG", icon: <FaGasPump size={24} /> },
-    // { name: "Bill Pay", icon: <FaCreditCard size={24} /> },
     { name: "BroadBand", icon: <FaWifi size={24} /> },
     { name: "Datacard Prepaid", icon: <MdDataUsage size={24} /> },
     { name: "Datacard Postpaid", icon: <MdDataUsage size={24} /> },
     { name: "Municipality", icon: <FaUniversity size={24} /> },
   ];
 
-  // Component mapping
   const categoryComponents = {
-    "Prepaid": MobileRechargeUI2,
-    "Postpaid": PostpaidRecharge1,
-    // "POST PAID": MobileRechargeUI,
-    // "POSTPAID": MobileRechargeUI,
-    "EMI": Emi1,
-    "Broadband": Broadband1,
-    "Electricity": ElectricityBillPayment1,
+    Prepaid: MobileRechargeUI2,
+    Postpaid: PostpaidRecharge1,
+    EMI: Emi1,
+    Broadband: Broadband1,
+    Electricity: ElectricityBillPayment1,
     "BILL PAYMENT": ElectricityBillPayment,
-    "Gas": PipedGas1,
-    "Insurance": Insurance1,
-    "Water": Water1,
-    "DTH": DTHRecharge1,
-    "Landline": Landline1,
-    "Cable": Cable1,
-    "Fastag": Fastag1,
-    "LPG": LpgBooking1,
+    Gas: PipedGas1,
+    Insurance: Insurance1,
+    Water: Water1,
+    DTH: DTHRecharge1,
+    Landline: Landline1,
+    Cable: Cable1,
+    Fastag: Fastag1,
+    LPG: LpgBooking1,
     "Bill Pay": ElectricityBillPayment,
-    "BroadBand": Broadband1,
+    BroadBand: Broadband1,
     "Datacard Prepaid": DatacardPrepaidRecharge,
     "Datacard Postpaid": DatacardPostpaidRecharge,
-    "Municipality": Municipality1
+    Municipality: Municipality1,
   };
 
-  // Initialize menu items based on screen size
   useEffect(() => {
     const updateMenuItems = () => {
       if (window.innerWidth <= 768) {
@@ -155,10 +139,9 @@ const BillPaymentSystem = () => {
     return () => window.removeEventListener("resize", updateMenuItems);
   }, []);
 
-  // Update More count dynamically
   useEffect(() => {
     setMenuItems((prevMenuItems) => {
-      if (prevMenuItems.some(item => item.name === "More")) {
+      if (prevMenuItems.some((item) => item.name === "More")) {
         return [
           ...prevMenuItems.slice(0, -1),
           { name: "More", icon: `+${moreItems.length}` },
@@ -168,22 +151,21 @@ const BillPaymentSystem = () => {
     });
   }, [moreItems]);
 
-  // Handle menu item click
-  const handleMenuClick = (menu) => {
+  const handleMenuClick = useCallback((menu) => {
     if (menu === "More") {
       setShowModal(true);
     } else {
       setSelectedCategory(menu);
       setStep(1);
-      // Reset relevant states when changing category
       setSelectedOperator("");
       setAccountNumber("");
+      setAdditionalFields({});
+      setCurrentOperatorDetails(null);
       setBillDetails(null);
     }
-  };
+  }, []);
 
-  // Handle more item click from modal
-  const handleMoreItemClick = (menu) => {
+  const handleMoreItemClick = useCallback((menu) => {
     const selectedModalItemIndex = moreItems.findIndex(
       (item) => item.name === menu
     );
@@ -192,14 +174,12 @@ const BillPaymentSystem = () => {
       const selectedModalItem = moreItems[selectedModalItemIndex];
       const lastVisibleItem = menuItems[menuItems.length - 2];
 
-      // Update the navbar menu items
       setMenuItems((prevMenuItems) => [
         ...prevMenuItems.slice(0, -2),
         { name: selectedModalItem.name, icon: selectedModalItem.icon },
         { name: "More", icon: `+${moreItems.length - 1}` },
       ]);
 
-      // Update the modal items
       setMoreItems((prevMoreItems) => [
         ...prevMoreItems.filter((item) => item.name !== menu),
         { name: lastVisibleItem.name, icon: lastVisibleItem.icon },
@@ -208,15 +188,15 @@ const BillPaymentSystem = () => {
       setSelectedCategory(menu);
       setShowModal(false);
       setStep(1);
-      // Reset relevant states when changing category
       setSelectedOperator("");
       setAccountNumber("");
+      setAdditionalFields({});
+      setCurrentOperatorDetails(null);
       setBillDetails(null);
     }
-  };
+  }, [menuItems, moreItems]);
 
-  // Check payment status
-  const checkPaymentStatus = async (refId) => {
+  const checkPaymentStatus = useCallback(async (refId) => {
     try {
       setStatusCheckLoading(true);
       const response = await axiosInstance.post(STATUS_API, {
@@ -244,50 +224,41 @@ const BillPaymentSystem = () => {
     } finally {
       setStatusCheckLoading(false);
     }
-  };
+  }, []);
 
-  // Validate input against operator's regex
-  const validateInput = (value) => {
-    if (!selectedOperator || !value) return true;
-
-    const operator = operators.find((op) => op.id === selectedOperator);
-    if (!operator?.regex) return true;
+  const validateInput = useCallback((value, regexPattern) => {
+    if (!value || !regexPattern) return true;
 
     try {
-      const regexPattern = operator.regex.replace(/\\/g, "\\");
-      const regex = new RegExp(regexPattern);
+      const cleanPattern = regexPattern.replace(/\\/g, "\\");
+      const regex = new RegExp(cleanPattern);
       return regex.test(value);
     } catch (err) {
-      console.error("Invalid regex pattern:", operator.regex);
-      return true;
+      console.error("Invalid regex pattern:", regexPattern);
+      return false;
     }
-  };
+  }, []);
 
-  // Handle account number change with validation
-  const handleAccountNumberChange = (e) => {
+  const handleAccountNumberChange = useCallback((e) => {
     const value = e.target.value;
     setAccountNumber(value);
 
-    if (selectedOperator && value) {
-      const operator = operators.find((op) => op.id === selectedOperator);
-      if (operator?.regex) {
-        const isValid = validateInput(value);
-        if (!isValid) {
-          setInputError(
-            `Please enter a valid ${operator.displayname || "account number"}`
-          );
-        } else {
-          setInputError("");
-        }
+    if (selectedOperator && value && currentOperatorDetails?.regex) {
+      const isValid = validateInput(value, currentOperatorDetails.regex);
+      if (!isValid) {
+        setInputError(
+          `Please enter a valid ${
+            currentOperatorDetails.displayname || "account number"
+          }`
+        );
       } else {
         setInputError("");
       }
     } else {
       setInputError("");
     }
-  };
+  }, [selectedOperator, currentOperatorDetails, validateInput]);
 
-  // Fetch operators when category is selected
   useEffect(() => {
     if (selectedCategory) {
       setLoading(true);
@@ -309,33 +280,97 @@ const BillPaymentSystem = () => {
     }
   }, [selectedCategory]);
 
-  // Reset account number and errors when operator changes
   useEffect(() => {
-    setAccountNumber("");
-    setInputError("");
-  }, [selectedOperator]);
+    if (selectedOperator) {
+      const operator = operators.find((op) => op.id === selectedOperator);
+      setCurrentOperatorDetails(operator);
+      setAccountNumber("");
+      setAdditionalFields({});
+      setInputError("");
+    }
+  }, [selectedOperator, operators]);
 
-  // Fetch bill details
-  const fetchBillDetails = () => {
-    if (!selectedOperator || !accountNumber) {
+  const handleProceed = useCallback((additionalFieldsData = {}) => {
+    if (!selectedOperator || !accountNumber || !currentOperatorDetails) {
       showErrorAlert("Please select an operator and enter account number");
       return;
     }
 
-    const operator = operators.find((op) => op.id === selectedOperator);
-    if (operator?.regex && !validateInput(accountNumber)) {
+    // Update additionalFields with the new data from child component
+    setAdditionalFields(prev => ({
+      ...prev,
+      ...additionalFieldsData
+    }));
+
+    // Validate main account number
+    if (
+      currentOperatorDetails.regex &&
+      !validateInput(accountNumber, currentOperatorDetails.regex)
+    ) {
       showErrorAlert(
-        `Please enter a valid ${operator.displayname || "account number"}`
+        `Please enter a valid ${
+          currentOperatorDetails.displayname || "account number"
+        }`
       );
       return;
     }
 
+    // Validate additional fields if they exist
+    if (currentOperatorDetails.ad1_name && currentOperatorDetails.ad1_regex) {
+      if (
+        !validateInput(additionalFieldsData[currentOperatorDetails.ad1_name], currentOperatorDetails.ad1_regex)
+      ) {
+        showErrorAlert(
+          `Please enter a valid ${currentOperatorDetails.ad1_d_name}`
+        );
+        return;
+      }
+    }
+
+    if (currentOperatorDetails.ad2_name && currentOperatorDetails.ad2_regex) {
+      if (
+        !validateInput(additionalFieldsData[currentOperatorDetails.ad2_name], currentOperatorDetails.ad2_regex)
+      ) {
+        showErrorAlert(
+          `Please enter a valid ${currentOperatorDetails.ad2_d_name}`
+        );
+        return;
+      }
+    }
+
+    if (currentOperatorDetails.viewbill === "1") {
+      fetchBillDetails(additionalFieldsData);
+    } else {
+      setBillDetails({
+        amount: "0",
+        bill_fetch: "0",
+      });
+      setShowPaymentModal(true);
+    }
+  }, [selectedOperator, accountNumber, currentOperatorDetails, validateInput]);
+
+  const fetchBillDetails = useCallback((additionalFieldsData) => {
     setLoading(true);
+
+    const requestData = {
+      operator: selectedOperator,
+      canumber: accountNumber,
+    };
+
+    // Add additional fields from the child component
+    Object.entries(additionalFieldsData).forEach(([key, value]) => {
+      requestData[key] = value;
+    });
+
+    // Also add any existing additional fields from state
+    Object.entries(additionalFields).forEach(([key, value]) => {
+      if (!requestData[key] && value) {
+        requestData[key] = value;
+      }
+    });
+
     axiosInstance
-      .post(DETAILS_API, {
-        operator: selectedOperator,
-        canumber: accountNumber,
-      })
+      .post(DETAILS_API, requestData)
       .then((response) => {
         setBillDetails(response.data);
         setLoading(false);
@@ -343,45 +378,247 @@ const BillPaymentSystem = () => {
         setStep(2);
       })
       .catch((err) => {
-        showErrorAlert("Failed to fetch bill details");
+        showErrorAlert(
+          err?.response?.data?.message || "Failed to fetch bill details"
+        );
         setLoading(false);
       });
-  };
+  }, [selectedOperator, accountNumber, additionalFields]);
 
-  // Process payment
-  const processPayment = () => {
-    if (!mpin || !billDetails) {
-      showErrorAlert("Please enter MPIN and fetch bill details first");
+  const processPayment = useCallback(() => {
+    if (!mpin || !currentOperatorDetails) {
+      showErrorAlert("Please enter MPIN");
       return;
     }
 
+    const amount = billDetails?.amount || "0";
     setLoading(true);
+
+    const paymentData = {
+      operator: selectedOperator,
+      canumber: accountNumber,
+      amount: amount.toString(),
+      referenceid: referenceId,
+      latitude: "1.25787874",
+      longitude: "1.75784512",
+      bill_fetch: billDetails?.bill_fetch || "0",
+      mpin: mpin,
+    };
+
+    // Add additional fields from the operator configuration
+    if (currentOperatorDetails.ad1_name && additionalFields[currentOperatorDetails.ad1_name]) {
+      paymentData[currentOperatorDetails.ad1_name] = additionalFields[currentOperatorDetails.ad1_name];
+    }
+    if (currentOperatorDetails.ad2_name && additionalFields[currentOperatorDetails.ad2_name]) {
+      paymentData[currentOperatorDetails.ad2_name] = additionalFields[currentOperatorDetails.ad2_name];
+    }
+    if (currentOperatorDetails.ad3_name && additionalFields[currentOperatorDetails.ad3_name]) {
+      paymentData[currentOperatorDetails.ad3_name] = additionalFields[currentOperatorDetails.ad3_name];
+    }
+
+    // Add any other additional fields that might be in the form
+    Object.entries(additionalFields).forEach(([key, value]) => {
+      if (!paymentData[key] && value) {
+        paymentData[key] = value;
+      }
+    });
+
     axiosInstance
-      .post(PAYMENT_API, {
-        operator: selectedOperator,
-        canumber: accountNumber,
-        amount: billDetails.amount.toString(),
-        referenceid: referenceId,
-        latitude: "1.25787874",
-        longitude: "1.75784512",
-        bill_fetch: billDetails.bill_fetch,
-        mpin: mpin,
-      })
+      .post(PAYMENT_API, paymentData)
       .then((response) => {
         showSuccessAlert("Payment processed successfully! Checking status...");
         setLoading(false);
         checkPaymentStatus(referenceId);
+        setShowPaymentModal(false);
         setStep(4);
-        fetchUserfree()
+        fetchUserfree();
       })
       .catch((err) => {
-        showErrorAlert("Payment failed. Please try again.");
+        showErrorAlert(
+          err?.response?.data?.message || "Payment failed. Please try again."
+        );
         setLoading(false);
       });
-  };
+  }, [
+    mpin,
+    currentOperatorDetails,
+    billDetails,
+    selectedOperator,
+    accountNumber,
+    additionalFields,
+    checkPaymentStatus,
+    fetchUserfree
+  ]);
 
-  // Alert functions
-  const showSuccessAlert = (message) => {
+  const renderAdditionalFields = useCallback((operator) => {
+    if (!operator) return null;
+
+    return (
+      <>
+        {operator.ad1_name && (
+          <div className="form-group mb-3">
+            <label>{operator.ad1_d_name}</label>
+            <input
+              type="text"
+              className="form-control"
+              value={additionalFields[operator.ad1_name] || ""}
+              onChange={(e) =>
+                setAdditionalFields({
+                  ...additionalFields,
+                  [operator.ad1_name]: e.target.value,
+                })
+              }
+              placeholder={operator.ad1_d_name}
+            />
+            {operator.ad1_regex &&
+              !validateInput(additionalFields[operator.ad1_name], operator.ad1_regex) && (
+                <small className="text-danger">
+                  Please enter a valid {operator.ad1_d_name}
+                </small>
+              )}
+          </div>
+        )}
+
+        {operator.ad2_name && (
+          <div className="form-group mb-3">
+            <label>{operator.ad2_d_name}</label>
+            <input
+              type="text"
+              className="form-control"
+              value={additionalFields[operator.ad2_name] || ""}
+              onChange={(e) =>
+                setAdditionalFields({
+                  ...additionalFields,
+                  [operator.ad2_name]: e.target.value,
+                })
+              }
+              placeholder={operator.ad2_d_name}
+            />
+            {operator.ad2_regex &&
+              !validateInput(additionalFields[operator.ad2_name], operator.ad2_regex) && (
+                <small className="text-danger">
+                  Please enter a valid {operator.ad2_d_name}
+                </small>
+              )}
+          </div>
+        )}
+
+        {operator.ad3_name && (
+          <div className="form-group mb-3">
+            <label>{operator.ad3_d_name}</label>
+            <input
+              type="text"
+              className="form-control"
+              value={additionalFields[operator.ad3_name] || ""}
+              onChange={(e) =>
+                setAdditionalFields({
+                  ...additionalFields,
+                  [operator.ad3_name]: e.target.value,
+                })
+              }
+              placeholder={operator.ad3_d_name}
+            />
+            {operator.ad3_regex &&
+              !validateInput(additionalFields[operator.ad3_name], operator.ad3_regex) && (
+                <small className="text-danger">
+                  Please enter a valid {operator.ad3_d_name}
+                </small>
+              )}
+          </div>
+        )}
+      </>
+    );
+  }, [additionalFields, validateInput]);
+
+  const OperatorSelection1 = memo(({
+    selectedCategory,
+    operators,
+    selectedOperator,
+    setSelectedOperator,
+    accountNumber,
+    setAccountNumber,
+    inputError,
+    setInputError,
+    fetchBillDetails,
+    loading,
+    onBack,
+  }) => {
+    const [currentOperator, setCurrentOperator] = useState(null);
+
+    useEffect(() => {
+      if (selectedOperator) {
+        const op = operators.find((o) => o.id === selectedOperator);
+        setCurrentOperator(op);
+      } else {
+        setCurrentOperator(null);
+      }
+    }, [selectedOperator, operators]);
+
+    return (
+      <div className="bg-white p-6 rounded-lg shadow-md">
+        <h2 className="text-xl font-semibold mb-4">
+          {selectedCategory} Bill Payment
+        </h2>
+
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Select Operator
+          </label>
+          <select
+            className="w-full p-2 border rounded"
+            value={selectedOperator}
+            onChange={(e) => setSelectedOperator(e.target.value)}
+          >
+            <option value="">Select Operator</option>
+            {operators.map((operator) => (
+              <option key={operator.id} value={operator.id}>
+                {operator.name}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        {selectedOperator && currentOperator && (
+          <>
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                {currentOperator.displayname || "Account Number"}
+              </label>
+              <input
+                type="text"
+                className="w-full p-2 border rounded"
+                value={accountNumber}
+                onChange={handleAccountNumberChange}
+                placeholder={
+                  currentOperator.displayname || "Enter account number"
+                }
+              />
+              {inputError && (
+                <p className="text-red-500 text-sm mt-1">{inputError}</p>
+              )}
+            </div>
+
+            {renderAdditionalFields(currentOperator)}
+          </>
+        )}
+
+        <div className="flex justify-between mt-6">
+          <button className="px-4 py-2 bg-gray-300 rounded" onClick={onBack}>
+            Back
+          </button>
+          <button
+            className="px-4 py-2 bg-blue-600 text-white rounded disabled:opacity-50"
+            onClick={fetchBillDetails}
+            disabled={!selectedOperator || !accountNumber || loading}
+          >
+            {loading ? "Processing..." : "Proceed"}
+          </button>
+        </div>
+      </div>
+    );
+  });
+
+  const showSuccessAlert = useCallback((message) => {
     Swal.fire({
       icon: "success",
       title: "Success!",
@@ -389,19 +626,18 @@ const BillPaymentSystem = () => {
       timer: 3000,
       showConfirmButton: false,
     });
-  };
+  }, []);
 
-  const showErrorAlert = (message) => {
+  const showErrorAlert = useCallback((message) => {
     Swal.fire({
       icon: "error",
       title: "Error!",
       text: message,
       confirmButtonColor: "#3085d6",
     });
-  };
+  }, []);
 
-  // Stepper component
-  const Stepper = () => {
+  const Stepper = memo(() => {
     return (
       <div className="mb-8">
         <div className="flex items-center justify-between relative">
@@ -436,12 +672,17 @@ const BillPaymentSystem = () => {
         </div>
       </div>
     );
-  };
+  });
+
+  const handleModalHide = useCallback(() => setShowModal(false), []);
+  const handlePaymentModalHide = useCallback(() => setShowPaymentModal(false), []);
 
   return (
     <div className="min-h-screen bg-gray-100 pb-8 pt-0">
-      {/* Icon-based Menu Navigation */}
-      <nav className="py-4 bg-light border-bottom" style={{ marginTop: "95px" }}>
+      <nav
+        className="py-4 bg-light border-bottom"
+        style={{ marginTop: "95px" }}
+      >
         <div>
           <Row className="text-center">
             {menuItems.map((item) => (
@@ -500,8 +741,6 @@ const BillPaymentSystem = () => {
       </nav>
 
       <div className="max-w-6xl mx-auto">
-      
-
         {(loading || statusCheckLoading) && (
           <div className="text-center py-4">
             <div className="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
@@ -509,59 +748,64 @@ const BillPaymentSystem = () => {
           </div>
         )}
 
-        {/* Category-specific content */}
-        {step === 1 && selectedCategory && categoryComponents[selectedCategory] && (
-          <div className="category-content mb-4">
-            {React.createElement(categoryComponents[selectedCategory], {
-              selectedCategory,
-              onProceed: fetchBillDetails,
-              selectedOperator,
-              setSelectedOperator,
-              accountNumber,
-              setAccountNumber,
-              inputError,
-              setInputError,
-              operators
-            })}
-          </div>
-        )}
+        {step === 1 &&
+          selectedCategory &&
+          categoryComponents[selectedCategory] && (
+            <div className="category-content mb-4">
+              {React.createElement(categoryComponents[selectedCategory], {
+                selectedCategory,
+                onProceed: handleProceed,
+                selectedOperator,
+                setSelectedOperator,
+                accountNumber,
+                setAccountNumber,
+                inputError,
+                setInputError,
+                operators,
+                additionalFields,
+                setAdditionalFields,
+                currentOperatorDetails,
+              })}
+            </div>
+          )}
 
-        {/* Operator Selection (shown when no specific component exists for category) */}
-        {/* {step === 1 && (!selectedCategory || !categoryComponents[selectedCategory]) && (
-          <OperatorSelection1
-            selectedCategory={selectedCategory}
-            operators={operators}
-            selectedOperator={selectedOperator}
-            setSelectedOperator={setSelectedOperator}
-            accountNumber={accountNumber}
-            handleAccountNumberChange={handleAccountNumberChange}
-            inputError={inputError}
-            fetchBillDetails={fetchBillDetails}
-            loading={loading}
-            onBack={() => {
-              setSelectedCategory("");
-              setStep(1);
-            }}
-          />
-        )} */}
+        {step === 1 &&
+          (!selectedCategory || !categoryComponents[selectedCategory]) && (
+            <OperatorSelection1
+              selectedCategory={selectedCategory}
+              operators={operators}
+              selectedOperator={selectedOperator}
+              setSelectedOperator={setSelectedOperator}
+              accountNumber={accountNumber}
+              setAccountNumber={setAccountNumber}
+              inputError={inputError}
+              setInputError={setInputError}
+              fetchBillDetails={handleProceed}
+              loading={loading}
+              onBack={() => {
+                setSelectedCategory("");
+                setStep(1);
+              }}
+            />
+          )}
 
-        {/* Step 2: Bill Details */}
-        {step === 2 && billDetails && (
-          <BillDetailsSection
-            billDetails={billDetails}
-            mpin={mpin}
-            setMpin={setMpin}
-            referenceId={referenceId}
-            processPayment={processPayment}
-            loading={loading}
-            onBack={() => {
-              setSelectedOperator("");
-              setStep(1);
-            }}
-          />
-        )}
+        {step === 2 &&
+          billDetails &&
+          currentOperatorDetails?.viewbill === "1" && (
+            <BillDetailsSection
+              billDetails={billDetails}
+              mpin={mpin}
+              setMpin={setMpin}
+              referenceId={referenceId}
+              processPayment={processPayment}
+              loading={loading}
+              onBack={() => {
+                setSelectedOperator("");
+                setStep(1);
+              }}
+            />
+          )}
 
-        {/* Step 4: Payment Status */}
         {step === 4 &&
           paymentStatus &&
           paymentStatus.data &&
@@ -573,14 +817,13 @@ const BillPaymentSystem = () => {
               statusCheckLoading={statusCheckLoading}
               onBack={() => {
                 setPaymentStatus(null);
-                setStep(2);
+                setStep(currentOperatorDetails?.viewbill === "1" ? 2 : 1);
               }}
             />
           )}
       </div>
 
-      {/* More Items Modal */}
-      <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+      <Modal show={showModal} onHide={handleModalHide} centered>
         <Modal.Header closeButton>
           <Modal.Title>More Bill Categories</Modal.Title>
         </Modal.Header>
@@ -611,6 +854,18 @@ const BillPaymentSystem = () => {
           </Container>
         </Modal.Body>
       </Modal>
+
+      {showPaymentModal && (
+        <PaymentSectionModal
+          amount={billDetails?.amount || "0"}
+          mpin={mpin}
+          setMpin={setMpin}
+          processPayment={processPayment}
+          loading={loading}
+          onBack={handlePaymentModalHide}
+          onHide={handlePaymentModalHide}
+        />
+      )}
     </div>
   );
 };

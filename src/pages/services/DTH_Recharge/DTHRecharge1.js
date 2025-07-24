@@ -1,22 +1,26 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useState, useEffect } from "react";
-import { Row, Col, Form, Button, Modal } from "react-bootstrap";
+import { Row, Col, Form, Button, Modal, Spinner } from "react-bootstrap";
 import FAQDthRecharge from "./FAQDthRecharge";
 import Swal from "sweetalert2";
 import axiosInstance from "../../../components/services/AxiosInstance";
 import { useUser } from "../../../context/UserContext";
 import LoginModal from "../../Login/LoginModal";
 
-
 const DTHRecharge1 = () => {
   const [operators, setOperators] = useState([]);
   const [showPlanModal, setShowPlanModal] = useState(false);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [showMpinModal, setShowMpinModal] = useState(false);
-  const [showLoginModal, setShowLoginModal] = useState(false); // New state for login modal
+  const [showLoginModal, setShowLoginModal] = useState(false);
   const [mpin, setMpin] = useState("");
   const [planInfo, setPlanInfo] = useState(null);
   const { fetchUserfree } = useUser();
+
+  // Loading states
+  const [loadingOperators, setLoadingOperators] = useState(false);
+  const [loadingPlans, setLoadingPlans] = useState(false);
+  const [processingRecharge, setProcessingRecharge] = useState(false);
 
   const [formData, setFormData] = useState({
     operator: "",
@@ -27,6 +31,7 @@ const DTHRecharge1 = () => {
   useEffect(() => {
     const fetchOperators = async () => {
       try {
+        setLoadingOperators(true);
         const res = await axiosInstance.get("/v1/s3/recharge/opertor");
         if (res.data.status === "success") {
           const dthOps = res.data.data.filter((op) => op.category === "DTH");
@@ -34,6 +39,8 @@ const DTHRecharge1 = () => {
         }
       } catch (err) {
         console.error("Operator API Error:", err);
+      } finally {
+        setLoadingOperators(false);
       }
     };
 
@@ -43,7 +50,6 @@ const DTHRecharge1 = () => {
   const handleChange = (e) => {
     const { id, value } = e.target;
 
-    // Allow only numeric values for customerId and amount
     if ((id === "customerId" || id === "amount") && !/^\d*$/.test(value)) {
       return;
     }
@@ -54,40 +60,6 @@ const DTHRecharge1 = () => {
     }));
   };
 
-  const handleNumberBlur = async () => {
-    if (!formData.customerId || formData.customerId.length < 5) return;
-
-    try {
-      const payload = {
-        number: formData.customerId,
-        type: "dth",
-      };
-
-      const res = await axiosInstance.post("/v1/s3/recharge/hlrcheck", payload);
-
-      if (res.data?.data?.status) {
-        const detectedOperator = res.data.data.info.operator;
-        const matchedOp = operators.find((op) =>
-          detectedOperator.toLowerCase().includes(op.name.toLowerCase())
-        );
-
-        if (matchedOp) {
-          setFormData((prev) => ({
-            ...prev,
-            operator: matchedOp.name,
-          }));
-        } else {
-          Swal.fire("Warning", "Operator detected but not matched with list.", "warning");
-        }
-      } else {
-        Swal.fire("Error", "HLR Check failed.", "error");
-      }
-    } catch (err) {
-      console.error("HLR API Error:", err);
-      Swal.fire("Error", "HLR Check failed.", "error");
-    }
-  };
-
   const handlePlanModalOpen = async () => {
     if (!formData.customerId || !formData.operator) {
       Swal.fire("Error", "Please enter Customer ID first.", "error");
@@ -95,6 +67,7 @@ const DTHRecharge1 = () => {
     }
 
     try {
+      setLoadingPlans(true);
       const payload = {
         canumber: formData.customerId,
         op: formData.operator,
@@ -111,6 +84,8 @@ const DTHRecharge1 = () => {
     } catch (err) {
       console.error("DTH Plan API Error:", err);
       Swal.fire("Error", "Failed to fetch plan info.", "error");
+    } finally {
+      setLoadingPlans(false);
     }
   };
 
@@ -120,7 +95,7 @@ const DTHRecharge1 = () => {
     const token = localStorage.getItem("token");
 
     if (!token) {
-      setShowLoginModal(true); // Show login modal instead of redirecting
+      setShowLoginModal(true);
       return;
     }
 
@@ -129,7 +104,7 @@ const DTHRecharge1 = () => {
 
   const handleLoginSuccess = () => {
     setShowLoginModal(false);
-    setShowConfirmModal(true); // Show confirm modal after successful login
+    setShowConfirmModal(true);
   };
 
   const handleRecharge = async () => {
@@ -139,10 +114,11 @@ const DTHRecharge1 = () => {
     }
 
     try {
+      setProcessingRecharge(true);
       const payload = {
         amount: formData.amount,
         canumber: formData.customerId,
-        category: "dth",
+        category: "DTH",
         mpin: mpin,
         operator: formData.operator,
       };
@@ -162,7 +138,9 @@ const DTHRecharge1 = () => {
       }
     } catch (error) {
       console.error("Recharge API Error:", error);
-      Swal.fire("Error", "Something went wrong during recharge!", "error");
+      Swal.fire("Error", error?.response?.data?.message, "error");
+    } finally {
+      setProcessingRecharge(false);
     }
   };
 
@@ -197,19 +175,24 @@ const DTHRecharge1 = () => {
                     placeholder="Enter Customer ID"
                     value={formData.customerId}
                     onChange={handleChange}
-                    onBlur={handleNumberBlur}
                   />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="operator">
                   <Form.Label>Operator</Form.Label>
-                  <Form.Select value={formData.operator} onChange={handleChange}>
-                    <option value="">Select Operator</option>
-                    {operators.map((op) => (
-                      <option key={op.id} value={op.name}>
-                        {op.name}
-                      </option>
-                    ))}
+                  <Form.Select value={formData.operator} onChange={handleChange} disabled={loadingOperators}>
+                    {loadingOperators ? (
+                      <option>Loading operators...</option>
+                    ) : (
+                      <>
+                        <option value="">Select Operator</option>
+                        {operators.map((op) => (
+                          <option key={op.id} value={op.name}>
+                            {op.name}
+                          </option>
+                        ))}
+                      </>
+                    )}
                   </Form.Select>
                 </Form.Group>
 
@@ -224,8 +207,18 @@ const DTHRecharge1 = () => {
                       value={formData.amount}
                       onChange={handleChange}
                     />
-                    <button className="btn btn-outline-secondary" type="button" onClick={handlePlanModalOpen}>
-                      Check Plan
+                    <button 
+                      className="btn btn-outline-secondary" 
+                      type="button" 
+                      onClick={handlePlanModalOpen}
+                      disabled={loadingPlans || !formData.customerId || !formData.operator}
+                    >
+                      {loadingPlans ? (
+                        <>
+                          <Spinner as="span" animation="border" size="sm" role="status" aria-hidden="true" />
+                          <span className="ms-2">Checking...</span>
+                        </>
+                      ) : "Check Balance"}
                     </button>
                   </div>
                 </Form.Group>
@@ -235,9 +228,14 @@ const DTHRecharge1 = () => {
                   type="submit"
                   className="w-100"
                   style={{ backgroundColor: "#001e50" }}
-                  disabled={!isFormValid}
+                  disabled={!isFormValid || processingRecharge}
                 >
-                  Confirm
+                  {processingRecharge ? (
+                    <>
+                      <Spinner as="span" animation="border" size="sm" role="status" aria-hidden="true" />
+                      <span className="ms-2">Processing...</span>
+                    </>
+                  ) : "Confirm"}
                 </Button>
               </Form>
             </div>
@@ -308,12 +306,22 @@ const DTHRecharge1 = () => {
               placeholder="Enter MPIN"
               value={mpin}
               onChange={(e) => setMpin(e.target.value)}
+              disabled={processingRecharge}
             />
           </Form.Group>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowMpinModal(false)}>Cancel</Button>
-          <Button variant="primary" onClick={handleRecharge}>Submit MPIN</Button>
+          <Button variant="secondary" onClick={() => setShowMpinModal(false)} disabled={processingRecharge}>
+            Cancel
+          </Button>
+          <Button variant="primary" onClick={handleRecharge} disabled={processingRecharge}>
+            {processingRecharge ? (
+              <>
+                <Spinner as="span" animation="border" size="sm" role="status" aria-hidden="true" />
+                <span className="ms-2">Processing...</span>
+              </>
+            ) : "Submit MPIN"}
+          </Button>
         </Modal.Footer>
       </Modal>
 

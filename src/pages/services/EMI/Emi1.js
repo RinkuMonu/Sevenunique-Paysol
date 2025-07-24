@@ -13,13 +13,15 @@ const Emi1 = ({
   setAccountNumber,
   inputError,
   setInputError,
-  operators
+  operators,
+  additionalFields,
+  setAdditionalFields,
+  currentOperatorDetails
 }) => {
   const [formData, setFormData] = useState({
     operator: "",
     applicationId: "",
   });
-  const [currentOperator, setCurrentOperator] = useState(null);
   const [isValidating, setIsValidating] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [loginCallback, setLoginCallback] = useState(null);
@@ -29,12 +31,19 @@ const Emi1 = ({
     if (operators.length === 1 && !selectedOperator) {
       setSelectedOperator(operators[0].id);
       setFormData(prev => ({ ...prev, operator: operators[0].id }));
-      setCurrentOperator(operators[0]);
-    } else if (selectedOperator) {
-      const operator = operators.find(op => op.id === selectedOperator);
-      setCurrentOperator(operator);
     }
   }, [operators, selectedOperator, setSelectedOperator]);
+
+  useEffect(() => {
+    if (selectedOperator) {
+      // Reset additional fields when operator changes
+      setAdditionalFields({
+        ad1: "",
+        ad2: "",
+        ad3: ""
+      });
+    }
+  }, [selectedOperator, setAdditionalFields]);
 
   const handleOperatorChange = (e) => {
     const value = e.target.value;
@@ -42,9 +51,6 @@ const Emi1 = ({
     setSelectedOperator(value);
     setAccountNumber("");
     setInputError("");
-    
-    const operator = operators.find(op => op.id === value);
-    setCurrentOperator(operator);
   };
 
   const handleApplicationIdChange = (e) => {
@@ -53,17 +59,37 @@ const Emi1 = ({
     setAccountNumber(value);
     
     // Validate input if operator has regex
-    if (currentOperator?.regex) {
+    if (currentOperatorDetails?.regex) {
       try {
-        const regex = new RegExp(currentOperator.regex);
+        const regex = new RegExp(currentOperatorDetails.regex);
         if (!regex.test(value)) {
-          setInputError(`Please enter a valid ${currentOperator.displayname || "application ID"}`);
+          setInputError(`Please enter a valid ${currentOperatorDetails.displayname || "application ID"}`);
         } else {
           setInputError("");
         }
       } catch (err) {
-        console.error("Invalid regex pattern:", currentOperator.regex);
+        console.error("Invalid regex pattern:", currentOperatorDetails.regex);
       }
+    }
+  };
+
+  const handleAdditionalFieldChange = (fieldName, value) => {
+    setAdditionalFields(prev => ({
+      ...prev,
+      [fieldName]: value
+    }));
+  };
+
+  const validateInput = (value, regexPattern) => {
+    if (!value || !regexPattern) return true;
+    
+    try {
+      const cleanPattern = regexPattern.replace(/\\/g, "\\");
+      const regex = new RegExp(cleanPattern);
+      return regex.test(value);
+    } catch (err) {
+      console.error("Invalid regex pattern:", regexPattern);
+      return false;
     }
   };
 
@@ -76,7 +102,6 @@ const Emi1 = ({
     if (!token) {
       // Store the callback function to proceed after login
       setLoginCallback(() => () => {
-        // Re-run the validation after login
         validateAndProceed();
       });
       setShowLoginModal(true);
@@ -84,7 +109,6 @@ const Emi1 = ({
       return;
     }
 
-    // If user is logged in, proceed with validation
     validateAndProceed();
   };
 
@@ -99,40 +123,157 @@ const Emi1 = ({
     // 3. Validate application ID is entered
     if (!formData.applicationId) {
       setInputError(
-        `Please enter your ${currentOperator?.displayname || "application ID"}`
+        `Please enter your ${currentOperatorDetails?.displayname || "application ID"}`
       );
       setIsValidating(false);
       return;
     }
 
     // 4. Validate against regex pattern if exists
-    if (currentOperator?.regex) {
+    if (currentOperatorDetails?.regex) {
       try {
-        const regex = new RegExp(currentOperator.regex);
+        const regex = new RegExp(currentOperatorDetails.regex);
         if (!regex.test(formData.applicationId)) {
           setInputError(
-            `Please enter a valid ${currentOperator.displayname || "application ID"}`
+            `Please enter a valid ${currentOperatorDetails.displayname || "application ID"}`
           );
           setIsValidating(false);
           return;
         }
       } catch (err) {
-        console.error("Invalid regex pattern:", currentOperator.regex);
+        console.error("Invalid regex pattern:", currentOperatorDetails.regex);
         setInputError("Invalid validation pattern. Please contact support.");
         setIsValidating(false);
         return;
       }
     }
 
-    // 5. Clear any previous errors if all validations pass
+    // 5. Validate additional fields if they exist
+    if (currentOperatorDetails?.ad1_name && currentOperatorDetails?.ad1_regex) {
+      if (!validateInput(additionalFields.ad1, currentOperatorDetails.ad1_regex)) {
+        setInputError(`Please enter a valid ${currentOperatorDetails.ad1_d_name}`);
+        setIsValidating(false);
+        return;
+      }
+    }
+    
+    if (currentOperatorDetails?.ad2_name && currentOperatorDetails?.ad2_regex) {
+      if (!validateInput(additionalFields.ad2, currentOperatorDetails.ad2_regex)) {
+        setInputError(`Please enter a valid ${currentOperatorDetails.ad2_d_name}`);
+        setIsValidating(false);
+        return;
+      }
+    }
+
+    // 6. Clear any previous errors if all validations pass
     setInputError("");
 
-    // 6. Only proceed if all validations pass
+    // 7. Only proceed if all validations pass
     if (formData.operator && formData.applicationId && !inputError) {
       onProceed();
     }
 
     setIsValidating(false);
+  };
+
+  const renderAdditionalFields = () => {
+    if (!currentOperatorDetails) return null;
+
+    return (
+      <>
+        {currentOperatorDetails.ad1_name && (
+          <Form.Group className="mb-3" controlId="additionalField1">
+            <Form.Label>{currentOperatorDetails.ad1_d_name}</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder={`Enter ${currentOperatorDetails.ad1_d_name}`}
+              value={additionalFields.ad1}
+              onChange={(e) => handleAdditionalFieldChange("ad1", e.target.value)}
+              className={
+                currentOperatorDetails.ad1_regex && 
+                additionalFields.ad1 && 
+                !validateInput(additionalFields.ad1, currentOperatorDetails.ad1_regex) 
+                  ? "is-invalid" 
+                  : ""
+              }
+            />
+            {currentOperatorDetails.ad1_regex && additionalFields.ad1 && (
+              <Form.Text className={
+                !validateInput(additionalFields.ad1, currentOperatorDetails.ad1_regex) 
+                  ? "text-danger" 
+                  : "text-muted"
+              }>
+                {!validateInput(additionalFields.ad1, currentOperatorDetails.ad1_regex)
+                  ? `Invalid ${currentOperatorDetails.ad1_d_name} format`
+                  : currentOperatorDetails.ad1_regex === "dd-mm-yyyy"
+                    ? "Format: DD-MM-YYYY"
+                    : ""}
+              </Form.Text>
+            )}
+          </Form.Group>
+        )}
+
+        {currentOperatorDetails.ad2_name && (
+          <Form.Group className="mb-3" controlId="additionalField2">
+            <Form.Label>{currentOperatorDetails.ad2_d_name}</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder={`Enter ${currentOperatorDetails.ad2_d_name}`}
+              value={additionalFields.ad2}
+              onChange={(e) => handleAdditionalFieldChange("ad2", e.target.value)}
+              className={
+                currentOperatorDetails.ad2_regex && 
+                additionalFields.ad2 && 
+                !validateInput(additionalFields.ad2, currentOperatorDetails.ad2_regex) 
+                  ? "is-invalid" 
+                  : ""
+              }
+            />
+            {currentOperatorDetails.ad2_regex && additionalFields.ad2 && (
+              <Form.Text className={
+                !validateInput(additionalFields.ad2, currentOperatorDetails.ad2_regex) 
+                  ? "text-danger" 
+                  : "text-muted"
+              }>
+                {!validateInput(additionalFields.ad2, currentOperatorDetails.ad2_regex)
+                  ? `Invalid ${currentOperatorDetails.ad2_d_name} format`
+                  : ""}
+              </Form.Text>
+            )}
+          </Form.Group>
+        )}
+
+        {currentOperatorDetails.ad3_name && (
+          <Form.Group className="mb-3" controlId="additionalField3">
+            <Form.Label>{currentOperatorDetails.ad3_d_name}</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder={`Enter ${currentOperatorDetails.ad3_d_name}`}
+              value={additionalFields.ad3}
+              onChange={(e) => handleAdditionalFieldChange("ad3", e.target.value)}
+              className={
+                currentOperatorDetails.ad3_regex && 
+                additionalFields.ad3 && 
+                !validateInput(additionalFields.ad3, currentOperatorDetails.ad3_regex) 
+                  ? "is-invalid" 
+                  : ""
+              }
+            />
+            {currentOperatorDetails.ad3_regex && additionalFields.ad3 && (
+              <Form.Text className={
+                !validateInput(additionalFields.ad3, currentOperatorDetails.ad3_regex) 
+                  ? "text-danger" 
+                  : "text-muted"
+              }>
+                {!validateInput(additionalFields.ad3, currentOperatorDetails.ad3_regex)
+                  ? `Invalid ${currentOperatorDetails.ad3_d_name} format`
+                  : ""}
+              </Form.Text>
+            )}
+          </Form.Group>
+        )}
+      </>
+    );
   };
 
   const handleLoginSuccess = () => {
@@ -199,30 +340,36 @@ const Emi1 = ({
                 </Form.Group>
 
                 {formData.operator && (
-                  <Form.Group className="mb-3" controlId="applicationId">
-                    <Form.Label>
-                      {currentOperator?.displayname || "Application ID"}
-                    </Form.Label>
-                    <Form.Control
-                      type="text"
-                      placeholder={
-                        currentOperator?.displayname 
-                          ? `Enter ${currentOperator.displayname}`
-                          : "Enter Application ID"
-                      }
-                      value={formData.applicationId}
-                      onChange={handleApplicationIdChange}
-                      required
-                    />
-                    {currentOperator?.regex && (
-                      <Form.Text className="text-muted">
-                        Required format: {currentOperator.regex}
-                      </Form.Text>
-                    )}
-                    {inputError && (
-                      <div className="text-danger">{inputError}</div>
-                    )}
-                  </Form.Group>
+                  <>
+                    <Form.Group className="mb-3" controlId="applicationId">
+                      <Form.Label>
+                        {currentOperatorDetails?.displayname || "Application ID"}
+                      </Form.Label>
+                      <Form.Control
+                        type="text"
+                        placeholder={
+                          currentOperatorDetails?.displayname 
+                            ? `Enter ${currentOperatorDetails.displayname}`
+                            : "Enter Application ID"
+                        }
+                        value={formData.applicationId}
+                        onChange={handleApplicationIdChange}
+                        className={inputError ? "is-invalid" : ""}
+                        required
+                      />
+                      {/* {currentOperatorDetails?.regex && (
+                        <Form.Text className="text-muted">
+                          Required format: {currentOperatorDetails.regex}
+                        </Form.Text>
+                      )} */}
+                      {inputError && (
+                        <div className="text-danger">{inputError}</div>
+                      )}
+                    </Form.Group>
+
+                    {/* Render additional fields if they exist */}
+                    {renderAdditionalFields()}
+                  </>
                 )}
 
                 {formData.operator && formData.applicationId && (
@@ -231,7 +378,12 @@ const Emi1 = ({
                     type="submit"
                     className="w-100"
                     style={{ backgroundColor: "#001e50", color: "white" }}
-                    disabled={!!inputError || isValidating}
+                    disabled={
+                      !!inputError || 
+                      isValidating ||
+                      (currentOperatorDetails?.ad1_name && !additionalFields.ad1) ||
+                      (currentOperatorDetails?.ad2_name && !additionalFields.ad2)
+                    }
                   >
                     {isValidating ? "Validating..." : "Confirm"}
                   </Button>

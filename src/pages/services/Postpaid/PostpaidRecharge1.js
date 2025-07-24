@@ -4,7 +4,6 @@ import FAQPostpaid from "./FAQPostpaid";
 import Swal from "sweetalert2";
 import LoginModal from "../../Login/LoginModal";
 
-
 const PostpaidRecharge1 = ({
   selectedCategory,
   onProceed,
@@ -15,24 +14,28 @@ const PostpaidRecharge1 = ({
   inputError,
   setInputError,
   operators,
+  additionalFields,
+  setAdditionalFields,
+  currentOperatorDetails
 }) => {
   const [formData, setFormData] = useState({
     operator: "",
     mobileNumber: "",
   });
-  const [currentOperator, setCurrentOperator] = useState(null);
   const [isValidating, setIsValidating] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [loginCallback, setLoginCallback] = useState(null);
 
   useEffect(() => {
     if (selectedOperator) {
-      const operator = operators.find((op) => op.id === selectedOperator);
-      setCurrentOperator(operator);
-    } else {
-      setCurrentOperator(null);
+      // Reset additional fields when operator changes
+      setAdditionalFields({
+        ad1: "",
+        ad2: "",
+        ad3: ""
+      });
     }
-  }, [selectedOperator, operators]);
+  }, [selectedOperator, operators, setAdditionalFields]);
 
   const handleOperatorChange = (e) => {
     const value = e.target.value;
@@ -43,29 +46,23 @@ const PostpaidRecharge1 = ({
   };
 
   const handleMobileChange = (e) => {
-    let value = e.target.value;
-
-    if (currentOperator?.type === "mobile") {
-      value = value.replace(/\D/g, "");
-    }
+    let value = e.target.value.trim().replace(/\D/g, ""); // sanitize input
 
     setFormData((prev) => ({ ...prev, mobileNumber: value }));
     setAccountNumber(value);
 
-    if (currentOperator?.regex && value) {
+    if (currentOperatorDetails?.regex && value) {
       try {
-        const regex = new RegExp(currentOperator.regex);
+        const regex = new RegExp(currentOperatorDetails.regex);
         if (!regex.test(value)) {
           setInputError(
-            `Please enter a valid ${
-              currentOperator.displayname || "mobile number"
-            }`
+            `Please enter a valid ${currentOperatorDetails.displayname || "mobile number"}`
           );
         } else {
           setInputError("");
         }
       } catch (err) {
-        console.error("Invalid regex pattern:", currentOperator.regex);
+        console.error("Invalid regex pattern from API:", currentOperatorDetails.regex);
         setInputError("Invalid validation pattern. Please contact support.");
       }
     } else if (!value) {
@@ -73,16 +70,33 @@ const PostpaidRecharge1 = ({
     }
   };
 
+  const handleAdditionalFieldChange = (fieldName, value) => {
+    setAdditionalFields(prev => ({
+      ...prev,
+      [fieldName]: value
+    }));
+  };
+
+  const validateInput = (value, regexPattern) => {
+    if (!value || !regexPattern) return true;
+    
+    try {
+      const cleanPattern = regexPattern.replace(/\\/g, "\\");
+      const regex = new RegExp(cleanPattern);
+      return regex.test(value);
+    } catch (err) {
+      console.error("Invalid regex pattern:", regexPattern);
+      return false;
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsValidating(true);
 
-    // 1. Check if user is logged in
     const token = localStorage.getItem("token");
     if (!token) {
-      // Store the callback function to proceed after login
       setLoginCallback(() => () => {
-        // Re-run the validation after login
         validateAndProceed();
       });
       setShowLoginModal(true);
@@ -90,52 +104,62 @@ const PostpaidRecharge1 = ({
       return;
     }
 
-    // If user is logged in, proceed with validation
     validateAndProceed();
   };
 
   const validateAndProceed = () => {
-    // 2. Validate operator is selected
     if (!formData.operator) {
       setInputError("Please select an operator");
       setIsValidating(false);
       return;
     }
 
-    // 3. Validate mobile number/account number is entered
     if (!formData.mobileNumber) {
       setInputError(
-        `Please enter your ${currentOperator?.displayname || "mobile number"}`
+        `Please enter your ${currentOperatorDetails?.displayname || "mobile number"}`
       );
       setIsValidating(false);
       return;
     }
 
-    // 4. Validate against regex pattern if exists
-    if (currentOperator?.regex) {
+    // Validate main account number
+    if (currentOperatorDetails?.regex) {
       try {
-        const regex = new RegExp(currentOperator.regex);
+        const regex = new RegExp(currentOperatorDetails.regex);
         if (!regex.test(formData.mobileNumber)) {
           setInputError(
-            `Please enter a valid ${
-              currentOperator.displayname || "mobile number"
-            }`
+            `Please enter a valid ${currentOperatorDetails.displayname || "mobile number"}`
           );
           setIsValidating(false);
           return;
         }
       } catch (err) {
-        console.error("Invalid regex pattern:", currentOperator.regex);
+        console.error("Invalid regex pattern:", currentOperatorDetails.regex);
         setInputError("Invalid validation pattern. Please contact support.");
         setIsValidating(false);
         return;
       }
     }
 
-    // 5. Clear any previous errors if all validations pass
+    // Validate additional fields if they exist
+    if (currentOperatorDetails?.ad1_name && currentOperatorDetails?.ad1_regex) {
+      if (!validateInput(additionalFields.ad1, currentOperatorDetails.ad1_regex)) {
+        setInputError(`Please enter a valid ${currentOperatorDetails.ad1_d_name}`);
+        setIsValidating(false);
+        return;
+      }
+    }
+    
+    if (currentOperatorDetails?.ad2_name && currentOperatorDetails?.ad2_regex) {
+      if (!validateInput(additionalFields.ad2, currentOperatorDetails.ad2_regex)) {
+        setInputError(`Please enter a valid ${currentOperatorDetails.ad2_d_name}`);
+        setIsValidating(false);
+        return;
+      }
+    }
+
     setInputError("");
 
-    // 6. Only proceed if all validations pass
     if (formData.operator && formData.mobileNumber && !inputError) {
       onProceed();
     }
@@ -150,11 +174,110 @@ const PostpaidRecharge1 = ({
     }
   };
 
+  const renderAdditionalFields = () => {
+    if (!currentOperatorDetails) return null;
+
+    return (
+      <>
+        {currentOperatorDetails.ad1_name && (
+          <Form.Group className="mb-3" controlId="additionalField1">
+            <Form.Label>{currentOperatorDetails.ad1_d_name}</Form.Label>
+            <Form.Control
+              type={currentOperatorDetails.ad1_regex === "dd-mm-yyyy" ? "date" : "text"}
+              placeholder={`Enter ${currentOperatorDetails.ad1_d_name}`}
+              value={additionalFields.ad1}
+              onChange={(e) => handleAdditionalFieldChange("ad1", e.target.value)}
+              className={
+                currentOperatorDetails.ad1_regex && 
+                additionalFields.ad1 && 
+                !validateInput(additionalFields.ad1, currentOperatorDetails.ad1_regex) 
+                  ? "is-invalid" 
+                  : ""
+              }
+            />
+            {currentOperatorDetails.ad1_regex && additionalFields.ad1 && (
+              <Form.Text className={
+                !validateInput(additionalFields.ad1, currentOperatorDetails.ad1_regex) 
+                  ? "text-danger" 
+                  : "text-muted"
+              }>
+                {!validateInput(additionalFields.ad1, currentOperatorDetails.ad1_regex)
+                  ? `Invalid ${currentOperatorDetails.ad1_d_name} format`
+                  : currentOperatorDetails.ad1_regex === "dd-mm-yyyy"
+                    ? "Format: DD-MM-YYYY"
+                    : ""}
+              </Form.Text>
+            )}
+          </Form.Group>
+        )}
+
+        {currentOperatorDetails.ad2_name && (
+          <Form.Group className="mb-3" controlId="additionalField2">
+            <Form.Label>{currentOperatorDetails.ad2_d_name}</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder={`Enter ${currentOperatorDetails.ad2_d_name}`}
+              value={additionalFields.ad2}
+              onChange={(e) => handleAdditionalFieldChange("ad2", e.target.value)}
+              className={
+                currentOperatorDetails.ad2_regex && 
+                additionalFields.ad2 && 
+                !validateInput(additionalFields.ad2, currentOperatorDetails.ad2_regex) 
+                  ? "is-invalid" 
+                  : ""
+              }
+            />
+            {currentOperatorDetails.ad2_regex && additionalFields.ad2 && (
+              <Form.Text className={
+                !validateInput(additionalFields.ad2, currentOperatorDetails.ad2_regex) 
+                  ? "text-danger" 
+                  : "text-muted"
+              }>
+                {!validateInput(additionalFields.ad2, currentOperatorDetails.ad2_regex)
+                  ? `Invalid ${currentOperatorDetails.ad2_d_name} format`
+                  : ""}
+              </Form.Text>
+            )}
+          </Form.Group>
+        )}
+
+        {currentOperatorDetails.ad3_name && (
+          <Form.Group className="mb-3" controlId="additionalField3">
+            <Form.Label>{currentOperatorDetails.ad3_d_name}</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder={`Enter ${currentOperatorDetails.ad3_d_name}`}
+              value={additionalFields.ad3}
+              onChange={(e) => handleAdditionalFieldChange("ad3", e.target.value)}
+              className={
+                currentOperatorDetails.ad3_regex && 
+                additionalFields.ad3 && 
+                !validateInput(additionalFields.ad3, currentOperatorDetails.ad3_regex) 
+                  ? "is-invalid" 
+                  : ""
+              }
+            />
+            {currentOperatorDetails.ad3_regex && additionalFields.ad3 && (
+              <Form.Text className={
+                !validateInput(additionalFields.ad3, currentOperatorDetails.ad3_regex) 
+                  ? "text-danger" 
+                  : "text-muted"
+              }>
+                {!validateInput(additionalFields.ad3, currentOperatorDetails.ad3_regex)
+                  ? `Invalid ${currentOperatorDetails.ad3_d_name} format`
+                  : ""}
+              </Form.Text>
+            )}
+          </Form.Group>
+        )}
+      </>
+    );
+  };
+
   return (
     <>
       <div className="p-5" style={{ backgroundColor: "#F5F9FF" }}>
         <Row>
-          {/* Left Side Content */}
           <Col md={6} className="text-center text-md-start">
             <h2 className="fw-bold" style={{ color: "#002244" }}>
               Postpaid Mobile Recharge
@@ -170,7 +293,6 @@ const PostpaidRecharge1 = ({
             </div>
           </Col>
 
-          {/* Right Side Form */}
           <Col md={6}>
             <div
               className="p-4 rounded bg-white shadow"
@@ -207,31 +329,39 @@ const PostpaidRecharge1 = ({
                 </Form.Group>
 
                 {formData.operator && (
-                  <Form.Group className="mb-3" controlId="mobileNumber">
-                    <Form.Label>
-                      {currentOperator?.displayname || "Mobile Number"}
-                    </Form.Label>
-                    <Form.Control
-                      type={currentOperator?.inputType || "text"}
-                      placeholder={
-                        currentOperator?.displayname
-                          ? `Enter ${currentOperator.displayname}`
-                          : "Enter Mobile Number (e.g., 9876543210)"
-                      }
-                      value={formData.mobileNumber}
-                      onChange={handleMobileChange}
-                      maxLength={currentOperator?.maxLength || 10}
-                      required
-                    />
-                    {currentOperator?.regex && (
-                      <Form.Text className="text-muted">
-                        Format: {currentOperator.regex}
-                      </Form.Text>
-                    )}
-                    {inputError && (
-                      <div className="text-danger">{inputError}</div>
-                    )}
-                  </Form.Group>
+                  <>
+                    <Form.Group className="mb-3" controlId="mobileNumber">
+                      <Form.Label>
+                        {currentOperatorDetails?.displayname || "Mobile Number"}
+                      </Form.Label>
+                      <Form.Control
+                        type={currentOperatorDetails?.inputType || "text"}
+                        placeholder={
+                          currentOperatorDetails?.displayname
+                            ? `Enter ${currentOperatorDetails.displayname}`
+                            : "Enter Mobile Number (e.g., 9876543210)"
+                        }
+                        value={formData.mobileNumber}
+                        onChange={handleMobileChange}
+                        maxLength={currentOperatorDetails?.maxLength || 10}
+                        className={inputError ? "is-invalid" : ""}
+                        required
+                      />
+                      {inputError && (
+                        <Form.Control.Feedback type="invalid">
+                          {inputError}
+                        </Form.Control.Feedback>
+                      )}
+                      {!inputError && (
+                        <Form.Text className="text-muted">
+                          Enter a 10-digit mobile number starting with 6, 7, 8, or 9
+                        </Form.Text>
+                      )}
+                    </Form.Group>
+
+                    {/* Render additional fields if they exist */}
+                    {renderAdditionalFields()}
+                  </>
                 )}
 
                 {formData.operator && formData.mobileNumber && (
@@ -240,7 +370,12 @@ const PostpaidRecharge1 = ({
                     type="submit"
                     className="w-100"
                     style={{ backgroundColor: "#002244", color: "white" }}
-                    disabled={!!inputError || isValidating}
+                    disabled={
+                      !!inputError || 
+                      isValidating ||
+                      (currentOperatorDetails?.ad1_name && !additionalFields.ad1) ||
+                      (currentOperatorDetails?.ad2_name && !additionalFields.ad2)
+                    }
                   >
                     {isValidating ? "Validating..." : "Confirm"}
                   </Button>
@@ -251,8 +386,8 @@ const PostpaidRecharge1 = ({
         </Row>
       </div>
       <FAQPostpaid />
-      <LoginModal 
-        show={showLoginModal} 
+      <LoginModal
+        show={showLoginModal}
         onClose={() => setShowLoginModal(false)}
         onLoginSuccess={handleLoginSuccess}
       />
